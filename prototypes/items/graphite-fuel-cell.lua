@@ -6,7 +6,7 @@ data:extend({
 		icon_size = 64,
 		subgroup = "intermediate-product",
 		stack_size = 50,
-		fuel_value = "150GJ",
+		fuel_value = "3GJ",
 		fuel_category = "nuclear",
 		burnt_result = "graphite-depleted-cell"
 		
