@@ -4,11 +4,12 @@ data:extend(
             type = "item-group",
             name = "atomic-overhaul",
             icon = "__Atomic_Overhaul__/graphics/icons/group.png",
-            icon_size = 64,
+            icon_size = 128,
+            order = "z"
         },
         {
             type = "item-subgroup",
-            name = "intermediate-product",
+            name = "resources",
             group = "atomic-overhaul",
             order = "a"
         },
