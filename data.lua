@@ -9,6 +9,8 @@ require("prototypes/items/plutonium")
 require("prototypes/items/plutonium-fuel-cell")
 require("prototypes/items/plutonium-depleted-cell")
 
+require("prototypes/vanilla-changes/recipes")
+
 
 require("prototypes/items/MOX")
 require("prototypes/items/MOX-fuel-cell")
@@ -22,4 +24,5 @@ require("prototypes/items/thorium-fuel-cell")
 require("prototypes/items/thorium-depleted-cell")
 
 
+require("prototypes/items/nuclear-waste")
 require("prototypes/group")

@@ -5,15 +5,15 @@ data:extend(
         name = "MOX-recipe",
         icon = "__Atomic_Overhaul__/graphics/icons/MOX.png",
         icon_size = 64,
-        category = "advanced-crafting",
+        category = "centrifuging",
         energy_required = 20,
         enabled = false,
         order = "z",
         subgroup = "resources",
         ingredients =
         {
-            {"uranium-238", 9},
-            {"plutonium", 9}
+            {"uranium-235", 9},
+            {"plutonium", 1}
         },
         always_show_made_in = true,
         results = 	{
