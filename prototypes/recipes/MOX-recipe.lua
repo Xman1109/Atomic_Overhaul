@@ -12,7 +12,7 @@ data:extend(
         subgroup = "resources",
         ingredients =
         {
-            {"uranium", 9},
+            {"uranium-283", 9},
             {"plutonium", 9}
         },
         always_show_made_in = true,
