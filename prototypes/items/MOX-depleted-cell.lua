@@ -13,7 +13,7 @@ data:extend(
             },
             icon_size = 64,
             stack_size = 50,
-            order = "r[used-up-MOX-fuel-cell]",
+            order = "r[MOX-used-up-fuel-cell]",
             group = "intermediate-products",
             subgroup = "intermediate-product"
         }
