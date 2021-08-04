@@ -28,7 +28,7 @@ data:extend({
 		order = "r[thorium-processing]-a[thorium-fuel-cell]",
 		fuel_category = "nuclear",
 		burnt_result = "thorium-depleted-cell",
-		fuel_value = "36GJ",
+		fuel_value = "16GJ",
 		stack_size = 50
 	  }
 })

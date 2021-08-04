@@ -28,7 +28,7 @@ data:extend({
 		order = "r[plutonium-processing]-a[plutonium-fuel-cell]",
 		fuel_category = "nuclear",
 		burnt_result = "plutonium-depleted-cell",
-		fuel_value = "16GJ",
+		fuel_value = "10GJ",
 		stack_size = 50
 	  }
 })

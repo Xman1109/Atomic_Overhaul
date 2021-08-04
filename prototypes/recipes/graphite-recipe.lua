@@ -8,7 +8,7 @@ data:extend(
         category = "advanced-crafting",
         energy_required = 20,
         enabled = false,
-        order = "z",
+        order = "a",
         subgroup = "resources",
         ingredients =
         {
