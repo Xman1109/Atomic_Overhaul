@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "MOX-recipe",
         icon = "__Atomic_Overhaul__/graphics/icons/MOX.png",
-        icon_size = 64,
+        icon_size = 64, mipmap_count = 4,
         category = "centrifuging",
         energy_required = 20,
         enabled = false,
