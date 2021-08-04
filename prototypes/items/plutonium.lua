@@ -28,7 +28,7 @@ data:extend(
             icon_size = 64, icon_mipmaps = 4,
             group = "intermediate-products",
             subgroup = "intermediate-product",
-            order = "r[plutonium]",
+            order = "r[plutonium-0]",
             stack_size = 100
         }
     })
