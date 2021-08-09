@@ -4,11 +4,12 @@ data:extend(
         type = "recipe",
         name = "MOX-fuel-cell-recipe",
         icon = "__Atomic_Overhaul__/graphics/icons/MOX-fuel-cell.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64,
+        mipmap_count = 4,
         category = "centrifuging",
         energy_required = 50,
         enabled = false,
-        order = "z",
+        order = "d",
         subgroup = "fuel-cells",
         ingredients =
         {

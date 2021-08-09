@@ -28,7 +28,7 @@ data:extend({
 		order = "r[MOX-processing]-a[MOX-fuel-cell]",
 		fuel_category = "nuclear",
 		burnt_result = "MOX-depleted-cell",
-		fuel_value = "22GJ",
+		fuel_value = "12GJ",
 		stack_size = 50
 	  }
 })

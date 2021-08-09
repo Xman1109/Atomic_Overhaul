@@ -2,22 +2,23 @@ data:extend(
     {
         {
         type = "recipe",
-        name = "MOX-recipe",
-        icon = "__Atomic_Overhaul__/graphics/icons/MOX.png",
+        name = "thorium-recipe",
+        icon = "__Atomic_Overhaul__/graphics/icons/thorium.png",
         icon_size = 64, mipmap_count = 4,
         category = "centrifuging",
         energy_required = 20,
         enabled = false,
-        order = "d",
+        order = "f",
         subgroup = "resources",
         ingredients =
         {
-            {"uranium-235", 9},
-            {"plutonium", 1}
+            {"uranium-ore", 15}
         },
         always_show_made_in = true,
         results = 	{
-            {"MOX", 8},
+            {"uranium-238", 3},
+            {type="item", name="uranium-235", amount_min = 1, amount_max = 2},
+            {type="item", name="thorium", amount_min = 0, amount_max = 3}
         },
     }
 })
