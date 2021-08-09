@@ -13,7 +13,7 @@ data:extend(
         ingredients =
         {
             {"MOX", 10},
-            {"empty-fuel-cell", 10}
+            {"empty-fuel-cell", 10},
             {"graphite", 1}
         },
         always_show_made_in = true,
