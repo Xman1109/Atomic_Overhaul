@@ -22,5 +22,3 @@ data:extend(
         },
     }
 })
-
-ATOMIC
