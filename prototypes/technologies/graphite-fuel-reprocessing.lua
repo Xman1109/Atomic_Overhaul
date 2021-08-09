@@ -2,26 +2,25 @@ data:extend({
 
     {
             type = "technology",
-            name = "thorium-processing",
+            name = "graphite-fuel-reprocessing",
             icon = "__Atomic_Overhaul__/graphics/icons/group.png",
             icon_size = "128",
-            prerequisites = {"uranium-processing"},
+            prerequisites = {"nuclear-power"},
             effects =
             {
                 {
-                   type = "unlock-recipe",
-                   recipe = "thorium-recipe"
-                }          
+                    type = "unlock-recipe",
+                    recipe = "graphite-fuel-reprocessing"
+                }
             },
             unit =
         {
-        count = 2500,
+        count = 150,
         ingredients =
             {
               {"automation-science-pack", 1},
               {"logistic-science-pack", 1},
               {"chemical-science-pack", 1},
-            --{"research-data", 1}
             },
         time = 45
         }
