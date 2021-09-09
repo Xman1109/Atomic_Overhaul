@@ -3,7 +3,7 @@ data:extend({
     {
             type = "technology",
             name = "graphite-fuel-reprocessing",
-            icon = "__Atomic_Overhaul__/graphics/icons/group.png",
+            icon = graphics .. "group.png",
             icon_size = "128",
             prerequisites = {"nuclear-power"},
             effects =

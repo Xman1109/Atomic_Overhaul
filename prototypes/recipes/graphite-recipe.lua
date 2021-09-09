@@ -3,7 +3,7 @@ data:extend(
         {
         type = "recipe",
         name = "graphite-recipe",
-        icon = "__Atomic_Overhaul__/graphics/icons/graphite.png",
+        icon = graphics .. "graphite.png",
         icon_size = 64, mipmap_count = 4,
         category = "advanced-crafting",
         energy_required = 20,

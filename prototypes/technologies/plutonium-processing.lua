@@ -3,7 +3,7 @@ data:extend({
     {
             type = "technology",
             name = "plutonium-processing",
-            icon = "__Atomic_Overhaul__/graphics/icons/plutonium-processing.png",
+            icon = graphics .. "plutonium-processing.png",
             icon_size = "256",
             prerequisites = {"nuclear-fuel-reprocessing"},
             effects =

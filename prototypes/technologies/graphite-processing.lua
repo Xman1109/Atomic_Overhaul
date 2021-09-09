@@ -3,7 +3,7 @@ data:extend({
     {
             type = "technology",
             name = "graphite-processing",
-            icon = "__Atomic_Overhaul__/graphics/icons/graphite-processing.png",
+            icon = graphics .. "graphite-processing.png",
             icon_size = "256",
             prerequisites = {"chemical-science-pack", "concrete"},
             effects =

@@ -3,7 +3,7 @@ data:extend(
         {
             type = "item",
             name = "graphite",
-            icon = "__Atomic_Overhaul__/graphics/icons/graphite.png",
+            icon = graphics .. "graphite.png",
             pictures =
             {
               layers =

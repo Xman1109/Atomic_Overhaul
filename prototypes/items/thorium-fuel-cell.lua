@@ -2,7 +2,7 @@ data:extend({
     {
 		type = "item",
 		name = "thorium-fuel-cell",
-		icon = "__Atomic_Overhaul__/graphics/icons/thorium-fuel-cell.png",
+		icon = graphics .. "thorium-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{

@@ -3,7 +3,7 @@ data:extend(
     {
         type = "recipe",
         name = "plutonium-fuel-cell-recipe",
-        icon = "__Atomic_Overhaul__/graphics/icons/plutonium-fuel-cell.png",
+        icon = graphics .. "plutonium-fuel-cell.png",
         icon_size = 64,
         mipmap_count = 4,
         category = "centrifuging",

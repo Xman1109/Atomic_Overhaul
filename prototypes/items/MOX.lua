@@ -3,7 +3,7 @@ data:extend(
         {
             type = "item",
             name = "MOX",
-            icon = "__Atomic_Overhaul__/graphics/icons/MOX.png",
+            icon = graphics .. "MOX.png",
             pictures =
             {
               layers =

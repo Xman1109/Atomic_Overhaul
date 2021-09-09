@@ -3,7 +3,7 @@ data:extend(
     {
         type = "recipe",
         name = "graphite-fuel-reprocessing",
-        icon = "__Atomic_Overhaul__/graphics/icons/graphite-fuel-cell.png",
+        icon = graphics .. "graphite-fuel-cell.png",
         icon_size = 64,
         mipmap_count = 4,
         category = "centrifuging",

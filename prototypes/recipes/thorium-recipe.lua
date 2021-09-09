@@ -3,7 +3,7 @@ data:extend(
         {
         type = "recipe",
         name = "thorium-recipe",
-        icon = "__Atomic_Overhaul__/graphics/icons/thorium.png",
+        icon = graphics .. "thorium.png",
         icon_size = 64, mipmap_count = 4,
         category = "centrifuging",
         energy_required = 20,

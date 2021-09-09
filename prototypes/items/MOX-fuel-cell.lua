@@ -2,7 +2,7 @@ data:extend({
     {
 		type = "item",
 		name = "MOX-fuel-cell",
-		icon = "__Atomic_Overhaul__/graphics/icons/MOX-fuel-cell.png",
+		icon = graphics .. "MOX-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{

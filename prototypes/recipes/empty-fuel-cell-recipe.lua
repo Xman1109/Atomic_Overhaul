@@ -3,7 +3,7 @@ data:extend(
     {
         type = "recipe",
         name = "empty-fuel-cell-recipe",
-        icon = "__Atomic_Overhaul__/graphics/icons/empty-fuel-cell.png",
+        icon = graphics .. "empty-fuel-cell.png",
         icon_size = 64,
         mipmap_count = 4,
         category = "crafting",

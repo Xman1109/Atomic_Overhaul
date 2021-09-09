@@ -3,7 +3,7 @@ data:extend(
         {
             type = "item",
             name = "plutonium",
-            icon = "__Atomic_Overhaul__/graphics/icons/plutonium.png",
+            icon = graphics .. "plutonium.png",
             pictures =
             {
               layers =

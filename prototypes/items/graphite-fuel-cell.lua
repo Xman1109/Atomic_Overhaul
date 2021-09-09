@@ -2,7 +2,7 @@ data:extend({
     {
 		type = "item",
 		name = "graphite-fuel-cell",
-		icon = "__Atomic_Overhaul__/graphics/icons/graphite-fuel-cell.png",
+		icon = graphics .. "graphite-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{

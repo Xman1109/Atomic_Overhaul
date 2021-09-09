@@ -2,7 +2,7 @@ data:extend({
     {
 		type = "item",
 		name = "plutonium-fuel-cell",
-		icon = "__Atomic_Overhaul__/graphics/icons/plutonium-fuel-cell.png",
+		icon = graphics .. "plutonium-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{
