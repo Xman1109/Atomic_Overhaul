@@ -24,5 +24,11 @@ data:extend(
             name = "reprocessing",
             group = "atomic-overhaul",
             order = "c"
+        },
+        {
+            type = "item-subgroup",
+            name = "fuel",
+            group = "atomic-overhaul",
+            order = "d"
         }
     })

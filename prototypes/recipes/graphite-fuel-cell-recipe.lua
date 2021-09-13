@@ -8,7 +8,7 @@ data:extend(
         category = "centrifuging",
         energy_required = 50,
         enabled = false,
-        order = "z",
+        order = "aa",
         subgroup = "fuel-cells",
         ingredients =
         {
