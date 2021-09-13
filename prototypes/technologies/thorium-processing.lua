@@ -5,7 +5,7 @@ data:extend({
             name = "thorium-processing",
             icon = graphics .. "group.png",
             icon_size = "128",
-            prerequisites = {"uranium-processing"},
+            prerequisites = {"plutonium-processing"},
             effects =
             {
                 {
@@ -21,7 +21,7 @@ data:extend({
               {"automation-science-pack", 1},
               {"logistic-science-pack", 1},
               {"chemical-science-pack", 1},
-            --{"research-data", 1}
+              {"research-data", 1},
             },
         time = 45
         }

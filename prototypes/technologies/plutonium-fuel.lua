@@ -5,7 +5,7 @@ data:extend({
             name = "plutonium-fuel",
             icon = graphics .. "plutonium-fuel.png",
             icon_size = "64",
-            prerequisites = {"plutonium-processing", "rocket-fuel"},
+            prerequisites = {"plutonium-processing", "kovarex-enrichment-process"},
             effects =
             {
                 {
@@ -21,6 +21,7 @@ data:extend({
               {"automation-science-pack", 1},
               {"logistic-science-pack", 1},
               {"chemical-science-pack", 1},
+              {"research-data", 1},
             },
         time = 75
         }
