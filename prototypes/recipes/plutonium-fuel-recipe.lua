@@ -3,7 +3,7 @@ data:extend(
     {
         type = "recipe",
         name = "plutonium-fuel-recipe",
-        icon = graphics .. "group.png",
+        icon = graphics .. "plutonium-fuel.png",
         icon_size = 64,
         mipmap_count = 4,
         category = "advanced-crafting",
@@ -13,12 +13,12 @@ data:extend(
         subgroup = "fuel",
         ingredients =
         {
-            {"plutonium", 5},
-            {"rocket-fuel", 10}
+            {"plutonium", 1},
+            {"rocket-fuel", 1}
         },
         always_show_made_in = true,
         results = 	{
-            {"plutonium-fuel", 3}
+            {"plutonium-fuel", 1}
         },
     }
 })
