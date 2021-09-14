@@ -11,7 +11,11 @@ data:extend({
                 {
                    type = "unlock-recipe",
                    recipe = "thorium-recipe"
-                }          
+                },
+                {
+                    type = "unlock-recipe",
+                    recipe = "thorium-fuel-cell-recipe"
+                }
             },
             unit =
         {
