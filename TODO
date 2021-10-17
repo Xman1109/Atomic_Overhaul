@@ -3,13 +3,10 @@ make recipes
 bugfix
 make tech
 bugfix
-make entities
-bugfix
-make category
-bugfix
+make category ✓
 make group+subgroup
 bugfix
-do crack
+do crack ✓
 bugfix
 make locals
 dont bugfix
@@ -20,14 +17,13 @@ What is the meaning of Life?
 ┕► bugfixing
 
 make compatibility for other mods:
+AAI Industry,
 Industrial Revolution,
 Realistic Reactors,
-More Ammo ;) ,
 MadClown01,
 Nuclear Fuel,
 Plutonium Energy,
-? Krastorio,
-? better nuclear
+? Krastorio
 bugfix
 
 make changelog
