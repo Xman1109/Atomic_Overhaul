@@ -10,6 +10,6 @@ data:extend({
     fuel_top_speed_multiplier = 1.25,
     subgroup = "fuel",
     order = "a",
-    stack_size = 100
+    stack_size = 1
     }
 })

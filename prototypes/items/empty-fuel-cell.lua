@@ -7,6 +7,5 @@ data:extend({
 		subgroup = "intermediate-product",
 		stack_size = 50,
 		order = "a[empty-fuel-cell]",
-		
 	}
 })
