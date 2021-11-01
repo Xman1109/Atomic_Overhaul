@@ -2,24 +2,20 @@ data:extend({
 
     {
             type = "technology",
-            name = "thorium-processing",
+            name = "thorium-fuel-reprocessing",
             icon = graphics .. "group.png",
             icon_size = "128",
-            prerequisites = {"plutonium-fuel-reprocessing"},
+            prerequisites = {"thorium-processing"},
             effects =
             {
                 {
-                   type = "unlock-recipe",
-                   recipe = "thorium-recipe"
-                },
-                {
                     type = "unlock-recipe",
-                    recipe = "thorium-fuel-cell-recipe"
+                    recipe = "thorium-fuel-reprocessing"
                 }
             },
             unit =
         {
-        count = 2500,
+        count = 1000,
         ingredients =
             {
               {"automation-science-pack", 1},
@@ -30,5 +26,4 @@ data:extend({
         time = 45
         }
     }
-    
 })
