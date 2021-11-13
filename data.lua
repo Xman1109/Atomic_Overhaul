@@ -1,8 +1,4 @@
-local items = "prototypes.items."
-local recipes = "prototypes.recipes."
-local techs = "prototypes.technologies."
-local vanilla = "prototypes.vanilla-changes."
-graphics = "__Atomic_Overhaul__/graphics/icons/"
+require("__Atomic_Overhaul__/lib/core")
 
 require("prototypes/group")
 require(items .. "empty-fuel-cell")

@@ -1,0 +1,5 @@
+items = "prototypes.items."
+recipes = "prototypes.recipes."
+techs = "prototypes.technologies."
+vanilla = "prototypes.vanilla-changes."
+graphics = "__Atomic_Overhaul__/graphics/icons/"
