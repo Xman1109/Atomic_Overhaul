@@ -1,0 +1,8 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2021-11-14
+  Features:
+      - An almost complete Overhaul to the production of nuclear Power!
+      - New Nuclear Fuel Cells
+      - New Technologies
+      - New Science Pack
