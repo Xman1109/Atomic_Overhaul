@@ -3,8 +3,9 @@ data:extend({
     {
             type = "technology",
             name = "plutonium-processing",
-            icon = graphics .. "group.png",
-            icon_size = "128",
+            icon = graphics .. "plutonium-processing.png",
+            icon_size = 256,
+            icon_mipmaps = 4,
             prerequisites = {"nuclear-fuel-reprocessing"},
             effects =
             {

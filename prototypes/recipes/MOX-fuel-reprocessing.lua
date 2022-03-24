@@ -2,22 +2,22 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "thorium-fuel-reprocessing",
-        icon = graphics .. "thorium-reprocessing.png",
+        name = "MOX-fuel-reprocessing",
+        icon = graphics .. "MOX-reprocessing.png",
         icon_size = 256,
         mipmap_count = 4,
         category = "centrifuging",
         energy_required = 50,
         enabled = false,
-        order = "e",
+        order = "d",
         subgroup = "reprocessing",
         ingredients =
         {
-            {"thorium-depleted-cell", 5}
+            {"MOX-depleted-cell", 5}
         },
         results = 	{
-            {"nuclear-waste", 15},
-            {type="item", name="thorium", amount_min = 2, amount_max = 3},
+            {"nuclear-waste", 13},
+            {type="item", name="MOX", amount_min = 1, amount_max = 3},
         },
     }
 })

@@ -3,9 +3,10 @@ data:extend({
     {
             type = "technology",
             name = "thorium-processing",
-            icon = graphics .. "group.png",
-            icon_size = "128",
-            prerequisites = {"plutonium-fuel-reprocessing"},
+            icon = graphics .. "thorium-processing.png",
+            icon_size = 256,
+            icon_mipmaps = 4,
+            prerequisites = {"MOX-fuel-reprocessing"},
             effects =
             {
                 {

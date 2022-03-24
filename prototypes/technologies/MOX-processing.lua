@@ -2,21 +2,21 @@ data:extend({
 
     {
             type = "technology",
-            name = "thorium-fuel-reprocessing",
-            icon = graphics .. "thorium-reprocessing.png",
+            name = "MOX-processing",
+            icon = graphics .. "MOX-processing.png",
             icon_size = 256,
             icon_mipmaps = 4,
-            prerequisites = {"thorium-processing"},
+            prerequisites = {"plutonium-fuel-reprocessing"},
             effects =
             {
                 {
                     type = "unlock-recipe",
-                    recipe = "thorium-fuel-reprocessing"
+                    recipe = "MOX-fuel-cell-recipe"
                 }
             },
             unit =
         {
-        count = 1000,
+        count = 750,
         ingredients =
             {
               {"automation-science-pack", 1},
@@ -24,7 +24,8 @@ data:extend({
               {"chemical-science-pack", 1},
               {"research-data", 1},
             },
-        time = 45
+        time = 75
         }
     }
+    
 })

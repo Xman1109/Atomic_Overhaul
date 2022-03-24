@@ -3,8 +3,8 @@ data:extend(
     {
         type = "recipe",
         name = "plutonium-fuel-reprocessing",
-        icon = graphics .. "group.png",
-        icon_size = 64,
+        icon = graphics .. "plutonium-reprocessing.png",
+        icon_size = 256,
         mipmap_count = 4,
         category = "centrifuging",
         energy_required = 50,
