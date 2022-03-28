@@ -9,7 +9,7 @@ data:extend(
         category = "crafting",
         energy_required = 20,
         enabled = false,
-        order = "a",
+        order = "z",
         subgroup = "fuel-cells",
         ingredients =
         {

@@ -3,8 +3,9 @@ data:extend(
         {
             type = "item-group",
             name = "atomic-overhaul",
-            icon = "__Atomic_Overhaul__/graphics/icons/group.png",
+            icon = graphics .. "group.png",
             icon_size = 128,
+            icon_mipmaps = 4,
             order = "z"
         },
         {
