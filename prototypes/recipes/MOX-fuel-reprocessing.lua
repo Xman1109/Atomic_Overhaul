@@ -18,6 +18,7 @@ data:extend(
         results = 	{
             {"nuclear-waste", 13},
             {type="item", name="MOX", amount_min = 1, amount_max = 3},
+            {type = "item", name = "research-data", amount_min = 7, amount_max = 10}
         },
     }
 })

@@ -18,6 +18,7 @@ data:extend(
         results = 	{
             {"nuclear-waste", 10},
             {type="item", name="plutonium", amount_min = 1, amount_max = 3},
+            {type = "item", name = "research-data", amount_min = 4, amount_max = 6}
         },
     }
 })
