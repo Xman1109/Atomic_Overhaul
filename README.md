@@ -1,4 +1,4 @@
-[logo]: https://raw.githubusercontent.com/fainda/images/main/logo.png
+[logo]: https://raw.githubusercontent.com/fainda/images/main/logo2.png
 ![logo][]
 
 Atomic Overhaul is a mod for <a href=https://factorio.com>Factorio</a> adding new nuclear fuels, recipes and technologies to the game. <br>
