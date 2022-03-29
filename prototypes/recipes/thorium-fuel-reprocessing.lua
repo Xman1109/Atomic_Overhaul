@@ -3,8 +3,8 @@ data:extend(
     {
         type = "recipe",
         name = "thorium-fuel-reprocessing",
-        icon = graphics .. "thorium-reprocessing.png",
-        icon_size = 256,
+        icon = graphics .. "thorium-reprocessing-recipe.png",
+        icon_size = 64,
         mipmap_count = 4,
         category = "centrifuging",
         energy_required = 50,

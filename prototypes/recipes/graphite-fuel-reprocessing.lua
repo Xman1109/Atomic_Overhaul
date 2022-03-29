@@ -3,8 +3,8 @@ data:extend(
     {
         type = "recipe",
         name = "graphite-fuel-reprocessing",
-        icon = graphics .. "graphite-reprocessing.png",
-        icon_size = 256,
+        icon = graphics .. "graphite-reprocessing-recipe.png",
+        icon_size = 64,
         mipmap_count = 4,
         category = "centrifuging",
         energy_required = 50,

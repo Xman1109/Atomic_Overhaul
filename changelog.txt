@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2022-03-30
+  Changes:
+      - Changed the atomic bomb technology.
+      - Changed the atomic bomb recipe.
+      - Added proper icons for the reprocessing recipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2022-03-29
+  Changes:
+      - Added alternative reprocessing recipes without research data.
+      - Deleted unnecessary graphics.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2022-03-28
   Features:
