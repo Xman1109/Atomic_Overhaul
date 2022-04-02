@@ -11,7 +11,7 @@ data:extend({
             {
                 {
                     type = "unlock-recipe",
-                    recipe = "MOX-fuel-reprocessing"
+                    recipe = "MOX-reprocessing"
                 }
             },
             unit =

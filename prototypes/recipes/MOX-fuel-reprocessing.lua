@@ -2,7 +2,7 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "MOX-fuel-reprocessing",
+        name = "MOX-reprocessing",
         icon = graphics .. "MOX-reprocessing-recipe.png",
         icon_size = 64,
         mipmap_count = 4,
