@@ -6,7 +6,7 @@ data:extend(
         icon = graphics .. "plutonium-fuel.png",
         icon_size = 64,
         mipmap_count = 4,
-        category = "advanced-crafting",
+        category = "centrifuging",
         energy_required = 20,
         enabled = false,
         order = "b",

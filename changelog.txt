@@ -1,6 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2022-04-05
+  Changes:
+      - Balanced some recipes
+      - Added the thorium module
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
-Date: 2022-04-2
+Date: 2022-04-02
   Changes:
       - Fixed a localisation bug.
       - Added compatibility for Realistic Reactors.
