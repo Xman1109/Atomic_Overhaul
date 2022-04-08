@@ -13,8 +13,8 @@ data:extend({
         ingredients =
         {
         {"thorium", 20},
-        {"productivity-module-2", 2},
-        {"speed-module-2", 2}
+        {"productivity-module-2", 1},
+        {"speed-module-2", 1}
         },
         results = {
             {"thorium-module-2", 1}
