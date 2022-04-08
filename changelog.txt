@@ -3,7 +3,7 @@ Version: 1.0.4
 Date: 2022-04-05
   Changes:
       - Balanced some recipes
-      - Added the thorium module
+      - Added thorium module 1, 2 and 3
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 2022-04-02
