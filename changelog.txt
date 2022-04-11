@@ -1,4 +1,37 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: ????
+  Changes:
+      - Moved the module recipes to the modules subgroup in Atomic Overhaul
+      - Savegame compatibility
+      - Nuclear Fuel compatibility
+      - Added locales for the Thorium module technologies
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2022-04-05
+  Changes:
+      - Balanced some recipes
+      - Added thorium module 1, 2 and 3
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2022-04-02
+  Changes:
+      - Fixed a localisation bug.
+      - Added compatibility for Realistic Reactors.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2022-03-30
+  Changes:
+      - Changed the atomic bomb technology.
+      - Changed the atomic bomb recipe.
+      - Added proper icons for the reprocessing recipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2022-03-29
+  Changes:
+      - Added alternative reprocessing recipes without research data.
+      - Deleted unnecessary graphics.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2022-03-28
   Features:

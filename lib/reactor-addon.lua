@@ -1,3 +1,6 @@
+-------------------------------------------------------------
+-- This is Work In Progress. Pretend you did not see this. --
+-------------------------------------------------------------
 entities = "prototypes.entities."
 entity_graphics = "__Atomic_Overhaul__/graphics/entities/"
 

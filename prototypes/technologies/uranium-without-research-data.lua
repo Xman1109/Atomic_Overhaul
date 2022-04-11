@@ -2,21 +2,21 @@ data:extend({
 
     {
             type = "technology",
-            name = "MOX-fuel-reprocessing",
-            icon = graphics .. "MOX-reprocessing.png",
+            name = "uranium-without-research-data",
+            icon = graphics .. "uranium-without-research-data-tech.png",
             icon_size = 256,
             icon_mipmaps = 4,
-            prerequisites = {"MOX-processing"},
+            prerequisites = {"nuclear-fuel-reprocessing"},
             effects =
             {
                 {
                     type = "unlock-recipe",
-                    recipe = "MOX-reprocessing"
+                    recipe = "uranium-without-research-data"
                 }
             },
             unit =
         {
-        count = 500,
+        count = 50,
         ingredients =
             {
               {"automation-science-pack", 1},

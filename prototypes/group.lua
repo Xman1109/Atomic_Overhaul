@@ -28,8 +28,20 @@ data:extend(
         },
         {
             type = "item-subgroup",
-            name = "fuel",
+            name = "reprocessing-without-research-data",
             group = "atomic-overhaul",
             order = "d"
+        },
+        {
+            type = "item-subgroup",
+            name = "modules",
+            group = "atomic-overhaul",
+            order = "e"
+        },
+        {
+            type = "item-subgroup",
+            name = "fuel",
+            group = "atomic-overhaul",
+            order = "f"
         }
     })

@@ -2,21 +2,21 @@ data:extend({
 
     {
             type = "technology",
-            name = "MOX-fuel-reprocessing",
-            icon = graphics .. "MOX-reprocessing.png",
+            name = "plutonium-without-research-data",
+            icon = graphics .. "plutonium-without-research-data.png",
             icon_size = 256,
             icon_mipmaps = 4,
-            prerequisites = {"MOX-processing"},
+            prerequisites = {"plutonium-fuel-reprocessing"},
             effects =
             {
                 {
                     type = "unlock-recipe",
-                    recipe = "MOX-reprocessing"
+                    recipe = "plutonium-without-research-data"
                 }
             },
             unit =
         {
-        count = 500,
+        count = 50,
         ingredients =
             {
               {"automation-science-pack", 1},
