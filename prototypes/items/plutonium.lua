@@ -16,11 +16,10 @@ data:extend(
                 },
                 {
                   draw_as_light = true,
-                  blend_mode = "additive",
+                  flags = {"light"},
                   size = 64,
-                  filename = "__Atomic_Overhaul__/graphics/icons/plutonium.png",
+                  filename = "__Atomic_Overhaul__/graphics/icons/resource-light.png",
                   scale = 0.25,
-                  tint = {r = 0.3, g = 0.3, b = 0.3, a = 0.3},
                   mipmap_count = 4
                 }
               }
