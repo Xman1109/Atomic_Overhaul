@@ -6,7 +6,7 @@ data:extend({
             icon = graphics .. "thorium-module-tech-2.png",
             icon_size = 256,
             icon_mipmaps = 4,
-            prerequisites = {"thorium-module-1", "productivity-module-2", "speed-module-2"},
+            prerequisites = {"thorium-module", "productivity-module-2", "speed-module-2"},
             effects =
             {
                 {

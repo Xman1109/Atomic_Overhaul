@@ -2,6 +2,7 @@ items = "prototypes.items."
 recipes = "prototypes.recipes."
 techs = "prototypes.technologies."
 vanilla = "prototypes.vanilla-changes."
+compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
 
 data:extend({{

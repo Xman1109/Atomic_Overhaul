@@ -7,8 +7,8 @@ data:extend({
         mipmap_count = 4,
         category = "advanced-crafting",
         enabled = false,
-        order = "d",
-        subgroup = "module",
+        order = "a",
+        subgroup = "modules",
         energy_required = 40,
         ingredients =
         {

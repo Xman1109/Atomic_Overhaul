@@ -1,8 +1,7 @@
 data:extend({
-
     {
             type = "technology",
-            name = "thorium-module-1",
+            name = "thorium-module",
             icon = graphics .. "thorium-module-tech-1.png",
             icon_size = 256,
             icon_mipmaps = 4,

@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: ????
+  Changes:
+      - Moved the module recipes to the modules subgroup in Atomic Overhaul
+      - Savegame compatibility
+      - Nuclear Fuel compatibility
+      - Added locales for the Thorium module technologies
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2022-04-05
   Changes:

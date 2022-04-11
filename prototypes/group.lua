@@ -34,8 +34,14 @@ data:extend(
         },
         {
             type = "item-subgroup",
-            name = "fuel",
+            name = "modules",
             group = "atomic-overhaul",
             order = "e"
+        },
+        {
+            type = "item-subgroup",
+            name = "fuel",
+            group = "atomic-overhaul",
+            order = "f"
         }
     })

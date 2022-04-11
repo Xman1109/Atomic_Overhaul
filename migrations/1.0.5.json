@@ -1,0 +1,14 @@
+{
+  "recipe":
+  [
+    ["MOX-fuel-reprocessing", "MOX-reprocessing"]
+  ],
+  "item":
+  [
+      ["MOX-fuel-reprocessing", "MOX-reprocessing"]
+  ],
+  "technology":
+  [
+      ["thorium-module-1", "thorium-module"]
+  ]
+}
