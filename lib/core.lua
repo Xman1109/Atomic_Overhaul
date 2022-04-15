@@ -1,4 +1,5 @@
 items = "prototypes.items."
+fluids = "prototypes.fluids."
 recipes = "prototypes.recipes."
 techs = "prototypes.technologies."
 vanilla = "prototypes.vanilla-changes."
