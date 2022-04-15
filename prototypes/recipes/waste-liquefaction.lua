@@ -5,6 +5,8 @@ data:extend({{
     icon_size = 64,
     icon_mipmaps = 4,
     category = "chemistry",
+    subgroup = "waste-reprocessing",
+    order = "a",
     enabled = false,
     energy_required = 10,
     ingredients = {

@@ -8,7 +8,8 @@ data:extend({
         category = "chemistry",
         enabled = false,
         energy_required = 10,
-        subgroup = "fluid-recipes",
+        subgroup = "waste-reprocessing",
+        order = "b",
         ingredients = {
             {type = "fluid", name = "waste-solution", amount = 50}
         },

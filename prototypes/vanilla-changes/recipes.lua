@@ -24,3 +24,11 @@ data.raw["recipe"]["nuclear-fuel"].order = "a"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].subgroup = "reprocessing"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].order = "b"
 data.raw["recipe"]["uranium-fuel-cell"].category = "centrifuging"
+data.raw["recipe"]["uranium-fuel-cell"].subgroup = "fuel-cells"
+data.raw["recipe"]["uranium-fuel-cell"].order = "b"
+data.raw["recipe"]["uranium-fuel-cell"].ingredients =
+{
+    {"uranium-235", 1},
+    {"graphite", 19},
+    {"empty-fuel-cell", 10}
+}
