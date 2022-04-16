@@ -13,10 +13,10 @@ data:extend(
         subgroup = "reprocessing",
         ingredients =
         {
-            {"graphite-depleted-cell", 1}
+            {"graphite-depleted-cell", 5}
         },
         results = 	{
-            {"graphite", 3},
+            {type = "item", name = "graphite", amount_min = 2, amount_max = 3},
             {type="item", name="empty-fuel-cell", amount_min = 0, amount_max = 1}
         },
     }
