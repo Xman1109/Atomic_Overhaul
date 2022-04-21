@@ -5,6 +5,7 @@ techs = "prototypes.technologies."
 vanilla = "prototypes.vanilla-changes."
 compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
+base_graphics = "__base__/graphics/icons/"
 
 data:extend({{
     type = "module-category",
