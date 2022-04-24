@@ -8,3 +8,6 @@ end
 if mods["Nuclear Fuel"] then
     require(compatibility .. "nuclear-fuel")
 end
+if mods["angelspetrochem"] then
+    require(compatibility .. "angels-petrochem")
+end
