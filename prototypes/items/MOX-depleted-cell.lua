@@ -13,8 +13,8 @@ data:extend(
             },
             icon_size = 64,
             stack_size = 50,
-            order = "r[MOX-used-up-fuel-cell]",
-            group = "intermediate-products",
-            subgroup = "intermediate-product"
+            group = "atomic-overhaul",
+            order = "d",
+            subgroup = "used-up-fuel-cells",
         }
     })

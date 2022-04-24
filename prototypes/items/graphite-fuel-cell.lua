@@ -24,8 +24,9 @@ data:extend({
 			}
 		  }
 		},
-		subgroup = "intermediate-product",
-		order = "r[graphite-processing]-a[graphite-fuel-cell]",
+		group = "atomic-overhaul",
+		order = "a",
+		subgroup = "fuel-cells",
 		fuel_category = "nuclear",
 		burnt_result = "graphite-depleted-cell",
 		fuel_value = "3GJ",

@@ -24,8 +24,9 @@ data:extend({
 			}
 		  }
 		},
-		subgroup = "intermediate-product",
-		order = "r[MOX-processing]-a[MOX-fuel-cell]",
+		group = "atomic-overhaul",
+		order = "d",
+		subgroup = "fuel-cells",
 		fuel_category = "nuclear",
 		burnt_result = "MOX-depleted-cell",
 		fuel_value = "12GJ",

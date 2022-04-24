@@ -6,7 +6,8 @@ data:extend(
             icon = graphics .. "nuclear-waste.png",
             icon_size = 64,
             stack_size = 50,
-            group = "intermediate-products",
-            subgroup = "intermediate-product"
+            group = "atomic_overhaul",
+            subgroup = "other-items",
+            order = "a",
         }
     })

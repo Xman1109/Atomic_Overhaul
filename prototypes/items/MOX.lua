@@ -25,9 +25,9 @@ data:extend(
               }
             },
             icon_size = 64, icon_mipmaps = 4,
-            group = "intermediate-products",
-            subgroup = "intermediate-product",
-            order = "r[MOX-0]",
+            group = "atomic-overhaul",
+            order = "e",
+            subgroup = "resources",
             stack_size = 100
         }
     })

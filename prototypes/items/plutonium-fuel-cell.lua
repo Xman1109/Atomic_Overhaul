@@ -24,8 +24,9 @@ data:extend({
 			}
 		  }
 		},
-		subgroup = "intermediate-product",
-		order = "r[plutonium-processing]-a[plutonium-fuel-cell]",
+		group = "atomic-overhaul",
+		order = "c",
+		subgroup = "fuel-cells",
 		fuel_category = "nuclear",
 		burnt_result = "plutonium-depleted-cell",
 		fuel_value = "10GJ",

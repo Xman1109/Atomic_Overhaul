@@ -24,8 +24,9 @@ data:extend({
 			}
 		  }
 		},
-		subgroup = "intermediate-product",
-		order = "r[thorium-processing]-a[thorium-fuel-cell]",
+		group = "atomic-overhaul",
+		order = "e",
+		subgroup = "fuel-cells",
 		fuel_category = "nuclear",
 		burnt_result = "thorium-depleted-cell",
 		fuel_value = "16GJ",

@@ -22,6 +22,12 @@ data:extend(
         },
         {
             type = "item-subgroup",
+            name = "used-up-fuel-cells",
+            group = "atomic-overhaul",
+            order = "b-c"
+        },
+        {
+            type = "item-subgroup",
             name = "reprocessing",
             group = "atomic-overhaul",
             order = "c"
@@ -49,5 +55,11 @@ data:extend(
             name = "waste-reprocessing",
             group = "atomic-overhaul",
             order = "g"
+        },
+        {
+            type = "item-subgroup",
+            name = "other-items",
+            group = "atomic-overhaul",
+            order = "h"
         }
     })

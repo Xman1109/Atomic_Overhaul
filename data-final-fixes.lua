@@ -1,5 +1,10 @@
 if mods["Clowns-Nuclear"] then
     if mods["Clowns-AngelBob-Nuclear"] then
         require(compatibility .. "madclown-angelbob")
-    end -- else require(compatibility .. "Clowns-Nuclear") (Coming soon)
+    else
+        require(compatibility .. "Clowns-Nuclear")
+    end
+end
+if mods["Nuclear Fuel"] then
+    require(compatibility .. "nuclear-fuel")
 end
