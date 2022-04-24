@@ -4,6 +4,7 @@ Date: 2022-04-24
   Changes:
       - Fixed order, subgroups in the Items Tab
       - Added compatibility fo Clown's Nuclear
+      - litte fix for angels-petrochem
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 2022-04-21
