@@ -1,65 +1,70 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2022-04-24
+  Changes:
+    - The Changelog now works ingame (Many Thanks to @Sgamez)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.9
 Date: 2022-04-24
   Changes:
-      - Fixed order, subgroups in the Items Tab
-      - Added compatibility fo Clown's Nuclear
-      - litte fix for angels-petrochem
+    - Fixed order, subgroups in the Items Tab
+    - Added compatibility fo Clown's Nuclear
+    - litte fix for angels-petrochem
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 2022-04-21
   Changes:
-      - Added compatibility for Clown's AngelBob Nuclear
+    - Added compatibility for Clown's AngelBob Nuclear
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 2022-04-16
   Changes:
-      - rebalanced the graphite fuel reprocessing recipe
+    - rebalanced the graphite fuel reprocessing recipe
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 2022-04-15
   Changes:
-      - Added a way to liquefy Nuclear waste and reprocess it.
+    - Added a way to liquefy Nuclear waste and reprocess it.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 2022-04-11
   Changes:
-      - Moved the module recipes to the modules subgroup in Atomic Overhaul
-      - Savegame compatibility
-      - Nuclear Fuel compatibility
-      - Added locales for the Thorium module technologies
-      - Added a light-map overlay for Graphite/Uranium/Plutonium/MOX/Thorium
+    - Moved the module recipes to the modules subgroup in Atomic Overhaul
+    - Savegame compatibility
+    - Nuclear Fuel compatibility
+    - Added locales for the Thorium module technologies
+    - Added a light-map overlay for Graphite/Uranium/Plutonium/MOX/Thorium
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 2022-04-05
   Changes:
-      - Balanced some recipes
-      - Added thorium module 1, 2 and 3
+    - Balanced some recipes
+    - Added thorium module 1, 2 and 3
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 2022-04-02
   Changes:
-      - Fixed a localisation bug.
-      - Added compatibility for Realistic Reactors.
+    - Fixed a localisation bug.
+    - Added compatibility for Realistic Reactors.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2022-03-30
   Changes:
-      - Changed the atomic bomb technology.
-      - Changed the atomic bomb recipe.
-      - Added proper icons for the reprocessing recipes.
+    - Changed the atomic bomb technology.
+    - Changed the atomic bomb recipe.
+    - Added proper icons for the reprocessing recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2022-03-29
   Changes:
-      - Added alternative reprocessing recipes without research data.
-      - Deleted unnecessary graphics.
+    - Added alternative reprocessing recipes without research data.
+    - Deleted unnecessary graphics.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2022-03-28
   Features:
-      - Overhaul to nuclear power in Factorio
-      - New nuclear fuel cells
-      - New plutonium fuel
-      - New technologies
-      - New science pack
+    - Overhaul to nuclear power in Factorio
+    - New nuclear fuel cells
+    - New plutonium fuel
+    - New technologies
+    - New science pack
