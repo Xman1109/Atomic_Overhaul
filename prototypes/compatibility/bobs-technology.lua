@@ -1,0 +1,1 @@
+table.insert(data.raw["lab"]["lab-2"].inputs, "research-data")

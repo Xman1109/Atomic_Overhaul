@@ -11,3 +11,6 @@ end
 if mods["angelspetrochem"] then
     require(compatibility .. "angels-petrochem")
 end
+if mods["bobtech"] then
+    require(compatibility .. "bobs-technology")
+end
