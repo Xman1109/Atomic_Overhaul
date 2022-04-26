@@ -1,3 +1,4 @@
+if not mods["space-exploration"] then
 data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
     type = "item",
     name = "plutonium",
@@ -17,6 +18,7 @@ data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
     amount_min = 1,
     amount_max = 3
 }}
+end
 data.raw["recipe"]["uranium-processing"].order = "b"
 data.raw["recipe"]["uranium-processing"].subgroup = "resources"
 data.raw["recipe"]["nuclear-fuel"].subgroup = "fuel"

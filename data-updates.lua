@@ -1,0 +1,5 @@
+require(vanilla .. "atomic-bomb")
+require(vanilla .. "icons")
+require(vanilla .. "items")
+require(vanilla .. "recipes")
+require(vanilla .. "technologies")
