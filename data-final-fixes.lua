@@ -14,3 +14,10 @@ end
 if mods["bobtech"] then
     require(compatibility .. "bobs-technology")
 end
+if mods["Krastorio2"] then
+    --if mods["space-exploration"] then
+    --    require(compatibility .. "k2-se")
+    --else
+        require(compatibility .. "krastorio2")
+    --end  --not ready yet
+end

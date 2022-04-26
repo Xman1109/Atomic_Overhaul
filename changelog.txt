@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
-Date: ????
+Date: 2022-04-26
   Changes:
+    - Localized the mod description into german.
+    - (Only for people who play with Bob's technology) fixed a Bug where the research data wouldn't show up in the lab-2.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2022-04-24
