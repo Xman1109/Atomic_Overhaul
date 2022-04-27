@@ -70,3 +70,25 @@ data.raw["item"]["graphite-fuel-cell"].fuel_value = "19GJ"
 data.raw["item"]["plutonium-fuel-cell"].fuel_value = "63GJ"
 data.raw["item"]["MOX-fuel-cell"].fuel_value = "75GJ"
 data.raw["item"]["thorium-fuel-cell"].fuel_value = "100GJ"
+
+
+data.raw["recipe"]["graphite-fuel-cell-recipe"].results = {{
+    type = "item",
+    name = "graphite-fuel-cell",
+    amount = 1
+}}
+data.raw["recipe"]["plutonium-fuel-cell-recipe"].results = {{
+    type = "item",
+    name = "plutonium-fuel-cell",
+    amount = 1
+}}
+data.raw["recipe"]["MOX-fuel-cell-recipe"].results = {{
+    type = "item",
+    name = "MOX-fuel-cell",
+    amount = 1
+}}
+data.raw["recipe"]["thorium-fuel-cell-recipe"].results = {{
+    type = "item",
+    name = "thorium-fuel-cell",
+    amount = 1
+}}

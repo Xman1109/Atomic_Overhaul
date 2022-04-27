@@ -22,3 +22,6 @@ if mods["Krastorio2"] then
         require(compatibility .. "krastorio2")
     end
 end
+--if mods["bobplates"] then
+--    require(compatibility .. "bobplates")
+--end
