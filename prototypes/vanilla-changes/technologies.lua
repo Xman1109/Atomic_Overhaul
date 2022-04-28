@@ -1,4 +1,8 @@
-table.insert(data.raw["lab"]["lab"].inputs, "research-data")
+for _, lab in pairs(data.raw["lab"]) do
+    if lab.inputs then
+        table.insert(lab.inputs, "research-data")
+    end
+end
 table.insert(data.raw["technology"]["nuclear-fuel-reprocessing"].prerequisites, "uranium-processing")
 table.insert(data.raw["technology"]["atomic-bomb"].prerequisites, "plutonium-processing")
 table.insert(data.raw["technology"]["atomic-bomb"].unit.ingredients, {"research-data", 1})

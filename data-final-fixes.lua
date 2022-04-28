@@ -1,3 +1,7 @@
+if mods["bobplates"] then
+    require(compatibility .. "bobplates")
+    bobplates = true
+end
 if mods["Clowns-Nuclear"] then
     if mods["Clowns-AngelBob-Nuclear"] then
         require(compatibility .. "madclown-angelbob")
@@ -11,9 +15,6 @@ end
 if mods["angelspetrochem"] then
     require(compatibility .. "angels-petrochem")
 end
-if mods["bobtech"] then
-    require(compatibility .. "bobs-technology")
-end
 if mods["Krastorio2"] then
     if mods["space-exploration"] then
         require(compatibility .. "k2-se")
@@ -22,6 +23,3 @@ if mods["Krastorio2"] then
         require(compatibility .. "krastorio2")
     end
 end
---if mods["bobplates"] then
---    require(compatibility .. "bobplates")
---end

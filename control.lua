@@ -18,3 +18,16 @@ if k2_se then
     end
 end
 script.on_init(replace_nfr)
+
+
+if bobplates then
+    function unlock_tech()
+        for index, force in pairs(game.forces) do
+            local technologies = force.technologies
+            local recipe = force.recipes
+            if recipe["empty-nuclear-fuel-reprocessing"].enabled then
+                technologies["graphite-processing"].enabled = true
+            end
+        end
+    end
+end
