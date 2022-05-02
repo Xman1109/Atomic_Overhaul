@@ -54,10 +54,15 @@ data.raw["recipe"]["uranium-without-research-data"].results = {{
 }}
 
 -- give every tech in list the research-data
-local list = {"kr-antimatter-ammo", "kovarex-enrichment-process", "kr-fusion-energy", "kr-antimatter-reactor",
-              "kr-antimatter-reactor-equipment", "fusion-reactor-equipment", "spidertron", "kr-rocket-turret",
-              "kr-nuclear-locomotive"}
-for _, tech in pairs(list) do
+if not mods["RealisticFusionPower"] then
+    k2_list = {"kr-antimatter-ammo", "kovarex-enrichment-process", "kr-fusion-energy", "kr-antimatter-reactor",
+               "kr-antimatter-reactor-equipment", "fusion-reactor-equipment", "spidertron", "kr-rocket-turret",
+               "kr-nuclear-locomotive"}
+else
+    k2_list = {"kr-antimatter-reactor-equipment", "kr-antimatter-ammo", "kr-nuclear-locomotive",
+               "kr-nuclear-reactor-equipment", "fusion-reactor-equipment", "spidertron", "kr-rocket-turret"}
+end
+for _, tech in pairs(k2_list) do
     table.insert(data.raw["technology"][tech].unit.ingredients, {
         type = "item",
         name = "research-data",
@@ -65,12 +70,11 @@ for _, tech in pairs(list) do
     })
 end
 
---multiply the fuel_value by 6.25
+-- multiply the fuel_value by 6.25
 data.raw["item"]["graphite-fuel-cell"].fuel_value = "19GJ"
 data.raw["item"]["plutonium-fuel-cell"].fuel_value = "63GJ"
 data.raw["item"]["MOX-fuel-cell"].fuel_value = "75GJ"
 data.raw["item"]["thorium-fuel-cell"].fuel_value = "100GJ"
-
 
 data.raw["recipe"]["graphite-fuel-cell-recipe"].results = {{
     type = "item",

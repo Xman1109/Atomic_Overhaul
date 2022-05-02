@@ -41,6 +41,8 @@ table.insert(data.raw["technology"]["thermonuclear-bomb"].unit.ingredients, {
     name = "research-data",
     amount = 1
 })
+data.raw["technology"]["kovarex-enrichment-process"].hidden = true
+data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
 
 -- change every recipe with the ingredient plutonium to use plutonium-239
 for _, recipe in pairs(data.raw.recipe) do

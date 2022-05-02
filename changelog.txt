@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.24
+Date: 2022-04-30
+  Changes:
+    - (Clown's Compatibility) Kovarex Enrichment recipe&tech are now hidden
+    - fixed the k2-rfp startup bug
+---------------------------------------------------------------------------------------------------
 Version: 1.1.23
 Date: 2022-04-28
   Changes:

@@ -277,6 +277,8 @@ table.insert(data.raw["technology"]["thorium-ore-processing"].effects, {
     type = "unlock-recipe",
     recipe = "thorium-processing"
 })
+data.raw["technology"]["kovarex-enrichment-process"].hidden = true
+data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
 
 if mods["RealisticReactors"] then
     data.raw["recipe"]["mixed-oxide"].hidden = true
