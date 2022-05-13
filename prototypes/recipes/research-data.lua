@@ -10,6 +10,8 @@ data:extend(
         enabled = false,
         order = "f[utility-science-pack]-g[research-data-recipe]",
         subgroup = "science-pack",
+        localized_name = "research-data",
+        always_show_made_in = true,
         ingredients =
         {
             {"uranium-235", 1},

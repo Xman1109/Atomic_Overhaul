@@ -3,6 +3,7 @@ Version: 1.1.25
 Date: 2022-05-13
   Changes:
     - added an alternative recipe for research data
+    - spanish locals (thanks to @kopynft)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.24
 Date: 2022-04-30
