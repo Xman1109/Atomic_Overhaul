@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.29
+Date: 2022-05-23
+  Changes:
+    - Fixed a bug where the Stack Size of the plutonium fuel would not be the same as the nuclear fuel when playing with Bob's Revamp and BigBags.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.28
 Date: 2022-05-23
   Changes:

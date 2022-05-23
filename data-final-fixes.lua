@@ -1,3 +1,5 @@
+require(compatibility .. "other-small-mods")
+
 if mods["bobplates"] then
     require(compatibility .. "bobplates")
     bobplates = true
