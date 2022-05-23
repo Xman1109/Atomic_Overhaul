@@ -279,6 +279,14 @@ table.insert(data.raw["technology"]["thorium-ore-processing"].effects, {
 })
 data.raw["technology"]["kovarex-enrichment-process"].hidden = true
 data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
+data.raw["recipe"]["uranium-processing"].hidden = true
+
+-- remove the uranium-processing recipe from the uranium-processing technology
+for i, effect in pairs(data.raw["technology"]["uranium-processing"].effects) do
+    if effect.recipe == "uranium-processing" then
+        table.remove(data.raw["technology"]["uranium-processing"].effects, i)
+    end
+end
 
 if mods["RealisticReactors"] then
     data.raw["recipe"]["mixed-oxide"].hidden = true

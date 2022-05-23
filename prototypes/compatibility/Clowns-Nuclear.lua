@@ -43,6 +43,14 @@ table.insert(data.raw["technology"]["thermonuclear-bomb"].unit.ingredients, {
 })
 data.raw["technology"]["kovarex-enrichment-process"].hidden = true
 data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
+data.raw["recipe"]["uranium-processing"].hidden = true
+
+-- remove the uranium-processing recipe from the uranium-processing technology
+for i, effect in pairs(data.raw["technology"]["uranium-processing"].effects) do
+    if effect.recipe == "uranium-processing" then
+        table.remove(data.raw["technology"]["uranium-processing"].effects, i)
+    end
+end
 
 -- change every recipe with the ingredient plutonium to use plutonium-239
 for _, recipe in pairs(data.raw.recipe) do
