@@ -290,6 +290,9 @@ end
 
 if mods["RealisticReactors"] then
     data.raw["recipe"]["mixed-oxide"].hidden = true
+    if ao_debug == true then
+        log(debug_text .. "RealisticReactors")
+    end
 end
 
 -- change every recipe with the ingredient thorium to thorium-232

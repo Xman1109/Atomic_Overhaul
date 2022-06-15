@@ -3,10 +3,11 @@ fluids = "prototypes.fluids."
 recipes = "prototypes.recipes."
 techs = "prototypes.technologies."
 vanilla = "prototypes.vanilla-changes."
+base_graphics = "__base__/graphics/icons/"
 compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
-base_graphics = "__base__/graphics/icons/"
 
+debug_text = "AO-DEBUG: Compatibilty loaded for: "
 data:extend({{
     type = "module-category",
     name = "thorium-module"
