@@ -18,7 +18,7 @@ data:extend({
 			  draw_as_light = true,
 			  flags = {"light"},
 			  size = 64,
-			  filename = "__base__/graphics/icons/uranium-fuel-cell-light.png",
+			  filename = base_graphics .. "uranium-fuel-cell-light.png",
 			  scale = 0.25,
 			  mipmap_count = 4
 			}

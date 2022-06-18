@@ -60,3 +60,28 @@ require(techs .. "thorium-module-3")
 require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
+
+
+--Addon stage begins here.
+if mods["space-exploration"] and settings.startup["se-addon"].value == true then
+    require("__Atomic_Overhaul__/lib/se-addon")
+        require("__Atomic_Overhaul__.prototypes.addons.space-exploration.group")
+        require(se_addon_items .. "advanced-fuel-cell")
+        require(se_addon_items .. "beryllium-7")
+        require(se_addon_items .. "holmium-166")
+        require(se_addon_items .. "iridium-192")
+        require(se_addon_items .. "iridium-fuel-cell")
+        require(se_addon_items .. "iridium-depleted-cell")
+
+        require(se_addon_recipes .. "iridium-fuel-cell-recipe")
+        if not mods["RealisticReactors"] then
+        require(se_addon_entities .."space-reactor")
+        else
+        require(se_addon_entities .."space-reactor-rr")
+        end
+
+
+        if ao_debug == true then
+            log(debug_addon_text .. "space-exploration")
+        end
+    end

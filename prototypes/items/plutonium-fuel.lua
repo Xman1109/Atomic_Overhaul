@@ -18,7 +18,7 @@ data:extend({
           draw_as_light = true,
           flags = {"light"},
           size = 64,
-          filename = "__base__/graphics/icons/nuclear-fuel-light.png",
+          filename = base_graphics .. "nuclear-fuel-light.png",
           scale = 0.25,
           mipmap_count = 4
         }
