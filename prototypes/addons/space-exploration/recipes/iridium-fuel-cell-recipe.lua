@@ -5,10 +5,10 @@ data:extend(
         name = "iridium-fuel-cell-recipe",
         icon = se_addon_graphics .. "iridium-fuel-cell.png",
         icon_size = 64, mipmap_count = 4,
-        category = "centrifuging",
+        category = "space-radiation",
         energy_required = 50,
         enabled = false,
-        order = "aa",
+        order = "za",
         subgroup = "fuel-cells",
         ingredients =
         {

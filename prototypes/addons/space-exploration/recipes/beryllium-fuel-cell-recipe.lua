@@ -2,22 +2,23 @@ data:extend(
     {
         {
         type = "recipe",
-        name = "graphite-fuel-cell-recipe",
-        icon = graphics .. "graphite-fuel-cell.png",
+        name = "beryllium-fuel-cell-recipe",
+        icon = se_addon_graphics .. "beryllium-fuel-cell.png",
         icon_size = 64, mipmap_count = 4,
-        category = "centrifuging",
+        category = "space-radiation",
         energy_required = 50,
         enabled = false,
-        order = "a",
+        order = "zc",
         subgroup = "fuel-cells",
         ingredients =
         {
-            {"empty-fuel-cell", 10},
-            {"graphite", 10}
+            {fuel_cell, 10},
+            {"beryllium-7", 5},
+            {"graphite", 3}
         },
         always_show_made_in = true,
         results = 	{
-            {"graphite-fuel-cell", 10},
+            {"beryllium-fuel-cell", 10},
         },
     }
 })
