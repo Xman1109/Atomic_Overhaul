@@ -30,6 +30,6 @@ data:extend({
         stack_size = 50,
         group = "atomic_overhaul",
         subgroup = "fuel-cells",
-        order = "i",
+        order = "zb",
     }
 })

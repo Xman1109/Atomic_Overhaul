@@ -5,6 +5,6 @@ data:extend({{
     icon_size = 64, icon_mipmaps = 4,
     stack_size = 50,
     group = "atomic-overhaul",
-    order = "f",
+    order = "h",
     subgroup = "used-up-fuel-cells",
 }})

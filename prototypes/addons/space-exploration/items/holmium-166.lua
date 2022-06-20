@@ -20,7 +20,7 @@ data:extend({{
     icon_size = 64,
     icon_mipmaps = 4,
     group = "atomic-overhaul",
-    order = "i",
+    order = "h",
     subgroup = "resources",
     stack_size = 100
 }})

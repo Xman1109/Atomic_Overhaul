@@ -14,7 +14,7 @@ data:extend(
         {
             {"empty-fuel-cell", 10},
             {"low-density-structure", 5},
-            {"graphite", 3}
+            {"se-heat-shielding", 3}
         },
         always_show_made_in = true,
         results = 	{
