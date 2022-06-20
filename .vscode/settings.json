@@ -1,8 +1,0 @@
-{
-    "Lua.diagnostics.globals": [
-        "data",
-        "mods",
-        "settings",
-        "log"
-    ]
-}
