@@ -8,7 +8,7 @@ Developed by <a href=https://github.com/Xman1109>Xman1109</a> and <a href=https:
 German <br>
 English <br>
 Spanish (thanks to <a href=https://github.com/Kopynft>@Kopynft</a>) <br>
-French (please install <a href=https://mods.factorio.com/mod/PatchFR>this</a> mod) <br>
+French (please install <a href=https://mods.factorio.com/mod/PatchFR>this mod</a>) <br>
 
 <h2>Graphite</h2>
 
