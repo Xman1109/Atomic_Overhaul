@@ -2,24 +2,20 @@ data:extend({
 
     {
             type = "technology",
-            name = "beryllium-7-processing",
-            icon = se_addon_graphics .. "beryllium-7-processing.png",
+            name = "iridium-192-without-research-data",
+            icon = se_addon_graphics .. "iridium-192-without-research-data.png",
             icon_size = "256",
-            prerequisites = {"se-processing-beryllium", "holmium-166-reprocessing"},
+            prerequisites = {"iridium-192-reprocessing"},
             effects =
             {
                 {
                     type = "unlock-recipe",
-                    recipe = "beryllium-7-recipe"
-                },
-                {
-                    type = "unlock-recipe",
-                    recipe = "beryllium-fuel-cell-recipe"
+                    recipe = "iridium-192-without-research-data-recipe"
                 }
             },
             unit =
         {
-        count = 3250,
+        count = 500,
         ingredients =
         {
             {"automation-science-pack", 1},

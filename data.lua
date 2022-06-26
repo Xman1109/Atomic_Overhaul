@@ -84,10 +84,22 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
         require(se_addon_recipes .. "iridium-192-recipe")
         require(se_addon_recipes .. "holmium-166-recipe")
         require(se_addon_recipes .. "beryllium-7-recipe")
+        require(se_addon_recipes.. "iridium-192-reprocessing-recipe")
+        require(se_addon_recipes.. "holmium-166-reprocessing-recipe")
+        require(se_addon_recipes.. "beryllium-7-reprocessing-recipe")
+        require(se_addon_recipes.. "iridium-192-without-research-data-recipe")
+        require(se_addon_recipes.. "holmium-166-without-research-data-recipe")
+        require(se_addon_recipes.. "beryllium-7-without-research-data-recipe")
 
         require(se_addon_techs .. "iridium-192-processing")
         require(se_addon_techs .. "holmium-166-processing")
         require(se_addon_techs .. "beryllium-7-processing")
+        require(se_addon_techs .. "iridium-192-reprocessing")
+        require(se_addon_techs .. "holmium-166-reprocessing")
+        require(se_addon_techs .. "beryllium-7-reprocessing")
+        require(se_addon_techs .. "iridium-192-without-research-data")
+        require(se_addon_techs .. "holmium-166-without-research-data")
+        require(se_addon_techs .. "beryllium-7-without-research-data")
         if not mods["RealisticReactors"] then
         require(se_addon_entities .."space-reactor")
         else

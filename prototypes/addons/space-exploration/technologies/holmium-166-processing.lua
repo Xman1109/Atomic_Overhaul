@@ -5,7 +5,7 @@ data:extend({
             name = "holmium-166-processing",
             icon = se_addon_graphics .. "holmium-166-processing.png",
             icon_size = "256",
-            prerequisites = {"se-processing-holmium", "iridium-192-processing"},
+            prerequisites = {"se-processing-holmium", "iridium-192-reprocessing"},
             effects =
             {
                 {
