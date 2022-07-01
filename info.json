@@ -6,5 +6,11 @@
   "author": "X_Man1109, fainda",
   "contact": "X_Man1109#6160",
   "factorio_version": "1.1",
-  "dependencies": ["base", "! Plutonium Energy", "? RealisticReactors"]
+  "dependencies": [
+    "base",
+    "! Plutonium Energy",
+    "? RealisticReactors",
+    "(?) space-exploration",
+    "(?) space-exploration-postprocess"
+  ]
 }

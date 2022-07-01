@@ -1,5 +1,5 @@
+--[[ Found a Fix for the error, will be removed in future updates.
 if settings.startup["se-addon"].value == true then
--- for some odd reason Space Exploration edits the technologies. This is a workaround for that.
 local ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack", 1},
@@ -42,4 +42,4 @@ data.raw["technology"]["iridium-192-without-research-data"].count = 500
 data.raw["technology"]["holmium-166-without-research-data"].count = 500
 data.raw["technology"]["beryllium-7-without-research-data"].count = 500
 log("AO-TECH-COUNT: "..data.raw["technology"]["iridium-192-processing"].count)
-end
+end]]
