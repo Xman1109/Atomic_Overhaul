@@ -1,5 +1,5 @@
 require("util")
-data:extend({
+data:extend({ --TODO: rework the reactor-texture, and make a reactor-item icon
 {
     type = "reactor",
     name = "space-reactor",
@@ -65,13 +65,13 @@ data:extend({
       layers =
       {
         {
-          filename = "__base__/graphics/entity/nuclear-reactor/reactor.png",
+          filename = se_addon_entity_graphics .. "reactor.png",
           width = 154,
           height = 158,
           shift = util.by_pixel(-6, -6),
           hr_version =
           {
-            filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor.png",
+            filename = se_addon_entity_graphics .. "hr-reactor.png",
             width = 302,
             height = 318,
             scale = 0.5,
@@ -99,7 +99,7 @@ data:extend({
 
     working_light_picture =
     {
-      filename = "__base__/graphics/entity/nuclear-reactor/reactor-lights-color.png",
+      filename = se_addon_entity_graphics .. "reactor-lights-color.png",
       blend_mode = "additive",
       draw_as_glow = true,
       width = 160,
@@ -107,7 +107,7 @@ data:extend({
       shift = { -0.03125, -0.1875 },
       hr_version =
       {
-        filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-lights-color.png",
+        filename = se_addon_entity_graphics .. "hr-reactor-lights-color.png",
         blend_mode = "additive",
         draw_as_glow = true,
         width = 320,
@@ -118,10 +118,10 @@ data:extend({
     },
     heat_buffer =
     {
-      max_temperature = 1000,
+      max_temperature = 250,
       specific_heat = "10MJ",
       max_transfer = "10GW",
-      minimum_glow_temperature = 350,
+      minimum_glow_temperature = 500,
       connections =
       {
         {

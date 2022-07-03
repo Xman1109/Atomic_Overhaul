@@ -1,4 +1,5 @@
 se_addon_graphics = "__Atomic_Overhaul__/graphics/se-addon/icons/"
+se_addon_entity_graphics = "__Atomic_Overhaul__/graphics/se-addon/entities/"
 se_addon_items = "__Atomic_Overhaul__.prototypes.addons.space-exploration.items."
 se_addon_recipes = "__Atomic_Overhaul__.prototypes.addons.space-exploration.recipes."
 se_addon_techs = "__Atomic_Overhaul__.prototypes.addons.space-exploration.technologies."
