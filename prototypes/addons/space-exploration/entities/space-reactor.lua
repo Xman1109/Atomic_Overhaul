@@ -1,17 +1,21 @@
 require("util")
-data:extend({ --TODO: rework the reactor-texture, and make a reactor-item icon
+data.raw["recipe"]["nuclear-reactor"].order = "a"
+data.raw["item"]["nuclear-reactor"].order = "a"
+data:extend({
 {
     type = "reactor",
     name = "space-reactor",
-    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+    icon  = se_addon_graphics .. "space-reactor.png",
     icon_size = 64, icon_mipmaps = 4,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.5, result = "nuclear-reactor"},
+    minable = {mining_time = 1.0, result = "nuclear-reactor"},
     max_health = 500,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
-    consumption = "40MW",
+    consumption = "100MW",
     neighbour_bonus = 1,
+    use_fuel_glow_color = true,
+    default_fuel_glow_color = {0, 218, 252},
     energy_source =
     {
       type = "burner",
@@ -23,7 +27,7 @@ data:extend({ --TODO: rework the reactor-texture, and make a reactor-item icon
       {
         color = {0,0,0},
         minimum_intensity = 0.7,
-        maximum_intensity = 0.95
+        maximum_intensity = 0.99
       }
     },
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
@@ -118,7 +122,7 @@ data:extend({ --TODO: rework the reactor-texture, and make a reactor-item icon
     },
     heat_buffer =
     {
-      max_temperature = 250,
+      max_temperature = 2500,
       specific_heat = "10MJ",
       max_transfer = "10GW",
       minimum_glow_temperature = 500,

@@ -27,6 +27,7 @@ data:extend({
         fuel_category = "space-nuclear-fuel",
         burnt_result = "beryllium-depleted-cell",
         fuel_value = "10GJ",
+        fuel_glow_color = {100, 247, 207},
         stack_size = 50,
         group = "atomic_overhaul",
         subgroup = "fuel-cells",
