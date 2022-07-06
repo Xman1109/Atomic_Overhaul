@@ -1,6 +1,4 @@
 require("util")
-data.raw["recipe"]["nuclear-reactor"].order = "a"
-data.raw["item"]["nuclear-reactor"].order = "a"
 data:extend({
 {
     type = "reactor",
@@ -16,6 +14,14 @@ data:extend({
     neighbour_bonus = 1,
     use_fuel_glow_color = true,
     default_fuel_glow_color = {0, 218, 252},
+    collision_mask = {
+      "water-tile",
+      "ground-tile",
+      "item-layer",
+      "object-layer",
+      "player-layer",
+      spaceship_collision_layer,
+    },
     energy_source =
     {
       type = "burner",

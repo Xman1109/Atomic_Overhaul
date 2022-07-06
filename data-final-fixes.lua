@@ -47,13 +47,13 @@ if mods["Krastorio2"] then
             log(debug_text .. "Krastorio2")
         end
     end
-end--[[
+end
 if mods["space-exploration"] then
     require(compatibility .. "space-exploration")
     if ao_debug == true then
         log(debug_text .. "space-exploration")
     end
-end]]
+end
 
 
 --Addon stage begins here.
@@ -85,6 +85,7 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
         require(se_addon_recipes .. "iridium-192-without-research-data-recipe")
         require(se_addon_recipes .. "holmium-166-without-research-data-recipe")
         require(se_addon_recipes .. "beryllium-7-without-research-data-recipe")
+        require(se_addon_recipes .. "space-reactor-recipe")
 
         require(se_addon_techs .. "iridium-192-processing")
         require(se_addon_techs .. "holmium-166-processing")
@@ -95,6 +96,7 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
         require(se_addon_techs .. "iridium-192-without-research-data")
         require(se_addon_techs .. "holmium-166-without-research-data")
         require(se_addon_techs .. "beryllium-7-without-research-data")
+        require(se_addon_techs .. "space-reactor")
         
         if ao_debug == true then
             log(debug_addon_text .. "space-exploration")

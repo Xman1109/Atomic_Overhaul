@@ -3,7 +3,8 @@ data:extend({
         type = "technology",
         name = "waste-reprocessing",
         icon = graphics .. "waste-reprocessing.png",
-        icon_size = 256, --icon_mipmaps = 4,
+        icon_size = 256,
+        icon_mipmaps = 4,
         prerequisites = {"thorium-fuel-reprocessing"},
         effects =
         {

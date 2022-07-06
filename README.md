@@ -42,7 +42,7 @@ MOX is just another fuel that consists of Uranium and Plutonium.
 Thorium is the last tier of nuclear fuel. But you can use it to craft the Thorium Modules, which increase the speed of processing/reprocessing recipes.
 
 <h3>Note:</h3>
-This mod is not finished, there will be more features added in the future. Visit the <a href=https://github.com/Xman1109/Atomic_Overhaul/projects/1>TODO</a> list for more information. <br>
+This mod is not finished, there will be more features added in the future. Visit the <a href=https://github.com/users/Xman1109/projects/1>TODO</a> list for more information. <br>
 
 <br> Want to give us some money? <br>
 <a href="https://www.patreon.com/bePatron?u=74323441" ><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron!" /></a>

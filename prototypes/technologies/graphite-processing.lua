@@ -5,6 +5,7 @@ data:extend({
             name = "graphite-processing",
             icon = graphics .. "graphite-processing.png",
             icon_size = "256",
+            icon_mipmaps = 4,
             prerequisites = {"chemical-science-pack", "concrete"},
             effects =
             {
