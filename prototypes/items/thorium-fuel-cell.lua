@@ -29,7 +29,7 @@ data:extend({
 		subgroup = "fuel-cells",
 		fuel_category = "nuclear",
 		burnt_result = "thorium-depleted-cell",
-		fuel_value = "16GJ",
+		fuel_value = "14GJ",
 		stack_size = 50
 	  }
 })
