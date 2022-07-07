@@ -12,8 +12,12 @@ data:extend(
         subgroup = "energy",
         ingredients =
         {
-            {"se-beryllium-powder", 10},
-            {type = "fluid", name = "se-beryllium-hydroxide", amount = 30}
+            {"nuclear-reactor", 1},
+            {"processing-unit", 250},
+            {"se-heat-shielding", 100},
+            {"low-density-structure", 75},
+            {"se-holmium-plate", 50},
+            {"se-iridium-plate", 50},
         },
         always_show_made_in = true,
         results = 	{

@@ -12,6 +12,10 @@ data:extend({
                 {
                     type = "unlock-recipe",
                     recipe = "space-reactor-recipe"
+                },
+                {
+                    type = "unlock-recipe",
+                    recipe = "advanced-fuel-cell-recipe"
                 }
             },
             unit =

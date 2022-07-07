@@ -1,7 +1,26 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: ????
+  Info:
+    - Switched the license from GNU GPL v3.0 to X_Man1109's custom Factorio Mod license
   Changes:
+    - Improved README file on GitHub
+    - New Todo list on GitHub
+    - Updated the German and English locale
+    - Space Exploration addon
+  Features:
+    - Iridium-192 Isotope
+    - Holmium-166 Isotope
+    - Beryllium-7 Isotope
+    - Advanced fuel cell casing
+    - Iridium fuel cell (17GJ)
+    - Holmium fuel cell (21GJ)
+    - Beryllium fuel cell (25GJ)
+    - New space reactor
+    - custom fuel glow for the new fuel cells
+    - 2 new Settings
+  Balancing:
+    - Thorium fuel cell (16GJ --> 14GJ)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.30
 Date: 2022-06-15
