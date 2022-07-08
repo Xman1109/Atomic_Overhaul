@@ -1,6 +1,6 @@
 {
   "name": "Atomic_Overhaul",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "title": "Atomic Overhaul",
   "description": "Atomic Overhaul is a mod for Factorio adding new nuclear fuels, recipes and technologies to the game.\n Developed by X_Man1109 and fainda.",
   "author": "X_Man1109, fainda",
@@ -9,9 +9,8 @@
   "dependencies": [
     "base",
     "! Plutonium Energy",
-    "! space-exploration >= 0.6",
     "? RealisticReactors",
-    "(?) space-exploration <= 0.5",
+    "(?) space-exploration",
     "(?) space-exploration-postprocess"
   ]
 }
