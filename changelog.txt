@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
-Date: ????
+Date: 2022-07-08
   Info:
+    - support for Space Exploration 0.6 coming soon.
     - Switched license from GNU GPL v3.0 to XFML
   Changes:
     - Updated README file on GitHub
