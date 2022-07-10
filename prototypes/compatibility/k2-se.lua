@@ -142,7 +142,7 @@ if settings.startup["se-addon"].value == true then
         amount_max = 3
     }}
 
-    if mods["space-exploration"] > "0.5.116" then
+    if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
         data.raw["recipe"]["uranium-processing"].order = "b"
         data.raw["recipe"]["uranium-processing"].group = "atomic-overhaul"
         data.raw["recipe"]["uranium-processing"].subgroup = "resources"

@@ -11,8 +11,10 @@ DEFAULT = {}
 DEFAULT.item = {}
 DEFAULT.recipe = {}
 
-
 debug_text = "AO-DEBUG: Compatibilty loaded for: "
+
+local tv = 1
+
 data:extend({{
     type = "module-category",
     name = "thorium-module"
@@ -49,36 +51,55 @@ function resourceGlow(item)
     }
 end
 
-function getDefaultOf(type, name, special)
-    local tv = 0 --wert wird nicht bearbeitet
+function getDefaultOf(type, name)
     if type == "r" then
         type = "recipe"
     elseif type == "i" then
         type = "item"
     end
-    if special ~= nil then
-        table.insert(DEFAULT, data.raw[type][name].special)
+    if data.raw[type][name] then
+        DEFAULT[type][tv] = table.deepcopy(data.raw[type][name])
+        if ao_debug == true then
+            log("Saved default of:" .. type .. "." .. name .. " at place: " .. tv)
+        end
+        tv = tv + 1
     else
-        table.insert(DEFAULT, data.raw[type][name])
-    end
-    if ao_debug == true then
-        log("Saved default of:" .. type .. "." .. name)
+        if ao_debug == true then
+            log("Error: Could not get the default of " .. type .. "." .. name)
+        end
     end
 end
 
-function loadDefaultOf(type, name, special)
+function loadDefaultOf(type, name)
     if type == "r" then
         type = "recipe"
     elseif type == "i" then
         type = "item"
     end
-    if special ~= nil then
-        data.raw[type][name].special = DEFAULT.data.raw[type][name].special
-    else
-        data.raw[type][name] = DEFAULT[1] --der part geht noch nicht!
-        
+    --[[if special ~= nil then
+        for k, v in pairs(DEFAULT[type]) do
+            if DEFAULT[type][k].name == name then
+                log(DEFAULT[type][k].name)
+                data.raw[type][name] = DEFAULT[type][k]
+                if ao_debug == true then
+                    log("Loaded default of:" .. type .. "." .. name .. " from place: " .. k)
+                end
+            else
+                log("Error 404: Not found")
+            end
+        end
+    else]]
+    for k, v in pairs(DEFAULT[type]) do
+        if DEFAULT[type][k].name == name then
+            data.raw[type][name] = DEFAULT[type][k]
+            if ao_debug == true then
+                log("Loaded default of:" .. type .. "." .. name .. " from place: " .. k)
+            end
+        else
+            if ao_debug == true then
+                log("Error: Could not find the default of " .. type .. "." .. name)
+            end
+        end
     end
-    if ao_debug == true then
-        log("Loaded default of:" .. type .. "." .. name)
-    end
+    -- end
 end

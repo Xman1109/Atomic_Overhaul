@@ -60,3 +60,5 @@ require(techs .. "thorium-module-3")
 require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
+
+getDefaultOf("r", "solid-fuel-from-heavy-oil")

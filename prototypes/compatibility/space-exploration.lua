@@ -28,9 +28,7 @@ if settings.startup["se-addon"].value == true then
         amount_max = 3
     }}
 
-
-
-    if mods["space-exploration"] > "0.5.116" then
+    if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
         data.raw["recipe"]["uranium-processing"].order = "b"
         data.raw["recipe"]["uranium-processing"].group = "atomic-overhaul"
         data.raw["recipe"]["uranium-processing"].subgroup = "resources"
@@ -65,22 +63,18 @@ if settings.startup["se-addon"].value == true then
 
         data.raw["technology"]["se-centrifuge"].hidden = true
 
-
---if not data.raw["item-subgroup"]["fuel"] then
---    data:extend({{
---        type = "item-subgroup",
---        name = "fuel",
---        group = "resources",
---        order = "d"
---    }})
---end
-        --getDefaultOf("r", "iron-gear-wheel")
-        --should work, but doesnt
+        -- if not data.raw["item-subgroup"]["fuel"] then
+        --    data:extend({{
+        --        type = "item-subgroup",
+        --        name = "fuel",
+        --        group = "resources",
+        --        order = "d"
+        --    }})
+        -- end
+        -- should work, but doesnt
         data.raw["recipe"]["fuel-processing"].order = "a"
         data.raw["recipe"]["fuel-processing"].group = "intermediate-products"
         data.raw["recipe"]["fuel-processing"].subgroup = "fuel"
-        --loadDefaultOf("r", "fuel-processing")
-        --loadDefaultOf("r", "iron-gear-wheel")
 
         data.raw["recipe"]["se-processed-fuel-from-solid-fuel"].order = "a"
         data.raw["recipe"]["se-processed-fuel-from-solid-fuel"].group = "intermediate-products"
@@ -94,9 +88,9 @@ if settings.startup["se-addon"].value == true then
         data.raw["recipe"]["se-liquid-rocket-fuel"].group = "intermediate-products"
         data.raw["recipe"]["se-liquid-rocket-fuel"].subgroup = "fuel"
 
-        --data.raw["recipe"]["se-rocket-fuel-from-water-copper"].order = "p"
-        --data.raw["recipe"]["se-rocket-fuel-from-water-copper"].group = "intermediate-products"
-        --data.raw["recipe"]["se-rocket-fuel-from-water-copper"].subgroup = "fuel"
+        -- data.raw["recipe"]["se-rocket-fuel-from-water-copper"].order = "p"
+        -- data.raw["recipe"]["se-rocket-fuel-from-water-copper"].group = "intermediate-products"
+        -- data.raw["recipe"]["se-rocket-fuel-from-water-copper"].subgroup = "fuel"
 
         data.raw["recipe"]["se-vulcanite-rocket-fuel"].order = "p"
         data.raw["recipe"]["se-vulcanite-rocket-fuel"].group = "intermediate-products"
@@ -106,7 +100,8 @@ if settings.startup["se-addon"].value == true then
         data.raw["recipe"]["solid-fuel-from-light-oil"].group = "resources"
         data.raw["recipe"]["solid-fuel-from-light-oil"].subgroup = "fuel"
 
-        data.raw["recipe"]["solid-fuel-from-petroleum-gas"].order = "b[fluid-chemistry]-d[solid-fuel-from-petroleum-gas]"
+        data.raw["recipe"]["solid-fuel-from-petroleum-gas"].order =
+            "b[fluid-chemistry]-d[solid-fuel-from-petroleum-gas]"
         data.raw["recipe"]["solid-fuel-from-petroleum-gas"].group = "resources"
         data.raw["recipe"]["solid-fuel-from-petroleum-gas"].group = "fuel"
 
