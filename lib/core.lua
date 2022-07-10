@@ -7,6 +7,11 @@ base_graphics = "__base__/graphics/icons/"
 compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
 
+DEFAULT = {}
+DEFAULT.item = {}
+DEFAULT.recipe = {}
+
+
 debug_text = "AO-DEBUG: Compatibilty loaded for: "
 data:extend({{
     type = "module-category",
@@ -42,4 +47,38 @@ function resourceGlow(item)
             mipmap_count = 4
         }}
     }
+end
+
+function getDefaultOf(type, name, special)
+    local tv = 0 --wert wird nicht bearbeitet
+    if type == "r" then
+        type = "recipe"
+    elseif type == "i" then
+        type = "item"
+    end
+    if special ~= nil then
+        table.insert(DEFAULT, data.raw[type][name].special)
+    else
+        table.insert(DEFAULT, data.raw[type][name])
+    end
+    if ao_debug == true then
+        log("Saved default of:" .. type .. "." .. name)
+    end
+end
+
+function loadDefaultOf(type, name, special)
+    if type == "r" then
+        type = "recipe"
+    elseif type == "i" then
+        type = "item"
+    end
+    if special ~= nil then
+        data.raw[type][name].special = DEFAULT.data.raw[type][name].special
+    else
+        data.raw[type][name] = DEFAULT[1] --der part geht noch nicht!
+        
+    end
+    if ao_debug == true then
+        log("Loaded default of:" .. type .. "." .. name)
+    end
 end
