@@ -56,6 +56,8 @@ function getDefaultOf(type, name)
         type = "recipe"
     elseif type == "i" then
         type = "item"
+    else
+        log("Unknown type: " .. type)
     end
     if data.raw[type][name] then
         DEFAULT[type][tv] = table.deepcopy(data.raw[type][name])
@@ -75,6 +77,8 @@ function loadDefaultOf(type, name)
         type = "recipe"
     elseif type == "i" then
         type = "item"
+    else
+        log("Unknown type: " .. type)
     end
     --[[if special ~= nil then
         for k, v in pairs(DEFAULT[type]) do
