@@ -63,7 +63,7 @@ This Reactor is only placeable in space and not on Planets, no matter the ground
 
 But remember that **_you can only fuel it with the new fuel cells,_** with each having its own glow, as seen in the picture below.
 
- <img align="right" hight=222 width=490 src="https://raw.githubusercontent.com/fainda/images/main/reactor-glow.png">
+ <img align="right" hight=180 width=425 src="https://raw.githubusercontent.com/fainda/images/main/reactor-glow.png">
  
 <br><br><br><br><br><br><br><br>
 ___

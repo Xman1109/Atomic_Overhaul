@@ -107,3 +107,20 @@ function loadDefaultOf(type, name)
     end
     -- end
 end
+
+function hideType(type, name)
+    if type == "r" then
+        type = "recipe"
+    elseif type == "i" then
+        type = "item"
+    elseif type == "t" then
+        type = "technology"
+    else
+        log("Unknown type: " .. type)
+    end
+    if data.raw[type][name] then
+        data.raw[type][name].hidden = true
+    else
+        log("Error: could not find " .. type .. "." .. name)
+    end
+end
