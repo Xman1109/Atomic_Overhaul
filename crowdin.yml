@@ -1,3 +1,5 @@
 files:
-  - source: /locale/en
+  - source: /locale/en/English.cfg
     translation: /locale/%two_letters_code%/%language%.cfg
+  - source: /locale/en/English_SE-addon.cfg
+    translation: /locale/%two_letters_code%/%language%_SE-addon.cfg
