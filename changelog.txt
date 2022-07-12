@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.4
+Date: 2022-07-12
+  Changes:
+    - All icons from Atomic Overhaul under the category of reprocessing have been renewed and were made by a python-script
+    - Added an Option that edits the Thorium reprocessing recipe and adds a new reprocessing recipe that does not give research data
+    - You can now translate the mod on crowdin
+---------------------------------------------------------------------------------------------------
 Version: 1.2.3
 Date: 2022-07-11
   Changes:

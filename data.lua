@@ -61,4 +61,7 @@ require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
-getDefaultOf("r", "solid-fuel-from-heavy-oil")
+if settings.startup["thorium-wrd"].value == true then
+require(recipes .. "thorium-without-research-data")
+require(techs .. "thorium-without-research-data")
+end

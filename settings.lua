@@ -8,6 +8,13 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "thorium-wrd",
+        setting_type = "startup",
+        default_value = false,
+        order = "b"
+    },
+    {
+        type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
         default_value = true,

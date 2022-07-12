@@ -1,3 +1,9 @@
+local wrd = nil
+local thorium = {type="item", name="thorium", amount_min = 2, amount_max = 3}
+if settings.startup["thorium-wrd"].value == true then
+    wrd = {"research-data", 10}
+    thorium = {type="item", name="thorium", amount_min = 1, amount_max = 2}
+end
 data:extend(
 {
     {
@@ -17,7 +23,8 @@ data:extend(
         },
         results = 	{
             {"nuclear-waste", 15},
-            {type="item", name="thorium", amount_min = 2, amount_max = 3},
+            thorium,
+            wrd
         },
     }
 })
