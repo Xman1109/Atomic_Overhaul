@@ -65,3 +65,8 @@ if settings.startup["thorium-wrd"].value == true then
 require(recipes .. "thorium-without-research-data")
 require(techs .. "thorium-without-research-data")
 end
+
+--example code from informatron
+
+-- style_name, filename, width, height -- style_name MUST be a completely unique name
+--informatron_make_image("example_image_1", "__Atomic_Overhaul__/example_image.png", 200, 128)
