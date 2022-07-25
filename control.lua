@@ -62,16 +62,15 @@ function example_page_content(page_name, player_index, element)
     -- main page
     if page_name == "Atomic_Overhaul" then
         element.add {
+            type = "button",
+            name = "ao_header",
+            style = "header"
+        }
+        element.add {
             type = "label",
             name = "text_1",
             caption = {"Atomic_Overhaul.page_Atomic_Overhaul_text_1"}
         }
-        element.add {
-            type = "button",
-            name = "ao_header",
-            style = images .. "header"
-        }
-
     end
 
     if page_name == "AO_materials" then
@@ -79,6 +78,11 @@ function example_page_content(page_name, player_index, element)
             type = "label",
             name = "text_1",
             caption = {"Atomic_Overhaul.page_AO_materials_text_1"}
+        }
+        element.add {
+            type = "label",
+            name = "text_2",
+            caption = {"Atomic_Overhaul.page_AO_materials_text_2"}
         }
     end
 
