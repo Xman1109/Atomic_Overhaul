@@ -3,6 +3,7 @@ Version: 1.2.5
 Date: 2022-07-26
   Changes:
     - Added Turkish locale (thanks to @Nekoist who translated the mod on crowdin)
+    - If you want to translate the mod, then visit https://crowdin.com/project/atomic-overhaul
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.4
 Date: 2022-07-12
