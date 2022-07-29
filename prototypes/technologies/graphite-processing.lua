@@ -2,7 +2,7 @@ data:extend({
 
     {
             type = "technology",
-            name = "graphite-processing",
+            name = "ao-graphite-processing",
             icon = graphics .. "graphite-processing.png",
             icon_size = "256",
             icon_mipmaps = 4,

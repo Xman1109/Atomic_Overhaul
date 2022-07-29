@@ -179,7 +179,7 @@ data.raw["item"]["empty-nuclear-fuel-cell"].icon_mipmaps = data.raw["recipe"]["e
 
 data.raw["technology"]["thorium-plutonium-fuel-cell"].icon_size = 64
 
-data.raw["technology"]["graphite-processing"].effects = {{
+data.raw["technology"]["ao-graphite-processing"].effects = {{
     type = "unlock-recipe",
     recipe = "centrifuge"
 }, {
