@@ -3,7 +3,7 @@ for index, force in pairs(game.forces) do
     local recipe = force.recipes
 
     if technologies["uranium-processing"].researched then
-        technologies["graphite-processing"].researched = true
+        technologies["ao-graphite-processing"].researched = true
         technologies["graphite-fuel-reprocessing"].researched = true
     end
     if technologies["plutonium-processing"].researched then
