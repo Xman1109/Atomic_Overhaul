@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+Version: 1.2.7
+Date: 2022-07-30
+  Changes:
+    - Renamed the es locale folder to es-ES
+    - Removed locales that need to be retranslated
+    - Moved Atomic Overhaul's Crowdin Project to the factorio mods localization project on Crowdin (https://crowdin.com/project/factorio-mods-localization --> Atomic Overhaul)
+---------------------------------------------------------------------------------------------------
+>>>>>>> main
 Version: 1.2.6
 Date: 2022-07-29
   Changes:
