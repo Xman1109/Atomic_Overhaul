@@ -3,5 +3,28 @@
         "undefined-global",
         "undefined-field",
         "lowercase-global"
+    ],
+    "factorio.versions": [
+        {
+            "name": "1.1.61",
+            "factorioPath": "f:\\Steam\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe",
+            "active": true
+        }
+    ],
+    "Lua.diagnostics.globals": [
+        "mods",
+        "table_size",
+        "log",
+        "localised_print",
+        "serpent",
+        "global",
+        "__DebugAdapter",
+        "__Profiler"
+    ],
+    "Lua.runtime.version": "Lua 5.2",
+    "Lua.workspace.library": [
+        "f:\\Steam\\steamapps\\common\\Factorio\\data",
+        "f:\\Steam\\steamapps\\common\\Factorio\\data\\core\\lualib",
+        ".vscode/factorio"
     ]
 }
