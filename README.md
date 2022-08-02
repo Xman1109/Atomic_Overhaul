@@ -17,35 +17,35 @@ French (please install <a href=https://mods.factorio.com/mod/PatchFR>this mod</a
 [graphite]: https://raw.githubusercontent.com/fainda/images/main/Graphite.png
 
 ![graphite][] <br>
-After you researched graphite processing, you will be able to craft graphite, which you will use to craft graphite fuel cells.
+After you have researched the **graphite processing** technology, you are able to craft graphite, which will be needed to craft **graphite fuel cells**.
 
 <h2>Uranium</h2>
 
 [uranium]: https://raw.githubusercontent.com/fainda/images/main/uranium.png
 
 ![uranium][] <br>
-Uranium is just like in the base game, you use it to craft fuel cells which when reprocessed give plutonium, research data, and Uranium-238. You will need the research data to research new technologies regarding nuclear stuff.
+Uranium remains as in the base game. It is used to craft fuel cells, which, when reprocessed, give **plutonium**, **research data**, and uranium-238. You will need the research data to research new technologies regarding nuclear stuff.
 
 <h2>Plutonium</h2>
 
 [plutonium]: https://raw.githubusercontent.com/fainda/images/main/plutonium.png
 
 ![plutonium][] <br>
-Plutonium is not just only used for crafting new Fuel Cells, but you will need it if you want to craft the Atomic bomb or the new Plutonium Fuel.
+Plutonium is not only used for crafting new fuel cells, but also for crafting the **atomic bomb** or the new **plutonium fuel**.
 
 <h2>Mixed Oxide (MOX)</h2>
 
 [mox]: https://raw.githubusercontent.com/fainda/images/main/MOX.png
 
 ![MOX][] <br>
-MOX is just another fuel that consists of Uranium and Plutonium.
+MOX is another fuel consisting of uranium and plutonium.
 
 <h2>Thorium</h2>
 
 [thorium]: https://raw.githubusercontent.com/fainda/images/main/thorium.png
 
 ![thorium][] <br>
-Thorium is the last tier of nuclear fuel. But you can use it to craft the Thorium Modules, which increase the speed of processing/reprocessing recipes.
+Thorium is, by standart, the **highest tier** of nuclear fuel. You can also use it to craft **Thorium Modules**, which increase the speed of processing/reprocessing recipes.
 
 ---
 
