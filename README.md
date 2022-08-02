@@ -50,18 +50,18 @@ Thorium is the last tier of nuclear fuel. But you can use it to craft the Thoriu
 ---
 
 <h1><a href="https://mods.factorio.com/mod/space-exploration">Space Exploration</a> + Atomic Overhaul</h1>
-Space Exploration is made by <a href="https://www.patreon.com/bePatron?u=9790523">Earendel </a>, one of the most popular mod creators of Factorio. <br>
-So we decided to make some additional content for his mod.
+Space Exploration by <a href="https://www.patreon.com/bePatron?u=9790523">Earendel </a>is one of the most popular mod for Factorio. <br>
+Atomic Overhaul provides additional content for this mod.
 
 <h2>The Space Reactor</h2>
 
 <img align="left" src="https://raw.githubusercontent.com/fainda/images/main/hr-reactor.png">
 
-The Space Reactor is a prototype of the standard reactor, but is modified to withstand the cold vacuum of space and resist cosmic radiation.
+The Space Reactor is a prototype of the standard reactor. It is modified to withstand the cold vacuum of space and resist cosmic radiation.
 
-This Reactor is only placeable in space and not on Planets, no matter the ground it is standing on.
+This Reactor is only placeable in space, regardless of the ground it is standing on.
 
-But remember that **_you can only fuel it with the new fuel cells,_** with each having its own glow, as seen in the picture below.
+Remember that **_you can only fuel it with the new fuel cells,_** each of which having its own glow as seen in the picture below.
 
  <img align="right" hight=180 width=425 src="https://raw.githubusercontent.com/fainda/images/main/reactor-glow.png">
  
@@ -72,7 +72,7 @@ ___
 [iridium]: https://raw.githubusercontent.com/fainda/images/main/iridium-192.png
 
 ![iridium][] <br>
-You are now able to extract the rare Iridium-192 Isotope from Iridium Powder and Sulfuric Acid inside a Radiation facility.
+You are now able to extract the rare Iridium-192 Isotope from Iridium Powder and Sulfuric Acid inside of a Radiation facility.
 Once Again, you will need it for a more powerful fuel cell with a fuel value of 17GJ.
 
 <h2>Holmium-166</h2>
@@ -81,7 +81,7 @@ Once Again, you will need it for a more powerful fuel cell with a fuel value of 
 
 ![holmium][]<br>
 
-Another Isotope that you can extract from Holmium powder and Sulfuric Acid in the Radiation facility. It is needed for the Holmium fuel cell with a fuel value of 21GJ.
+Another Isotope you are now able to extract from Holmium powder and Sulfuric Acid inside of the Radiation facility is Holmium-166. It is needed for the Holmium fuel cell with a fuel value of 21GJ.
 
 <h2>Beryllium-7</h2>
 
@@ -89,12 +89,12 @@ Another Isotope that you can extract from Holmium powder and Sulfuric Acid in th
 
 ![beryllium][]
 
-Beryllium is currently the most powerful nuclear fuel you can get in this mod. The fuel cell has a fuel value of 25GJ.
+Beryllium is currently the most powerful nuclear fuel you are able to obtain in this mod. The Beryllium fuel cell has a fuel value of 25GJ.
 
 ---
 
 <h3>Note:</h3>
-This mod is not finished, there will be more features added in the future. Visit the <a href=https://github.com/users/Xman1109/projects/1>TODO</a> list for more information. <br>
+This mod is not finished, there will be more features added in future updates. Visit the <a href=https://github.com/users/Xman1109/projects/1>TODO</a> list for more information. <br>
 
-<br> Want to give us some money? <br>
+<br> Want to support our work? <br>
 <a href="https://www.patreon.com/bePatron?u=74323441" ><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron!" /></a>
