@@ -50,7 +50,7 @@ Thorium is the last tier of nuclear fuel. But you can use it to craft the Thoriu
 ---
 
 <h1><a href="https://mods.factorio.com/mod/space-exploration">Space Exploration</a> + Atomic Overhaul</h1>
-Space Exploration by <a href="https://www.patreon.com/bePatron?u=9790523">Earendel </a>is one of the most popular mod for Factorio. <br>
+Space Exploration by <a href="https://www.patreon.com/bePatron?u=9790523">Earendel </a>is one of the most popular mods for Factorio. <br>
 Atomic Overhaul provides additional content for this mod.
 
 <h2>The Space Reactor</h2>
