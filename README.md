@@ -84,7 +84,7 @@ Once Again, you will need it for a more powerful fuel cell with a fuel value of 
 Another Isotope you are now able to extract from Holmium powder and Sulfuric Acid inside of the Radiation facility is Holmium-166. It is needed for the Holmium fuel cell with a fuel value of 21GJ.
 
 <h2>Beryllium-7</h2>
-
+ 
 [beryllium]: https://raw.githubusercontent.com/fainda/images/main/beryllium-7.png
 
 ![beryllium][]
