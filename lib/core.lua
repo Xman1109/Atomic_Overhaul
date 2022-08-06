@@ -6,6 +6,7 @@ vanilla = "prototypes.vanilla-changes."
 base_graphics = "__base__/graphics/icons/"
 compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
+images = "__Atomic_Overhaul__/graphics/images/"
 
 DEFAULT = {}
 DEFAULT.item = {}
