@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.8
+Date: 2022-08-01
+  Changes:
+    - fixed a naming bug for clowns-nuclear
+---------------------------------------------------------------------------------------------------
+Version: 1.2.7
+Date: 2022-07-30
+  Changes:
+    - Renamed the es locale folder to es-ES
+    - Removed locales that need to be retranslated
+    - Moved Atomic Overhaul's Crowdin Project to the factorio mods localization project on Crowdin (https://crowdin.com/project/factorio-mods-localization --> Atomic Overhaul)
+---------------------------------------------------------------------------------------------------
+Version: 1.2.6
+Date: 2022-07-29
+  Changes:
+    - Added compatibility for the Carbon and Diamonds mod
+---------------------------------------------------------------------------------------------------
+Version: 1.2.5
+Date: 2022-07-26
+  Changes:
+    - Added Turkish locale (thanks to @Nekoist who translated the mod on crowdin)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.4
 Date: 2022-07-12
   Changes:

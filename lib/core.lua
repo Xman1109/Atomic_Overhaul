@@ -125,3 +125,10 @@ function hideType(type, name)
         log("Error: could not find " .. type .. "." .. name)
     end
 end
+
+function replaceEffects(t, effects)
+    data.raw["technology"][t].effects = effects
+end
+function replaceIngredients(r, ingredients)
+    data.raw["recipe"][r].ingredients = ingredients
+end

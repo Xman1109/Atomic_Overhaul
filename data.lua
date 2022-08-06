@@ -71,3 +71,7 @@ end
 -- style_name, filename, width, height -- style_name MUST be a completely unique name
 informatron_make_image("header", images .. "logo.png", 800, 250)
 informatron_make_image("graphite", images .. "graphite.png", 64, 64)
+informatron_make_image("uranium", images .. "uranium.png", 64, 64)
+informatron_make_image("plutonium", images .. "plutonium.png", 64, 64)
+informatron_make_image("MOX", images .. "MOX.png", 64, 64)
+informatron_make_image("thorium", images .. "thorium.png", 64, 64)

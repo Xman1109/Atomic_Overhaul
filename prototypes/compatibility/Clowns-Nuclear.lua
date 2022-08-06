@@ -2,31 +2,13 @@
 -- MadClown01 if you want me to change something then create an issue/pull request on github.--
 -----------------------------------------------------------------------------------------------
 -- make the plutonium-239 item glow in the dark
-data.raw["item"]["plutonium-239"].pictures = {
-    layers = {{
-        size = 32, -- please try to make 64x64 icons with 4 mipmaps
-        filename = "__Clowns-Nuclear__/graphics/icons/plutonium-239.png",
-        scale = 0.50
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = "__Atomic_Overhaul__/graphics/icons/resource-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
-data.raw["recipe"]["plutonium-atomic-bomb"].hidden = true
+resourceGlow("plutonium-239")
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].group = "atomic-overhaul"
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].order = "z"
 data.raw["recipe"]["uranium-fuel-cell"].ingredients = {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}}
-data.raw["recipe"]["plutonium-atomic-bomb"].hidden = true
-data.raw["item"]["plutonium"].hidden = true
 data.raw["item"]["plutonium-239"].group = "atomic-overhaul"
 data.raw["item"]["plutonium-239"].subgroup = "resources"
 data.raw["item"]["plutonium-239"].order = "d"
-data.raw["technology"]["mixed-oxide-fuel"].hidden = true
-data.raw["recipe"]["mixed-oxide"].hidden = true
 --data.raw["recipe"]["uranium-processing"].results = {{name = "35%-uranium", probability = 0.007, amount = 1}, {name = "uranium-238", probability = 0.993, amount = 1}}
 table.insert(data.raw["technology"]["uranium-processing"].effects, {
     type = "unlock-recipe",
@@ -41,9 +23,15 @@ table.insert(data.raw["technology"]["thermonuclear-bomb"].unit.ingredients, {
     name = "research-data",
     amount = 1
 })
-data.raw["technology"]["kovarex-enrichment-process"].hidden = true
-data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
-data.raw["recipe"]["uranium-processing"].hidden = true
+replaceEffects("atomic-bomb", {{type = "unlock-recipe", recipe = "atomic-bomb"}})
+hideType("t", "kovarex-enrichment-process")
+hideType("r", "kovarex-enrichment-process")
+hideType("r", "uranium-processing")
+hideType("r", "plutonium-atomic-bomb")
+hideType("i", "plutonium")
+hideType("t", "mixed-oxide-fuel")
+hideType("r", "mixed-oxide")
+
 
 -- remove the uranium-processing recipe from the uranium-processing technology
 for i, effect in pairs(data.raw["technology"]["uranium-processing"].effects) do
