@@ -11,6 +11,7 @@ German <br>
 English <br>
 Spanish (thanks to <a href=https://github.com/Kopynft>@Kopynft</a>) <br>
 French (please install <a href=https://mods.factorio.com/mod/PatchFR>this mod</a>) <br>
+Turkish (thanks to @Nekoist)
 
 <h2>Graphite</h2>
 
