@@ -10,7 +10,7 @@ data:extend({
 		  {
 			{
 			  size = 64,
-			  filename = "__Atomic_Overhaul__/graphics/icons/plutonium-fuel-cell.png",
+			  filename = graphics .. "plutonium-fuel-cell.png",
 			  scale = 0.25,
 			  mipmap_count = 4
 			},

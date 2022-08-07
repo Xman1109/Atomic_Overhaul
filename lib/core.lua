@@ -34,6 +34,8 @@ function resourceGlow(item)
         scale = 0.5
     elseif data.raw["item"][item].icon_size == 64 then
         scale = 0.25
+    else
+        log("Error: Item " .. item .. " has not the right icon size (" .. data.raw["item"][item].icon_size .. ").")
     end
     data.raw["item"][item].pictures = {
         layers = { {
@@ -131,12 +133,14 @@ function regroup(type, name, group, subgroup, order)
         type = "item"
     else
         log("Unknown type: " .. type)
+        return
     end
     if group == "AO" then
         group = "Atomic_Overhaul"
     end
     if group and subgroup and order == nil then
         log("Missing Arguments!")
+        return
     end
     if data.raw[type][name] then
         if group ~= nil then
@@ -163,16 +167,47 @@ function iconizer(type1, name1, type2, name2) --name1 has the icon you want to m
             v = "technology"
         else
             log("Unknown type: " .. v)
+            return
         end
     end
 
     if name1 ~= nil then
         if name2 ~= nil then
-            -- TODO: icon, icon_size, icon_mipmaps von name1 zu name2 moven
+            if data.raw[type1][name1].icon ~= nil then
+                data.raw[type2][name2].icon = data.raw[type1][name1].icon
+            else
+                if ao_debug == true then
+                    log(type1 .. "." .. name1 .. " has no icon")
+                end
+            end
+            if data.raw[type1][name1].icon_size ~= nil then
+                data.raw[type2][name2].icon_size = data.raw[type1][name1].icon_size
+            else
+                if ao_debug == true then
+                    log(type1 .. "." .. name1 .. " has no icon size")
+                end
+            end
+            if data.raw[type1][name1].icon_mipmaps ~= nil then
+                data.raw[type2][name2].icon_mipmaps = data.raw[type1][name1].icon_mipmaps
+            else
+                if ao_debug == true then
+                    log(type1 .. "." .. name1 .. " has no mipmaps")
+                end
+            end
         else
             log("Error: could not find " .. type2 .. "." .. name2)
         end
     else
         log("Error: could not find " .. type1 .. "." .. name1)
+    end
+end
+
+function addResearchData(name) -- supports tables
+    for i in name do
+        if data.raw["technology"][i] ~= nil then
+            table.insert(data.raw["technology"][i].unit.ingredients, "research-data")
+        else
+            log("Error: could not find " .. "technology" .. "." .. i)
+        end
     end
 end

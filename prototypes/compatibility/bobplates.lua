@@ -8,7 +8,7 @@ data.raw["item"]["thorium-232"].pictures = {
         draw_as_light = true,
         flags = {"light"},
         size = 64,
-        filename = "__Atomic_Overhaul__/graphics/icons/resource-light.png",
+        filename = graphics .. "resource-light.png",
         scale = 0.25,
         mipmap_count = 4
     }}
@@ -22,7 +22,7 @@ data.raw["item"]["plutonium-239"].pictures = {
         draw_as_light = true,
         flags = {"light"},
         size = 64,
-        filename = "__Atomic_Overhaul__/graphics/icons/resource-light.png",
+        filename = graphics .. "resource-light.png",
         scale = 0.25,
         mipmap_count = 4
     }}
@@ -207,7 +207,6 @@ data.raw["technology"]["deuterium-processing"].prerequisites = {"thorium-fuel-re
 data.raw["technology"]["thorium-plutonium-fuel-cell"].prerequisites = {"thorium-processing", "plutonium-processing"}
 table.insert(data.raw["technology"]["thorium-processing"].unit.ingredients, "research-data")
 
--- vergiss nicht alles im tech-tree zu prüfen! ~Shawn von gestern
 
 -- for every recipe which uses empty-fuel-cell as an ingredient, replace it with empty-nuclear-fuel-cell
 for _, recipe in pairs(data.raw["recipe"]) do

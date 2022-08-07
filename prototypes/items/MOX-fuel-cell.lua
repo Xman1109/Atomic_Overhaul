@@ -10,7 +10,7 @@ data:extend({
 		  {
 			{
 			  size = 64,
-			  filename = "__Atomic_Overhaul__/graphics/icons/MOX-fuel-cell1.png",
+			  filename = graphics .. "MOX-fuel-cell1.png",
 			  scale = 0.25,
 			  mipmap_count = 4
 			},
