@@ -46,15 +46,7 @@ remote.add_interface("Atomic_Overhaul", {
 function example_menu(player_index)
     return {
         AO_materials = 1,
-        dog = 1,
-        bird = {
-            penguin = 1,
-            corvid = {
-                crow = 1,
-                raven = 1,
-                jay = 1
-            }
-        }
+        SE_materials = 1
     }
 end
 
@@ -131,46 +123,46 @@ function example_page_content(page_name, player_index, element)
         }
     end
 
-    if page_name == "dog" then
+    if page_name == "SE_materials" then
         element.add {
             type = "label",
             name = "text_1",
-            caption = {"example.page_dog_text_1"}
+            caption = {"Atomic_Overhaul.page_SE_materials_text_1"}
         }
-    end
-
-    if page_name == "bird" then
         element.add {
-            type = "label",
-            name = "text_1",
-            caption = {"example.page_bird_text_1"}
-        }
-    end
-
-    if page_name == "penguin" then
-        element.add {
-            type = "label",
-            name = "text_1",
-            caption = {"example.page_penguin_text_1"}
-        }
-        local image_container = element.add {
-            type = "frame",
-            name = "image_1",
-            style = "informatron_image_container",
-            direction = "vertical"
-        }
-        image_container.add {
             type = "button",
-            name = "image_1",
-            style = "example_image_1"
-        } -- defined in data.lua. MUST be a completely unique style name
-    end
-
-    if page_name == "corvid" or page_name == "crow" or page_name == "raven" or page_name == "jay" then
+            name = "Space Reactor",
+            style = "Space Reactor",
+        }
         element.add {
             type = "label",
-            name = "text_1",
-            caption = {"example.page_" .. page_name .. "_text_1"}
+            name = "text_2",
+            caption = {"Atomic_Overhaul.page_SE_materials_text_2"}
+        }
+        element.add {
+            type = "button",
+            name = "Iridium",
+            style = "Iridium",
+        }
+        element.add {
+            type = "label",
+            name = "text_3",
+            caption = {"Atomic_Overhaul.page_SE_materials_text_3"}
+        }
+        element.add {
+            type = "button",
+            name = "Holmium",
+            style = "Holmium",
+        }
+        element.add {
+            type = "label",
+            name = "text_4",
+            caption = {"Atomic_Overhaul.page_SE_materials_text_4"}
+        }
+        element.add {
+            type = "button",
+            name = "Beryllium",
+            style = "Beryllium",
         }
     end
 
