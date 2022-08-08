@@ -5,10 +5,12 @@
 resourceGlow("plutonium-239")
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].group = "atomic-overhaul"
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].order = "z"
-data.raw["recipe"]["uranium-fuel-cell"].ingredients = {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}}
-data.raw["item"]["plutonium-239"].group = "atomic-overhaul"
-data.raw["item"]["plutonium-239"].subgroup = "resources"
-data.raw["item"]["plutonium-239"].order = "d"
+-- data.raw["recipe"]["uranium-fuel-cell"].ingredients = {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}}
+replaceIngredients("uranium-fuel-cell", {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}})
+-- data.raw["item"]["plutonium-239"].group = "atomic-overhaul"
+-- data.raw["item"]["plutonium-239"].subgroup = "resources"
+-- data.raw["item"]["plutonium-239"].order = "d"
+regroup("i", "AO", "resources", "d")
 --data.raw["recipe"]["uranium-processing"].results = {{name = "35%-uranium", probability = 0.007, amount = 1}, {name = "uranium-238", probability = 0.993, amount = 1}}
 table.insert(data.raw["technology"]["uranium-processing"].effects, {
     type = "unlock-recipe",
@@ -18,11 +20,12 @@ table.insert(data.raw["technology"]["uranium-processing"].effects, {
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-35%"
 })
-table.insert(data.raw["technology"]["thermonuclear-bomb"].unit.ingredients, {
-    type = "item",
-    name = "research-data",
-    amount = 1
-})
+-- table.insert(data.raw["technology"]["thermonuclear-bomb"].unit.ingredients, {
+--     type = "item",
+--     name = "research-data",
+--     amount = 1
+-- })
+addResearchData("thermonuclear-bomb")
 replaceEffects("atomic-bomb", {{type = "unlock-recipe", recipe = "atomic-bomb"}})
 hideType("t", "kovarex-enrichment-process")
 hideType("r", "kovarex-enrichment-process")

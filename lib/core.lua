@@ -28,7 +28,7 @@ function thorium_module_limitation()
             "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing"}
 end
 
-function resourceGlow(item)
+function resourceGlow(item) -- TODO: make compatibility for the resources, fuel cells and nuclear fuel!
     local scale
     if data.raw["item"][item].icon_size == 32 then
         scale = 0.5
@@ -136,6 +136,35 @@ function replaceEffects(t, effects)
     end
 end
 
+function modifyEffects(name, effects, task)
+    if data.raw["technology"][name] then
+        if task == "replace" or nil then
+            data.raw["technology"][name].effects = effects
+            if ao_debug == true then
+                log("Replaced effects of technology." .. name .. " with " .. serpent.block(effects))
+            end
+        elseif task == "add" then
+            if type(effects) == "table" then
+                for _, i in ipairs(effects) do
+                    table.insert(data.raw["technology"][name].effects, i)
+                end
+                if ao_debug == true then
+                    log("Added effects of technology." .. name .. " with " .. serpent.block(effects))
+                end
+            else
+                table.insert(data.raw["technology"][name].effects, effects)
+                if ao_debug == true then
+                    log("Added effect of technology." .. name .. " with " .. serpent.block(effects))
+                end
+            end
+        else
+            log("Unknown task: " .. task)
+        end
+    else
+        log("Error: could not find technology." .. name)
+    end
+end
+
 function replaceIngredients(r, ingredients)
     if data.raw["recipe"][r] then
         data.raw["recipe"][r].ingredients = ingredients
@@ -144,6 +173,91 @@ function replaceIngredients(r, ingredients)
         end
     else
         log("Error: could not find recipe." .. r)
+    end
+end
+
+function modifyIngredients(name, ingredients, task)
+    if data.raw["recipe"][name] then
+        if task == "replace" or nil then
+            data.raw["recipe"][name].ingredients = ingredients
+            if ao_debug == true then
+                log("Replaced ingredients of recipe." .. name .. " with " .. serpent.block(ingredients))
+            end
+        elseif task == "add" then
+            if type(ingredients) == "table" then
+                for _, i in ipairs(ingredients) do
+                    table.insert(data.raw["recipe"][name].ingredients, i)
+                end
+                if ao_debug == true then
+                    log("Added '" .. serpent.block(ingredients) .. "' as ingredients to recipe." .. name)
+                end
+            else
+                table.insert(data.raw["recipe"][name].ingredients, ingredients)
+                if ao_debug == true then
+                    log("Added '" .. serpent.block(ingredients) .. "' as ingredient to recipe." .. name)
+                end
+            end
+        else
+            log("Unknown task: " .. task)
+        end
+    else
+        log("Error: could not find recipe." .. name)
+    end
+end
+
+function modifyResults(name, results, task)
+    if data.raw["recipe"][name] then
+        if data.raw["recipe"][name].results then
+            if task == "replace" or nil then
+                data.raw["recipe"][name].results = results
+                if ao_debug == true then
+                    log("Replaced results of recipe." .. name .. " with " .. serpent.block(results))
+                end
+            elseif task == "add" then
+                if type(results) == "table" then
+                    for _, i in ipairs(results) do
+                        table.insert(data.raw["recipe"][name].results, i)
+                    end
+                    if ao_debug == true then
+                        log("Added '" .. serpent.block(results) .. "' as results to recipe." .. name)
+                    end
+                else
+                    table.insert(data.raw["recipe"][name].results, results)
+                    if ao_debug == true then
+                        log("Added '" .. serpent.block(results) .. "' as result to recipe." .. name)
+                    end
+                end
+            else
+                log("Unknown task: " .. task)
+            end
+        elseif data.raw["recipe"][name].result then
+            if task == "replace" or nil then
+                data.raw["recipe"][name].result = results
+                if ao_debug == true then
+                    log("Replaced result of recipe." .. name .. " with " .. serpent.block(results))
+                end
+            elseif task == "add" then
+                if type(results) == "table" then
+                    for _, i in ipairs(results) do
+                        table.insert(data.raw["recipe"][name].result, i)
+                    end
+                    if ao_debug == true then
+                        log("Added '" .. serpent.block(results) .. "' as result to recipe." .. name)
+                    end
+                else
+                    table.insert(data.raw["recipe"][name].result, results)
+                    if ao_debug == true then
+                        log("Added '" .. serpent.block(results) .. "' as result to recipe." .. name)
+                    end
+                end
+            else
+                log("Unknown task: " .. task)
+            end
+        else
+            log("Error: recipe." .. name .. " does not have a result or results field")
+        end
+    else
+        log("Error: could not find recipe." .. name)
     end
 end
 
@@ -158,6 +272,35 @@ function replacePrerequisites(t, prerequisites)
     end
 end
 
+function modifyPrerequisites(name, prerequisites, task)
+    if data.raw["technology"][name] then
+        if task == "replace" or nil then
+            data.raw["technology"][name].prerequisites = prerequisites
+            if ao_debug == true then
+                log("Replaced prerequisites of technology." .. name .. " with " .. serpent.block(prerequisites))
+            end
+        elseif task == "add" then
+            if type(prerequisites) == "table" then
+                for _, i in ipairs(prerequisites) do
+                    table.insert(data.raw["technology"][name].prerequisites, i)
+                end
+                if ao_debug == true then
+                    log("Added '" .. serpent.block(prerequisites) .. "' as prerequisites to technology." .. name)
+                end
+            else
+                table.insert(data.raw["technology"][name].prerequisites, prerequisites)
+                if ao_debug == true then
+                    log("Added '" .. serpent.block(prerequisites) .. "' as prerequisite to technology." .. name)
+                end
+            end
+        else
+            log("Unknown task: " .. task)
+        end
+    else
+        log("Error: could not find technology." .. name)
+    end
+end
+
 function regroup(type, name, group, subgroup, order)
     if type == "r" then
         type = "recipe"
@@ -168,7 +311,7 @@ function regroup(type, name, group, subgroup, order)
         return
     end
     if group == "AO" then
-        group = "Atomic_Overhaul"
+        group = "atomic-overhaul"
     end
     if group and subgroup and order == nil then
         log("Missing Arguments!")
@@ -237,7 +380,9 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].icon_size ~= nil then
                 data.raw[toType2][toName2].icon_size = data.raw[fromType1][fromName1].icon_size
                 if ao_debug == true then
-                    log(fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                    log(
+                        fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
+                            "'")
                 end
             else
                 if ao_debug == true then
@@ -247,7 +392,8 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].icon_mipmaps ~= nil then
                 data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
                 if ao_debug == true then
-                    log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                    log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." ..
+                            toName2 .. "'")
                 end
             else
                 if ao_debug == true then
@@ -257,7 +403,8 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].pictures ~= nil then
                 data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
                 if ao_debug == true then
-                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
+                            "'")
                 end
             else
                 if ao_debug == true then
