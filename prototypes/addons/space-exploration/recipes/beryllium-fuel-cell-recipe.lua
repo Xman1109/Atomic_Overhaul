@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "beryllium-fuel-cell-recipe",
         icon = se_addon_graphics .. "beryllium-fuel-cell.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
         energy_required = 50,
         enabled = false,

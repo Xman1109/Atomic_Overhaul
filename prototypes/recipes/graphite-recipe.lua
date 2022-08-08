@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "graphite-recipe",
         icon = graphics .. "graphite.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64, icon_mipmaps = 4,
         category = "advanced-crafting",
         energy_required = 20,
         enabled = false,

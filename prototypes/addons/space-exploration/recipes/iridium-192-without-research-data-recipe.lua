@@ -5,7 +5,7 @@ data:extend(
         name = "iridium-192-without-research-data-recipe",
         icon = se_addon_graphics .. "iridium-192-without-research-data-recipe.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "space-radiation",
         energy_required = 50,
         enabled = false,

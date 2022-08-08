@@ -4,7 +4,7 @@ data:extend({
         name = "thorium-module-2",
         icon = graphics .. "thorium-module-2.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "advanced-crafting",
         enabled = false,
         order = "b",

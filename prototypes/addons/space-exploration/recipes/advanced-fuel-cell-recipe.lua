@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "advanced-fuel-cell-recipe",
         icon = se_addon_graphics .. "advanced-fuel-cell.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64, icon_mipmaps = 4,
         category = "space-manufacturing",
         energy_required = 50,
         enabled = false,

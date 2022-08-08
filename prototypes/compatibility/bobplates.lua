@@ -1,32 +1,5 @@
--- makes stuff glow in the dark
-data.raw["item"]["thorium-232"].pictures = {
-    layers = {{
-        size = 64,
-        filename = data.raw["item"]["thorium-232"].icon,
-        scale = 0.25
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = graphics .. "resource-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
-data.raw["item"]["plutonium-239"].pictures = {
-    layers = {{
-        size = 64,
-        filename = data.raw["item"]["plutonium-239"].icon,
-        scale = 0.25
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = graphics .. "resource-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
+resourceGlow("thorium-232")
+resourceGlow("plutonium-239")
 data.raw["item"]["deuterium-fuel-cell"].pictures = {
     layers = {{
         size = 64,
@@ -117,69 +90,37 @@ data.raw["recipe"]["thorium-fuel-reprocessing"].results = {{
     amount = 1
 }}
 
-data.raw["recipe"]["plutonium-fuel-cell"].subgroup = data.raw["recipe"]["plutonium-fuel-cell-recipe"].subgroup
-data.raw["recipe"]["plutonium-fuel-cell"].order = data.raw["recipe"]["plutonium-fuel-cell-recipe"].order
-data.raw["recipe"]["empty-nuclear-fuel-cell"].subgroup = "fuel-cells"
-data.raw["recipe"]["empty-nuclear-fuel-cell"].order = "z"
-data.raw["recipe"]["thorium-fuel-cell"].subgroup = data.raw["recipe"]["thorium-fuel-cell-recipe"].subgroup
-data.raw["recipe"]["thorium-fuel-cell"].order = data.raw["recipe"]["thorium-fuel-cell-recipe"].order
-data.raw["recipe"]["thorium-processing"].subgroup = "resources"
-data.raw["recipe"]["thorium-processing"].order = "f"
-data.raw["recipe"]["thorium-plutonium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["recipe"]["thorium-plutonium-fuel-cell"].order = "g"
-data.raw["recipe"]["deuterium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["recipe"]["deuterium-fuel-cell"].order = "h"
-data.raw["recipe"]["deuterium-fuel-cell-2"].subgroup = "fuel-cells"
-data.raw["recipe"]["deuterium-fuel-cell-2"].order = "i"
-data.raw["recipe"]["thorium-fuel-reprocessing"].subgroup = "reprocessing"
-data.raw["recipe"]["thorium-fuel-reprocessing"].order = "e"
-data.raw["recipe"]["deuterium-fuel-reprocessing"].subgroup = "reprocessing"
-data.raw["recipe"]["deuterium-fuel-reprocessing"].order = "f"
-
-data.raw["item"]["empty-nuclear-fuel-cell"].subgroup = "fuel-cells"
-data.raw["item"]["empty-nuclear-fuel-cell"].order = "z"
-data.raw["item"]["thorium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["item"]["thorium-fuel-cell"].order = "e"
-data.raw["item"]["thorium-plutonium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["item"]["thorium-plutonium-fuel-cell"].order = "f"
-data.raw["item"]["deuterium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["item"]["deuterium-fuel-cell"].order = "g"
-data.raw["item"]["deuterium-fuel-cell-2"].subgroup = "fuel-cells"
-data.raw["item"]["deuterium-fuel-cell-2"].order = "h"
-data.raw["item"]["plutonium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["item"]["plutonium-fuel-cell"].order = "c"
-data.raw["item"]["thorium-232"].subgroup = "resources"
-data.raw["item"]["thorium-232"].order = "f"
-data.raw["item"]["plutonium-239"].subgroup = "resources"
-data.raw["item"]["plutonium-239"].order = "d"
-data.raw["item"]["used-up-thorium-fuel-cell"].subgroup = "used-up-fuel-cells"
-data.raw["item"]["used-up-thorium-fuel-cell"].order = "e"
-data.raw["item"]["used-up-deuterium-fuel-cell"].subgroup = "used-up-fuel-cells"
-data.raw["item"]["used-up-deuterium-fuel-cell"].order = "f"
-
-data.raw["recipe"]["plutonium-fuel-cell"].icon = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon
-data.raw["recipe"]["plutonium-fuel-cell"].icon_size = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon_size
-data.raw["recipe"]["plutonium-fuel-cell"].icon_mipmaps = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon_mipmaps
-data.raw["recipe"]["thorium-fuel-cell"].icon = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon
-data.raw["recipe"]["thorium-fuel-cell"].icon_size = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon_size
-data.raw["recipe"]["thorium-fuel-cell"].icon_mipmaps = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon_mipmaps
-data.raw["recipe"]["empty-nuclear-fuel-cell"].icon = data.raw["recipe"]["empty-fuel-cell-recipe"].icon
-data.raw["recipe"]["empty-nuclear-fuel-cell"].icon_size = data.raw["recipe"]["empty-fuel-cell-recipe"].icon_size
-data.raw["recipe"]["empty-nuclear-fuel-cell"].icon_mipmaps = data.raw["recipe"]["empty-fuel-cell-recipe"].icon_mipmaps
-
-data.raw["item"]["plutonium-fuel-cell"].icon = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon
-data.raw["item"]["plutonium-fuel-cell"].icon_size = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon_size
-data.raw["item"]["plutonium-fuel-cell"].icon_mipmaps = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon_mipmaps
-data.raw["item"]["thorium-fuel-cell"].icon = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon
-data.raw["item"]["thorium-fuel-cell"].icon_size = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon_size
-data.raw["item"]["thorium-fuel-cell"].icon_mipmaps = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon_mipmaps
-data.raw["item"]["empty-nuclear-fuel-cell"].icon = data.raw["recipe"]["empty-fuel-cell-recipe"].icon
-data.raw["item"]["empty-nuclear-fuel-cell"].icon_size = data.raw["recipe"]["empty-fuel-cell-recipe"].icon_size
-data.raw["item"]["empty-nuclear-fuel-cell"].icon_mipmaps = data.raw["recipe"]["empty-fuel-cell-recipe"].icon_mipmaps
+regroup("r", "plutonium-fuel-cell", nil, data.raw["recipe"]["plutonium-fuel-cell-recipe"].subgroup,
+    data.raw["recipe"]["plutonium-fuel-cell-recipe"].order)
+regroup("r", "empty-nuclear-fuel-cell", nil, "fuel-cells", "z")
+regroup("r", "thorium-fuel-cell", nil, data.raw["recipe"]["thorium-fuel-cell-recipe"].subgroup,
+    data.raw["recipe"]["thorium-fuel-cell-recipe"].order)
+regroup("r", "thorium-processing", nil, "resources", "f")
+regroup("r", "thorium-plutonium-fuel-cell", nil, "fuel-cells", "g")
+regroup("r", "deuterium-fuel-cell", nil, "fuel-cells", "h")
+regroup("r", "deuterium-fuel-cell-2", nil, "fuel-cells", "i")
+regroup("r", "thorium-fuel-reprocessing", nil, "reprocessing", "e")
+regroup("r", "deuterium-fuel-reprocessing", nil, "reprocessing", "f")
+regroup("i", "empty-nuclear-fuel-cell", nil, "fuel-cells", "z")
+regroup("i", "thorium-fuel-cell", nil, "fuel-cells", "e")
+regroup("i", "thorium-plutonium-fuel-cell", nil, "fuel-cells", "f")
+regroup("i", "deuterium-fuel-cell", nil, "fuel-cells", "g")
+regroup("i", "deuterium-fuel-cell-2", nil, "fuel-cells", "h")
+regroup("i", "plutonium-fuel-cell", nil, "fuel-cells", "c")
+regroup("i", "thorium-232", nil, "resources", "f")
+regroup("i", "plutonium-239", nil, "resources", "d")
+regroup("i", "used-up-thorium-fuel-cell", nil, "used-up-fuel-cells", "e")
+regroup("i", "used-up-deuterium-fuel-cell", nil, "used-up-fuel-cells", "f")
+iconizer("r", "plutonium-fuel-cell-recipe", "r", "plutonium-fuel-cell")
+iconizer("r", "thorium-fuel-cell-recipe", "r", "thorium-fuel-cell")
+iconizer("r", "empty-fuel-cell-recipe", "r", "empty-nuclear-fuel-cell")
+iconizer("r", "plutonium-fuel-cell-recipe", "i", "plutonium-fuel-cell")
+iconizer("r", "thorium-fuel-cell-recipe", "i", "thorium-fuel-cell")
+iconizer("r", "empty-fuel-cell-recipe", "i", "empty-nuclear-fuel-cell")
 
 data.raw["technology"]["thorium-plutonium-fuel-cell"].icon_size = 64
 
-data.raw["technology"]["ao-graphite-processing"].effects = {{
+replaceEffects("ao-graphite-processing", {{
     type = "unlock-recipe",
     recipe = "centrifuge"
 }, {
@@ -191,8 +132,9 @@ data.raw["technology"]["ao-graphite-processing"].effects = {{
 }, {
     type = "unlock-recipe",
     recipe = "graphite-fuel-cell-recipe"
-}}
-data.raw["technology"]["plutonium-processing"].effects = {{
+}})
+
+replaceEffects("plutonium-processing", {{
     type = "unlock-recipe",
     recipe = "plutonium-fuel-cell"
 }, {
@@ -201,14 +143,13 @@ data.raw["technology"]["plutonium-processing"].effects = {{
 }, {
     type = "unlock-recipe",
     recipe = "plutonium-nucleosynthesis"
-}}
-data.raw["technology"]["thorium-processing"].prerequisites = {"MOX-fuel-reprocessing"}
-data.raw["technology"]["deuterium-processing"].prerequisites = {"thorium-fuel-reprocessing"}
-data.raw["technology"]["thorium-plutonium-fuel-cell"].prerequisites = {"thorium-processing", "plutonium-processing"}
-table.insert(data.raw["technology"]["thorium-processing"].unit.ingredients, "research-data")
+}})
 
+replacePrerequisites("thorium-processing", {"MOX-fuel-reprocessing"})
+replacePrerequisites("deuterium-processing", {"thorium-fuel-reprocessing"})
+replacePrerequisites("thorium-plutonium-fuel-cell", {"thorium-processing", "plutonium-processing"})
+addResearchData("thorium-processing")
 
--- for every recipe which uses empty-fuel-cell as an ingredient, replace it with empty-nuclear-fuel-cell
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
@@ -218,7 +159,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- do the same for the products
+
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
@@ -229,7 +170,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
     end
 end
 
--- for every recipe which uses plutonium as an ingredient, replace it with plutonium-239
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
@@ -239,7 +179,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- do the same for the products
+
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
@@ -249,7 +189,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- for every recipe which uses thorium as an ingredient, replace it with thorium-232
+
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
@@ -259,7 +199,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- do the same for the products
+
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
@@ -269,7 +209,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- overwrite every unit.ingredient to {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"research-data", 1},}
+
 local list = {"thorium-processing", "thorium-fuel-reprocessing", "thorium-plutonium-fuel-cell", "deuterium-processing",
               "deuterium-fuel-cell-2", "deuterium-fuel-reprocessing"}
 for _, tech in pairs(list) do
@@ -278,10 +218,6 @@ for _, tech in pairs(list) do
                                                      {"research-data", 1}}
 end
 
-data.raw["recipe"]["plutonium-fuel-cell-recipe"].hidden = true
-data.raw["recipe"]["empty-fuel-cell-recipe"].hidden = true
-data.raw["recipe"]["empty-nuclear-fuel-cell"].hidden = false
-data.raw["technology"]["plutonium-fuel-cell"].hidden = true
-data.raw["technology"]["bobingabout-enrichment-process"].hidden = true
-data.raw["item"]["thorium-depleted-cell"].hidden = true
-data.raw["item"]["empty-fuel-cell"].hidden = true
+hideType("r", {"plutonium-fuel-cell-recipe", "empty-fuel-cell-recipe"})
+hideType("t", {"plutonium-fuel-cell", "bobingabout-enrichment-process"})
+hideType("i", {"thorium-depleted-cell", "empty-fuel-cell"})

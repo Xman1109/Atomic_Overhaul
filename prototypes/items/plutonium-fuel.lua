@@ -4,6 +4,7 @@ data:extend({
     name = "plutonium-fuel",
     icon = graphics .. "plutonium-fuel.png",
     icon_size = 64,
+    icon_mipmaps = 4,
     pictures =
     {
       layers =

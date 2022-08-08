@@ -12,7 +12,7 @@ data:extend({
               size = 64,
               filename = se_addon_graphics .. "beryllium-fuel-cell.png",
               scale = 0.25,
-              mipmap_count = 4
+              icon_mipmaps = 4
             },
             {
               draw_as_light = true,
@@ -20,7 +20,7 @@ data:extend({
               size = 64,
               filename = base_graphics .. "uranium-fuel-cell-light.png",
               scale = 0.25,
-              mipmap_count = 4
+              icon_mipmaps = 4
             }
           }
         },

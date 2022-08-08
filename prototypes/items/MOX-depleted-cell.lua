@@ -12,6 +12,7 @@ data:extend(
                 mipmap_count = 4
             },
             icon_size = 64,
+            icon_mipmaps = 4,
             stack_size = 50,
             group = "atomic-overhaul",
             order = "d",

@@ -16,16 +16,16 @@ debug_text = "AO-DEBUG: Compatibilty loaded for: "
 
 local tv = 1
 
-data:extend({ {
+data:extend({{
     type = "module-category",
     name = "thorium-module"
 
-} })
+}})
 
 function thorium_module_limitation()
-    return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
-        "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
-        "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
+    return {"uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
+            "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
+            "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing"}
 end
 
 function resourceGlow(item)
@@ -38,19 +38,19 @@ function resourceGlow(item)
         log("Error: Item " .. item .. " has not the right icon size (" .. data.raw["item"][item].icon_size .. ").")
     end
     data.raw["item"][item].pictures = {
-        layers = { {
+        layers = {{
             size = data.raw["item"][item].icon_size,
             filename = data.raw["item"][item].icon,
             scale = scale,
             mipmap_count = data.raw["item"][item].mipmap_count
         }, {
             draw_as_light = true,
-            flags = { "light" },
+            flags = {"light"},
             size = 64,
             filename = graphics .. "resource-light.png",
             scale = 0.25,
             mipmap_count = 4
-        } }
+        }}
     }
 end
 
@@ -97,33 +97,65 @@ function loadDefaultOf(type, name)
     end
 end
 
-function hideType(type, name)
-    if type == "r" then
-        type = "recipe"
-    elseif type == "i" then
-        type = "item"
-    elseif type == "t" then
-        type = "technology"
+function hideType(fromType1, name) -- supports tables
+    if fromType1 == "r" then
+        fromType1 = "recipe"
+    elseif fromType1 == "i" then
+        fromType1 = "item"
+    elseif fromType1 == "t" then
+        fromType1 = "technology"
     else
-        log("Unknown type: " .. type)
+        log("Unknown type: " .. fromType1)
     end
-    if data.raw[type][name] then
-        data.raw[type][name].hidden = true
+
+    if type(name) == "table" then
+        for _, i in ipairs(name) do
+            if data.raw[fromType1][i] then
+                data.raw[fromType1][i].hidden = true
+            else
+                log("Error: could not find " .. fromType1 .. "." .. i)
+            end
+        end
     else
-        log("Error: could not find " .. type .. "." .. name)
+        if data.raw[fromType1][name] then
+            data.raw[fromType1][name].hidden = true
+        else
+            log("Error: could not find " .. fromType1 .. "." .. name)
+        end
     end
 end
 
 function replaceEffects(t, effects)
-    data.raw["technology"][t].effects = effects
+    if data.raw["technology"][t] then
+        data.raw["technology"][t].effects = effects
+        if ao_debug == true then
+            log("Replaced effects of technology." .. t .. " with " .. serpent.block(effects))
+        end
+    else
+        log("Error: could not find technology." .. t)
+    end
 end
 
 function replaceIngredients(r, ingredients)
-    data.raw["recipe"][r].ingredients = ingredients
+    if data.raw["recipe"][r] then
+        data.raw["recipe"][r].ingredients = ingredients
+        if ao_debug == true then
+            log("Replaced ingredients of recipe." .. r .. " with " .. serpent.block(ingredients))
+        end
+    else
+        log("Error: could not find recipe." .. r)
+    end
 end
 
 function replacePrerequisites(t, prerequisites)
-    data.raw["technology"][t].prerequisites = prerequisites
+    if data.raw["technology"][t] then
+        data.raw["technology"][t].prerequisites = prerequisites
+        if ao_debug == true then
+            log("Replaced prerequisites of technology." .. t .. " with " .. serpent.block(prerequisites))
+        end
+    else
+        log("Error: could not find technology." .. t)
+    end
 end
 
 function regroup(type, name, group, subgroup, order)
@@ -145,69 +177,121 @@ function regroup(type, name, group, subgroup, order)
     if data.raw[type][name] then
         if group ~= nil then
             data.raw[type][name].group = group
+            if ao_debug == true then
+                log("Group of " .. type .. "." .. name .. " replaced with '" .. group .. "'")
+            end
         end
         if subgroup ~= nil then
             data.raw[type][name].subgroup = subgroup
+            if ao_debug == true then
+                log("Subgroup of " .. type .. "." .. name .. " got replaced with '" .. subgroup .. "'")
+            end
         end
         if order ~= nil then
             data.raw[type][name].order = order
+            if ao_debug == true then
+                log("Order of " .. type .. "." .. name .. " replaced with '" .. order .. "'")
+            end
         end
     else
         log("Error: could not find " .. type .. "." .. name)
     end
 end
 
-function iconizer(type1, name1, type2, name2) --name1 has the icon you want to move to name2
-    for t, v in type1 and type2 do
-        if v == "r" then
-            v = "recipe"
-        elseif v == "i" then
-            v = "item"
-        elseif v == "t" then
-            v = "technology"
-        else
-            log("Unknown type: " .. v)
-            return
-        end
+function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the icon you want to move to toName2
+
+    if fromType1 == "r" then
+        fromType1 = "recipe"
+    elseif fromType1 == "i" then
+        fromType1 = "item"
+    elseif fromType1 == "t" then
+        fromType1 = "technology"
+    else
+        log("Unknown type: " .. fromType1)
+        return
     end
 
-    if name1 ~= nil then
-        if name2 ~= nil then
-            if data.raw[type1][name1].icon ~= nil then
-                data.raw[type2][name2].icon = data.raw[type1][name1].icon
+    if toType2 == "r" then
+        toType2 = "recipe"
+    elseif toType2 == "i" then
+        toType2 = "item"
+    elseif toType2 == "t" then
+        toType2 = "technology"
+    else
+        log("Unknown type: " .. toType2)
+        return
+    end
+
+    if data.raw[fromType1][fromName1] ~= nil then
+        if data.raw[fromType1][toName2] ~= nil then
+            if data.raw[fromType1][fromName1].icon ~= nil then
+                data.raw[toType2][toName2].icon = data.raw[fromType1][fromName1].icon
+                if ao_debug == true then
+                    log(fromType1 .. "." .. fromName1 .. "'s icon got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                end
             else
                 if ao_debug == true then
-                    log(type1 .. "." .. name1 .. " has no icon")
+                    log(fromType1 .. "." .. fromName1 .. " has no icon")
                 end
             end
-            if data.raw[type1][name1].icon_size ~= nil then
-                data.raw[type2][name2].icon_size = data.raw[type1][name1].icon_size
+            if data.raw[fromType1][fromName1].icon_size ~= nil then
+                data.raw[toType2][toName2].icon_size = data.raw[fromType1][fromName1].icon_size
+                if ao_debug == true then
+                    log(fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                end
             else
                 if ao_debug == true then
-                    log(type1 .. "." .. name1 .. " has no icon size")
+                    log(fromType1 .. "." .. fromName1 .. " has no icon size")
                 end
             end
-            if data.raw[type1][name1].icon_mipmaps ~= nil then
-                data.raw[type2][name2].icon_mipmaps = data.raw[type1][name1].icon_mipmaps
+            if data.raw[fromType1][fromName1].icon_mipmaps ~= nil then
+                data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
+                if ao_debug == true then
+                    log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                end
             else
                 if ao_debug == true then
-                    log(type1 .. "." .. name1 .. " has no mipmaps")
+                    log(fromType1 .. "." .. fromName1 .. " has no mipmaps")
+                end
+            end
+            if data.raw[fromType1][fromName1].pictures ~= nil then
+                data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
+                if ao_debug == true then
+                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 .. "'")
+                end
+            else
+                if ao_debug == true then
+                    log(fromType1 .. "." .. fromName1 .. " has no pictures")
                 end
             end
         else
-            log("Error: could not find " .. type2 .. "." .. name2)
+            log("Error: could not find " .. toType2 .. "." .. toName2)
         end
     else
-        log("Error: could not find " .. type1 .. "." .. name1)
+        log("Error: could not find " .. fromType1 .. "." .. fromName1)
     end
 end
 
 function addResearchData(name) -- supports tables
-    for i in name do
-        if data.raw["technology"][i] ~= nil then
-            table.insert(data.raw["technology"][i].unit.ingredients, "research-data")
+    if type(name) == "table" then
+        for i in name do
+            if data.raw["technology"][i] ~= nil then
+                table.insert(data.raw["technology"][i].unit.ingredients, "research-data")
+                if ao_debug == true then
+                    log("Added research data to " .. i)
+                end
+            else
+                log("Error: could not find " .. "technology" .. "." .. i)
+            end
+        end
+    else
+        if data.raw["technology"][name] ~= nil then
+            table.insert(data.raw["technology"][name].unit.ingredients, "research-data")
+            if ao_debug == true then
+                log("Added research data to " .. name)
+            end
         else
-            log("Error: could not find " .. "technology" .. "." .. i)
+            log("Error: could not find " .. "technology" .. "." .. name)
         end
     end
 end

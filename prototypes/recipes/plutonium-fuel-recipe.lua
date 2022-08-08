@@ -5,7 +5,7 @@ data:extend(
         name = "plutonium-fuel-recipe",
         icon = graphics .. "plutonium-fuel.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "centrifuging",
         energy_required = 20,
         enabled = false,

@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "holmium-166-recipe",
         icon = se_addon_graphics .. "holmium-166.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
         energy_required = 60,
         enabled = false,

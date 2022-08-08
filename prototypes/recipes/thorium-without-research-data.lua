@@ -5,7 +5,7 @@ data:extend(
         name = "thorium-without-research-data",
         icon = graphics .. "thorium-without-research-recipe.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "centrifuging",
         energy_required = 50,
         enabled = false,

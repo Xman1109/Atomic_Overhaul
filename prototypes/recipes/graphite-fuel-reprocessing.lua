@@ -5,7 +5,7 @@ data:extend(
         name = "graphite-fuel-reprocessing",
         icon = graphics .. "graphite-reprocessing-recipe.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "centrifuging",
         energy_required = 50,
         enabled = false,

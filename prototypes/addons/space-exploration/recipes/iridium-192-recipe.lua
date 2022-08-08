@@ -4,7 +4,7 @@ data:extend(
         type = "recipe",
         name = "iridium-192-recipe",
         icon = se_addon_graphics .. "iridium-192.png",
-        icon_size = 64, mipmap_count = 4,
+        icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
