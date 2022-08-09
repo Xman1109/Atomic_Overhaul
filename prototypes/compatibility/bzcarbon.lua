@@ -1,5 +1,5 @@
-table.insert(data.raw["technology"]["ao-graphite-processing"].prerequisites, "graphite-processing")
-replaceEffects("ao-graphite-processing", {{
+modifyPrerequisites("ao-graphite-processing", {"graphite-processing"}, "add")
+modifyEffects("ao-graphite-processing", {{
     type = "unlock-recipe",
     recipe = "centrifuge"
 }, {
@@ -10,4 +10,4 @@ replaceEffects("ao-graphite-processing", {{
     recipe = "graphite-fuel-cell-recipe"
 }})
 hideType("r", "graphite-recipe")
-replaceIngredients("graphite-fuel-cell-recipe", {{"graphite", 25}, {"empty-fuel-cell", 10}})
+modifyIngredients("graphite-fuel-cell-recipe", {{"graphite", 25}, {"empty-fuel-cell", 10}})

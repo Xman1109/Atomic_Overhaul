@@ -120,7 +120,7 @@ iconizer("r", "empty-fuel-cell-recipe", "i", "empty-nuclear-fuel-cell")
 
 data.raw["technology"]["thorium-plutonium-fuel-cell"].icon_size = 64
 
-replaceEffects("ao-graphite-processing", {{
+modifyEffects("ao-graphite-processing", {{
     type = "unlock-recipe",
     recipe = "centrifuge"
 }, {
@@ -134,7 +134,7 @@ replaceEffects("ao-graphite-processing", {{
     recipe = "graphite-fuel-cell-recipe"
 }})
 
-replaceEffects("plutonium-processing", {{
+modifyEffects("plutonium-processing", {{
     type = "unlock-recipe",
     recipe = "plutonium-fuel-cell"
 }, {
@@ -145,9 +145,9 @@ replaceEffects("plutonium-processing", {{
     recipe = "plutonium-nucleosynthesis"
 }})
 
-replacePrerequisites("thorium-processing", {"MOX-fuel-reprocessing"})
-replacePrerequisites("deuterium-processing", {"thorium-fuel-reprocessing"})
-replacePrerequisites("thorium-plutonium-fuel-cell", {"thorium-processing", "plutonium-processing"})
+modifyPrerequisites("thorium-processing", {"MOX-fuel-reprocessing"})
+modifyPrerequisites("deuterium-processing", {"thorium-fuel-reprocessing"})
+modifyPrerequisites("thorium-plutonium-fuel-cell", {"thorium-processing", "plutonium-processing"})
 addResearchData("thorium-processing")
 
 for _, recipe in pairs(data.raw["recipe"]) do

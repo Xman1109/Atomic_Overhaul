@@ -6,17 +6,24 @@ resourceGlow("plutonium-239")
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].group = "atomic-overhaul"
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].order = "z"
 -- data.raw["recipe"]["uranium-fuel-cell"].ingredients = {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}}
-replaceIngredients("uranium-fuel-cell", {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}})
+modifyIngredients("uranium-fuel-cell", {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}})
 -- data.raw["item"]["plutonium-239"].group = "atomic-overhaul"
 -- data.raw["item"]["plutonium-239"].subgroup = "resources"
 -- data.raw["item"]["plutonium-239"].order = "d"
 regroup("i", "AO", "resources", "d")
---data.raw["recipe"]["uranium-processing"].results = {{name = "35%-uranium", probability = 0.007, amount = 1}, {name = "uranium-238", probability = 0.993, amount = 1}}
-table.insert(data.raw["technology"]["uranium-processing"].effects, {
+-- data.raw["recipe"]["uranium-processing"].results = {{name = "35%-uranium", probability = 0.007, amount = 1}, {name = "uranium-238", probability = 0.993, amount = 1}}
+-- table.insert(data.raw["technology"]["uranium-processing"].effects, {
+--     type = "unlock-recipe",
+--     recipe = "clowns-centrifuging-20%-ore"
+-- })
+-- table.insert(data.raw["technology"]["uranium-processing"].effects, {
+--     type = "unlock-recipe",
+--     recipe = "clowns-centrifuging-35%"
+-- })
+modifyEffects("uranium-processing", {{
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-20%-ore"
-})
-table.insert(data.raw["technology"]["uranium-processing"].effects, {
+}}, {
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-35%"
 })
@@ -26,7 +33,10 @@ table.insert(data.raw["technology"]["uranium-processing"].effects, {
 --     amount = 1
 -- })
 addResearchData("thermonuclear-bomb")
-replaceEffects("atomic-bomb", {{type = "unlock-recipe", recipe = "atomic-bomb"}})
+modifyEffects("atomic-bomb", {{
+    type = "unlock-recipe",
+    recipe = "atomic-bomb"
+}})
 hideType("t", "kovarex-enrichment-process")
 hideType("r", "kovarex-enrichment-process")
 hideType("r", "uranium-processing")
@@ -34,7 +44,6 @@ hideType("r", "plutonium-atomic-bomb")
 hideType("i", "plutonium")
 hideType("t", "mixed-oxide-fuel")
 hideType("r", "mixed-oxide")
-
 
 -- remove the uranium-processing recipe from the uranium-processing technology
 for i, effect in pairs(data.raw["technology"]["uranium-processing"].effects) do
@@ -49,7 +58,7 @@ for _, recipe in pairs(data.raw.recipe) do
         for _, ingredient in pairs(recipe.ingredients) do
             if ingredient.name == "plutonium" or ingredient[1] == "plutonium" then
                 ingredient[1] = "plutonium-239"
-                --log(recipe.name .. " now needs:" .. ingredient[1])
+                -- log(recipe.name .. " now needs:" .. ingredient[1])
             end
         end
     end
