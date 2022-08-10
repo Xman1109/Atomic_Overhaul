@@ -166,7 +166,8 @@ if settings.startup["se-addon"].value == true then
         data.raw["transport-belt"]["transport-belt"].collision_mask or
             data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
     data.raw["tool"]["research-data"].order = "zz"
-    data.raw["recipe"]["research-data-recipe"].order = "zz"
+    -- data.raw["recipe"]["research-data-recipe"].order = "zz"
+    regroup("r", "research-data-recipe", nil, nil, "zz")
     -- data.raw["item"]["nuclear-fuel"].order = "a"
     -- data.raw["item"]["nuclear-fuel"].group = "atomic-overhaul"
     -- data.raw["item"]["nuclear-fuel"].subgroup = "fuel"

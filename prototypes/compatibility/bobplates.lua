@@ -1,49 +1,74 @@
-resourceGlow("thorium-232")
-resourceGlow("plutonium-239")
-data.raw["item"]["deuterium-fuel-cell"].pictures = {
-    layers = {{
-        size = 64,
-        filename = data.raw["item"]["deuterium-fuel-cell"].icon,
-        scale = 0.25
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = base_graphics .. "uranium-fuel-cell-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
-data.raw["item"]["deuterium-fuel-cell-2"].pictures = {
-    layers = {{
-        size = 64,
-        filename = data.raw["item"]["deuterium-fuel-cell-2"].icon,
-        scale = 0.25
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = base_graphics .. "uranium-fuel-cell-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
-data.raw["item"]["thorium-plutonium-fuel-cell"].pictures = {
-    layers = {{
-        size = 64,
-        filename = data.raw["item"]["thorium-plutonium-fuel-cell"].icon,
-        scale = 0.25
-    }, {
-        draw_as_light = true,
-        flags = {"light"},
-        size = 64,
-        filename = base_graphics .. "uranium-fuel-cell-light.png",
-        scale = 0.25,
-        mipmap_count = 4
-    }}
-}
-
-data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
+Glow("thorium-232")
+Glow("plutonium-239")
+-- data.raw["item"]["deuterium-fuel-cell"].pictures = {
+--     layers = {{
+--         size = 64,
+--         filename = data.raw["item"]["deuterium-fuel-cell"].icon,
+--         scale = 0.25
+--     }, {
+--         draw_as_light = true,
+--         flags = {"light"},
+--         size = 64,
+--         filename = base_graphics .. "uranium-fuel-cell-light.png",
+--         scale = 0.25,
+--         mipmap_count = 4
+--     }}
+-- }
+Glow("deuterium-fuel-cell", "cell")
+-- data.raw["item"]["deuterium-fuel-cell-2"].pictures = {
+--     layers = {{
+--         size = 64,
+--         filename = data.raw["item"]["deuterium-fuel-cell-2"].icon,
+--         scale = 0.25
+--     }, {
+--         draw_as_light = true,
+--         flags = {"light"},
+--         size = 64,
+--         filename = base_graphics .. "uranium-fuel-cell-light.png",
+--         scale = 0.25,
+--         mipmap_count = 4
+--     }}
+-- }
+Glow("deuterium-fuel-cell-2", "cell")
+-- data.raw["item"]["thorium-plutonium-fuel-cell"].pictures = {
+--     layers = {{
+--         size = 64,
+--         filename = data.raw["item"]["thorium-plutonium-fuel-cell"].icon,
+--         scale = 0.25
+--     }, {
+--         draw_as_light = true,
+--         flags = {"light"},
+--         size = 64,
+--         filename = base_graphics .. "uranium-fuel-cell-light.png",
+--         scale = 0.25,
+--         mipmap_count = 4
+--     }}
+-- }
+Glow("thorium-plutonium-fuel-cell", "cell")
+-- data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
+--     type = "item",
+--     name = "plutonium",
+--     amount_min = 1,
+--     amount_max = 3
+-- }, {
+--     type = "item",
+--     name = "uranium-238",
+--     amount = 3
+-- }, {
+--     type = "item",
+--     name = "nuclear-waste",
+--     amount = 5
+-- }, {
+--     type = "item",
+--     name = "research-data",
+--     amount_min = 1,
+--     amount_max = 3
+-- }, {
+--     type = "item",
+--     name = "fusion-catalyst",
+--     amount = 1
+-- }}
+modifyResults("nuclear-fuel-reprocessing", {{
     type = "item",
     name = "plutonium",
     amount_min = 1,
@@ -65,8 +90,31 @@ data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
     type = "item",
     name = "fusion-catalyst",
     amount = 1
-}}
-data.raw["recipe"]["thorium-fuel-reprocessing"].results = {{
+}})
+-- data.raw["recipe"]["thorium-fuel-reprocessing"].results = {{
+--     type = "item",
+--     name = "thorium",
+--     amount_min = 2,
+--     amount_max = 3
+-- }, {
+--     type = "item",
+--     name = "uranium-235",
+--     amount = 3
+-- }, {
+--     type = "item",
+--     name = "nuclear-waste",
+--     amount = 15
+-- }, {
+--     type = "item",
+--     name = "research-data",
+--     amount_min = 1,
+--     amount_max = 3
+-- }, {
+--     type = "item",
+--     name = "fusion-catalyst",
+--     amount = 1
+-- }}
+modifyResults("thorium-fuel-reprocessing", {{
     type = "item",
     name = "thorium",
     amount_min = 2,
@@ -88,7 +136,7 @@ data.raw["recipe"]["thorium-fuel-reprocessing"].results = {{
     type = "item",
     name = "fusion-catalyst",
     amount = 1
-}}
+}})
 
 regroup("r", "plutonium-fuel-cell", nil, data.raw["recipe"]["plutonium-fuel-cell-recipe"].subgroup,
     data.raw["recipe"]["plutonium-fuel-cell-recipe"].order)

@@ -2,7 +2,7 @@
 -- MadClown01 if you want me to change something then create an issue/pull request on github.--
 -----------------------------------------------------------------------------------------------
 -- make the plutonium-239 item glow in the dark
-resourceGlow("plutonium-239")
+Glow("plutonium-239")
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].group = "atomic-overhaul"
 data.raw["item-subgroup"]["clowns-uranium-centrifuging"].order = "z"
 -- data.raw["recipe"]["uranium-fuel-cell"].ingredients = {{"35%-uranium", 1}, {"graphite", 19}, {"empty-fuel-cell", 10}}

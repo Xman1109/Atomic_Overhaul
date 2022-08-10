@@ -1,3 +1,10 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+-- TODO: modify the modifyIngredients and modifyResults functions to replace every ingredient/result from the data.raw["recipe"] table.
+-- TODO: delete the old unnused functions
+-- TODO: make a resolveType function
+-- TODO: update the Glow function to support tables
+------------------------------------------------------------------------------------------------------------------------------------------
+
 items = "prototypes.items."
 fluids = "prototypes.fluids."
 recipes = "prototypes.recipes."
@@ -16,19 +23,19 @@ debug_text = "AO-DEBUG: Compatibilty loaded for: "
 
 local tv = 1
 
-data:extend({{
+data:extend({ {
     type = "module-category",
     name = "thorium-module"
 
-}})
+} })
 
 function thorium_module_limitation()
-    return {"uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
-            "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
-            "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing"}
+    return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
+        "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
+        "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
 end
 
-function resourceGlow(item) -- TODO: make compatibility for the resources, fuel cells and nuclear fuel!
+function resourceGlow(item)
     local scale
     if data.raw["item"][item].icon_size == 32 then
         scale = 0.5
@@ -38,30 +45,99 @@ function resourceGlow(item) -- TODO: make compatibility for the resources, fuel 
         log("Error: Item " .. item .. " has not the right icon size (" .. data.raw["item"][item].icon_size .. ").")
     end
     data.raw["item"][item].pictures = {
-        layers = {{
+        layers = { {
             size = data.raw["item"][item].icon_size,
             filename = data.raw["item"][item].icon,
             scale = scale,
             mipmap_count = data.raw["item"][item].mipmap_count
         }, {
             draw_as_light = true,
-            flags = {"light"},
+            flags = { "light" },
             size = 64,
             filename = graphics .. "resource-light.png",
             scale = 0.25,
             mipmap_count = 4
-        }}
+        } }
     }
 end
 
-function getDefaultOf(type, name)
-    if type == "r" then
-        type = "recipe"
-    elseif type == "i" then
-        type = "item"
+function Glow(name, typeOfItem)
+    local scale
+    if data.raw["item"][name].icon_size == 32 then
+        scale = 0.5
+    elseif data.raw["item"][name].icon_size == 64 then
+        scale = 0.25
     else
-        log("Unknown type: " .. type)
+        log("Error: Item " .. name .. " has not the right icon size (" .. data.raw["item"][name].icon_size .. ").")
     end
+    if data.raw["item"][name] then
+        if typeofItem == nil or "resource" then
+            typeOfItem = "resource"
+            data.raw["item"][name].pictures = {
+                layers = { {
+                    size = data.raw["item"][name].icon_size,
+                    filename = data.raw["item"][name].icon,
+                    scale = scale,
+                    mipmap_count = data.raw["item"][name].mipmap_count
+                }, {
+                    draw_as_light = true,
+                    flags = { "light" },
+                    size = 64,
+                    filename = graphics .. "resource-light.png",
+                    scale = 0.25,
+                    mipmap_count = 4
+                } }
+            }
+            if ao_debug == true then
+                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
+            end
+        elseif typeOfItem == "cell" then
+            data.raw["item"][name].pictures = {
+                layers = { {
+                    size = data.raw["item"][name].icon_size,
+                    filename = data.raw["item"][name].icon,
+                    scale = scale,
+                    mipmap_count = data.raw["item"][name].mipmap_count
+                }, {
+                    draw_as_light = true,
+                    flags = { "light" },
+                    size = 64,
+                    filename = base_graphics .. "uranium-fuel-cell-light.png",
+                    scale = 0.25,
+                    mipmap_count = 4
+                } }
+            }
+            if ao_debug == true then
+                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
+            end
+        elseif typeOfItem == "fuel" then
+            data.raw["item"][name].pictures = {
+                layers = { {
+                    size = data.raw["item"][name].icon_size,
+                    filename = data.raw["item"][name].icon,
+                    scale = scale,
+                    mipmap_count = data.raw["item"][name].mipmap_count
+                }, {
+                    draw_as_light = true,
+                    flags = { "light" },
+                    size = 64,
+                    filename = base_graphics .. "nuclear-fuel-light.png",
+                    scale = 0.25,
+                    mipmap_count = 4
+                } }
+            }
+            if ao_debug == true then
+                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
+            end
+        else
+            log("Error: Uknown typeOfItem: " .. typeOfItem)
+        end
+        log("Error: could not find item." .. name)
+    end
+end
+
+function getDefaultOf(type, name)
+    type = resolveType(type)
     if data.raw[type][name] then
         DEFAULT[type][tv] = table.deepcopy(data.raw[type][name])
         if ao_debug == true then
@@ -76,13 +152,7 @@ function getDefaultOf(type, name)
 end
 
 function loadDefaultOf(type, name)
-    if type == "r" then
-        type = "recipe"
-    elseif type == "i" then
-        type = "item"
-    else
-        log("Unknown type: " .. type)
-    end
+    type = resolveType(type)
     for k, v in pairs(DEFAULT[type]) do
         if DEFAULT[type][k].name == name then
             data.raw[type][name] = DEFAULT[type][k]
@@ -98,15 +168,7 @@ function loadDefaultOf(type, name)
 end
 
 function hideType(fromType1, name) -- supports tables
-    if fromType1 == "r" then
-        fromType1 = "recipe"
-    elseif fromType1 == "i" then
-        fromType1 = "item"
-    elseif fromType1 == "t" then
-        fromType1 = "technology"
-    else
-        log("Unknown type: " .. fromType1)
-    end
+    fromType1 = resolveType(fromType1)
 
     if type(name) == "table" then
         for _, i in ipairs(name) do
@@ -302,14 +364,7 @@ function modifyPrerequisites(name, prerequisites, task)
 end
 
 function regroup(type, name, group, subgroup, order)
-    if type == "r" then
-        type = "recipe"
-    elseif type == "i" then
-        type = "item"
-    else
-        log("Unknown type: " .. type)
-        return
-    end
+    type = resolveType(type)
     if group == "AO" then
         group = "atomic-overhaul"
     end
@@ -343,27 +398,8 @@ end
 
 function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the icon you want to move to toName2
 
-    if fromType1 == "r" then
-        fromType1 = "recipe"
-    elseif fromType1 == "i" then
-        fromType1 = "item"
-    elseif fromType1 == "t" then
-        fromType1 = "technology"
-    else
-        log("Unknown type: " .. fromType1)
-        return
-    end
-
-    if toType2 == "r" then
-        toType2 = "recipe"
-    elseif toType2 == "i" then
-        toType2 = "item"
-    elseif toType2 == "t" then
-        toType2 = "technology"
-    else
-        log("Unknown type: " .. toType2)
-        return
-    end
+    fromType1 = resolveType(fromType1)
+    toType2 = resolveType(toType2)
 
     if data.raw[fromType1][fromName1] ~= nil then
         if data.raw[fromType1][toName2] ~= nil then
@@ -381,8 +417,9 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_size = data.raw[fromType1][fromName1].icon_size
                 if ao_debug == true then
                     log(
-                        fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
-                            "'")
+                        fromType1 ..
+                        "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
+                        "'")
                 end
             else
                 if ao_debug == true then
@@ -393,7 +430,7 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
                 if ao_debug == true then
                     log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." ..
-                            toName2 .. "'")
+                        toName2 .. "'")
                 end
             else
                 if ao_debug == true then
@@ -403,8 +440,9 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].pictures ~= nil then
                 data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
                 if ao_debug == true then
-                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
-                            "'")
+                    log(fromType1 ..
+                        "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
+                        "'")
                 end
             else
                 if ao_debug == true then
@@ -441,4 +479,23 @@ function addResearchData(name) -- supports tables
             log("Error: could not find " .. "technology" .. "." .. name)
         end
     end
+end
+
+function resolveType(type)
+    local resolvedType
+    if type == "i" then
+        resolvedType = "item"
+    elseif type == "r" then
+        resolvedType = "recipe"
+    elseif type == "t" then
+        resolvedType = "technology"
+    elseif type == "to" then
+        resolvedType = "tool"
+    elseif type == "is" then
+        resolvedType = "item-subgroup"
+    else
+        log("Unrecognised type: " .. type)
+        resolvedType = nil
+    end
+    return resolvedType
 end
