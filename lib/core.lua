@@ -1,10 +1,9 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
--- TODO: modify the modifyIngredients and modifyResults functions to replace every ingredient/result from the data.raw["recipe"] table.
+-- TODO: modify the modifyIngredients and modifyResults functions to replace every ingredient/result from the data.raw["recipe"] table, and test it.
 -- TODO: delete the old unnused functions
--- TODO: make a resolveType function
--- TODO: update the Glow function to support tables
+-- ! make sure to test everything before deleting stuff.
+-- TODO: update the Glow function to support tables and test it
 ------------------------------------------------------------------------------------------------------------------------------------------
-
 items = "prototypes.items."
 fluids = "prototypes.fluids."
 recipes = "prototypes.recipes."
@@ -23,16 +22,16 @@ debug_text = "AO-DEBUG: Compatibilty loaded for: "
 
 local tv = 1
 
-data:extend({ {
+data:extend({{
     type = "module-category",
     name = "thorium-module"
 
-} })
+}})
 
 function thorium_module_limitation()
-    return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
-        "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
-        "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
+    return {"uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
+            "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
+            "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing"}
 end
 
 function resourceGlow(item)
@@ -45,94 +44,97 @@ function resourceGlow(item)
         log("Error: Item " .. item .. " has not the right icon size (" .. data.raw["item"][item].icon_size .. ").")
     end
     data.raw["item"][item].pictures = {
-        layers = { {
+        layers = {{
             size = data.raw["item"][item].icon_size,
             filename = data.raw["item"][item].icon,
             scale = scale,
             mipmap_count = data.raw["item"][item].mipmap_count
         }, {
             draw_as_light = true,
-            flags = { "light" },
+            flags = {"light"},
             size = 64,
             filename = graphics .. "resource-light.png",
             scale = 0.25,
             mipmap_count = 4
-        } }
+        }}
     }
 end
 
+-- the glow function should support tables
 function Glow(name, typeOfItem)
     local scale
-    if data.raw["item"][name].icon_size == 32 then
-        scale = 0.5
-    elseif data.raw["item"][name].icon_size == 64 then
-        scale = 0.25
-    else
-        log("Error: Item " .. name .. " has not the right icon size (" .. data.raw["item"][name].icon_size .. ").")
-    end
-    if data.raw["item"][name] then
-        if typeofItem == nil or "resource" then
-            typeOfItem = "resource"
-            data.raw["item"][name].pictures = {
-                layers = { {
-                    size = data.raw["item"][name].icon_size,
-                    filename = data.raw["item"][name].icon,
-                    scale = scale,
-                    mipmap_count = data.raw["item"][name].mipmap_count
-                }, {
-                    draw_as_light = true,
-                    flags = { "light" },
-                    size = 64,
-                    filename = graphics .. "resource-light.png",
-                    scale = 0.25,
-                    mipmap_count = 4
-                } }
-            }
-            if ao_debug == true then
-                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
-            end
-        elseif typeOfItem == "cell" then
-            data.raw["item"][name].pictures = {
-                layers = { {
-                    size = data.raw["item"][name].icon_size,
-                    filename = data.raw["item"][name].icon,
-                    scale = scale,
-                    mipmap_count = data.raw["item"][name].mipmap_count
-                }, {
-                    draw_as_light = true,
-                    flags = { "light" },
-                    size = 64,
-                    filename = base_graphics .. "uranium-fuel-cell-light.png",
-                    scale = 0.25,
-                    mipmap_count = 4
-                } }
-            }
-            if ao_debug == true then
-                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
-            end
-        elseif typeOfItem == "fuel" then
-            data.raw["item"][name].pictures = {
-                layers = { {
-                    size = data.raw["item"][name].icon_size,
-                    filename = data.raw["item"][name].icon,
-                    scale = scale,
-                    mipmap_count = data.raw["item"][name].mipmap_count
-                }, {
-                    draw_as_light = true,
-                    flags = { "light" },
-                    size = 64,
-                    filename = base_graphics .. "nuclear-fuel-light.png",
-                    scale = 0.25,
-                    mipmap_count = 4
-                } }
-            }
-            if ao_debug == true then
-                log("successfully applied " .. typeOfItem .. "-glow on item." .. name)
-            end
+    for i in name do
+        if data.raw["item"][i].icon_size == 32 then
+            scale = 0.5
+        elseif data.raw["item"][i].icon_size == 64 then
+            scale = 0.25
         else
-            log("Error: Uknown typeOfItem: " .. typeOfItem)
+            log("Error: Item " .. i .. " has not the right icon size (" .. data.raw["item"][i].icon_size .. ").")
         end
-        log("Error: could not find item." .. name)
+        if data.raw["item"][i] then
+            if typeofItem == nil or "resource" then
+                typeOfItem = "resource"
+                data.raw["item"][i].pictures = {
+                    layers = {{
+                        size = data.raw["item"][i].icon_size,
+                        filename = data.raw["item"][i].icon,
+                        scale = scale,
+                        mipmap_count = data.raw["item"][i].mipmap_count
+                    }, {
+                        draw_as_light = true,
+                        flags = {"light"},
+                        size = 64,
+                        filename = graphics .. "resource-light.png",
+                        scale = 0.25,
+                        mipmap_count = 4
+                    }}
+                }
+                if ao_debug == true then
+                    log("successfully applied " .. typeOfItem .. "-glow on item." .. i)
+                end
+            elseif typeOfItem == "cell" then
+                data.raw["item"][i].pictures = {
+                    layers = {{
+                        size = data.raw["item"][i].icon_size,
+                        filename = data.raw["item"][i].icon,
+                        scale = scale,
+                        mipmap_count = data.raw["item"][i].mipmap_count
+                    }, {
+                        draw_as_light = true,
+                        flags = {"light"},
+                        size = 64,
+                        filename = base_graphics .. "uranium-fuel-cell-light.png",
+                        scale = 0.25,
+                        mipmap_count = 4
+                    }}
+                }
+                if ao_debug == true then
+                    log("successfully applied " .. typeOfItem .. "-glow on item." .. i)
+                end
+            elseif typeOfItem == "fuel" then
+                data.raw["item"][i].pictures = {
+                    layers = {{
+                        size = data.raw["item"][i].icon_size,
+                        filename = data.raw["item"][i].icon,
+                        scale = scale,
+                        mipmap_count = data.raw["item"][i].mipmap_count
+                    }, {
+                        draw_as_light = true,
+                        flags = {"light"},
+                        size = 64,
+                        filename = base_graphics .. "nuclear-fuel-light.png",
+                        scale = 0.25,
+                        mipmap_count = 4
+                    }}
+                }
+                if ao_debug == true then
+                    log("successfully applied " .. typeOfItem .. "-glow on item." .. i)
+                end
+            else
+                log("Error: Uknown typeOfItem: " .. typeOfItem)
+            end
+            log("Error: could not find item." .. i)
+        end
     end
 end
 
@@ -259,6 +261,20 @@ function modifyIngredients(name, ingredients, task)
                     log("Added '" .. serpent.block(ingredients) .. "' as ingredient to recipe." .. name)
                 end
             end
+        elseif task == "globalReplace" then
+            for _, recipe in pairs(data.raw.recipe) do
+                if recipe.ingredients then
+                    for _, ingredient in pairs(recipe.ingredients) do
+                        if ingredient.name or ingredient[1] == name then
+                            ingredient[1] = ingredients
+                            if ao_debug == true then
+                                log("Replaced ingredient '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
+                                        serpent.block(ingredients) .. "'")
+                            end
+                        end
+                    end
+                end
+            end
         else
             log("Unknown task: " .. task)
         end
@@ -289,6 +305,20 @@ function modifyResults(name, results, task)
                         log("Added '" .. serpent.block(results) .. "' as result to recipe." .. name)
                     end
                 end
+            elseif task == "globalReplace" then
+                for _, recipe in pairs(data.raw["recipe"]) do
+                    if recipe.results then
+                        for _, result in pairs(recipe.results) do
+                            if result.name == name then
+                                result.name = results
+                                if ao_debug == true then
+                                    log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
+                                            serpent.block(results) .. "'")
+                                end
+                            end
+                        end
+                    end
+                end
             else
                 log("Unknown task: " .. task)
             end
@@ -310,6 +340,18 @@ function modifyResults(name, results, task)
                     table.insert(data.raw["recipe"][name].result, results)
                     if ao_debug == true then
                         log("Added '" .. serpent.block(results) .. "' as result to recipe." .. name)
+                    end
+                end
+            elseif task == "globalReplace" then
+                for _, recipe in pairs(data.raw["recipe"]) do
+                    if recipe.result then
+                        if recipe.result.name == name then
+                            recipe.result.name = results
+                            if ao_debug == true then
+                                log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
+                                        serpent.block(results) .. "'")
+                            end
+                        end
                     end
                 end
             else
@@ -417,9 +459,8 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_size = data.raw[fromType1][fromName1].icon_size
                 if ao_debug == true then
                     log(
-                        fromType1 ..
-                        "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
-                        "'")
+                        fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
+                            "'")
                 end
             else
                 if ao_debug == true then
@@ -430,7 +471,7 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
                 if ao_debug == true then
                     log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." ..
-                        toName2 .. "'")
+                            toName2 .. "'")
                 end
             else
                 if ao_debug == true then
@@ -440,9 +481,8 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].pictures ~= nil then
                 data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
                 if ao_debug == true then
-                    log(fromType1 ..
-                        "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
-                        "'")
+                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
+                            "'")
                 end
             else
                 if ao_debug == true then
