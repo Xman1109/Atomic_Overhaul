@@ -1,74 +1,7 @@
-Glow("thorium-232")
-Glow("plutonium-239")
--- data.raw["item"]["deuterium-fuel-cell"].pictures = {
---     layers = {{
---         size = 64,
---         filename = data.raw["item"]["deuterium-fuel-cell"].icon,
---         scale = 0.25
---     }, {
---         draw_as_light = true,
---         flags = {"light"},
---         size = 64,
---         filename = base_graphics .. "uranium-fuel-cell-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     }}
--- }
-Glow("deuterium-fuel-cell", "cell")
--- data.raw["item"]["deuterium-fuel-cell-2"].pictures = {
---     layers = {{
---         size = 64,
---         filename = data.raw["item"]["deuterium-fuel-cell-2"].icon,
---         scale = 0.25
---     }, {
---         draw_as_light = true,
---         flags = {"light"},
---         size = 64,
---         filename = base_graphics .. "uranium-fuel-cell-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     }}
--- }
-Glow("deuterium-fuel-cell-2", "cell")
--- data.raw["item"]["thorium-plutonium-fuel-cell"].pictures = {
---     layers = {{
---         size = 64,
---         filename = data.raw["item"]["thorium-plutonium-fuel-cell"].icon,
---         scale = 0.25
---     }, {
---         draw_as_light = true,
---         flags = {"light"},
---         size = 64,
---         filename = base_graphics .. "uranium-fuel-cell-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     }}
--- }
-Glow("thorium-plutonium-fuel-cell", "cell")
--- data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
---     type = "item",
---     name = "plutonium",
---     amount_min = 1,
---     amount_max = 3
--- }, {
---     type = "item",
---     name = "uranium-238",
---     amount = 3
--- }, {
---     type = "item",
---     name = "nuclear-waste",
---     amount = 5
--- }, {
---     type = "item",
---     name = "research-data",
---     amount_min = 1,
---     amount_max = 3
--- }, {
---     type = "item",
---     name = "fusion-catalyst",
---     amount = 1
--- }}
-modifyResults("nuclear-fuel-reprocessing", {{
+Glow({ "thorium-232", "plutonium-239" })
+Glow({ "deuterium-fuel-cell", "deuterium-fuel-cell-2", "thorium-plutonium-fuel-cell", "thorium-fuel-cell",
+    "plutonium-fuel-cell" }, "cell")
+modifyResults("nuclear-fuel-reprocessing", { {
     type = "item",
     name = "plutonium",
     amount_min = 1,
@@ -90,31 +23,8 @@ modifyResults("nuclear-fuel-reprocessing", {{
     type = "item",
     name = "fusion-catalyst",
     amount = 1
-}})
--- data.raw["recipe"]["thorium-fuel-reprocessing"].results = {{
---     type = "item",
---     name = "thorium",
---     amount_min = 2,
---     amount_max = 3
--- }, {
---     type = "item",
---     name = "uranium-235",
---     amount = 3
--- }, {
---     type = "item",
---     name = "nuclear-waste",
---     amount = 15
--- }, {
---     type = "item",
---     name = "research-data",
---     amount_min = 1,
---     amount_max = 3
--- }, {
---     type = "item",
---     name = "fusion-catalyst",
---     amount = 1
--- }}
-modifyResults("thorium-fuel-reprocessing", {{
+} })
+modifyResults("thorium-fuel-reprocessing", { {
     type = "item",
     name = "thorium",
     amount_min = 2,
@@ -136,8 +46,7 @@ modifyResults("thorium-fuel-reprocessing", {{
     type = "item",
     name = "fusion-catalyst",
     amount = 1
-}})
-
+} })
 regroup("r", "plutonium-fuel-cell", nil, data.raw["recipe"]["plutonium-fuel-cell-recipe"].subgroup,
     data.raw["recipe"]["plutonium-fuel-cell-recipe"].order)
 regroup("r", "empty-nuclear-fuel-cell", nil, "fuel-cells", "z")
@@ -168,7 +77,7 @@ iconizer("r", "empty-fuel-cell-recipe", "i", "empty-nuclear-fuel-cell")
 
 data.raw["technology"]["thorium-plutonium-fuel-cell"].icon_size = 64
 
-modifyEffects("ao-graphite-processing", {{
+modifyEffects("ao-graphite-processing", { {
     type = "unlock-recipe",
     recipe = "centrifuge"
 }, {
@@ -180,9 +89,9 @@ modifyEffects("ao-graphite-processing", {{
 }, {
     type = "unlock-recipe",
     recipe = "graphite-fuel-cell-recipe"
-}})
+} })
 
-modifyEffects("plutonium-processing", {{
+modifyEffects("plutonium-processing", { {
     type = "unlock-recipe",
     recipe = "plutonium-fuel-cell"
 }, {
@@ -191,11 +100,11 @@ modifyEffects("plutonium-processing", {{
 }, {
     type = "unlock-recipe",
     recipe = "plutonium-nucleosynthesis"
-}})
+} })
 
-modifyPrerequisites("thorium-processing", {"MOX-fuel-reprocessing"})
-modifyPrerequisites("deuterium-processing", {"thorium-fuel-reprocessing"})
-modifyPrerequisites("thorium-plutonium-fuel-cell", {"thorium-processing", "plutonium-processing"})
+modifyPrerequisites("thorium-processing", { "MOX-fuel-reprocessing" })
+modifyPrerequisites("deuterium-processing", { "thorium-fuel-reprocessing" })
+modifyPrerequisites("thorium-plutonium-fuel-cell", { "thorium-processing", "plutonium-processing" })
 addResearchData("thorium-processing")
 
 for _, recipe in pairs(data.raw["recipe"]) do
@@ -258,14 +167,14 @@ for _, recipe in pairs(data.raw["recipe"]) do
     end
 end
 
-local list = {"thorium-processing", "thorium-fuel-reprocessing", "thorium-plutonium-fuel-cell", "deuterium-processing",
-              "deuterium-fuel-cell-2", "deuterium-fuel-reprocessing"}
+local list = { "thorium-processing", "thorium-fuel-reprocessing", "thorium-plutonium-fuel-cell", "deuterium-processing",
+    "deuterium-fuel-cell-2", "deuterium-fuel-reprocessing" }
 for _, tech in pairs(list) do
-    data.raw["technology"][tech].unit.ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1},
-                                                     {"chemical-science-pack", 1}, {"production-science-pack", 1},
-                                                     {"research-data", 1}}
+    data.raw["technology"][tech].unit.ingredients = { { "automation-science-pack", 1 }, { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 }, { "production-science-pack", 1 },
+        { "research-data", 1 } }
 end
 
-hideType("r", {"plutonium-fuel-cell-recipe", "empty-fuel-cell-recipe"})
-hideType("t", {"plutonium-fuel-cell", "bobingabout-enrichment-process"})
-hideType("i", {"thorium-depleted-cell", "empty-fuel-cell"})
+hideType("r", { "plutonium-fuel-cell-recipe", "empty-fuel-cell-recipe" })
+hideType("t", { "plutonium-fuel-cell", "bobingabout-enrichment-process" })
+hideType("i", { "thorium-depleted-cell", "empty-fuel-cell" })

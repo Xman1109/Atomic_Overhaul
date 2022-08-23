@@ -3,6 +3,7 @@ function checkSave()
     game.print(
         "\nNOTE: If Atomic Overhaul has been added to an already existing savegame, you may need to troubleshoot your nuclear processing.\n")
 end
+
 script.on_init(checkSave)
 
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one

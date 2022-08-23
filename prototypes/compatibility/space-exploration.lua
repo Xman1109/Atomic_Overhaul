@@ -1,8 +1,8 @@
 if settings.startup["se-addon"].value == true then
     table.insert(data.raw["technology"]["se-antimatter-reactor"].prerequisites, "space-reactor")
     data.raw["reactor"]["nuclear-reactor"].collision_mask =
-        data.raw["transport-belt"]["transport-belt"].collision_mask or
-            data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
+    data.raw["transport-belt"]["transport-belt"].collision_mask or
+        data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
     data.raw["tool"]["research-data"].order = "zz"
     -- data.raw["recipe"]["research-data-recipe"].order = "zz"
     regroup("r", "research-data-recipe", nil, nil, "zz")
@@ -29,7 +29,7 @@ if settings.startup["se-addon"].value == true then
     --     amount_min = 1,
     --     amount_max = 3
     -- }}
-    modifyResults("nuclear-fuel-reprocessing", {{
+    modifyResults("nuclear-fuel-reprocessing", { {
         type = "item",
         name = "plutonium",
         amount_min = 1,
@@ -47,9 +47,11 @@ if settings.startup["se-addon"].value == true then
         name = "research-data",
         amount_min = 1,
         amount_max = 3
-    }})
+    } })
 
     if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
+        modifyPrerequisites("uranium-processing", { "graphite-fuel-reprocessing", "advanced-electronics-2" })
+
         -- data.raw["recipe"]["uranium-processing"].order = "b"
         -- data.raw["recipe"]["uranium-processing"].group = "atomic-overhaul"
         -- data.raw["recipe"]["uranium-processing"].subgroup = "resources"
