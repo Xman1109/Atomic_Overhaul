@@ -1,9 +1,3 @@
-------------------------------------------------------------------------------------------------------------------------------------------
--- TODO: modify the modifyIngredients and modifyResults functions to replace every ingredient/result from the data.raw["recipe"] table, and test it.
--- TODO: delete the old unnused functions
--- ! make sure to test everything before deleting stuff.
--- TODO: update the Glow function to support tables and test it
-------------------------------------------------------------------------------------------------------------------------------------------
 items = "prototypes.items."
 fluids = "prototypes.fluids."
 recipes = "prototypes.recipes."
@@ -32,33 +26,6 @@ function thorium_module_limitation()
     return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
         "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
-end
-
-function resourceGlow(item)
-    local scale
-    if data.raw["item"][item].icon_size == 32 then
-        scale = 0.5
-    elseif data.raw["item"][item].icon_size == 64 then
-        scale = 0.25
-    else
-        log("Error: Item " ..
-            item .. " has not the right icon size (" .. data.raw["item"][item].icon_size .. ")." .. "\n")
-    end
-    data.raw["item"][item].pictures = {
-        layers = { {
-            size = data.raw["item"][item].icon_size,
-            filename = data.raw["item"][item].icon,
-            scale = scale,
-            mipmap_count = data.raw["item"][item].mipmap_count
-        }, {
-            draw_as_light = true,
-            flags = { "light" },
-            size = 64,
-            filename = graphics .. "resource-light.png",
-            scale = 0.25,
-            mipmap_count = 4
-        } }
-    }
 end
 
 -- the glow function should support tables
@@ -281,21 +248,10 @@ function hideType(Type, name) -- supports tables
     end
 end
 
-function replaceEffects(t, effects)
-    if data.raw["technology"][t] then
-        data.raw["technology"][t].effects = effects
-        if ao_debug == true then
-            log("Replaced effects of technology." .. t .. " with " .. serpent.block(effects) .. "\n")
-        end
-    else
-        log("Error: could not find technology." .. t .. "\n")
-    end
-end
-
 function modifyEffects(name, effects, task)
     if ao_debug == true then
         log("Trying to modify effects of recipe." ..
-            name .. " with " .. serpent.block(effects) .. " with Task " .. tostring(task) .. "\n")
+            name .. " with " .. serpent.block(effects) .. " with Task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["technology"][name] then
         if task == "replace" or task == nil then
@@ -319,28 +275,17 @@ function modifyEffects(name, effects, task)
                 end
             end
         else
-            log("Unknown task: " .. task .. "\n")
+            log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
         end
     else
         log("Error: could not find technology." .. name .. "\n")
     end
 end
 
-function replaceIngredients(r, ingredients)
-    if data.raw["recipe"][r] then
-        data.raw["recipe"][r].ingredients = ingredients
-        if ao_debug == true then
-            log("Replaced ingredients of recipe." .. r .. " with " .. serpent.block(ingredients) .. "\n")
-        end
-    else
-        log("Error: could not find recipe." .. r .. "\n")
-    end
-end
-
 function modifyIngredients(name, ingredients, task)
     if ao_debug == true then
         log("Trying to modify ingredients of recipe." ..
-            name .. " with " .. serpent.block(ingredients) .. " with Task " .. tostring(task) .. "\n")
+            name .. " with " .. serpent.block(ingredients) .. " with Task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["recipe"][name] then
         if task == "replace" or task == nil then
@@ -377,7 +322,7 @@ function modifyIngredients(name, ingredients, task)
                 end
             end
         else
-            log("Unknown task: " .. task .. "\n")
+            log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
         end
     else
         log("Error: could not find recipe." .. name .. "\n")
@@ -387,7 +332,7 @@ end
 function modifyResults(name, results, task)
     if ao_debug == true then
         log("Trying to use modifyResults on recipe." ..
-            name .. " with " .. serpent.block(results) .. " and task " .. tostring(task) .. "\n")
+            name .. " with " .. serpent.block(results) .. " and task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["recipe"][name] then
         if data.raw["recipe"][name].results then
@@ -425,7 +370,7 @@ function modifyResults(name, results, task)
                     end
                 end
             else
-                log("Unknown task: " .. task .. "\n")
+                log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
             end
         elseif data.raw["recipe"][name].result then
             if task == "replace" or task == nil then
@@ -460,7 +405,7 @@ function modifyResults(name, results, task)
                     end
                 end
             else
-                log("Unknown task: " .. task .. "\n")
+                log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
             end
         else
             log("Error: recipe." .. name .. " does not have a result or results field" .. "\n")
@@ -470,21 +415,10 @@ function modifyResults(name, results, task)
     end
 end
 
-function replacePrerequisites(t, prerequisites)
-    if data.raw["technology"][t] then
-        data.raw["technology"][t].prerequisites = prerequisites
-        if ao_debug == true then
-            log("Replaced prerequisites of technology." .. t .. " with " .. serpent.block(prerequisites) .. "\n")
-        end
-    else
-        log("Error: could not find technology." .. t .. "\n")
-    end
-end
-
 function modifyPrerequisites(name, prerequisites, task)
     if ao_debug == true then
         log("Trying to use modifyPrerequisites on technology." ..
-            name .. " with " .. serpent.block(prerequisites) .. " and task " .. tostring(task) .. "\n")
+            name .. " with " .. serpent.block(prerequisites) .. " and task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["technology"][name] then
         if task == "replace" or task == nil then
@@ -507,7 +441,7 @@ function modifyPrerequisites(name, prerequisites, task)
                 end
             end
         else
-            log("Unknown task: " .. task .. "\n")
+            log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
         end
     else
         log("Error: could not find technology." .. name .. "\n")

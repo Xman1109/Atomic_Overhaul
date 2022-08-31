@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.9
-Date: ????
+Date: 2022-08-31
   Changes:
+    - A LOT of code cleanup and optimization.
+    - Fixed a bug with SE where Uranium Processing could not be researched
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.8
 Date: 2022-08-01

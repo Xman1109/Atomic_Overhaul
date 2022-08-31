@@ -1,111 +1,22 @@
------------------------------------------------------------------------------------------------
--- MadClown01 if you want me to change something then create an issue/pull request on github.--
------------------------------------------------------------------------------------------------
-
--- cant test new functions because of an error with Angels Petrochem
-
--- make the resource items glow in the dark
 Glow({ "thorium-232", "plutonium-239", "polonium-210", "caesium-137", "strontium-90", "protactinium-231", "zinc-65",
     "cobalt-60" })
 Glow({ "hypernuclear-fuel", "turbonuclear-fuel", "radiothermal-fuel", "superradiothermal-fuel", "ultraradiothermal-fuel" }
     , "fuel")
-
--- make the fuel items glow in the dark
--- data.raw["item"]["hypernuclear-fuel"].pictures = {
---     layers = { {
---         size = 32, -- please try to make 64x64 icons with 4 mipmaps
---         filename = "__Clowns-AngelBob-Nuclear__/graphics/icons/hypernuclear-fuel.png",
---         scale = 0.50
---     }, {
---         draw_as_light = true,
---         flags = { "light" },
---         size = 64,
---         filename = base_graphics .. "nuclear-fuel-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     } }
--- }
--- data.raw["item"]["turbonuclear-fuel"].pictures = {
---     layers = { {
---         size = 32, -- please try to make 64x64 icons with 4 mipmaps
---         filename = "__Clowns-AngelBob-Nuclear__/graphics/icons/turbonuclear-fuel.png",
---         scale = 0.50
---     }, {
---         draw_as_light = true,
---         flags = { "light" },
---         size = 64,
---         filename = base_graphics .. "nuclear-fuel-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     } }
--- }
--- data.raw["item"]["radiothermal-fuel"].pictures = {
---     layers = { {
---         size = 32, -- please try to make 64x64 icons with 4 mipmaps
---         filename = "__Clowns-AngelBob-Nuclear__/graphics/icons/radiothermal-fuel.png",
---         scale = 0.50
---     }, {
---         draw_as_light = true,
---         flags = { "light" },
---         size = 64,
---         filename = base_graphics .. "nuclear-fuel-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     } }
--- }
--- data.raw["item"]["superradiothermal-fuel"].pictures = {
---     layers = { {
---         size = 32, -- please try to make 64x64 icons with 4 mipmaps
---         filename = "__Clowns-AngelBob-Nuclear__/graphics/icons/superradiothermal-fuel.png",
---         scale = 0.50
---     }, {
---         draw_as_light = true,
---         flags = { "light" },
---         size = 64,
---         filename = base_graphics .. "nuclear-fuel-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     } }
--- }
--- data.raw["item"]["ultraradiothermal-fuel"].pictures = {
---     layers = { {
---         size = 32, -- please try to make 64x64 icons with 4 mipmaps
---         filename = "__Clowns-AngelBob-Nuclear__/graphics/icons/ultraradiothermal-fuel.png",
---         scale = 0.50
---     }, {
---         draw_as_light = true,
---         flags = { "light" },
---         size = 64,
---         filename = base_graphics .. "nuclear-fuel-light.png",
---         scale = 0.25,
---         mipmap_count = 4
---     } }
--- }
-
-data.raw["recipe"]["advanced-nuclear-fuel-reprocessing"].order = "b[nuclear-fuel-reprocessing]-c[advanced-nuclear-fuel-reprocessing]"
-data.raw["recipe"]["thorium-nuclear-fuel-reprocessing"].order = "f"
-data.raw["recipe"]["advanced-thorium-nuclear-fuel-reprocessing"].order = "g"
-data.raw["recipe"]["advanced-thorium-nuclear-fuel-reprocessing|b"].order = "h"
-data.raw["recipe"]["nuclear-fuel"].subgroup = "fuel"
-data.raw["recipe"]["nuclear-fuel"].order = "a"
-data.raw["recipe"]["hypernuclear-fuel"].subgroup = "fuel"
-data.raw["recipe"]["hypernuclear-fuel"].order = "z"
-data.raw["recipe"]["turbonuclear-fuel"].subgroup = "fuel"
-data.raw["recipe"]["turbonuclear-fuel"].order = "z"
-data.raw["recipe"]["radiothermal-fuel"].subgroup = "fuel"
-data.raw["recipe"]["radiothermal-fuel"].order = "z"
-data.raw["recipe"]["superradiothermal-fuel"].subgroup = "fuel"
-data.raw["recipe"]["superradiothermal-fuel"].order = "z"
-data.raw["recipe"]["ultraradiothermal-fuel"].subgroup = "fuel"
-data.raw["recipe"]["ultraradiothermal-fuel"].order = "z"
-data.raw["recipe"]["thorium-processing"].subgroup = "resources"
-data.raw["recipe"]["thorium-processing"].order = "g"
-data.raw["recipe"]["thorium-purification"].subgroup = "resources"
-data.raw["recipe"]["thorium-purification"].order = "h"
-data.raw["recipe"]["thorium-mixed-oxide"].subgroup = "fuel-cells"
-data.raw["recipe"]["thorium-mixed-oxide"].order = "g"
-data.raw["recipe"]["thorium-fuel-cell"].subgroup = "fuel-cells"
-data.raw["recipe"]["thorium-fuel-cell"].order = "f"
+regroup("r", "advanced-nuclear-fuel-reprocessing", nil, nil,
+    "b[nuclear-fuel-reprocessing]-c[advanced-nuclear-fuel-reprocessing]")
+regroup("r", "thorium-nuclear-fuel-reprocessing", nil, nil, "f")
+regroup("r", "advanced-thorium-nuclear-fuel-reprocessing", nil, nil, "g")
+regroup("r", "advanced-thorium-nuclear-fuel-reprocessing|b", nil, nil, "h")
+regroup("r", "nuclear-fuel", nil, "fuel", "a")
+regroup("r", "hypernuclear-fuel", nil, "fuel", "b")
+regroup("r", "turbonuclear-fuel", nil, "fuel", "c")
+regroup("r", "radiothermal-fuel", nil, "fuel", "d")
+regroup("r", "superradiothermal-fuel", nil, "fuel", "e")
+regroup("r", "ultraradiothermal-fuel", nil, "fuel", "f")
+regroup("r", "thorium-processing", nil, "resources", "g")
+regroup("r", "thorium-purification", nil, "resources", "h")
+regroup("r", "thorium-mixed-oxide", nil, "fuel-cells", "g")
+regroup("r", "thorium-fuel-cell", nil, "fuel-cells", "f")
 data.raw["item"]["thorium-fuel-cell"].icon = graphics .. "thorium-fuel-cell.png"
 data.raw["item"]["thorium-fuel-cell"].icon_size = 64
 data.raw["item"]["thorium-fuel-cell"].icon_mipmaps = 4
@@ -115,7 +26,7 @@ data.raw["item"]["used-up-thorium-fuel-cell"].icon_mipmaps = 4
 data.raw["recipe"]["nuclear-fuel-reprocessing"].icon = base_graphics .. "nuclear-fuel-reprocessing.png"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].icon_size = 64
 data.raw["recipe"]["nuclear-fuel-reprocessing"].icon_mipmaps = 4
-data.raw["recipe"]["nuclear-fuel-reprocessing"].results = { {
+modifyResults("nuclear-fuel-reprocessing", { {
     type = "item",
     name = "plutonium",
     amount_min = 1,
@@ -133,64 +44,51 @@ data.raw["recipe"]["nuclear-fuel-reprocessing"].results = { {
     name = "research-data",
     amount_min = 1,
     amount_max = 3
-} }
-data.raw["recipe"]["plutonium-atomic-bomb"].hidden = true
-data.raw["item-subgroup"]["clowns-uranium-centrifuging"].group = "atomic-overhaul"
-data.raw["item-subgroup"]["clowns-uranium-centrifuging"].order = "z"
-data.raw["item-subgroup"]["clowns-nuclear-cells"].group = "atomic-overhaul"
-data.raw["item-subgroup"]["clowns-nuclear-cells"].order = "z"
-data.raw["technology"]["plutonium-fuel"].hidden = true
-data.raw["recipe"]["plutonium-fuel-recipe"].hidden = true
-data.raw["technology"]["radiothermal-fuel-1"].prerequisites = { "plutonium-processing" }
-data.raw["technology"]["thorium-module"].prerequisites = { "thorium-ore-processing" }
-table.insert(data.raw["technology"]["thorium-ore-processing"].effects, {
+} })
+hideType("r", { "plutonium-atomic-bomb", "plutonium-fuel-recipe", "kovarex-enrichment-process", "uranium-processing" })
+hideType("t", { "thorium-processing", "plutonium-fuel", "kovarex-enrichment-process" })
+regroup("is", "clowns-uranium-centrifuging", "AO", nil, "z")
+regroup("is", "clowns-nuclear-cells", "AO", nil, "z")
+modifyPrerequisites("radiothermal-fuel-1", { "plutonium-processing" })
+
+modifyPrerequisites("thorium-module", { "thorium-ore-processing" })
+modifyEffects("thorium-ore-processing", { {
     type = "unlock-recipe",
     recipe = "thorium-recipe"
-})
-table.insert(data.raw["technology"]["thorium-ore-processing"].prerequisites, "MOX-fuel-reprocessing")
-data.raw["technology"]["thorium-nuclear-fuel-reprocessing-2"].prerequisites = { "thorium-fuel-reprocessing" }
-data.raw["technology"]["thorium-processing"].hidden = true
-data.raw["technology"]["thorium-fuel-reprocessing"].prerequisites = { "thorium-ore-processing" }
-table.insert(data.raw["technology"]["uranium-processing"].effects, {
+} }, "add")
+modifyPrerequisites("thorium-ore-processing", { "MOX-fuel-reprocessing" }, "add")
+modifyPrerequisites("thorium-nuclear-fuel-reprocessing-2", { "thorium-fuel-reprocessing" })
+modifyPrerequisites("thorium-fuel-reprocessing", { "thorium-ore-processing" })
+modifyEffects("uranium-processing", { {
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-20%-ore"
-})
-table.insert(data.raw["technology"]["uranium-processing"].effects, {
+}, {
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-35%"
-})
-data.raw["recipe"]["uranium-fuel-cell"].ingredients = { { "35%-uranium", 1 }, { "graphite", 19 },
-    { "empty-fuel-cell", 10 } }
-data.raw["technology"]["mixed-oxide-fuel"].effects = { {
+} }, "add")
+modifyIngredients("uranium-fuel-cell", { { "35%-uranium", 1 }, { "graphite", 19 }, { "empty-fuel-cell", 10 } })
+modifyEffects("mixed-oxide-fuel", { {
     type = "unlock-recipe",
     recipe = "thorium-mixed-oxide"
-} }
+} }, "add")
 data.raw["recipe"]["thorium-mixed-oxide"].icon = graphics .. "thorium-fuel-cell.png"
 data.raw["recipe"]["thorium-mixed-oxide"].icon_size = 64
 data.raw["recipe"]["thorium-mixed-oxide"].icon_mipmaps = 4
-table.insert(data.raw["technology"]["thorium-ore-processing"].effects, {
+modifyEffects("thorium-ore-processing", { {
     type = "unlock-recipe",
     recipe = "thorium-processing"
-})
-data.raw["technology"]["kovarex-enrichment-process"].hidden = true
-data.raw["recipe"]["kovarex-enrichment-process"].hidden = true
-data.raw["recipe"]["uranium-processing"].hidden = true
-
--- remove the uranium-processing recipe from the uranium-processing technology
+} }, "add")
 for i, effect in pairs(data.raw["technology"]["uranium-processing"].effects) do
     if effect.recipe == "uranium-processing" then
         table.remove(data.raw["technology"]["uranium-processing"].effects, i)
     end
 end
-
 if mods["RealisticReactors"] then
     data.raw["recipe"]["mixed-oxide"].hidden = true
     if ao_debug == true then
         log(debug_text .. "RealisticReactors")
     end
 end
-
--- change every recipe with the ingredient thorium to thorium-232
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
@@ -200,7 +98,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- do the same thing for the results
+
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
@@ -210,8 +108,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
-
--- change every recipe with the ingredient plutonium to plutonium-239
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
@@ -221,7 +117,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- do the same thing for the results
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
@@ -231,20 +126,12 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
--- give every tech in list the research-data
-local list = { "nuclear-fuel-reprocessing-2", "thorium-nuclear-fuel-reprocessing-2", "thorium-ore-processing",
+addResearchData({ "nuclear-fuel-reprocessing-2", "thorium-nuclear-fuel-reprocessing-2", "thorium-ore-processing",
     "thermonuclear-bomb", "advanced-uranium-processing-1", "advanced-uranium-processing-2",
-    "radiothermal-fuel-1", "radiothermal-fuel-2", "radiothermal-fuel-3", "nuclear-fuel-2", "nuclear-fuel-3" }
-for _, tech in pairs(list) do
-    table.insert(data.raw["technology"][tech].unit.ingredients, {
-        type = "item",
-        name = "research-data",
-        amount = 1
-    })
-end
+    "radiothermal-fuel-1", "radiothermal-fuel-2", "radiothermal-fuel-3", "nuclear-fuel-2", "nuclear-fuel-3" })
 
 local list2 = { "centrifuge", "clowns-centrifuging-20%-ore", "clowns-centrifuging-35%", "uranium-fuel-cell" }
--- check if the recipes in the effects are the same as in list2 then remove the recipes in list2 from the nuclear-power tech
+
 for _, tech in pairs(list2) do
     for _, effect in pairs(data.raw["technology"]["nuclear-power"].effects) do
         if effect.recipe == tech then
@@ -252,14 +139,12 @@ for _, tech in pairs(list2) do
         end
     end
 end
-
 local list3 = { "thorium-nuclear-fuel-reprocessing", "advanced-nuclear-fuel-reprocessing",
     "advanced-thorium-nuclear-fuel-reprocessing", "advanced-thorium-nuclear-fuel-reprocessing|b" }
--- set the subgroup from every recipe in list3 to reprocessing from atomic-overhaul
+
 for _, recipe in pairs(list3) do
     data.raw["recipe"][recipe].subgroup = "reprocessing"
 end
-
 data:extend({ {
     type = "recipe",
     name = "atomic-bomb",

@@ -1,26 +1,6 @@
-data.raw["recipe"]["nuclear-fuel"].icon = "__base__/graphics/icons/nuclear-fuel.png"
+data.raw["recipe"]["nuclear-fuel"].icon = base_graphics .. "nuclear-fuel.png"
 data.raw["recipe"]["nuclear-fuel"].icon_size = 64
 data.raw["recipe"]["nuclear-fuel"].icon_mipmaps = 4
-
--- data.raw["recipe"]["nuclear-fuel-reprocessing"].results = {{
---     type = "item",
---     name = "plutonium",
---     amount_min = 1,
---     amount_max = 3
--- }, {
---     type = "item",
---     name = "uranium-238",
---     amount = 3
--- }, {
---     type = "item",
---     name = "nuclear-waste",
---     amount = 5
--- }, {
---     type = "item",
---     name = "research-data",
---     amount_min = 1,
---     amount_max = 3
--- }}
 modifyResults("nuclear-fuel-reprocessing", { {
     type = "item",
     name = "plutonium",
@@ -40,37 +20,15 @@ modifyResults("nuclear-fuel-reprocessing", { {
     amount_min = 1,
     amount_max = 3
 } })
-
--- data.raw["recipe"]["breeder-fuel-cell"].subgroup = "fuel-cells"
--- data.raw["recipe"]["breeder-fuel-cell"].order = "c[plutonium-fuel-cell-recipe]-d[breeder-fuel-cell]"
-regroup("breeder-fuel-cell", nil, "fuel-cells", "c[plutonium-fuel-cell-recipe]-d[breeder-fuel-cell]")
--- data.raw["recipe"]["breeder-fuel-cell"].ingredients = {{"empty-fuel-cell", 10}, {"plutonium", 1}, {"uranium-238", 19}}
+regroup("r", "breeder-fuel-cell", nil, "fuel-cells", "c[plutonium-fuel-cell-recipe]-d[breeder-fuel-cell]")
 modifyIngredients("breeder-fuel-cell", { { "empty-fuel-cell", 10 }, { "plutonium", 1 }, { "uranium-238", 19 } })
-
--- data.raw["recipe"]["breeder-fuel-reprocessing"].subgroup = "reprocessing"
--- data.raw["recipe"]["breeder-fuel-reprocessing"].order = "c[plutonium-fuel-reprocessing]-d[breeder-fuel-reprocessing]"
 regroup("r", "breeder-fuel-reprocessing", nil, "reprocessing",
     "c[plutonium-fuel-reprocessing]-d[breeder-fuel-reprocessing]")
-
--- data.raw["technology"]["mox-fuel"].hidden = true
 hideType("t", "mox-fuel")
--- data.raw["recipe"]["nuclear-fuel-pu"].hidden = true
--- data.raw["recipe"]["mox-fuel-cell"].hidden = true
 hideType("r", { "mox-fuel-cell", "nuclear-fuel-pu" })
-
--- data.raw["technology"]["nuclear-rocket-fuel"].effects = { {
---     type = "unlock-recipe",
---     recipe = "nuclear-fuel"
--- }, {
---     type = "unlock-recipe",
---     recipe = "plutonium-fuel-recipe"
--- } }
 modifyEffects("nuclear-rocket-fuel", { {
     type = "unlock-recipe",
     recipe = "nuclear-fuel"
-}, {
-    type = "unlock-recipe",
-    recipe = "plutonium-fuel-recipe"
 } })
 
 data:extend({ {
