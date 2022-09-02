@@ -22,3 +22,13 @@ else
     end
     fuel_cell = settings.startup["fuel-cell-ingredient"].default_value
 end
+
+cmt.iridium = {
+    --copy from SE
+}
+cmt.holmium = {
+    --copy from SE
+}
+cmt.beryllium = {
+    --copy from SE
+}

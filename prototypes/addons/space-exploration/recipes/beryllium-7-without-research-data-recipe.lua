@@ -7,6 +7,7 @@ data:extend(
         icon_size = 64,
         icon_mipmaps = 4,
         category = "space-radiation",
+        crafting_machine_tint = cmt.beryllium,
         energy_required = 50,
         enabled = false,
         order = "za",

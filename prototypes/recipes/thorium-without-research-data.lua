@@ -7,6 +7,7 @@ data:extend(
         icon_size = 64,
         icon_mipmaps = 4,
         category = "centrifuging",
+        crafting_machine_tint = cmt.thorium,
         energy_required = 50,
         enabled = false,
         order = "e",

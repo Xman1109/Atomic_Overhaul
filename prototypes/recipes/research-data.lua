@@ -6,6 +6,7 @@ data:extend(
         icon = graphics .. "research-data.png",
         icon_size = 64, icon_mipmaps = 4,
         category = "centrifuging",
+        crafting_machine_tint = cmt.thorium,
         energy_required = 30,
         enabled = false,
         order = "z",

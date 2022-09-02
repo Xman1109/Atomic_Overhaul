@@ -6,6 +6,7 @@ data:extend(
         icon = se_addon_graphics .. "beryllium-7.png",
         icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
+        crafting_machine_tint = cmt.beryllium,
         energy_required = 60,
         enabled = false,
         order = "zc",

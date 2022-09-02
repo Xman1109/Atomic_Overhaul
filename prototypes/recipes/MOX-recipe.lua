@@ -6,6 +6,7 @@ data:extend(
         icon = graphics .. "MOX.png",
         icon_size = 64, icon_mipmaps = 4,
         category = "centrifuging",
+        crafting_machine_tint = cmt.MOX,
         energy_required = 20,
         enabled = false,
         order = "d",

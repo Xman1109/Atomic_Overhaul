@@ -8,6 +8,8 @@ compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
 images = "__Atomic_Overhaul__/graphics/images/"
 
+cmt ={} -- crafting machine tint
+
 DEFAULT = {}
 DEFAULT.item = {}
 DEFAULT.recipe = {}
@@ -593,7 +595,7 @@ end
 
 function resolveType(type)
     local resolvedType
-    if type == "i" then
+    if type == "i"graphics .. " then
         resolvedType = "item"
     elseif type == "r" then
         resolvedType = "recipe"
@@ -609,3 +611,24 @@ function resolveType(type)
     end
     return resolvedType
 end
+
+cmt.graphite = {
+    primary = { 52, 54, 64 },
+    secondary = { 79, 82, 94 },
+    tertiary = { 32, 33, 38 },
+}
+cmt.plutonium = {
+    primary = { 101, 160, 103 },
+    secondary = { 107, 153, 112 },
+    tertiary = { 76, 143, 69 },
+}
+cmt.MOX = {
+    primary = { 111, 131, 69 },
+    secondary = { 151, 167, 83 },
+    tertiary = { 117, 157, 50 },
+}
+cmt.thorium = {
+    primary = { 199, 206, 118 },
+    secondary = { 154, 163, 99 },
+    tertiary = { 162, 173, 102 },
+}

@@ -6,6 +6,7 @@ data:extend(
         icon = se_addon_graphics .. "iridium-fuel-cell.png",
         icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
+        crafting_machine_tint = cmt.iridium,
         energy_required = 50,
         enabled = false,
         order = "za",

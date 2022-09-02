@@ -6,6 +6,7 @@ data:extend(
         icon = se_addon_graphics .. "holmium-fuel-cell.png",
         icon_size = 64, icon_mipmaps = 4,
         category = "space-radiation",
+        crafting_machine_tint = cmt.holmium,
         energy_required = 50,
         enabled = false,
         order = "zb",
