@@ -23,12 +23,82 @@ else
     fuel_cell = settings.startup["fuel-cell-ingredient"].default_value
 end
 
+-- Space Exploration's color palette
 cmt.iridium = {
-    --copy from SE
+    primary = {
+        r = 1.000,
+        g = 0.958,
+        b = 0.000,
+        a = 1.000
+    },
+    secondary = {
+        r = 1.000,
+        g = 0.852,
+        b = 0.172,
+        a = 1.000
+    },
+    tertiary = {
+        r = 0.876,
+        g = 0.869,
+        b = 0.597,
+        a = 1.000
+    },
+    quaternary = {
+        r = 0.969,
+        g = 1.000,
+        b = 0.019,
+        a = 1.000
+    },
 }
 cmt.holmium = {
-    --copy from SE
+    primary = {
+        a = 1,
+        g = 0.338,
+        b = 0.482,
+        r = 0.965
+    },
+    quaternary = {
+        a = 1,
+        g = 0.191,
+        b = 0.763,
+        r = 0.939
+    },
+    secondary = {
+        a = 1,
+        g = 0.222,
+        b = 0.560,
+        r = 0.831
+    },
+    tertiary = {
+        a = 1,
+        g = 0.443,
+        b = 0.728,
+        r = 0.818,
+    }
 }
 cmt.beryllium = {
-    --copy from SE
+    primary = {
+        r = 0.338,
+        g = 0.965,
+        b = 0.482,
+        a = 1.000
+    },
+    quaternary = {
+        r = 0.191,
+        g = 0.939,
+        b = 0.763,
+        a = 1.000
+    },
+    secondary = {
+        r = 0.222,
+        g = 0.831,
+        b = 0.56,
+        a = 1.000
+    },
+    tertiary = {
+        r = 0.443,
+        g = 0.818,
+        b = 0.728,
+        a = 1.000
+    }
 }

@@ -8,7 +8,7 @@ compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
 images = "__Atomic_Overhaul__/graphics/images/"
 
-cmt ={} -- crafting machine tint
+cmt = {} -- crafting machine tint
 
 DEFAULT = {}
 DEFAULT.item = {}
@@ -595,7 +595,7 @@ end
 
 function resolveType(type)
     local resolvedType
-    if type == "i"graphics .. " then
+    if type == "i" then
         resolvedType = "item"
     elseif type == "r" then
         resolvedType = "recipe"
