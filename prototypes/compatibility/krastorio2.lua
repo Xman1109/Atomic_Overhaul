@@ -59,13 +59,7 @@ else
     k2_list = { "kr-antimatter-reactor-equipment", "kr-antimatter-ammo", "kr-nuclear-locomotive",
         "kr-nuclear-reactor-equipment", "fusion-reactor-equipment", "spidertron", "kr-rocket-turret" }
 end
-for _, tech in pairs(k2_list) do
-    table.insert(data.raw["technology"][tech].unit.ingredients, {
-        type = "item",
-        name = "research-data",
-        amount = 1
-    })
-end
+addResearchData(k2_list)
 data.raw["item"]["graphite-fuel-cell"].fuel_value = "19GJ"
 data.raw["item"]["plutonium-fuel-cell"].fuel_value = "63GJ"
 data.raw["item"]["MOX-fuel-cell"].fuel_value = "75GJ"

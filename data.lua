@@ -60,8 +60,9 @@ require(techs .. "thorium-module-3")
 require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
+--require(entities .. "heat_furnace") -- not ready yet
 
 if settings.startup["thorium-wrd"].value == true then
-require(recipes .. "thorium-without-research-data")
-require(techs .. "thorium-without-research-data")
+    require(recipes .. "thorium-without-research-data")
+    require(techs .. "thorium-without-research-data")
 end
