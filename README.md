@@ -6,7 +6,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Xman1109/Atomic_Overhaul?color=g&style=plastic) <a href="https://www.patreon.com/bePatron?u=74323441">
 ![Patreon](https://img.shields.io/badge/Become%20a-Patron-red?style=plastic)</a>
 ![Version](https://img.shields.io/badge/dynamic/json?color=yellow&style=plastic&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FXman1109%2FAtomic_Overhaul%2Fmain%2Finfo.json)
-![Translate](https://img.shields.io/badge/Translate-here!-blueviolet?style=plastic)
+<a href="https://crowdin.com/project/factorio-mods-localization"> ![Translate](https://img.shields.io/badge/Translate-here!-blueviolet?style=plastic)</a>
 
 Atomic Overhaul is a mod for <a href=https://factorio.com>Factorio</a> adding new nuclear fuels, recipes and technologies to the game. <br>
 Developed by <a href=https://github.com/Xman1109>Xman1109</a> and <a href=https://github.com/fainda>fainda</a>.
