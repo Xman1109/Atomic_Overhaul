@@ -43,6 +43,7 @@ if mods["Krastorio2"] then
         end
     else
         require(compatibility .. "krastorio2")
+        K2 = true
         if ao_debug == true then
             log(debug_text .. "Krastorio2")
         end

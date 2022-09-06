@@ -19,12 +19,6 @@ debug_text = "AO-DEBUG: Compatibilty loaded for: "
 
 local tv = 1
 
-data:extend({ {
-    type = "module-category",
-    name = "thorium-module"
-
-} })
-
 function thorium_module_limitation()
     return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
         "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
