@@ -43,12 +43,14 @@ if mods["Krastorio2"] then
         end
     else
         require(compatibility .. "krastorio2")
+        K2 = true
         if ao_debug == true then
             log(debug_text .. "Krastorio2")
         end
     end
 elseif mods["space-exploration"] then
     require(compatibility .. "space-exploration")
+    se = true
     if ao_debug == true then
         log(debug_text .. "space-exploration")
     end

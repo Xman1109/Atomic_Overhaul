@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.12
+Date: 2022-09-06
+  Changes:
+    - Bugfix for crash on map loading
+---------------------------------------------------------------------------------------------------
+Version: 1.2.11
+Date: 2022-09-05
+  Changes:
+    - (Krastorio 2) Most Items added by AO are radioactive now.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.10
+Date: 2022-09-04
+  Changes:
+    - recipe tint for centrifuge recipes
+    - fuel glow color for reactor
+---------------------------------------------------------------------------------------------------
+Version: 1.2.9
+Date: 2022-08-31
+  Changes:
+    - A LOT of code cleanup and optimization.
+    - Fixed a bug with SE where Uranium Processing could not be researched
+---------------------------------------------------------------------------------------------------
 Version: 1.2.8
 Date: 2022-08-01
   Changes:

@@ -61,5 +61,10 @@ data:extend(
             name = "other-items",
             group = "atomic-overhaul",
             order = "h"
+        },
+        {
+            type = "module-category",
+            name = "thorium-module"
+
         }
     })

@@ -5,7 +5,7 @@ data:extend(
         name = "empty-fuel-cell-recipe",
         icon = graphics .. "empty-fuel-cell.png",
         icon_size = 64,
-        mipmap_count = 4,
+        icon_mipmaps = 4,
         category = "crafting",
         energy_required = 20,
         enabled = false,

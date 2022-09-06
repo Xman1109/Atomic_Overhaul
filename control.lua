@@ -3,6 +3,7 @@ function checkSave()
     game.print(
         "\nINFO: If Atomic Overhaul has been added to a used save, you may need to troubleshoot your nuclear processing.\n")
 end
+
 script.on_init(checkSave)
 
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
@@ -61,7 +62,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_1",
-            caption = {"Atomic_Overhaul.page_Atomic_Overhaul_text_1"}
+            caption = { "Atomic_Overhaul.page_Atomic_Overhaul_text_1" }
         }
     end
 
@@ -69,7 +70,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_1",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_1"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_1" }
         }
         element.add {
             type = "button",
@@ -79,7 +80,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_2",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_2"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_2" }
         }
         element.add {
             type = "button",
@@ -89,7 +90,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_3",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_3"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_3" }
         }
         element.add {
             type = "button",
@@ -99,7 +100,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_4",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_4"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_4" }
         }
         element.add {
             type = "button",
@@ -109,7 +110,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_5",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_5"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_5" }
         }
         element.add {
             type = "button",
@@ -119,7 +120,7 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_6",
-            caption = {"Atomic_Overhaul.page_AO_materials_text_6"}
+            caption = { "Atomic_Overhaul.page_AO_materials_text_6" }
         }
     end
 
@@ -127,42 +128,52 @@ function example_page_content(page_name, player_index, element)
         element.add {
             type = "label",
             name = "text_1",
-            caption = {"Atomic_Overhaul.page_SE_materials_text_1"}
+            caption = { "Atomic_Overhaul.page_SE_materials_text_1" }
         }
         element.add {
             type = "button",
-            name = "Space Reactor",
-            style = "Space Reactor",
+            name = "Space_Reactor",
+            style = "Space_Reactor",
         }
         element.add {
             type = "label",
             name = "text_2",
-            caption = {"Atomic_Overhaul.page_SE_materials_text_2"}
+            caption = { "Atomic_Overhaul.page_SE_materials_text_2" }
         }
         element.add {
             type = "button",
             name = "Iridium",
-            style = "Iridium",
+            style = "iridium",
         }
         element.add {
             type = "label",
             name = "text_3",
-            caption = {"Atomic_Overhaul.page_SE_materials_text_3"}
+            caption = { "Atomic_Overhaul.page_SE_materials_text_3" }
         }
         element.add {
             type = "button",
             name = "Holmium",
-            style = "Holmium",
+            style = "holmium",
         }
         element.add {
             type = "label",
             name = "text_4",
-            caption = {"Atomic_Overhaul.page_SE_materials_text_4"}
+            caption = { "Atomic_Overhaul.page_SE_materials_text_4" }
         }
         element.add {
             type = "button",
             name = "Beryllium",
-            style = "Beryllium",
+            style = "beryllium",
+        }
+        element.add {
+            type = "label",
+            name = "text_5",
+            caption = { "Atomic_Overhaul.page_SE_materials_text_5" }
+        }
+        element.add {
+            type = "button",
+            name = "glow_1",
+            style = "glow_1",
         }
     end
 

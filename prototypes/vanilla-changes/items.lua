@@ -17,3 +17,5 @@ data.raw["item"]["used-up-uranium-fuel-cell"].order = "b"
 data.raw["item"]["uranium-fuel-cell"].group = "atomic-overhaul"
 data.raw["item"]["uranium-fuel-cell"].subgroup = "fuel-cells"
 data.raw["item"]["uranium-fuel-cell"].order = "b"
+
+data.raw["item"]["uranium-fuel-cell"].fuel_glow_color = { 0, 255, 0 }

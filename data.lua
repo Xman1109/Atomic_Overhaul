@@ -62,16 +62,23 @@ require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
 if settings.startup["thorium-wrd"].value == true then
-require(recipes .. "thorium-without-research-data")
-require(techs .. "thorium-without-research-data")
+    require(recipes .. "thorium-without-research-data")
+    require(techs .. "thorium-without-research-data")
 end
 
---example code from informatron
+if mods["informatron"] then
+    -- example code from informatron
 
--- style_name, filename, width, height -- style_name MUST be a completely unique name
-informatron_make_image("header", images .. "logo.png", 800, 250)
-informatron_make_image("graphite", images .. "graphite.png", 64, 64)
-informatron_make_image("uranium", images .. "uranium.png", 64, 64)
-informatron_make_image("plutonium", images .. "plutonium.png", 64, 64)
-informatron_make_image("MOX", images .. "MOX.png", 64, 64)
-informatron_make_image("thorium", images .. "thorium.png", 64, 64)
+    -- style_name, filename, width, height -- style_name MUST be a completely unique name
+    informatron_make_image("header", images .. "logo.png", 800, 250)
+    informatron_make_image("graphite", images .. "graphite.png", 64, 64)
+    informatron_make_image("uranium", images .. "uranium.png", 64, 64)
+    informatron_make_image("plutonium", images .. "plutonium.png", 64, 64)
+    informatron_make_image("MOX", images .. "MOX.png", 64, 64)
+    informatron_make_image("thorium", images .. "thorium.png", 64, 64)
+    informatron_make_image("Space_Reactor", images .. "Space_Reactor.png", 302, 318)
+    informatron_make_image("iridium", images .. "iridium.png", 64, 64)
+    informatron_make_image("holmium", images .. "holmium.png", 64, 64)
+    informatron_make_image("beryllium", images .. "beryllium.png", 64, 64)
+    informatron_make_image("glow_1", images .. "glow.png", 243, 100)
+end
