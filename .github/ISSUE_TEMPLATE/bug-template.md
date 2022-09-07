@@ -4,6 +4,7 @@ about: If you found a bug in the mod use this template! (This Template is not fo
 title: "[Bug-Report]"
 labels: bug
 assignees: Xman1109
+
 ---
 
 # Bug Report

@@ -4,6 +4,7 @@ about: If Atomic Overhaul crashed the game for some reason use this template!
 title: "[Game Crash]"
 labels: bug
 assignees: Xman1109
+
 ---
 
 # Mod Crashed Game

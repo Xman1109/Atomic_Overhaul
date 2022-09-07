@@ -4,6 +4,7 @@ about: If there is an typo or something else regarding the translation of the mo
 title: "[Translation Error]"
 labels: translation-error
 assignees: Xman1109
+
 ---
 
 # Translation Error
