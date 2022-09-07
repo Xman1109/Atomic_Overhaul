@@ -68,8 +68,6 @@ if settings.startup["thorium-wrd"].value == true then
 end
 
 if mods["informatron"] then
-    -- example code from informatron
-
     -- style_name, filename, width, height -- style_name MUST be a completely unique name
     informatron_make_image("header", images .. "logo.png", 800, 250)
     informatron_make_image("graphite", images .. "graphite.png", 64, 64)
