@@ -60,7 +60,20 @@ require(techs .. "thorium-module-3")
 require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
---require(entities .. "heat_furnace") -- not ready yet
+
+if settings.startup["old-graphite-fuel"].value == false then
+    require(items .. "non-moderated-fuel-cell")
+    require(items .. "non-moderated-depleted-cell")
+    require(items .. "heat-furnace")
+    require(recipes .. "non-moderated-fuel-cell-recipe")
+    require(recipes .. "non-moderated-fuel-reprocessing")
+    require(recipes .. "graphite-furnace-recipe")
+    require(recipes .. "heat-furnace-recipe")
+    require(techs .. "non-moderated-fuel-processing")
+    require(techs .. "non-moderated-fuel-reprocessing")
+    require(techs .. "graphite-cooking")
+    require(entities .. "heat-furnace")
+end
 
 if settings.startup["thorium-wrd"].value == true then
     require(recipes .. "thorium-without-research-data")

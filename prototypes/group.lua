@@ -68,3 +68,9 @@ data:extend(
 
         }
     })
+if settings.startup["old-graphite-fuel"].value == false then
+    data:extend({ {
+        type = "recipe-category",
+        name = "heat-furnace"
+    } })
+end

@@ -15,6 +15,13 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "old-graphite-fuel",
+        setting_type = "startup",
+        default_value = false,
+        order = "c"
+    },
+    {
+        type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
         default_value = true,
@@ -25,7 +32,7 @@ data:extend({
         name = "fuel-cell-ingredient",
         setting_type = "startup",
         default_value = "Advanced Fuel Cell",
-        allowed_values = {"Advanced Fuel Cell", "Normal Fuel Cell"},
+        allowed_values = { "Advanced Fuel Cell", "Normal Fuel Cell" },
         order = "za"
     }
 })

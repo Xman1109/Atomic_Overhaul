@@ -55,6 +55,11 @@ script.on_init(function()
         "\nNOTE: If Atomic Overhaul has been added to an already existing savegame, you may need to troubleshoot your nuclear processing.\n")
 end)
 
+script.on_configuration_changed(function()
+    game.print(
+        "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
+end)
+
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
 if k2_se then
     script.on_init(
