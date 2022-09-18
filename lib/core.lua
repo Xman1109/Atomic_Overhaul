@@ -7,6 +7,7 @@ vanilla = "prototypes.vanilla-changes."
 base_graphics = "__base__/graphics/icons/"
 compatibility = "prototypes.compatibility."
 graphics = "__Atomic_Overhaul__/graphics/icons/"
+entity_graphics = "__Atomic_Overhaul__/graphics/entities/"
 images = "__Atomic_Overhaul__/graphics/images/"
 
 cmt = {} -- crafting machine tint
