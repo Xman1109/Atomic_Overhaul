@@ -1,4 +1,17 @@
 {
-  "item": [["graphite-fuel-cell", "non-moderated-fuel-cell"]],
-  "recipe": [["graphite-fuel-cell-recipe", "non-moderated-fuel-cell-recipe"]]
+  "item": [
+    ["graphite-fuel-cell", "non-moderated-fuel-cell"],
+    ["graphite-depleted-cell", "non-moderated-depleted-cell"]
+  ],
+  "recipe": [
+    ["graphite-fuel-cell-recipe", "non-moderated-fuel-cell-recipe"],
+    [
+      "graphite-fuel-reprocessing-recipe",
+      "non-moderated-fuel-reprocessing-recipe"
+    ]
+  ],
+  "technology": [
+    ["graphite-fuel-cell", "non-moderated-fuel-cell"],
+    ["graphite-fuel-reprocessing", "non-moderated-fuel-reprocessing"]
+  ]
 }

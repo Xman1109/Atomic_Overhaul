@@ -3,7 +3,7 @@ data:extend({
     {
         type = "technology",
         name = "graphite-cooking",
-        icon = graphics .. "graphite-processing.png",
+        icon = graphics .. "heat-furnace-technology.png",
         icon_size = "256",
         icon_mipmaps = 4,
         prerequisites = { "non-moderated-fuel-reprocessing" },

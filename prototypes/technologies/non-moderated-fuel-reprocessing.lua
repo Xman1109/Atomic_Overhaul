@@ -3,7 +3,7 @@ data:extend({
     {
         type = "technology",
         name = "non-moderated-fuel-reprocessing",
-        icon = graphics .. "graphite-reprocessing.png",
+        icon = graphics .. "non-moderated-reprocessing.png",
         icon_size = 256,
         icon_mipmaps = 4,
         prerequisites = { "nuclear-power", "non-moderated-fuel-processing" },
