@@ -11,7 +11,7 @@
     ]
   ],
   "technology": [
-    ["graphite-fuel-cell", "non-moderated-fuel-cell"],
+    ["ao-graphite-processing", "non-moderated-fuel-processing"],
     ["graphite-fuel-reprocessing", "non-moderated-fuel-reprocessing"]
   ]
 }

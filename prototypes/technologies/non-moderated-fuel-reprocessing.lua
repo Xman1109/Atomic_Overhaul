@@ -6,7 +6,7 @@ data:extend({
         icon = graphics .. "non-moderated-reprocessing.png",
         icon_size = 256,
         icon_mipmaps = 4,
-        prerequisites = { "nuclear-power", "non-moderated-fuel-processing" },
+        prerequisites = data.raw["technology"]["graphite-fuel-reprocessing"].prerequisites,
         effects =
         {
             {
@@ -14,17 +14,7 @@ data:extend({
                 recipe = "non-moderated-fuel-reprocessing"
             }
         },
-        unit =
-        {
-            count = 150,
-            ingredients =
-            {
-                { "automation-science-pack", 1 },
-                { "logistic-science-pack", 1 },
-                { "chemical-science-pack", 1 },
-            },
-            time = 45
-        }
+        unit = data.raw["technology"]["graphite-fuel-reprocessing"].unit
     }
 
 })
