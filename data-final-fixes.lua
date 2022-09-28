@@ -110,3 +110,9 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
         log(debug_addon_text .. "space-exploration")
     end
 end
+
+if settings.startup["old-graphite-fuel"].value == false then
+    if settings.startup["heat-algo-mode"].value ~= "off" then
+        require(recipes .. "plate-heat-recipe")
+    end
+end

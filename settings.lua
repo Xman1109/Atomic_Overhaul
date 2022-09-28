@@ -21,6 +21,14 @@ data:extend({
         order = "c"
     },
     {
+        type = "string-setting",
+        name = "heat-algo-mode",
+        setting_type = "startup",
+        default_value = "advanced",
+        allowed_values = { "off", "basic", "advanced" },
+        order = "d"
+    },
+    {
         type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
