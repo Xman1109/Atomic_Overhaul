@@ -29,6 +29,13 @@ data:extend({
         order = "d"
     },
     {
+        type = "string-setting",
+        name = "heat-algo-searchterm",
+        setting_type = "startup",
+        default_value = "plate, brick",
+        order = "e"
+    },
+    {
         type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
