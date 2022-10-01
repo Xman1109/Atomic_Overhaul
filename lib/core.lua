@@ -555,23 +555,31 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
 end
 
 function addResearchData(name) -- supports tables
-    --[[    if ao_debug == true then
+    local found = false
+    if ao_debug == true then
         log("Trying to add research data to " .. serpent.block(name) .. "\n")
     end
     if type(name) == "table" then
         for k, i in pairs(name) do
             if data.raw["technology"][i] ~= nil then
-                for _, ii in pairs(data.raw["technology"][i].unit.ingredients) do
-                    log(data.raw["technology"][i].unit.ingredients[ii])
-                    if data.raw["technology"][i].unit.ingredients[ii].name ~= "research-data" then
-                        table.insert(data.raw["technology"][i].unit.ingredients, {
-                            type = "item",
-                            name = "research-data",
-                            amount = 1
-                        })
-                        if ao_debug == true then
-                            log("Added research data to " .. i .. "\n")
-                        end
+                for _, ingredient in pairs(data.raw["technology"][i].unit.ingredients) do
+                    if ingredient[1] == "research-data" then
+                        found = true
+                        break
+                    else
+                        found = false
+                    end
+                end
+                if found == false then
+                    table.insert(data.raw["technology"][i].unit.ingredients, {
+                        "research-data", 1
+                    })
+                    if ao_debug == true then
+                        log("Added research data to " .. i .. "\n")
+                    end
+                else
+                    if ao_debug == true then
+                        log("Research data already exists in " .. i .. "\n")
                     end
                 end
             else
@@ -580,18 +588,30 @@ function addResearchData(name) -- supports tables
         end
     else
         if data.raw["technology"][name] ~= nil then
-            table.insert(data.raw["technology"][name].unit.ingredients, {
-                type = "item",
-                name = "research-data",
-                amount = 1
-            })
-            if ao_debug == true then
-                log("Added research data to " .. name)
+            for _, ingredient in pairs(data.raw["technology"][name].unit.ingredients) do
+                if ingredient[1] == "research-data" then
+                    found = true
+                    break
+                else
+                    found = false
+                end
+            end
+            if found == false then
+                table.insert(data.raw["technology"][name].unit.ingredients, {
+                    "research-data", 1
+                })
+                if ao_debug == true then
+                    log("Added research data to " .. name .. "\n")
+                end
+            else
+                if ao_debug == true then
+                    log("Research data already exists in " .. name .. "\n")
+                end
             end
         else
             log("Error: could not find " .. "technology" .. "." .. name .. "\n")
         end
-    end ]]
+    end
 end
 
 function resolveType(type)

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.4
+Date: 2022-10-01
+  Changes:
+    - fixed another startup crash
+    - fixed a missing prerequisite when playing with space exploration
+    - updated the addResearchdata function so it would not crash the game
+---------------------------------------------------------------------------------------------------
 Version: 1.3.3
 Date: 2022-10-01
   Changes:

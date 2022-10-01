@@ -4,7 +4,6 @@ if settings.startup["se-addon"].value == true then
     data.raw["transport-belt"]["transport-belt"].collision_mask or
         data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
     data.raw["tool"]["research-data"].order = "zz"
-    modifyPrerequisites("nuclear-fuel-reprocessing", "uranium-processing", "add")
     regroup("r", "research-data-recipe", nil, nil, "zz")
     regroup("i", "nuclear-fuel", "AO", "fuel", "a")
     modifyResults("nuclear-fuel-reprocessing", { {
@@ -28,7 +27,13 @@ if settings.startup["se-addon"].value == true then
     } })
 
     if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
-        modifyPrerequisites("uranium-processing", { "graphite-fuel-reprocessing", "advanced-electronics-2" })
+        local reprocessing
+        if settings.startup["old-graphite-fuel"].value then
+            reprocessing = "graphite-fuel-reprocessing"
+        else
+            reprocessing = "graphite-cooking"
+        end
+        modifyPrerequisites("uranium-processing", { reprocessing, "advanced-electronics-2" })
         regroup("r", "uranium-processing", "AO", "resources", "b")
         regroup("i", "uranium-235", "AO", "resources", "c")
         regroup("i", "uranium-238", "AO", "resources", "b")

@@ -1,7 +1,6 @@
 data.raw["recipe"]["atomic-bomb"].icon = "__Krastorio2Assets__/icons/ammo/atomic-bomb.png"
 data.raw["recipe"]["atomic-bomb"].icon_size = 64
 data.raw["recipe"]["atomic-bomb"].icon_mipmaps = 4
-modifyPrerequisites("nuclear-fuel-reprocessing", "uranium-processing", "add")
 modifyResults("uranium-without-research-data", { {
     type = "item",
     name = "uranium-238",
@@ -129,7 +128,13 @@ if settings.startup["se-addon"].value == true then
         amount_max = 3
     } })
     if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
-        modifyPrerequisites("uranium-processing", { "graphite-fuel-reprocessing", "advanced-electronics-2" })
+        local reprocessing
+        if settings.startup["old-graphite-fuel"].value then
+            reprocessing = "graphite-fuel-reprocessing"
+        else
+            reprocessing = "graphite-cooking"
+        end
+        modifyPrerequisites("uranium-processing", { reprocessing, "advanced-electronics-2" })
         regroup("r", "uranium-processing", "AO", "resources", "b")
         regroup("i", "uranium-235", "AO", "resources", "c")
         regroup("i", "uranium-238", "AO", "resources", "b")

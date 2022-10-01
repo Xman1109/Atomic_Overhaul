@@ -73,8 +73,6 @@ if settings.startup["old-graphite-fuel"].value == false then
     require(techs .. "non-moderated-fuel-reprocessing")
     require(techs .. "graphite-cooking")
     require(entities .. "heat-furnace")
-
-    --require(ao_recipes .. "plate-heat-recipe")
 end
 
 if settings.startup["thorium-wrd"].value == true then
