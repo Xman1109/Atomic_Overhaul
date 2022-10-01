@@ -113,6 +113,6 @@ end
 
 if settings.startup["old-graphite-fuel"].value == false then
     if settings.startup["heat-algo-mode"].value ~= "off" then
-        require(recipes .. "plate-heat-recipe")
+        require(ao_recipes .. "plate-heat-recipe")
     end
 end

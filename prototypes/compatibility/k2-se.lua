@@ -1,6 +1,7 @@
 data.raw["recipe"]["atomic-bomb"].icon = "__Krastorio2Assets__/icons/ammo/atomic-bomb.png"
 data.raw["recipe"]["atomic-bomb"].icon_size = 64
 data.raw["recipe"]["atomic-bomb"].icon_mipmaps = 4
+modifyPrerequisites("nuclear-fuel-reprocessing", "uranium-processing", "add")
 modifyResults("uranium-without-research-data", { {
     type = "item",
     name = "uranium-238",

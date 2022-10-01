@@ -1,6 +1,6 @@
 items = "prototypes.items."
 fluids = "prototypes.fluids."
-recipes = "prototypes.recipes."
+ao_recipes = "prototypes.recipes."
 techs = "prototypes.technologies."
 entities = "prototypes.entities."
 vanilla = "prototypes.vanilla-changes."
@@ -555,19 +555,24 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
 end
 
 function addResearchData(name) -- supports tables
-    if ao_debug == true then
+    --[[    if ao_debug == true then
         log("Trying to add research data to " .. serpent.block(name) .. "\n")
     end
     if type(name) == "table" then
         for k, i in pairs(name) do
             if data.raw["technology"][i] ~= nil then
-                table.insert(data.raw["technology"][i].unit.ingredients, {
-                    type = "item",
-                    name = "research-data",
-                    amount = 1
-                })
-                if ao_debug == true then
-                    log("Added research data to " .. i .. "\n")
+                for _, ii in pairs(data.raw["technology"][i].unit.ingredients) do
+                    log(data.raw["technology"][i].unit.ingredients[ii])
+                    if data.raw["technology"][i].unit.ingredients[ii].name ~= "research-data" then
+                        table.insert(data.raw["technology"][i].unit.ingredients, {
+                            type = "item",
+                            name = "research-data",
+                            amount = 1
+                        })
+                        if ao_debug == true then
+                            log("Added research data to " .. i .. "\n")
+                        end
+                    end
                 end
             else
                 log("Error: could not find " .. "technology" .. "." .. i .. "\n")
@@ -586,7 +591,7 @@ function addResearchData(name) -- supports tables
         else
             log("Error: could not find " .. "technology" .. "." .. name .. "\n")
         end
-    end
+    end ]]
 end
 
 function resolveType(type)

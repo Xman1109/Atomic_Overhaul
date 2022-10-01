@@ -4,6 +4,7 @@ if settings.startup["se-addon"].value == true then
     data.raw["transport-belt"]["transport-belt"].collision_mask or
         data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
     data.raw["tool"]["research-data"].order = "zz"
+    modifyPrerequisites("nuclear-fuel-reprocessing", "uranium-processing", "add")
     regroup("r", "research-data-recipe", nil, nil, "zz")
     regroup("i", "nuclear-fuel", "AO", "fuel", "a")
     modifyResults("nuclear-fuel-reprocessing", { {

@@ -39,10 +39,224 @@ if settings.startup["heat-algo-mode"] ~= "off" then
             if resource.minable.result then
                 for k2, recipe in pairs(data.raw["recipe"]) do
                     if data.raw["recipe"][recipe.name].category == cc then
-                        for k3, ingredient in pairs(data.raw["recipe"][recipe.name].ingredients) do
-                            if ingredient[1] == data.raw["resource"][resource.name].minable.result then
-                                if data.raw["recipe"][recipe.name].normal then
-                                    if data.raw["recipe"][recipe.name].normal.result then
+                        if data.raw["recipe"][recipe.name].ingredients then
+                            for k3, ingredient in pairs(data.raw["recipe"][recipe.name].ingredients) do
+                                if ingredient[1] == data.raw["resource"][resource.name].minable.result then
+                                    if data.raw["recipe"][recipe.name].normal then
+                                        if data.raw["recipe"][recipe.name].normal.result then
+                                            for _, i in pairs(searchterms) do
+                                                if recipe.result:find(i) then
+                                                    local newRecipe = table.deepcopy(recipe)
+                                                    newRecipe.name = recipe.name .. "-heat"
+                                                    newRecipe.category = "heat-furnace"
+                                                    newRecipe.hidden = false
+                                                    local isunlockedbytech = false
+                                                    for k4, tech in pairs(data.raw["technology"]) do
+                                                        if tech.effects then
+                                                            for k5, effect in pairs(tech.effects) do
+                                                                if effect.recipe == recipe.name then
+                                                                    table.insert(data.raw["technology"][tech.name].effects
+                                                                        ,
+                                                                        { type = "unlock-recipe", recipe = newRecipe.name })
+                                                                    isunlockedbytech = true
+                                                                end
+
+                                                            end
+                                                        end
+                                                    end
+                                                    if isunlockedbytech == false then
+                                                        newRecipe.enabled = true
+                                                    else
+                                                        newRecipe.enabled = false
+                                                    end
+                                                    if ao_debug then
+                                                        log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                    end
+                                                    --data:extend({ newRecipe })
+                                                    table.insert(exports, newRecipe)
+                                                end
+                                            end
+                                        elseif data.raw["recipe"][recipe.name].normal.results then
+                                            for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
+                                                for _, i in pairs(searchterms) do
+                                                    if result[1] then
+                                                        if result[1]:find(i) then
+                                                            local newRecipe = table.deepcopy(recipe)
+                                                            newRecipe.name = recipe.name .. "-heat"
+                                                            newRecipe.category = "heat-furnace"
+                                                            newRecipe.hidden = false
+                                                            local isunlockedbytech = false
+                                                            for k4, tech in pairs(data.raw["technology"]) do
+                                                                if tech.effects then
+                                                                    for k5, effect in pairs(tech.effects) do
+                                                                        if effect.recipe == recipe.name then
+                                                                            table.insert(data.raw["technology"][
+                                                                                tech.name].effects
+                                                                                ,
+                                                                                { type = "unlock-recipe",
+                                                                                    recipe = newRecipe.name })
+                                                                            isunlockedbytech = true
+                                                                        end
+
+                                                                    end
+                                                                end
+                                                            end
+                                                            if isunlockedbytech == false then
+                                                                newRecipe.enabled = true
+                                                            else
+                                                                newRecipe.enabled = false
+                                                            end
+                                                            if ao_debug then
+                                                                log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                            end
+                                                            --data:extend({ newRecipe })
+                                                            table.insert(exports, newRecipe)
+                                                        end
+                                                    elseif result.name then
+                                                        if result.name:find(i) then
+                                                            local newRecipe = table.deepcopy(recipe)
+                                                            newRecipe.name = recipe.name .. "-heat"
+                                                            newRecipe.category = "heat-furnace"
+                                                            newRecipe.hidden = false
+                                                            local isunlockedbytech = false
+                                                            for k4, tech in pairs(data.raw["technology"]) do
+                                                                if tech.effects then
+                                                                    for k5, effect in pairs(tech.effects) do
+                                                                        if effect.recipe == recipe.name then
+                                                                            table.insert(data.raw["technology"][
+                                                                                tech.name].effects
+                                                                                ,
+                                                                                { type = "unlock-recipe",
+                                                                                    recipe = newRecipe.name })
+                                                                            isunlockedbytech = true
+                                                                        end
+
+                                                                    end
+                                                                end
+                                                            end
+                                                            if isunlockedbytech == false then
+                                                                newRecipe.enabled = true
+                                                            else
+                                                                newRecipe.enabled = false
+                                                            end
+                                                            if ao_debug then
+                                                                log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                            end
+                                                            --data:extend({ newRecipe })
+                                                            table.insert(exports, newRecipe)
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    elseif data.raw["recipe"][recipe.name].expensive then
+                                        if data.raw["recipe"][recipe.name].expensive.result then
+                                            for _, i in pairs(searchterms) do
+                                                if recipe.result:find(i) then
+                                                    local newRecipe = table.deepcopy(recipe)
+                                                    newRecipe.name = recipe.name .. "-heat"
+                                                    newRecipe.category = "heat-furnace"
+                                                    newRecipe.hidden = false
+                                                    local isunlockedbytech = false
+                                                    for k4, tech in pairs(data.raw["technology"]) do
+                                                        if tech.effects then
+                                                            for k5, effect in pairs(tech.effects) do
+                                                                if effect.recipe == recipe.name then
+                                                                    table.insert(data.raw["technology"][tech.name].effects
+                                                                        ,
+                                                                        { type = "unlock-recipe", recipe = newRecipe.name })
+                                                                    isunlockedbytech = true
+                                                                end
+
+                                                            end
+                                                        end
+                                                    end
+                                                    if isunlockedbytech == false then
+                                                        newRecipe.enabled = true
+                                                    else
+                                                        newRecipe.enabled = false
+                                                    end
+                                                    if ao_debug then
+                                                        log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                    end
+                                                    --data:extend({ newRecipe })
+                                                    table.insert(exports, newRecipe)
+                                                end
+                                            end
+                                        elseif data.raw["recipe"][recipe.name].expensive.results then
+                                            for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
+                                                for _, i in pairs(searchterms) do
+                                                    if result[1] then
+                                                        if result[1]:find(i) then
+                                                            local newRecipe = table.deepcopy(recipe)
+                                                            newRecipe.name = recipe.name .. "-heat"
+                                                            newRecipe.category = "heat-furnace"
+                                                            newRecipe.hidden = false
+                                                            local isunlockedbytech = false
+                                                            for k4, tech in pairs(data.raw["technology"]) do
+                                                                if tech.effects then
+                                                                    for k5, effect in pairs(tech.effects) do
+                                                                        if effect.recipe == recipe.name then
+                                                                            table.insert(data.raw["technology"][
+                                                                                tech.name].effects
+                                                                                ,
+                                                                                { type = "unlock-recipe",
+                                                                                    recipe = newRecipe.name })
+                                                                            isunlockedbytech = true
+                                                                        end
+
+                                                                    end
+                                                                end
+                                                            end
+                                                            if isunlockedbytech == false then
+                                                                newRecipe.enabled = true
+                                                            else
+                                                                newRecipe.enabled = false
+                                                            end
+                                                            if ao_debug then
+                                                                log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                            end
+                                                            --data:extend({ newRecipe })
+                                                            table.insert(exports, newRecipe)
+                                                        end
+                                                    elseif result.name then
+                                                        if result.name:find(i) then
+                                                            local newRecipe = table.deepcopy(recipe)
+                                                            newRecipe.name = recipe.name .. "-heat"
+                                                            newRecipe.category = "heat-furnace"
+                                                            newRecipe.hidden = false
+                                                            local isunlockedbytech = false
+                                                            for k4, tech in pairs(data.raw["technology"]) do
+                                                                if tech.effects then
+                                                                    for k5, effect in pairs(tech.effects) do
+                                                                        if effect.recipe == recipe.name then
+                                                                            table.insert(data.raw["technology"][
+                                                                                tech.name].effects
+                                                                                ,
+                                                                                { type = "unlock-recipe",
+                                                                                    recipe = newRecipe.name })
+                                                                            isunlockedbytech = true
+                                                                        end
+
+                                                                    end
+                                                                end
+                                                            end
+                                                            if isunlockedbytech == false then
+                                                                newRecipe.enabled = true
+                                                            else
+                                                                newRecipe.enabled = false
+                                                            end
+                                                            if ao_debug then
+                                                                log("Copied Smelting Recipe: " .. newRecipe.name)
+                                                            end
+                                                            --data:extend({ newRecipe })
+                                                            table.insert(exports, newRecipe)
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    elseif data.raw["recipe"][recipe.name].result then
                                         for _, i in pairs(searchterms) do
                                             if recipe.result:find(i) then
                                                 local newRecipe = table.deepcopy(recipe)
@@ -54,8 +268,7 @@ if settings.startup["heat-algo-mode"] ~= "off" then
                                                     if tech.effects then
                                                         for k5, effect in pairs(tech.effects) do
                                                             if effect.recipe == recipe.name then
-                                                                table.insert(data.raw["technology"][tech.name].effects
-                                                                    ,
+                                                                table.insert(data.raw["technology"][tech.name].effects,
                                                                     { type = "unlock-recipe", recipe = newRecipe.name })
                                                                 isunlockedbytech = true
                                                             end
@@ -75,7 +288,7 @@ if settings.startup["heat-algo-mode"] ~= "off" then
                                                 table.insert(exports, newRecipe)
                                             end
                                         end
-                                    elseif data.raw["recipe"][recipe.name].normal.results then
+                                    elseif data.raw["recipe"][recipe.name].results then
                                         for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
                                             for _, i in pairs(searchterms) do
                                                 if result[1] then
@@ -142,213 +355,6 @@ if settings.startup["heat-algo-mode"] ~= "off" then
                                                         --data:extend({ newRecipe })
                                                         table.insert(exports, newRecipe)
                                                     end
-                                                end
-                                            end
-                                        end
-                                    end
-                                elseif data.raw["recipe"][recipe.name].expensive then
-                                    if data.raw["recipe"][recipe.name].expensive.result then
-                                        for _, i in pairs(searchterms) do
-                                            if recipe.result:find(i) then
-                                                local newRecipe = table.deepcopy(recipe)
-                                                newRecipe.name = recipe.name .. "-heat"
-                                                newRecipe.category = "heat-furnace"
-                                                newRecipe.hidden = false
-                                                local isunlockedbytech = false
-                                                for k4, tech in pairs(data.raw["technology"]) do
-                                                    if tech.effects then
-                                                        for k5, effect in pairs(tech.effects) do
-                                                            if effect.recipe == recipe.name then
-                                                                table.insert(data.raw["technology"][tech.name].effects
-                                                                    ,
-                                                                    { type = "unlock-recipe", recipe = newRecipe.name })
-                                                                isunlockedbytech = true
-                                                            end
-
-                                                        end
-                                                    end
-                                                end
-                                                if isunlockedbytech == false then
-                                                    newRecipe.enabled = true
-                                                else
-                                                    newRecipe.enabled = false
-                                                end
-                                                if ao_debug then
-                                                    log("Copied Smelting Recipe: " .. newRecipe.name)
-                                                end
-                                                --data:extend({ newRecipe })
-                                                table.insert(exports, newRecipe)
-                                            end
-                                        end
-                                    elseif data.raw["recipe"][recipe.name].expensive.results then
-                                        for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
-                                            for _, i in pairs(searchterms) do
-                                                if result[1] then
-                                                    if result[1]:find(i) then
-                                                        local newRecipe = table.deepcopy(recipe)
-                                                        newRecipe.name = recipe.name .. "-heat"
-                                                        newRecipe.category = "heat-furnace"
-                                                        newRecipe.hidden = false
-                                                        local isunlockedbytech = false
-                                                        for k4, tech in pairs(data.raw["technology"]) do
-                                                            if tech.effects then
-                                                                for k5, effect in pairs(tech.effects) do
-                                                                    if effect.recipe == recipe.name then
-                                                                        table.insert(data.raw["technology"][tech.name].effects
-                                                                            ,
-                                                                            { type = "unlock-recipe",
-                                                                                recipe = newRecipe.name })
-                                                                        isunlockedbytech = true
-                                                                    end
-
-                                                                end
-                                                            end
-                                                        end
-                                                        if isunlockedbytech == false then
-                                                            newRecipe.enabled = true
-                                                        else
-                                                            newRecipe.enabled = false
-                                                        end
-                                                        if ao_debug then
-                                                            log("Copied Smelting Recipe: " .. newRecipe.name)
-                                                        end
-                                                        --data:extend({ newRecipe })
-                                                        table.insert(exports, newRecipe)
-                                                    end
-                                                elseif result.name then
-                                                    if result.name:find(i) then
-                                                        local newRecipe = table.deepcopy(recipe)
-                                                        newRecipe.name = recipe.name .. "-heat"
-                                                        newRecipe.category = "heat-furnace"
-                                                        newRecipe.hidden = false
-                                                        local isunlockedbytech = false
-                                                        for k4, tech in pairs(data.raw["technology"]) do
-                                                            if tech.effects then
-                                                                for k5, effect in pairs(tech.effects) do
-                                                                    if effect.recipe == recipe.name then
-                                                                        table.insert(data.raw["technology"][tech.name].effects
-                                                                            ,
-                                                                            { type = "unlock-recipe",
-                                                                                recipe = newRecipe.name })
-                                                                        isunlockedbytech = true
-                                                                    end
-
-                                                                end
-                                                            end
-                                                        end
-                                                        if isunlockedbytech == false then
-                                                            newRecipe.enabled = true
-                                                        else
-                                                            newRecipe.enabled = false
-                                                        end
-                                                        if ao_debug then
-                                                            log("Copied Smelting Recipe: " .. newRecipe.name)
-                                                        end
-                                                        --data:extend({ newRecipe })
-                                                        table.insert(exports, newRecipe)
-                                                    end
-                                                end
-                                            end
-                                        end
-                                    end
-                                elseif data.raw["recipe"][recipe.name].result then
-                                    for _, i in pairs(searchterms) do
-                                        if recipe.result:find(i) then
-                                            local newRecipe = table.deepcopy(recipe)
-                                            newRecipe.name = recipe.name .. "-heat"
-                                            newRecipe.category = "heat-furnace"
-                                            newRecipe.hidden = false
-                                            local isunlockedbytech = false
-                                            for k4, tech in pairs(data.raw["technology"]) do
-                                                if tech.effects then
-                                                    for k5, effect in pairs(tech.effects) do
-                                                        if effect.recipe == recipe.name then
-                                                            table.insert(data.raw["technology"][tech.name].effects,
-                                                                { type = "unlock-recipe", recipe = newRecipe.name })
-                                                            isunlockedbytech = true
-                                                        end
-
-                                                    end
-                                                end
-                                            end
-                                            if isunlockedbytech == false then
-                                                newRecipe.enabled = true
-                                            else
-                                                newRecipe.enabled = false
-                                            end
-                                            if ao_debug then
-                                                log("Copied Smelting Recipe: " .. newRecipe.name)
-                                            end
-                                            --data:extend({ newRecipe })
-                                            table.insert(exports, newRecipe)
-                                        end
-                                    end
-                                elseif data.raw["recipe"][recipe.name].results then
-                                    for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
-                                        for _, i in pairs(searchterms) do
-                                            if result[1] then
-                                                if result[1]:find(i) then
-                                                    local newRecipe = table.deepcopy(recipe)
-                                                    newRecipe.name = recipe.name .. "-heat"
-                                                    newRecipe.category = "heat-furnace"
-                                                    newRecipe.hidden = false
-                                                    local isunlockedbytech = false
-                                                    for k4, tech in pairs(data.raw["technology"]) do
-                                                        if tech.effects then
-                                                            for k5, effect in pairs(tech.effects) do
-                                                                if effect.recipe == recipe.name then
-                                                                    table.insert(data.raw["technology"][tech.name].effects
-                                                                        ,
-                                                                        { type = "unlock-recipe",
-                                                                            recipe = newRecipe.name })
-                                                                    isunlockedbytech = true
-                                                                end
-
-                                                            end
-                                                        end
-                                                    end
-                                                    if isunlockedbytech == false then
-                                                        newRecipe.enabled = true
-                                                    else
-                                                        newRecipe.enabled = false
-                                                    end
-                                                    if ao_debug then
-                                                        log("Copied Smelting Recipe: " .. newRecipe.name)
-                                                    end
-                                                    --data:extend({ newRecipe })
-                                                    table.insert(exports, newRecipe)
-                                                end
-                                            elseif result.name then
-                                                if result.name:find(i) then
-                                                    local newRecipe = table.deepcopy(recipe)
-                                                    newRecipe.name = recipe.name .. "-heat"
-                                                    newRecipe.category = "heat-furnace"
-                                                    newRecipe.hidden = false
-                                                    local isunlockedbytech = false
-                                                    for k4, tech in pairs(data.raw["technology"]) do
-                                                        if tech.effects then
-                                                            for k5, effect in pairs(tech.effects) do
-                                                                if effect.recipe == recipe.name then
-                                                                    table.insert(data.raw["technology"][tech.name].effects
-                                                                        ,
-                                                                        { type = "unlock-recipe",
-                                                                            recipe = newRecipe.name })
-                                                                    isunlockedbytech = true
-                                                                end
-
-                                                            end
-                                                        end
-                                                    end
-                                                    if isunlockedbytech == false then
-                                                        newRecipe.enabled = true
-                                                    else
-                                                        newRecipe.enabled = false
-                                                    end
-                                                    if ao_debug then
-                                                        log("Copied Smelting Recipe: " .. newRecipe.name)
-                                                    end
-                                                    --data:extend({ newRecipe })
-                                                    table.insert(exports, newRecipe)
                                                 end
                                             end
                                         end
