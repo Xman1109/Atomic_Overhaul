@@ -79,6 +79,8 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_items .. "beryllium-fuel-cell")
     require(se_addon_items .. "beryllium-depleted-cell")
     require(se_addon_items .. "space-reactor")
+    require(se_addon_items .. "lead-delivery-capsule")
+    require(se_addon_items .. "capsule-items")
 
     require(se_addon_recipes .. "advanced-fuel-cell-recipe")
     require(se_addon_recipes .. "iridium-fuel-cell-recipe")
@@ -94,6 +96,8 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_recipes .. "holmium-166-without-research-data-recipe")
     require(se_addon_recipes .. "beryllium-7-without-research-data-recipe")
     require(se_addon_recipes .. "space-reactor-recipe")
+    require(se_addon_recipes .. "lead-delivery-recipe")
+    require(se_addon_recipes .. "capsule-recipes")
 
     require(se_addon_techs .. "iridium-192-processing")
     require(se_addon_techs .. "holmium-166-processing")
