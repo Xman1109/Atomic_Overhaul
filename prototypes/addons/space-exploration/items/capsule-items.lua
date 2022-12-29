@@ -17,7 +17,16 @@ local list = {
     "depleted-thorium-fuel-cell",
     "MOX",
     "MOX-fuel-cell",
-    "depleted-MOX-fuel-cell"
+    "depleted-MOX-fuel-cell",
+    "iridium-192",
+    "iridium-fuel-cell",
+    "depleted-iridium-fuel-cell",
+    "holmium-166",
+    "holmium-fuel-cell",
+    "depleted-holmium-fuel-cell",
+    "beryllium-7",
+    "beryllium-fuel-cell",
+    "depleted-beryllium-fuel-cell"
 }
 
 local template = {
@@ -26,8 +35,9 @@ local template = {
     icon = se_addon_graphics .. "lead-delivery-capsule.png",
     icon_size = 64,
     stack_size = 1,
-    subgroup = "se-delivery-capsule",
-    order = "a[lead-delivery-capsule]",
+    group = "atomic-overhaul",
+    subgroup = "delivery-capules",
+    order = "b",
     allow_decomposition = false,
 }
 
@@ -37,6 +47,7 @@ for _, item in pairs(list) do
     if data.raw.item[item] then
         local new_item = table.deepcopy(template)
         new_item.name = new_item.name .. item
+        new_item.localised_name = { "", { "item-name.lead-delivery-capsule" }, ": ", { "item-name." .. item } }
         data:extend({ new_item })
     else
         if ao_debug then

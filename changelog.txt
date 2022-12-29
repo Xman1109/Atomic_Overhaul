@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.6
-Date: ????
+Date: 2022-12-29
   Changes:
+    - (Space Exploration) Added the Isotope transport capsule, to shoot radioactive isotopes to other surfaces (warning: may be buggy)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.5
 Date: 2022-11-03

@@ -127,6 +127,13 @@ if settings.startup["se-addon"].value == true then
         amount_min = 1,
         amount_max = 3
     } })
+
+    hideType("r", "se-delivery-cannon-pack-uranium-235")
+    hideType("r", "se-delivery-cannon-pack-uranium-238")
+
+    modifyEffects("se-delivery-cannon-capsule-iridium", { { type = "unlock-recipe", recipe = "lead-delivery-recipe" } }
+        , "add")
+
     if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
         local reprocessing
         if settings.startup["old-graphite-fuel"].value then

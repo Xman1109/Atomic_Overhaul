@@ -4,8 +4,9 @@ data:extend({
         name = "lead-delivery-capsule",
         icon = se_addon_graphics .. "lead-delivery-capsule.png",
         icon_size = 64,
-        subgroup = "capsule",
-        order = "a[rocket-launcher]-b[lead-delivery-capsule]",
+        group = "atomic-overhaul",
+        subgroup = "delivery-capules",
+        order = "a",
         stack_size = 100
     }
 })

@@ -16,7 +16,7 @@ if mods["Clowns-Nuclear"] then
             log(debug_text .. "Clowns-AngelBob-Nuclear")
         end
     else
-        require(compatibility .. "clowns-nuclear")
+        require(compatibility .. "clowns-vanilla-nuclear")
         if ao_debug == true then
             log(debug_text .. "Clowns-Nuclear")
         end
