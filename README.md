@@ -16,7 +16,9 @@ German <br>
 English <br>
 Spanish (thanks to <a href=https://github.com/Kopynft>@Kopynft</a>) <br>
 French (thanks to @Rominou) <br>
-Turkish (thanks to @Nekoist)
+Turkish (thanks to @Nekoist) <br>
+Brazil-Portuguese (by thoraras) <br>
+Taiwan-Chinese (by hunterkm)
 
 <h2>Graphite</h2>
 

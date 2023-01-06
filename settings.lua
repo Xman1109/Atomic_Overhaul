@@ -43,6 +43,13 @@ data:extend({
         order = "z"
     },
     {
+        type = "bool-setting",
+        name = "ruins-addon",
+        setting_type = "startup",
+        default_value = true,
+        order = "za"
+    },
+    {
         type = "string-setting",
         name = "fuel-cell-ingredient",
         setting_type = "startup",
