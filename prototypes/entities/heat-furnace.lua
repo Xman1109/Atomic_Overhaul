@@ -2,6 +2,7 @@ heat_furnace = util.table.deepcopy(data.raw["furnace"]["steel-furnace"])
 heat_furnace.name = "heat-furnace"
 heat_furnace.type = "assembling-machine"
 heat_furnace.crafting_categories = { "heat-furnace" }
+heat_furnace.minable.result = "heat-furnace"
 
 heat_furnace.energy_source =
 {
