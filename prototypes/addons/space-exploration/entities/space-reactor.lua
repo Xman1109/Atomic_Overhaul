@@ -1,19 +1,19 @@
 require("util")
 data:extend({
-{
+  {
     type = "reactor",
     name = "space-reactor",
-    icon  = se_addon_graphics .. "space-reactor.png",
+    icon = se_addon_graphics .. "space-reactor.png",
     icon_size = 64, icon_mipmaps = 4,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1.0, result = "nuclear-reactor"},
+    flags = { "placeable-neutral", "player-creation" },
+    minable = { mining_time = 1.0, result = "space-reactor" },
     max_health = 500,
     corpse = "nuclear-reactor-remnants",
     dying_explosion = "nuclear-reactor-explosion",
     consumption = "100MW",
     neighbour_bonus = 1,
     use_fuel_glow_color = true,
-    default_fuel_glow_color = {0, 218, 252},
+    default_fuel_glow_color = { 0, 218, 252 },
     collision_mask = {
       "water-tile",
       "ground-tile",
@@ -31,13 +31,13 @@ data:extend({
       burnt_inventory_size = 1,
       light_flicker =
       {
-        color = {0,0,0},
+        color = { 0, 0, 0 },
         minimum_intensity = 0.7,
         maximum_intensity = 0.99
       }
     },
-    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_box = { { -2.2, -2.2 }, { 2.2, 2.2 } },
+    selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
     damaged_trigger_effect = hit_effects.entity(),
     lower_layer_picture =
     {
@@ -92,7 +92,7 @@ data:extend({
           filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
           width = 263,
           height = 162,
-          shift = { 1.625 , 0 },
+          shift = { 1.625, 0 },
           draw_as_shadow = true,
           hr_version =
           {
@@ -135,51 +135,51 @@ data:extend({
       connections =
       {
         {
-          position = {-2, -2},
+          position = { -2, -2 },
           direction = defines.direction.north
         },
         {
-          position = {0, -2},
+          position = { 0, -2 },
           direction = defines.direction.north
         },
         {
-          position = {2, -2},
+          position = { 2, -2 },
           direction = defines.direction.north
         },
         {
-          position = {2, -2},
+          position = { 2, -2 },
           direction = defines.direction.east
         },
         {
-          position = {2, 0},
+          position = { 2, 0 },
           direction = defines.direction.east
         },
         {
-          position = {2, 2},
+          position = { 2, 2 },
           direction = defines.direction.east
         },
         {
-          position = {2, 2},
+          position = { 2, 2 },
           direction = defines.direction.south
         },
         {
-          position = {0, 2},
+          position = { 0, 2 },
           direction = defines.direction.south
         },
         {
-          position = {-2, 2},
+          position = { -2, 2 },
           direction = defines.direction.south
         },
         {
-          position = {-2, 2},
+          position = { -2, 2 },
           direction = defines.direction.west
         },
         {
-          position = {-2, 0},
+          position = { -2, 0 },
           direction = defines.direction.west
         },
         {
-          position = {-2, -2},
+          position = { -2, -2 },
           direction = defines.direction.west
         }
       },

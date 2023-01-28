@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.9
+Date: 2023-01-28
+  Changes:
+    - (Krastorio 2) atomic bomb recipe will now be overwritten by K2 to avoid more bugs
+    - (Space Exploration) deconstructing the space reactor now gives you back the space reactor as an item
+---------------------------------------------------------------------------------------------------
 Version: 1.3.8
 Date: 2023-01-18
   Changes:

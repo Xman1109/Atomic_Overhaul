@@ -1,4 +1,6 @@
-require(vanilla .. "atomic-bomb")
+if not mods["krastorio2"] then
+    require(vanilla .. "atomic-bomb")
+end
 require(vanilla .. "icons")
 require(vanilla .. "items")
 require(vanilla .. "recipes")

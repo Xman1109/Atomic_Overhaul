@@ -64,14 +64,6 @@ if mods["bzcarbon"] then
     end
 end
 
-if mods["AbandonedRuins"] and settings.startup["ruins-addon"].value == true then
-    require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruin-set")
-    ruins = true
-    if ao_debug == true then
-        log(debug_text .. "the-ruins-mod")
-    end
-end
-
 -- Addon stage begins here.
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("__Atomic_Overhaul__/lib/se-addon")
@@ -122,6 +114,15 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
         log(debug_addon_text .. "space-exploration")
     end
 end
+
+-- if mods["AbandonedRuins"] and settings.startup["ruins-addon"].value == true then
+--     require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruin-set")
+--     ruins = true
+--     if ao_debug == true then
+--         log(debug_text .. "the-ruins-mod")
+--     end
+-- end
+
 
 if settings.startup["old-graphite-fuel"].value == false then
     if settings.startup["heat-algo-mode"].value ~= "off" then

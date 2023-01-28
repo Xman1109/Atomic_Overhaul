@@ -280,7 +280,7 @@ function modifyEffects(name, effects, task)
     end
 end
 
-function modifyIngredients(name, ingredients, task)
+function modifyIngredients(name, ingredients, task) -- name = string | ingredients = table/string | task = replace/add
     if ao_debug == true then
         log("Trying to modify ingredients of recipe." ..
             name .. " with " .. serpent.block(ingredients) .. " with Task " .. '"' .. tostring(task) .. '"' .. "\n")
