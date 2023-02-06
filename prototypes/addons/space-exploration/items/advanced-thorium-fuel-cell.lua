@@ -1,8 +1,8 @@
 data:extend({
 	{
 		type = "item",
-		name = "plutonium-fuel-cell",
-		icon = graphics .. "plutonium-fuel-cell.png",
+		name = "advanced-thorium-fuel-cell",
+		icon = graphics .. "thorium-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{
@@ -10,7 +10,7 @@ data:extend({
 			{
 				{
 					size = 64,
-					filename = graphics .. "plutonium-fuel-cell.png",
+					filename = graphics .. "thorium-fuel-cell.png",
 					scale = 0.25,
 					mipmap_count = 4
 				},
@@ -25,12 +25,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "c",
+		order = "e",
 		subgroup = "fuel-cells",
-		fuel_category = "nuclear",
-		burnt_result = "plutonium-depleted-cell",
-		fuel_glow_color = { 130, 187, 124 },
-		fuel_value = "10GJ",
+		fuel_category = "space-nuclear",
+		burnt_result = "advanced-thorium-depleted-cell",
+		fuel_glow_color = { 219, 225, 130 },
+		fuel_value = "14GJ",
 		stack_size = 50
 	}
 })

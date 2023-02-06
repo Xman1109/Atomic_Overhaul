@@ -1,11 +1,8 @@
-data.raw["reactor"]["nuclear-reactor"].use_fuel_glow_color = true
-data.raw["reactor"]["nuclear-reactor"].default_fuel_glow_color = { 0, 1, 0, 1 }
-
 data:extend({
 	{
 		type = "item",
-		name = "thorium-fuel-cell",
-		icon = graphics .. "thorium-fuel-cell.png",
+		name = "advanced-MOX-fuel-cell",
+		icon = graphics .. "MOX-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{
@@ -13,7 +10,7 @@ data:extend({
 			{
 				{
 					size = 64,
-					filename = graphics .. "thorium-fuel-cell.png",
+					filename = graphics .. "MOX-fuel-cell1.png",
 					scale = 0.25,
 					mipmap_count = 4
 				},
@@ -28,12 +25,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "e",
+		order = "d",
 		subgroup = "fuel-cells",
-		fuel_category = "nuclear",
-		burnt_result = "thorium-depleted-cell",
-		fuel_glow_color = { 219, 225, 130 },
-		fuel_value = "14GJ",
+		fuel_category = "space-nuclear",
+		burnt_result = "advanced-MOX-depleted-cell",
+		fuel_glow_color = { 118, 150, 57 },
+		fuel_value = "12GJ",
 		stack_size = 50
 	}
 })

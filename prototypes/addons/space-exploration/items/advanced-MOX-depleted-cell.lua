@@ -2,7 +2,7 @@ data:extend(
     {
         {
             type = "item",
-            name = "MOX-depleted-cell",
+            name = "advanced-MOX-depleted-cell",
             icon = graphics .. "MOX-used-up-fuel-cell.png",
             pictures =
             {
@@ -15,7 +15,7 @@ data:extend(
             icon_mipmaps = 4,
             stack_size = 50,
             group = "atomic-overhaul",
-            order = "d",
+            order = "zc",
             subgroup = "used-up-fuel-cells",
         }
     })

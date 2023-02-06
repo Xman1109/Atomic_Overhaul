@@ -1,13 +1,13 @@
-    data:extend(
+data:extend(
     {
         {
             type = "item",
-            name = "thorium-depleted-cell",
-            icon = graphics .. "thorium-used-up-fuel-cell.png",
+            name = "advanced-plutonium-depleted-cell",
+            icon = graphics .. "plutonium-used-up-fuel-cell.png",
             icon_size = 64, icon_mipmaps = 4,
             stack_size = 50,
             group = "atomic-overhaul",
-            order = "e",
+            order = "zb",
             subgroup = "used-up-fuel-cells",
         }
     })

@@ -1,8 +1,8 @@
 data:extend({
 	{
 		type = "item",
-		name = "MOX-fuel-cell",
-		icon = graphics .. "MOX-fuel-cell.png",
+		name = "advanced-plutonium-fuel-cell",
+		icon = graphics .. "plutonium-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{
@@ -10,7 +10,7 @@ data:extend({
 			{
 				{
 					size = 64,
-					filename = graphics .. "MOX-fuel-cell1.png",
+					filename = graphics .. "plutonium-fuel-cell.png",
 					scale = 0.25,
 					mipmap_count = 4
 				},
@@ -25,12 +25,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "d",
+		order = "c",
 		subgroup = "fuel-cells",
-		fuel_category = "nuclear",
-		burnt_result = "MOX-depleted-cell",
-		fuel_glow_color = { 118, 150, 57 },
-		fuel_value = "12GJ",
+		fuel_category = "space-nuclear",
+		burnt_result = "advanced-plutonium-depleted-cell",
+		fuel_glow_color = { 130, 187, 124 },
+		fuel_value = "10GJ",
 		stack_size = 50
 	}
 })
