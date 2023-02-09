@@ -94,3 +94,7 @@ if mods["informatron"] then
     informatron_make_image("beryllium", images .. "beryllium.png", 64, 64)
     informatron_make_image("glow_1", images .. "glow.png", 243, 100)
 end
+
+-- TODO: make the scripts "beautiful"
+-- TODO: add the fuel rods
+-- TODO: Fix the icons with the zero g icon

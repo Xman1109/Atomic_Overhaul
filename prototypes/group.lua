@@ -16,51 +16,57 @@ data:extend(
         },
         {
             type = "item-subgroup",
-            name = "fuel-cells",
+            name = "fuel-rods",
             group = "atomic-overhaul",
             order = "b"
         },
         {
             type = "item-subgroup",
-            name = "used-up-fuel-cells",
-            group = "atomic-overhaul",
-            order = "b-c"
-        },
-        {
-            type = "item-subgroup",
-            name = "reprocessing",
+            name = "fuel-cells",
             group = "atomic-overhaul",
             order = "c"
         },
         {
             type = "item-subgroup",
-            name = "reprocessing-without-research-data",
+            name = "used-up-fuel-cells",
             group = "atomic-overhaul",
             order = "d"
         },
         {
             type = "item-subgroup",
-            name = "modules",
+            name = "reprocessing",
             group = "atomic-overhaul",
             order = "e"
         },
         {
             type = "item-subgroup",
-            name = "fuel",
+            name = "reprocessing-without-research-data",
             group = "atomic-overhaul",
             order = "f"
         },
         {
             type = "item-subgroup",
-            name = "waste-reprocessing",
+            name = "modules",
             group = "atomic-overhaul",
             order = "g"
         },
         {
             type = "item-subgroup",
-            name = "other-items",
+            name = "fuel",
             group = "atomic-overhaul",
             order = "h"
+        },
+        {
+            type = "item-subgroup",
+            name = "waste-reprocessing",
+            group = "atomic-overhaul",
+            order = "i"
+        },
+        {
+            type = "item-subgroup",
+            name = "other-items",
+            group = "atomic-overhaul",
+            order = "j"
         },
         {
             type = "module-category",

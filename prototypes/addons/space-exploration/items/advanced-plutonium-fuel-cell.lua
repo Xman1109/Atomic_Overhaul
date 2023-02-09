@@ -25,12 +25,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "c",
+		order = "b",
 		subgroup = "fuel-cells",
-		fuel_category = "space-nuclear",
+		fuel_category = "space-nuclear-fuel",
 		burnt_result = "advanced-plutonium-depleted-cell",
 		fuel_glow_color = { 130, 187, 124 },
-		fuel_value = "10GJ",
+		fuel_value = math.floor(string.gsub(data.raw["item"]["plutonium-fuel-cell"].fuel_value, "GJ", "") * 0.75) .. "GJ",
 		stack_size = 50
 	}
 })

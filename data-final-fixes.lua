@@ -81,6 +81,8 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_items .. "space-reactor")
     require(se_addon_items .. "lead-delivery-capsule")
     require(se_addon_items .. "capsule-items")
+    require(se_addon_items .. "advanced-thorium-fuel-cell")
+    require(se_addon_items .. "advanced-thorium-depleted-cell")
 
     require(se_addon_recipes .. "advanced-fuel-cell-recipe")
     require(se_addon_recipes .. "iridium-fuel-cell-recipe")

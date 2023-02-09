@@ -1,13 +1,12 @@
 data:extend({
 	{
-		type = "item",
+		type = "item", -- TODO: Make the icon have the zero g logo + for all the other fuel cells
 		name = "advanced-MOX-fuel-cell",
-		icon = graphics .. "MOX-fuel-cell.png",
-		icon_size = 64, icon_mipmaps = 4,
 		pictures =
 		{
 			layers =
 			{
+				zero_g_icon,
 				{
 					size = 64,
 					filename = graphics .. "MOX-fuel-cell1.png",
@@ -25,12 +24,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "d",
+		order = "c",
 		subgroup = "fuel-cells",
-		fuel_category = "space-nuclear",
+		fuel_category = "space-nuclear-fuel",
 		burnt_result = "advanced-MOX-depleted-cell",
 		fuel_glow_color = { 118, 150, 57 },
-		fuel_value = "12GJ",
+		fuel_value = math.floor(string.gsub(data.raw["item"]["MOX-fuel-cell"].fuel_value, "GJ", "") * 0.75) .. "GJ",
 		stack_size = 50
 	}
 })

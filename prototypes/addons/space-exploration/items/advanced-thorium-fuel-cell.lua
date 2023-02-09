@@ -8,6 +8,7 @@ data:extend({
 		{
 			layers =
 			{
+				zero_g_icon,
 				{
 					size = 64,
 					filename = graphics .. "thorium-fuel-cell.png",
@@ -25,12 +26,12 @@ data:extend({
 			}
 		},
 		group = "atomic-overhaul",
-		order = "e",
+		order = "d",
 		subgroup = "fuel-cells",
-		fuel_category = "space-nuclear",
+		fuel_category = "space-nuclear-fuel",
 		burnt_result = "advanced-thorium-depleted-cell",
 		fuel_glow_color = { 219, 225, 130 },
-		fuel_value = "14GJ",
+		fuel_value = math.floor(string.gsub(data.raw["item"]["thorium-fuel-cell"].fuel_value, "GJ", "") * 0.75) .. "GJ",
 		stack_size = 50
 	}
 })

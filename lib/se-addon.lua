@@ -8,6 +8,13 @@ se_addon_entities = "__Atomic_Overhaul__.prototypes.addons.space-exploration.ent
 hit_effects = require("__base__.prototypes.entity.hit-effects")
 sounds = require("__base__.prototypes.entity.sounds")
 
+zero_g_icon = {
+    filename = se_addon_graphics .. "zero-g.png",
+    size = 64,
+    mipmap_count = 4,
+    scale = 0.25
+}
+
 debug_addon_text = "AO-DEBUG: Add-on loaded for: "
 
 

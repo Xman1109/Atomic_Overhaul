@@ -2,8 +2,8 @@ data:extend(
     {
         {
             type = "item",
-            name = "advanced-non-moderated-depleted-cell",
-            icon = graphics .. "non-moderated-used-up-fuel-cell.png",
+            name = "advanced-uranium-depleted-cell",
+            icon = data.raw["item"]["advanced-uranium-fuel-cell"].icon,
             icon_size = 64, icon_mipmaps = 4,
             stack_size = 50,
             group = "atomic-overhaul",
