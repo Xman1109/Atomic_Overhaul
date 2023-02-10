@@ -3,24 +3,30 @@ require("__Atomic_Overhaul__/lib/core")
 require("prototypes/group")
 require(fluids .. "waste-solution")
 require(items .. "empty-fuel-cell")
+require(items .. "nuclear-waste")
+require(items .. "research-data")
+require(items .. "uranium-fuel-rod")
+require(items .. "graphite")
 require(items .. "graphite-depleted-cell")
 require(items .. "graphite-fuel-cell")
-require(items .. "graphite")
+require(items .. "MOX")
 require(items .. "MOX-depleted-cell")
 require(items .. "MOX-fuel-cell")
-require(items .. "MOX")
-require(items .. "nuclear-waste")
-require(items .. "plutonium-depleted-cell")
-require(items .. "plutonium-fuel-cell")
-require(items .. "plutonium-fuel")
+require(items .. "MOX-fuel-rod")
 require(items .. "plutonium")
-require(items .. "research-data")
+require(items .. "plutonium-depleted-cell")
+require(items .. "plutonium-fuel")
+require(items .. "plutonium-fuel-cell")
+require(items .. "plutonium-fuel-rod")
+require(items .. "thorium")
 require(items .. "thorium-depleted-cell")
 require(items .. "thorium-fuel-cell")
+require(items .. "thorium-fuel-rod")
 require(items .. "thorium-module-1")
 require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
-require(items .. "thorium")
+
+
 require(ao_recipes .. "empty-fuel-cell-recipe")
 require(ao_recipes .. "graphite-fuel-cell-recipe")
 require(ao_recipes .. "graphite-fuel-cell-recipe")
@@ -44,6 +50,8 @@ require(ao_recipes .. "thorium-recipe")
 require(ao_recipes .. "uranium-without-research-data")
 require(ao_recipes .. "waste-liquefaction")
 require(ao_recipes .. "waste-solution-reprocessing")
+
+
 require(techs .. "graphite-fuel-reprocessing")
 require(techs .. "graphite-processing")
 require(techs .. "plutonium-fuel-reprocessing")
@@ -96,5 +104,9 @@ if mods["informatron"] then
 end
 
 -- TODO: make the scripts "beautiful"
--- TODO: add the fuel rods
--- TODO: Fix the icons with the zero g icon
+-- TODO: add the fuel rods ✔ (space rods still missing)
+-- TODO: Fix the icons with the zero g icon ✔
+-- TODO: Add locals ✔ (recipes still need locales)
+-- TODO: Make recipes for the fuel rods
+-- TODO: #31
+-- TODO: #26

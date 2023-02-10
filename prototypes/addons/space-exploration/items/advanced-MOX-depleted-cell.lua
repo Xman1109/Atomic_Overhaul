@@ -3,16 +3,26 @@ data:extend(
         {
             type = "item",
             name = "advanced-MOX-depleted-cell",
-            icon = graphics .. "MOX-used-up-fuel-cell.png",
+            icons =
+            {
+                {
+                    icon = graphics .. "MOX-used-up-fuel-cell.png",
+                    icon_size = 64,
+                    icon_mipmaps = 4,
+                },
+                zero_g_icon
+            },
             pictures =
             {
-                size = 64,
-                filename = graphics .. "MOX-used-up-fuel-cell1.png",
-                scale = 0.25,
-                mipmap_count = 4
+                layers =
+                {
+                    size = 64,
+                    filename = graphics .. "MOX-used-up-fuel-cell1.png",
+                    scale = 0.25,
+                    mipmap_count = 4
+                },
+                zero_g_picture
             },
-            icon_size = 64,
-            icon_mipmaps = 4,
             stack_size = 50,
             group = "atomic-overhaul",
             order = "zc",

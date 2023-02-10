@@ -2,8 +2,15 @@ data:extend({
 	{
 		type = "item",
 		name = "advanced-plutonium-fuel-cell",
-		icon = graphics .. "plutonium-fuel-cell.png",
-		icon_size = 64, icon_mipmaps = 4,
+		icons =
+		{
+			{
+				icon = graphics .. "plutonium-fuel-cell.png",
+				icon_size = 64,
+				icon_mipmaps = 4
+			},
+			zero_g_icon
+		},
 		pictures =
 		{
 			layers =
@@ -21,7 +28,8 @@ data:extend({
 					filename = base_graphics .. "uranium-fuel-cell-light.png",
 					scale = 0.25,
 					mipmap_count = 4
-				}
+				},
+				zero_g_picture
 			}
 		},
 		group = "atomic-overhaul",

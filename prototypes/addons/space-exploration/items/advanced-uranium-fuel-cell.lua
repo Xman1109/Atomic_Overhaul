@@ -3,8 +3,16 @@ data:extend({
         type = "item",
         name = "advanced-uranium-fuel-cell",
         icon = data.raw["item"]["uranium-fuel-cell"].icon,
-        icon_size = 64, icon_mipmaps = 4,
-        pictures = data.raw["item"]["uranium-fuel-cell"].pictures,
+        icons =
+        {
+            {
+                icon = data.raw["item"]["uranium-fuel-cell"].icon,
+                icon_size = 64,
+                icon_mipmaps = 4
+            },
+            zero_g_icon
+        },
+        pictures = data.raw["item"]["uranium-fuel-cell"].pictures .. zero_g_picture,
         group = "atomic-overhaul",
         order = "a",
         subgroup = "fuel-cells",

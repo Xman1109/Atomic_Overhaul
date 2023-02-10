@@ -1,15 +1,24 @@
 data:extend({
 	{
-		type = "item", -- TODO: Make the icon have the zero g logo + for all the other fuel cells
+		type = "item",
 		name = "advanced-MOX-fuel-cell",
+		icons =
+		{
+			{
+				icon = graphics .. "MOX-fuel-cell.png",
+				icon_size = 64,
+				icon_mipmaps = 4
+			},
+			zero_g_icon
+		},
 		pictures =
 		{
 			layers =
 			{
-				zero_g_icon,
 				{
-					size = 64,
-					filename = graphics .. "MOX-fuel-cell1.png",
+					filename = graphics .. "MOX-fuel-cell.png",
+					width = 64,
+					height = 64,
 					scale = 0.25,
 					mipmap_count = 4
 				},
@@ -20,7 +29,9 @@ data:extend({
 					filename = base_graphics .. "uranium-fuel-cell-light.png",
 					scale = 0.25,
 					mipmap_count = 4
-				}
+				},
+				zero_g_picture
+
 			}
 		},
 		group = "atomic-overhaul",

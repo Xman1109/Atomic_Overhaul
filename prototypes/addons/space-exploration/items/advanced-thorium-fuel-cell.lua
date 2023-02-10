@@ -2,13 +2,19 @@ data:extend({
 	{
 		type = "item",
 		name = "advanced-thorium-fuel-cell",
-		icon = graphics .. "thorium-fuel-cell.png",
-		icon_size = 64, icon_mipmaps = 4,
+		icons =
+		{
+			{
+				icon = graphics .. "thorium-fuel-cell.png",
+				icon_size = 64,
+				icon_mipmaps = 4
+			},
+			zero_g_icon
+		},
 		pictures =
 		{
 			layers =
 			{
-				zero_g_icon,
 				{
 					size = 64,
 					filename = graphics .. "thorium-fuel-cell.png",
@@ -22,7 +28,8 @@ data:extend({
 					filename = base_graphics .. "uranium-fuel-cell-light.png",
 					scale = 0.25,
 					mipmap_count = 4
-				}
+				},
+				zero_g_picture
 			}
 		},
 		group = "atomic-overhaul",
