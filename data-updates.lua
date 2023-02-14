@@ -1,5 +1,9 @@
-if not mods["krastorio2"] then
+if not mods["Krastorio2"] then
     require(vanilla .. "atomic-bomb")
+else
+    if ao_debug then
+        log("Atomic Overhaul: Atomic Bomb not changed, because of Krastorio2")
+    end
 end
 require(vanilla .. "icons")
 require(vanilla .. "items")

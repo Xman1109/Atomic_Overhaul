@@ -26,7 +26,10 @@ function thorium_module_limitation()
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
 end
 
--- the glow function should support tables
+--- ***This function is used to make an item glow***
+--
+-- **name**: This is the name of the item
+-- **typeOfItem**: This is the type of item (nil = resource, cell, fuel)
 function Glow(name, typeOfItem)
     if typeOfItem == nil then
         typeOfItem = "resource"
@@ -42,8 +45,8 @@ function Glow(name, typeOfItem)
             elseif data.raw["item"][i].icon_size == 64 then
                 scale = 0.25
             else
-                log("Error: Item " ..
-                    i .. " has not the right icon size (" .. data.raw["item"][i].icon_size .. ")." .. "\n")
+                log("Error: Item " .. i .. " has not the right icon size (" .. data.raw["item"][i].icon_size .. ")." ..
+                "\n")
             end
             if data.raw["item"][i] then
                 if typeOfItem == "resource" then
@@ -116,8 +119,9 @@ function Glow(name, typeOfItem)
         elseif data.raw["item"][name].icon_size == 64 then
             scale = 0.25
         else
-            log("Error: Item " ..
-                name .. " has not the right icon size (" .. data.raw["item"][name].icon_size .. ")." .. "\n")
+            log(
+                "Error: Item " .. name .. " has not the right icon size (" .. data.raw["item"][name].icon_size .. ")." ..
+                "\n")
         end
         if data.raw["item"][name] then
             if typeOfItem == "resource" then
@@ -217,7 +221,12 @@ function loadDefaultOf(type, name)
     end
 end
 
-function hideType(Type, name) -- supports tables
+--TODO: Overhaul the docs
+--- Hides a specific item/recipe/technology/item-subgroup. The name can either be a single item or a table of items
+--
+-- - **Type:** The type of data to hide
+-- - **name:** The name of the data to hide, or a table of names if hiding multiple items
+function hideType(Type, name)
     if ao_debug == true then
         log("Trying to hide " .. Type .. "." .. serpent.block(name) .. "\n")
     end
@@ -246,10 +255,20 @@ function hideType(Type, name) -- supports tables
     end
 end
 
+--- The `modifyEffects` function modifies the effects of a technology in the game
+--
+-- - **name:** The name of the technology
+-- - **effects:** The effects to be added or replaced in the technology
+-- - **task:** (optional) The task to be performed. Can be either "replace" or "add".
+-- If "replace" is specified, the current effects will be replaced with the new ones.
+-- If "add" is specified  the new effects will be added to the current ones
+-- If task is not specified, the default is "replace".
 function modifyEffects(name, effects, task)
     if ao_debug == true then
-        log("Trying to modify effects of recipe." ..
-            name .. " with " .. serpent.block(effects) .. " with Task " .. '"' .. tostring(task) .. '"' .. "\n")
+        log(
+            "Trying to modify effects of recipe." ..
+            name .. " with " .. serpent.block(effects) .. " with Task " .. '"' ..
+            tostring(task) .. '"' .. "\n")
     end
     if data.raw["technology"][name] then
         if task == "replace" or task == nil then
@@ -280,10 +299,19 @@ function modifyEffects(name, effects, task)
     end
 end
 
-function modifyIngredients(name, ingredients, task) -- name = string | ingredients = table/string | task = replace/add
+---
+-- Modifies the ingredients of a recipe.
+--
+---@param name string The name of the recipe to modify.
+---@param ingredients table/string The ingredients to add or replace.
+---@param task string [optional] The task to perform. Can be "replace", "add", or "globalReplace". Defaults to "replace".
+--
+function modifyIngredients(name, ingredients, task)
     if ao_debug == true then
-        log("Trying to modify ingredients of recipe." ..
-            name .. " with " .. serpent.block(ingredients) .. " with Task " .. '"' .. tostring(task) .. '"' .. "\n")
+        log(
+            "Trying to modify ingredients of recipe." ..
+            name .. " with " .. serpent.block(ingredients) .. " with Task " ..
+            '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["recipe"][name] then
         if task == "replace" or task == nil then
@@ -313,7 +341,7 @@ function modifyIngredients(name, ingredients, task) -- name = string | ingredien
                             ingredient[1] = ingredients
                             if ao_debug == true then
                                 log("Replaced ingredient '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                    serpent.block(ingredients) .. "'" .. "\n")
+                                serpent.block(ingredients) .. "'" .. "\n")
                             end
                         end
                     end
@@ -329,8 +357,8 @@ end
 
 function modifyResults(name, results, task)
     if ao_debug == true then
-        log("Trying to use modifyResults on recipe." ..
-            name .. " with " .. serpent.block(results) .. " and task " .. '"' .. tostring(task) .. '"' .. "\n")
+        log("Trying to use modifyResults on recipe." .. name .. " with " .. serpent.block(results) .. " and task " ..
+        '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["recipe"][name] then
         if data.raw["recipe"][name].results then
@@ -361,7 +389,7 @@ function modifyResults(name, results, task)
                                 result.name = results
                                 if ao_debug == true then
                                     log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                        serpent.block(results) .. "'" .. "\n")
+                                    serpent.block(results) .. "'" .. "\n")
                                 end
                             end
                         end
@@ -397,7 +425,7 @@ function modifyResults(name, results, task)
                             recipe.result.name = results
                             if ao_debug == true then
                                 log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                    serpent.block(results) .. "'" .. "\n")
+                                serpent.block(results) .. "'" .. "\n")
                             end
                         end
                     end
@@ -415,8 +443,8 @@ end
 
 function modifyPrerequisites(name, prerequisites, task)
     if ao_debug == true then
-        log("Trying to use modifyPrerequisites on technology." ..
-            name .. " with " .. serpent.block(prerequisites) .. " and task " .. '"' .. tostring(task) .. '"' .. "\n")
+        log("Trying to use modifyPrerequisites on technology." .. name .. " with " .. serpent.block(prerequisites) ..
+        " and task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["technology"][name] then
         if task == "replace" or task == nil then
@@ -448,15 +476,8 @@ end
 
 function regroup(type, name, group, subgroup, order)
     if ao_debug == true then
-        log("Trying to use regroup on " ..
-            type ..
-            "." ..
-            name ..
-            " Group: " ..
-            '"' ..
-            tostring(group) ..
-            '"' ..
-            " Subgroup: " .. '"' .. tostring(subgroup) .. '"' .. " order: " .. '"' .. tostring(order) .. '"' .. "\n")
+        log("Trying to use regroup on " .. type .. "." .. name .. " Group: " .. '"' .. tostring(group) .. '"' ..
+        " Subgroup: " .. '"' .. tostring(subgroup) .. '"' .. " order: " .. '"' .. tostring(order) .. '"' .. "\n")
     end
     type = resolveType(type)
     if group == "AO" then
@@ -492,7 +513,8 @@ end
 
 function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the icon you want to move to toName2
     if ao_debug == true then
-        log("Trying to use iconizer on " .. fromType1 .. "." .. fromName1 .. " --> " .. toType2 .. "." .. toName2 .. "\n")
+        log("Trying to use iconizer on " .. fromType1 .. "." .. fromName1 .. " --> " .. toType2 .. "." .. toName2 ..
+        "\n")
     end
 
     fromType1 = resolveType(fromType1)
@@ -514,8 +536,7 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_size = data.raw[fromType1][fromName1].icon_size
                 if ao_debug == true then
                     log(
-                        fromType1 ..
-                        "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
+                        fromType1 .. "." .. fromName1 .. "'s icon size got replaced by '" .. toType2 .. "." .. toName2 ..
                         "'")
                 end
             else
@@ -527,7 +548,7 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
                 data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
                 if ao_debug == true then
                     log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." ..
-                        toName2 .. "'")
+                    toName2 .. "'")
                 end
             else
                 if ao_debug == true then
@@ -537,9 +558,8 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
             if data.raw[fromType1][fromName1].pictures ~= nil then
                 data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
                 if ao_debug == true then
-                    log(fromType1 ..
-                        "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
-                        "'")
+                    log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
+                    "'")
                 end
             else
                 if ao_debug == true then
@@ -571,9 +591,7 @@ function addResearchData(name) -- supports tables
                     end
                 end
                 if found == false then
-                    table.insert(data.raw["technology"][i].unit.ingredients, {
-                        "research-data", 1
-                    })
+                    table.insert(data.raw["technology"][i].unit.ingredients, { "research-data", 1 })
                     if ao_debug == true then
                         log("Added research data to " .. i .. "\n")
                     end
@@ -597,9 +615,7 @@ function addResearchData(name) -- supports tables
                 end
             end
             if found == false then
-                table.insert(data.raw["technology"][name].unit.ingredients, {
-                    "research-data", 1
-                })
+                table.insert(data.raw["technology"][name].unit.ingredients, { "research-data", 1 })
                 if ao_debug == true then
                     log("Added research data to " .. name .. "\n")
                 end
@@ -636,24 +652,23 @@ end
 cmt.graphite = {
     primary = { 52, 54, 64 },
     secondary = { 79, 82, 94 },
-    tertiary = { 32, 33, 38 },
+    tertiary = { 32, 33, 38 }
 }
 cmt.plutonium = {
     primary = { 101, 160, 103 },
     secondary = { 107, 153, 112 },
-    tertiary = { 76, 143, 69 },
+    tertiary = { 76, 143, 69 }
 }
 cmt.MOX = {
     primary = { 111, 131, 69 },
     secondary = { 151, 167, 83 },
-    tertiary = { 117, 157, 50 },
+    tertiary = { 117, 157, 50 }
 }
 cmt.thorium = {
     primary = { 199, 206, 118 },
     secondary = { 154, 163, 99 },
-    tertiary = { 162, 173, 102 },
+    tertiary = { 162, 173, 102 }
 }
-
 
 -- From the base game (not my code)
 

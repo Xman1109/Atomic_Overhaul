@@ -1,4 +1,3 @@
-data.raw["recipe"]["atomic-bomb"].icon = "__Krastorio2Assets__/icons/ammo/atomic-bomb.png"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].localized_name = { "recipe-name.ao-nuclear-fuel-reprocessing" }
 modifyResults("nuclear-fuel-reprocessing", { {
     type = "item",

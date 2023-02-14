@@ -11,8 +11,7 @@ sounds = require("__base__.prototypes.entity.sounds")
 zero_g_picture = {
     filename = se_addon_graphics .. "zero-g.png",
     priority = "extra-high",
-    width = 64,
-    height = 64,
+    size = 64,
     scale = 0.25,
     mipmap_count = 4
 }

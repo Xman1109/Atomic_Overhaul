@@ -1,6 +1,3 @@
-data.raw["recipe"]["atomic-bomb"].icon = "__Krastorio2Assets__/icons/ammo/atomic-bomb.png"
-data.raw["recipe"]["atomic-bomb"].icon_size = 64
-data.raw["recipe"]["atomic-bomb"].icon_mipmaps = 4
 modifyResults("uranium-without-research-data", { {
     type = "item",
     name = "uranium-238",
@@ -103,7 +100,7 @@ modifyResults("thorium-fuel-cell-recipe", { {
 if settings.startup["se-addon"].value == true then
     table.insert(data.raw["technology"]["se-antimatter-reactor"].prerequisites, "space-reactor")
     data.raw["reactor"]["nuclear-reactor"].collision_mask =
-    data.raw["transport-belt"]["transport-belt"].collision_mask or
+        data.raw["transport-belt"]["transport-belt"].collision_mask or
         data.raw["assembling-machine"]["assembling-machine-1"].collision_mask
     data.raw["tool"]["research-data"].order = "zz"
     regroup("r", "research-data-recipe", nil, nil, "zz")

@@ -109,4 +109,4 @@ end
 -- TODO: Add locals ✔ (recipes still need locales)
 -- TODO: Make recipes for the fuel rods
 -- TODO: #31
--- TODO: #26
+-- TODO: #26 ✔
