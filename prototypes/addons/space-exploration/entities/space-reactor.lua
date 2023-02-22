@@ -14,14 +14,7 @@ data:extend({
     neighbour_bonus = 1,
     use_fuel_glow_color = true,
     default_fuel_glow_color = { 0, 218, 252 },
-    collision_mask = {
-      "water-tile",
-      "ground-tile",
-      "item-layer",
-      "object-layer",
-      "player-layer",
-      spaceship_collision_layer,
-    },
+    collision_mask = data.raw["assembling-machine"]["se-space-manufactory"].collision_mask,
     energy_source =
     {
       type = "burner",
@@ -44,14 +37,14 @@ data:extend({
       filename = "__base__/graphics/entity/nuclear-reactor/reactor-pipes.png",
       width = 156,
       height = 156,
-      shift = util.by_pixel(-2, -4),
+      shift = util.by_pixel( -2, -4),
       hr_version =
       {
         filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-pipes.png",
         width = 320,
         height = 316,
         scale = 0.5,
-        shift = util.by_pixel(-1, -5)
+        shift = util.by_pixel( -1, -5)
       }
     },
     heat_lower_layer_picture = apply_heat_pipe_glow
@@ -59,14 +52,14 @@ data:extend({
       filename = "__base__/graphics/entity/nuclear-reactor/reactor-pipes-heated.png",
       width = 156,
       height = 156,
-      shift = util.by_pixel(-3, -4),
+      shift = util.by_pixel( -3, -4),
       hr_version =
       {
         filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-pipes-heated.png",
         width = 320,
         height = 316,
         scale = 0.5,
-        shift = util.by_pixel(-0.5, -4.5)
+        shift = util.by_pixel( -0.5, -4.5)
       }
     },
 
@@ -78,14 +71,14 @@ data:extend({
           filename = se_addon_entity_graphics .. "reactor.png",
           width = 154,
           height = 158,
-          shift = util.by_pixel(-6, -6),
+          shift = util.by_pixel( -6, -6),
           hr_version =
           {
             filename = se_addon_entity_graphics .. "hr-reactor.png",
             width = 302,
             height = 318,
             scale = 0.5,
-            shift = util.by_pixel(-5, -7)
+            shift = util.by_pixel( -5, -7)
           }
         },
         {

@@ -25,6 +25,20 @@
     "Lua.workspace.library": [
         "f:\\Steam\\steamapps\\common\\Factorio\\data",
         "f:\\Steam\\steamapps\\common\\Factorio\\data\\core\\lualib",
-        ".vscode/factorio"
-    ]
+        ".vscode/factorio",
+        "c:/Users/X-Man1109/AppData/Roaming/Code/User/workspaceStorage/19a56ed9b31da92d8fd2688b4b29d068/justarandomgeek.factoriomod-debug/sumneko-3rd/factorio/library"
+    ],
+    "Lua.workspace.userThirdParty": [
+        "c:\\Users\\X-Man1109\\AppData\\Roaming\\Code\\User\\workspaceStorage\\19a56ed9b31da92d8fd2688b4b29d068\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
+    ],
+    "Lua.runtime.builtin": {
+        "io": "disable",
+        "os": "disable",
+        "math": "disable",
+        "debug": "disable",
+        "coroutine": "disable",
+        "package": "disable"
+    },
+    "Lua.runtime.special": [],
+    "Lua.runtime.plugin": "c:/Users/X-Man1109/AppData/Roaming/Code/User/workspaceStorage/19a56ed9b31da92d8fd2688b4b29d068/justarandomgeek.factoriomod-debug/sumneko-3rd/factorio/plugin.lua"
 }
