@@ -26,10 +26,11 @@ function thorium_module_limitation()
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
 end
 
---- ***This function is used to make an item glow***
---
--- **name**: This is the name of the item
--- **typeOfItem**: This is the type of item (nil = resource, cell, fuel)
+---
+--- This function is used to make an item glow
+---
+---@param name (string|table) This is the name of the item
+---@param typeOfItem (string) This is the type of item (nil = resource, cell, fuel)
 function Glow(name, typeOfItem)
     if typeOfItem == nil then
         typeOfItem = "resource"
@@ -221,11 +222,10 @@ function loadDefaultOf(type, name)
     end
 end
 
---TODO: Overhaul the docs
---- Hides a specific item/recipe/technology/item-subgroup. The name can either be a single item or a table of items
---
--- - **Type:** The type of data to hide
--- - **name:** The name of the data to hide, or a table of names if hiding multiple items
+---
+--- Hides an object of the specified type with the given name(s).
+--- @param Type (string) The type of object to hide (e.g. "item", "recipe", "fluid").
+--- @param name (string|table) The name(s) of the object to hide. Can be a single string or a table of strings.
 function hideType(Type, name)
     if ao_debug == true then
         log("Trying to hide " .. Type .. "." .. serpent.block(name) .. "\n")
@@ -255,14 +255,12 @@ function hideType(Type, name)
     end
 end
 
---- The `modifyEffects` function modifies the effects of a technology in the game
---
--- - **name:** The name of the technology
--- - **effects:** The effects to be added or replaced in the technology
--- - **task:** (optional) The task to be performed. Can be either "replace" or "add".
--- If "replace" is specified, the current effects will be replaced with the new ones.
--- If "add" is specified  the new effects will be added to the current ones
--- If task is not specified, the default is "replace".
+---
+-- Modifies the effects of a given technology.
+---@param name (string) The name of the technology to modify.
+---@param effects (table) The effects to set or add to the technology.
+---@param task (string) The task to perform. Can be "replace" to replace the existing effects, "add" to add to the existing effects, or "nil" to default to "replace".
+---@return nil
 function modifyEffects(name, effects, task)
     if ao_debug == true then
         log(
@@ -355,6 +353,13 @@ function modifyIngredients(name, ingredients, task)
     end
 end
 
+---
+---Modifies the results of a given recipe.
+---
+---@param name (string) The name of the recipe to modify.
+---@param results (table|string) The results to set or add to the recipe.
+---@param task (string) The task to perform. Can be "replace" to replace the existing results, "add" to add to the existing results, "globalReplace" to replace the result in all recipes that contain it, or nil to default to "replace".
+---@return nil
 function modifyResults(name, results, task)
     if ao_debug == true then
         log("Trying to use modifyResults on recipe." .. name .. " with " .. serpent.block(results) .. " and task " ..
@@ -441,6 +446,12 @@ function modifyResults(name, results, task)
     end
 end
 
+---
+-- Modifies the prerequisites of a given technology.
+---@param name (string) The name of the technology to modify.
+---@param prerequisites (table|string) The prerequisites to set or add to the technology.
+---@param task (string) The task to perform. Can be "replace" to replace the existing prerequisites, "add" to add to the existing prerequisites, or "nil" to default to "replace".
+---@return nil
 function modifyPrerequisites(name, prerequisites, task)
     if ao_debug == true then
         log("Trying to use modifyPrerequisites on technology." .. name .. " with " .. serpent.block(prerequisites) ..
@@ -474,6 +485,15 @@ function modifyPrerequisites(name, prerequisites, task)
     end
 end
 
+---
+-- Changes the group, subgroup, or order of the specified type of object.
+--
+-- @param type (string) The type of object to modify.
+-- @param name (string) The name of the object to modify.
+-- @param group (string) The new group to assign to the object.
+-- @param subgroup (string) The new subgroup to assign to the object.
+-- @param order (string) The new order to assign to the object.
+-- @return nil
 function regroup(type, name, group, subgroup, order)
     if ao_debug == true then
         log("Trying to use regroup on " .. type .. "." .. name .. " Group: " .. '"' .. tostring(group) .. '"' ..
@@ -511,7 +531,14 @@ function regroup(type, name, group, subgroup, order)
     end
 end
 
-function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the icon you want to move to toName2
+---
+---Sets the icon, icon size, icon mipmaps, and pictures of one item to match those of another item.
+---@param fromType1 (string) The type of the item to copy the icon and pictures from (e.g., "item", "fluid", "recipe").
+---@param fromName1 (string) The name of the item to copy the icon and pictures from.
+---@param toType2 (string) The type of the item to apply the copied icon and pictures to.
+---@param toName2 (string) The name of the item to apply the copied icon and pictures to.
+---@return nil
+function iconizer(fromType1, fromName1, toType2, toName2)
     if ao_debug == true then
         log("Trying to use iconizer on " .. fromType1 .. "." .. fromName1 .. " --> " .. toType2 .. "." .. toName2 ..
         "\n")
@@ -574,7 +601,12 @@ function iconizer(fromType1, fromName1, toType2, toName2) -- fromName1 has the i
     end
 end
 
-function addResearchData(name) -- supports tables
+---
+---Adds the "research-data" ingredient to a technology.
+---If the input is a table, the function will iterate over its contents and add the ingredient to each technology found.
+---@param name (string|table) The name(s) of the technology/ies to which the ingredient should be added.
+---@return nil
+function addResearchData(name)
     local found = false
     if ao_debug == true then
         log("Trying to add research data to " .. serpent.block(name) .. "\n")
@@ -630,6 +662,10 @@ function addResearchData(name) -- supports tables
     end
 end
 
+---
+---Returns a resolved type based on input string
+---@param type (string): The input string to be resolved
+---@return (string) resolvedType: The resolved type as a string or nil if the input string is unrecognised
 function resolveType(type)
     local resolvedType
     if type == "i" then
