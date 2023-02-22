@@ -108,5 +108,4 @@ end
 -- TODO: Fix the icons with the zero g icon ✔
 -- TODO: Add locals ✔ (recipes still need locales)
 -- TODO: Make recipes for the fuel rods
--- TODO: #31
--- TODO: #26 ✔
+-- TODO: Add the rod-light map to the fuel rods
