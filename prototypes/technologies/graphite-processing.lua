@@ -1,12 +1,13 @@
-data:extend({
+if settings.startup["complexity-level"].value ~= "simple" then
+    data:extend({
 
-    {
+        {
             type = "technology",
             name = "ao-graphite-processing",
             icon = graphics .. "graphite-processing.png",
             icon_size = "256",
             icon_mipmaps = 4,
-            prerequisites = {"chemical-science-pack", "concrete"},
+            prerequisites = { "chemical-science-pack", "concrete" },
             effects =
             {
                 {
@@ -14,8 +15,8 @@ data:extend({
                     recipe = "centrifuge"
                 },
                 {
-                   type = "unlock-recipe",
-                   recipe = "graphite-recipe"
+                    type = "unlock-recipe",
+                    recipe = "graphite-recipe"
                 },
                 {
                     type = "unlock-recipe",
@@ -27,16 +28,17 @@ data:extend({
                 }
             },
             unit =
-        {
-        count = 200,
-        ingredients =
             {
-              {"automation-science-pack", 1},
-              {"logistic-science-pack", 1},
-              {"chemical-science-pack", 1},
-            },
-        time = 75
+                count = 200,
+                ingredients =
+                {
+                    { "automation-science-pack", 1 },
+                    { "logistic-science-pack",   1 },
+                    { "chemical-science-pack",   1 },
+                },
+                time = 75
+            }
         }
-    }
-    
-})
+
+    })
+end

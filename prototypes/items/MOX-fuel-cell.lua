@@ -1,3 +1,10 @@
+local fuel_value
+if settings.startup["complexity-level"].value == "simple" then
+	fuel_value = "15GJ"
+else
+	fuel_value = "12GJ"
+end
+
 data:extend({
 	{
 		type = "item",
@@ -30,7 +37,7 @@ data:extend({
 		fuel_category = "nuclear",
 		burnt_result = "MOX-depleted-cell",
 		fuel_glow_color = { 118, 150, 57 },
-		fuel_value = "12GJ",
+		fuel_value = fuel_value,
 		stack_size = 50
 	}
 })

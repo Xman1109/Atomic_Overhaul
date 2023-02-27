@@ -1,3 +1,4 @@
+if settings.startup["complexity-level"].value ~= "simple" then
 data:extend(
     {
         {
@@ -31,3 +32,4 @@ data:extend(
             stack_size = 100
         }
     })
+end

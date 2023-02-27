@@ -1,3 +1,4 @@
+if settings.startup["complexity-level"].value ~= "simple" then
 data:extend(
     {
         {
@@ -13,7 +14,7 @@ data:extend(
         subgroup = "resources",
         ingredients =
         {
-            {"uranium-235", 9},
+            {"uranium-235", 9},  -- WHY? WHY mixing enriched instead of depleted?
             {"plutonium", 1}
         },
         always_show_made_in = true,
@@ -22,3 +23,4 @@ data:extend(
         },
     }
 })
+end

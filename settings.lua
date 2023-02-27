@@ -7,18 +7,26 @@ data:extend({
         order = "a"
     },
     {
+        type = "string-setting",
+        name = "complexity-level",
+        setting_type = "startup",
+        allowed_values = { "full", "advanced", "simple" },
+        default_value = "full",
+        order = "b"
+    },
+    {
         type = "bool-setting",
         name = "thorium-wrd",
         setting_type = "startup",
         default_value = false,
-        order = "b"
+        order = "c"
     },
     {
         type = "bool-setting",
         name = "old-graphite-fuel",
         setting_type = "startup",
         default_value = false,
-        order = "c"
+        order = "d"
     },
     {
         type = "string-setting",
@@ -26,14 +34,14 @@ data:extend({
         setting_type = "startup",
         default_value = "advanced",
         allowed_values = { "off", "basic", "advanced" },
-        order = "d"
+        order = "e"
     },
     {
         type = "string-setting",
         name = "heat-algo-searchterm",
         setting_type = "startup",
         default_value = "plate, brick",
-        order = "e"
+        order = "f"
     },
     {
         type = "bool-setting",

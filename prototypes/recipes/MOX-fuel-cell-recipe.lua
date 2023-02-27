@@ -1,3 +1,26 @@
+local m_ingredients
+local m_results
+if settings.startup["complexity-level"].value == "simple" then
+    m_ingredients =
+    {
+        { "plutonium", 2 },
+        { "uranium-238", 25 }
+    }
+    m_results = {
+        {"MOX-fuel-cell", 2},
+    }
+else
+    m_ingredients =
+    {
+        { "MOX",             10 },
+        { "empty-fuel-cell", 10 },
+        { "graphite",        1 }
+    }
+    m_results = {
+        {"MOX-fuel-cell", 10},
+    }
+end
+
 data:extend(
     {
         {
@@ -12,15 +35,8 @@ data:extend(
         enabled = false,
         order = "d",
         subgroup = "fuel-cells",
-        ingredients =
-        {
-            {"MOX", 10},
-            {"empty-fuel-cell", 10},
-            {"graphite", 1}
-        },
+        ingredients = m_ingredients,
         always_show_made_in = true,
-        results = 	{
-            {"MOX-fuel-cell", 10},
-        },
+        results = m_results,
     }
 })
