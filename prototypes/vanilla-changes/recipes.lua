@@ -1,6 +1,6 @@
 local uf_results
 if settings.startup["complexity-level"].value == "simple" then
-    multiply_recipe(data.raw["recipe"]["nuclear-fuel-reprocessing"], 6)
+    multiply_recipe(data.raw["recipe"]["nuclear-fuel-reprocessing"], 4)
     uf_results = {
         {
         type = "item",

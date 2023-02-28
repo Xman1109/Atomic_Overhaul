@@ -1,6 +1,6 @@
 local fuel_value
 if settings.startup["complexity-level"].value == "simple" then
-	fuel_value = "15GJ"
+	fuel_value = "14GJ"
 else
 	fuel_value = "12GJ"
 end

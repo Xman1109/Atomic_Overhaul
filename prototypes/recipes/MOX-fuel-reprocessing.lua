@@ -2,17 +2,17 @@ if settings.startup["complexity-level"].value == "simple" then
     local m_results
     if mods["SchallUraniumProcessing"] then
         m_results = {
-            { "fissile-products", 3 },
-            { "plutonium", 1 },
-            { "uranium-238", 9 },
-            { "uranium-concentrate", 15 }
+            { "fissile-products", 4 },
+            { "plutonium", 2 },
+            { "uranium-238", 18 },
+            { "uranium-concentrate", 21 }
         }
     else
         m_results = {
-            { "fissile-products", 3 },
-            { "plutonium", 1 },
-            { "uranium-238", 9 },
-            { "uranium-ore", 150 }
+            { "fissile-products", 4 },
+            { "plutonium", 2 },
+            { "uranium-238", 21 },
+            { "uranium-ore", 180 }
         }
     end
     data:extend(
@@ -25,7 +25,7 @@ if settings.startup["complexity-level"].value == "simple" then
                 icon_mipmaps = 4,
                 category = "centrifuging",
                 crafting_machine_tint = cmt.MOX,
-                energy_required = 60,
+                energy_required = 72,
                 enabled = false,
                 order = "d",
                 subgroup = "reprocessing",
