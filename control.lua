@@ -51,17 +51,21 @@ end)
 
 -- checking if the mod is loaded on a used savegame for the first time
 script.on_init(function()
+ if (settings.startup["complexity-level"].value ~= "simple") then -- Why should mod always threaten player?
     game.print(
         "\nNOTE: If Atomic Overhaul has been added to an already existing savegame, you may need to troubleshoot your nuclear processing.\n")
+ end
 end)
 
 script.on_configuration_changed(function()
-    game.print(
+    if (settings.startup["complexity-level"].value ~= "simple") then --no graphite in Simplified
+      game.print(
         "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
+    end
 end)
 
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
-if k2_se then
+if k2_se and (settings.startup["complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -74,7 +78,7 @@ if k2_se then
         end)
 end
 
-if bobplates then
+if bobplates and (settings.startup["complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -87,7 +91,7 @@ if bobplates then
         end)
 end
 
-if bzcarbon then
+if bzcarbon and (settings.startup["complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do

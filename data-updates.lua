@@ -1,15 +1,15 @@
 if not mods["Krastorio2"] then
-    require(vanilla .. "atomic-bomb") --s
+    require(vanilla .. "atomic-bomb")
 else
     if ao_debug then
         log("Atomic Overhaul: Atomic Bomb not changed, because of Krastorio2")
     end
 end
-require(vanilla .. "icons") --s
-require(vanilla .. "items") --s
-require(vanilla .. "recipes") --s
-require(vanilla .. "technologies") --s
-require(vanilla .. "entities") --s
+require(vanilla .. "icons")
+require(vanilla .. "items")
+require(vanilla .. "recipes")
+require(vanilla .. "technologies")
+require(vanilla .. "entities")
 
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     if settings.startup["complexity-level"].value == "simple" then

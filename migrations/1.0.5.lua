@@ -1,17 +1,20 @@
 for index, force in pairs(game.forces) do
     local technologies = force.technologies
     local recipe = force.recipes
+    if settings.startup["complexity-level"].value == "simple" then
 
-    if technologies["uranium-processing"].researched then
-        technologies["ao-graphite-processing"].researched = true
-        technologies["graphite-fuel-reprocessing"].researched = true
-    end
-    if technologies["plutonium-processing"].researched then
-        technologies["MOX-processing"].researched = true
-        technologies["MOX-fuel-reprocessing"].researched = true
-    end
-    if recipe["MOX-fuel-cell-recipe"].enabled then
-        recipe["MOX-recipe"].enabled = true
-        recipe["MOX-reprocessing"].enabled = true
+    else
+        if technologies["uranium-processing"].researched then
+            technologies["ao-graphite-processing"].researched = true
+            technologies["graphite-fuel-reprocessing"].researched = true
+        end
+        if technologies["plutonium-processing"].researched then
+            technologies["MOX-processing"].researched = true
+            technologies["MOX-fuel-reprocessing"].researched = true
+        end
+        if recipe["MOX-fuel-cell-recipe"].enabled then
+            recipe["MOX-recipe"].enabled = true
+            recipe["MOX-reprocessing"].enabled = true
+        end
     end
 end
