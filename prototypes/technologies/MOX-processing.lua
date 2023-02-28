@@ -1,8 +1,9 @@
 local tech_effects
 local tech_prereq
 local tech_ingredients
+local tech_descr_local
 if settings.startup["complexity-level"].value == "simple" then
-    tech_prereq = {"waste-reprocessing"}
+    tech_prereq = { "fissile-products-reprocessing" }
     tech_effects = {
         {
             type = "unlock-recipe",
@@ -14,11 +15,12 @@ if settings.startup["complexity-level"].value == "simple" then
         }
     }
     tech_ingredients = {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
-      }
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack",   1 },
+        { "chemical-science-pack",   1 },
+        { "production-science-pack", 1 }
+    }
+    tech_descr_local = { "technology-description.MOX-processing-simple" }
 else
     tech_effects = {
         {
@@ -31,19 +33,21 @@ else
         }
     }
     tech_ingredients = {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1},
-        {"research-data", 1},
-      }
-      tech_prereq = {"plutonium-fuel-reprocessing"}
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack",   1 },
+        { "chemical-science-pack",   1 },
+        { "production-science-pack", 1 },
+        { "research-data",           1 },
+    }
+    tech_prereq = { "plutonium-fuel-reprocessing" }
+    tech_descr_local = { "technology-description.MOX-processing" }
 end
 data:extend({
 
     {
             type = "technology",
             name = "MOX-processing",
+            localised_description = tech_descr_local,
             icon = graphics .. "MOX-processing.png",
             icon_size = 256,
             icon_mipmaps = 4,
