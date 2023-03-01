@@ -2,12 +2,12 @@ local rocket_ingredients
 if settings.startup["complexity-level"].value == "simple" then
     if mods["SchallUraniumProcessing"] then
         rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "uranium-235", 20 },
-            { "plutonium", 10 } }
+            { "plutonium", 5 } }
     else
-        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "plutonium", 20 }}
+        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "plutonium", 10 }}
     end
 else
-    rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 30 }, { "plutonium", 15 },
+    rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 25 }, { "plutonium", 5 },
         { "rocket",              3 } }
 end
 

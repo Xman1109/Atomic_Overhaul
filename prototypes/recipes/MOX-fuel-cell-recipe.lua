@@ -7,7 +7,7 @@ if settings.startup["complexity-level"].value == "simple" then
         { "uranium-238", 38 }
     }
     m_results = {
-        {"MOX-fuel-cell", 3},
+        {"MOX-fuel-cell", 1},
     }
 else
     m_ingredients =

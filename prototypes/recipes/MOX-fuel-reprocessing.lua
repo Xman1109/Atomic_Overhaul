@@ -31,7 +31,7 @@ if settings.startup["complexity-level"].value == "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 6 }
+                    { "MOX-depleted-cell", 2 }
                 },
                 results = m_results,
             }
