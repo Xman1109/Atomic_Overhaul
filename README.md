@@ -27,7 +27,7 @@ Ukrainian (by @Met\_en\_Bouldry) _via crowdin_ <br>
 
 <h2>Graphite</h2>
 
-[graphite]: graphics/images/Graphite.png
+[graphite]: graphics/images/graphite.png
 
 ![graphite][] <br>
 After you have researched the **graphite processing** technology, you are able to craft graphite, which will be needed to craft **graphite fuel cells**.
