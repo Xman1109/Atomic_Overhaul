@@ -113,9 +113,9 @@ function breed.APM_breeder_reactor()
     breeder_reactor.default_fuel_glow_color = { r = 1.000, g = 0.500, b = 0.000, a = 0.500 } --color used as working_light_picture tint for fuels that don't have glow color defined
 
     breeder_reactor.heat_buffer = {}
-    breeder_reactor.heat_buffer.max_temperature = 1000
-    breeder_reactor.heat_buffer.specific_heat = "3MJ"
-    breeder_reactor.heat_buffer.max_transfer = "4GW"
+    breeder_reactor.heat_buffer.max_temperature = 900
+    breeder_reactor.heat_buffer.specific_heat = "4MJ"
+    breeder_reactor.heat_buffer.max_transfer = "8GW"
     breeder_reactor.heat_buffer.minimum_glow_temperature = 350
     breeder_reactor.heat_buffer.glow_alpha_modifier = 0.6
     breeder_reactor.heat_buffer.connections = {}

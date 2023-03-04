@@ -10,7 +10,7 @@ local function FixUraniumResources()
     end
 
     for i, force in pairs(game.forces) do
-        if ao_breeder then
+        if ao_breeder and ao_enrichUranium then
             force.technologies["kovarex-enrichment-process"].enabled = false
             force.recipes["kovarex-enrichment-process"].enabled = false
         else

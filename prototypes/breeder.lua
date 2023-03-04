@@ -328,7 +328,42 @@ function breed.Breeder()
       }
     }
   })
-  -- kovarex-enrichment-process
+
+  if ao_enrichUranium then -- no SchallUraniumProcessing or other mods hiding Kovarex already and probably solving Rocket Nuclear fuel problem
+    -- ***** Moving Nuclear Rocket Fuel into a special technology, because Kovarex is hidden
+    data:extend({
+      {
+        type = "technology",
+        name = "nuclear-rocket-fuel",
+        icon_size = 128,
+        icon = "__Atomic_Overhaul__/graphics/vanilla/nuclear-rocket-fuel_tech.png",
+        effects =
+        {
+          {
+            type = "unlock-recipe",
+            recipe = "nuclear-fuel"
+          }
+
+        },
+        prerequisites = { "production-science-pack", "uranium-processing", "rocket-fuel" },
+        unit =
+        {
+          ingredients =
+          {
+            { "automation-science-pack", 1 },
+            { "logistic-science-pack",   1 },
+            { "chemical-science-pack",   1 },
+            { "production-science-pack", 1 }
+          },
+          time = 45,
+          count = 200
+        },
+        order = "e-p-b-c"
+      }
+    })
+    data.raw.technology["kovarex-enrichment-process"].enabled = false
+    data.raw.recipe["kovarex-enrichment-process"].hidden = true
+  end
 end
 
 return breed
