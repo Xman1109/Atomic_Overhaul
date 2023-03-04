@@ -1,11 +1,12 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     data:extend(
         {
             {
                 type = "recipe",
                 name = "graphite-fuel-cell-recipe",
                 icon = graphics .. "graphite-fuel-cell.png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
+                icon_mipmaps = 4,
                 category = "centrifuging",
                 crafting_machine_tint = cmt.graphite,
                 energy_required = 50,

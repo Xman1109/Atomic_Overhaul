@@ -1,5 +1,5 @@
 local fuel_value
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
 	fuel_value = "14GJ"
 else
 	fuel_value = "12GJ"
@@ -10,7 +10,8 @@ data:extend({
 		type = "item",
 		name = "MOX-fuel-cell",
 		icon = graphics .. "MOX-fuel-cell.png",
-		icon_size = 64, icon_mipmaps = 4,
+		icon_size = 64,
+		icon_mipmaps = 4,
 		pictures =
 		{
 			layers =

@@ -51,21 +51,21 @@ end)
 
 -- checking if the mod is loaded on a used savegame for the first time
 script.on_init(function()
- if (settings.startup["complexity-level"].value ~= "simple") then -- Why should mod always threaten player?
-    game.print(
-        "\nNOTE: If Atomic Overhaul has been added to an already existing savegame, you may need to troubleshoot your nuclear processing.\n")
- end
+    if (settings.startup["ao-complexity-level"].value ~= "simple") then -- Why should mod always threaten player?
+        game.print(
+            "\nNOTE: If Atomic Overhaul has been added to an already existing savegame, you may need to troubleshoot your nuclear processing.\n")
+    end
 end)
 
 script.on_configuration_changed(function()
-    if (settings.startup["complexity-level"].value ~= "simple") then --no graphite in Simplified
-      game.print(
-        "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
+    if (settings.startup["ao-complexity-level"].value ~= "simple") then --no graphite in Simplified
+        game.print(
+            "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
     end
 end)
 
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
-if k2_se and (settings.startup["complexity-level"].value ~= "simple") then
+if k2_se and (settings.startup["ao-complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -78,7 +78,7 @@ if k2_se and (settings.startup["complexity-level"].value ~= "simple") then
         end)
 end
 
-if bobplates and (settings.startup["complexity-level"].value ~= "simple") then
+if bobplates and (settings.startup["ao-complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -91,7 +91,7 @@ if bobplates and (settings.startup["complexity-level"].value ~= "simple") then
         end)
 end
 
-if bzcarbon and (settings.startup["complexity-level"].value ~= "simple") then
+if bzcarbon and (settings.startup["ao-complexity-level"].value ~= "simple") then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -248,7 +248,6 @@ function example_page_content(page_name, player_index, element)
             style = "glow_1",
         }
     end
-
 end
 
 -- local k2 = require("scripts.krastorio2")

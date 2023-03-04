@@ -2,7 +2,7 @@ local tech_effects
 local tech_prereq
 local tech_ingredients
 local tech_descr_local
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     tech_prereq = { "fissile-products-reprocessing" }
     tech_effects = {
         {
@@ -45,20 +45,20 @@ end
 data:extend({
 
     {
-            type = "technology",
-            name = "MOX-processing",
-            localised_description = tech_descr_local,
-            icon = graphics .. "MOX-processing.png",
-            icon_size = 256,
-            icon_mipmaps = 4,
-            prerequisites = tech_prereq,
-            effects = tech_effects,
-            unit =
+        type = "technology",
+        name = "MOX-processing",
+        localised_description = tech_descr_local,
+        icon = graphics .. "MOX-processing.png",
+        icon_size = 256,
+        icon_mipmaps = 4,
+        prerequisites = tech_prereq,
+        effects = tech_effects,
+        unit =
         {
-        count = 750,
-        ingredients = tech_ingredients,
-        time = 75
+            count = 750,
+            ingredients = tech_ingredients,
+            time = 75
         }
     }
-    
+
 })

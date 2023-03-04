@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value == "simple" then -- it's useless garbage isotopes we can only store somewhere forever
+if settings.startup["ao-complexity-level"].value == "simple" then -- it's useless garbage isotopes we can only store somewhere forever
   data:extend({ {
     type = "fluid",
     name = "radioactive-waste-solution",
@@ -12,7 +12,7 @@ if settings.startup["complexity-level"].value == "simple" then -- it's useless g
     icon_mipmaps = 4,
     order = "z"
   } })
-else  -- it's not garbage, but contains all isotopes we love so much. It's an important part of reprocessing cycle
+else -- it's not garbage, but contains all isotopes we love so much. It's an important part of reprocessing cycle
   data:extend({ {
     type = "fluid",
     name = "waste-solution",

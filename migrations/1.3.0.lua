@@ -4,7 +4,7 @@ for index, force in pairs(game.forces) do
 
     if settings.startup["old-graphite-fuel"].value == false then
         if technologies["uranium-processing"].researched then
-            if settings.startup["complexity-level"].value ~= "simple" then
+            if settings.startup["ao-complexity-level"].value ~= "simple" then
                 technologies["non-moderated-fuel-processing"].researched = true
                 recipe["empty-fuel-cell-recipe"].enabled = true
                 recipe["non-moderated-fuel-cell-recipe"].enabled = true
@@ -20,7 +20,7 @@ for index, force in pairs(game.forces) do
 
             recipe["heat-furnace-recipe"].enabled = true
         end
-        if settings.startup["complexity-level"].value ~= "simple" then
+        if settings.startup["ao-complexity-level"].value ~= "simple" then
             recipe["graphite-fuel-cell-recipe"].enabled = false
             recipe["graphite-fuel-reprocessing"].enabled = false
             recipe["graphite-recipe"].enabled = false

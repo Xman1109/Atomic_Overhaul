@@ -1,18 +1,18 @@
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     local m_results
     if mods["SchallUraniumProcessing"] then
         m_results = {
-            { "fissile-products", 4 },
-            { "plutonium", 2 },
-            { "uranium-238", 21 },
+            { "fissile-products",    4 },
+            { "plutonium",           2 },
+            { "uranium-238",         21 },
             { "uranium-concentrate", 18 }
         }
     else
         m_results = {
             { "fissile-products", 4 },
-            { "plutonium", 2 },
-            { "uranium-238", 21 },
-            { "uranium-ore", 180 }
+            { "plutonium",        2 },
+            { "uranium-238",      21 },
+            { "uranium-ore",      180 }
         }
     end
     data:extend(

@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     data:extend({
 
         {
@@ -13,7 +13,6 @@ if settings.startup["complexity-level"].value ~= "simple" then
                 {
                     type = "unlock-recipe",
                     recipe = "thorium-without-research-data"
-
                 }
             },
             unit =

@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value == "full" then
+if settings.startup["ao-complexity-level"].value == "full" then
     data:extend(
         {
             {
@@ -6,7 +6,8 @@ if settings.startup["complexity-level"].value == "full" then
                 name = "research-data",
                 localised_description = { "item-description.science-pack" },
                 icon = graphics .. "research-data.png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
+                icon_mipmaps = 4,
                 subgroup = "resources",
                 order = "z",
                 durability = 1,

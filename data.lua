@@ -1,7 +1,8 @@
 require("__Atomic_Overhaul__/lib/core")
 
-ao_breeder = ( not mods["Nuclear Fuel"] ) and settings.startup["complexity-level"].value == "simple" and settings.startup["ao-breeder"].value
-ao_enrichUranium = ( not mods["SchallUraniumProcessing"] ) and settings.startup["complexity-level"].value == "simple"
+ao_breeder = (not mods["Nuclear Fuel"]) and settings.startup["ao-complexity-level"].value == "simple" and
+settings.startup["ao-breeder"].value
+ao_enrichUranium = (not mods["SchallUraniumProcessing"]) and settings.startup["ao-complexity-level"].value == "simple"
 local breed = require("prototypes/breeder")
 if ao_enrichUranium then -- if no SchallUraniumProcessing is loaded we always add our own (better) enrichment levels for simplified mod complexity
     breed.NewEnrichment()

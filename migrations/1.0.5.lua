@@ -1,7 +1,7 @@
 for index, force in pairs(game.forces) do
     local technologies = force.technologies
     local recipe = force.recipes
-    if settings.startup["complexity-level"].value == "simple" then
+    if settings.startup["ao-complexity-level"].value == "simple" then
 
     else
         if technologies["uranium-processing"].researched then

@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     data:extend({
         {
             type = "item",

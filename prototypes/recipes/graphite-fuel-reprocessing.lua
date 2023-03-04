@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     data:extend(
         {
             {
@@ -18,7 +18,7 @@ if settings.startup["complexity-level"].value ~= "simple" then
                     { "graphite-depleted-cell", 5 }
                 },
                 results = {
-                    { type = "item", name = "graphite",      amount_min = 2, amount_max = 3 },
+                    { type = "item", name = "graphite",        amount_min = 2, amount_max = 3 },
                     { type = "item", name = "empty-fuel-cell", amount_min = 0, amount_max = 1 }
                 },
             }

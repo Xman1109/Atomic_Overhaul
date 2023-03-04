@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     local wrd = nil
     local thorium = { type = "item", name = "thorium", amount_min = 2, amount_max = 3 }
     if settings.startup["thorium-wrd"].value == true then

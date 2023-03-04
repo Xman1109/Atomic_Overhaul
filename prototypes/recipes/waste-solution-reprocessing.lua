@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     data:extend({
         {
             type = "recipe",
@@ -12,11 +12,11 @@ if settings.startup["complexity-level"].value == "simple" then
             subgroup = "waste-reprocessing",
             order = "b",
             ingredients = {
-                { type = "item", name = "fissile-products", amount = 5 },
-                { type = "fluid", name = "sulfuric-acid", amount = 60 }
+                { type = "item",  name = "fissile-products", amount = 5 },
+                { type = "fluid", name = "sulfuric-acid",    amount = 60 }
             },
             results = {
-                { type = "item", name = "plutonium",   amount = 1},
+                { type = "item",  name = "plutonium",                  amount = 1 },
                 { type = "fluid", name = "radioactive-waste-solution", amount = 30 }
             }
         }
@@ -38,10 +38,10 @@ else
                 { type = "fluid", name = "waste-solution", amount = 50 }
             },
             results = {
-                { type = "item", name = "uranium-238", amount = 5,  probability = 0.25 },
-                { type = "item", name = "plutonium",   amount = 3,  probability = 0.25 },
-                { type = "item", name = "MOX",         amount = 2,  probability = 0.25 },
-                { type = "item", name = "thorium",     amount = 1,  probability = 0.1 },
+                { type = "item", name = "uranium-238", amount = 5, probability = 0.25 },
+                { type = "item", name = "plutonium",   amount = 3, probability = 0.25 },
+                { type = "item", name = "MOX",         amount = 2, probability = 0.25 },
+                { type = "item", name = "thorium",     amount = 1, probability = 0.1 },
             }
         }
     })

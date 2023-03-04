@@ -4,7 +4,7 @@ local waste_ingredients
 local waste_local
 local waste_local_n
 local waste_n
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     waste_effects = {
         {
             type = "unlock-recipe",
@@ -12,8 +12,8 @@ if settings.startup["complexity-level"].value == "simple" then
         }
     }
     waste_prereq = { "nuclear-fuel-reprocessing" }
-    waste_local = {"technology-description.fissile-products-reprocessing"}
-    waste_local_n = {"technology-name.fissile-products-reprocessing"}
+    waste_local = { "technology-description.fissile-products-reprocessing" }
+    waste_local_n = { "technology-name.fissile-products-reprocessing" }
     waste_n = "fissile-products-reprocessing"
     waste_ingredients = {
         count = 500,
@@ -38,8 +38,8 @@ else
         }
     }
     waste_prereq = { "thorium-fuel-reprocessing" }
-    waste_local = {"technology-description.waste-reprocessing"}
-    waste_local_n = {"technology-name.waste-reprocessing"}
+    waste_local = { "technology-description.waste-reprocessing" }
+    waste_local_n = { "technology-name.waste-reprocessing" }
     waste_n = "waste-reprocessing"
     waste_ingredients = {
         count = 5000,

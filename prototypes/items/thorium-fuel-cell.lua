@@ -1,13 +1,13 @@
 data.raw["reactor"]["nuclear-reactor"].use_fuel_glow_color = true
 data.raw["reactor"]["nuclear-reactor"].default_fuel_glow_color = { 0, 1, 0, 1 }
-if settings.startup["complexity-level"].value ~= "simple" then
-
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 	data:extend({
 		{
 			type = "item",
 			name = "thorium-fuel-cell",
 			icon = graphics .. "thorium-fuel-cell.png",
-			icon_size = 64, icon_mipmaps = 4,
+			icon_size = 64,
+			icon_mipmaps = 4,
 			pictures =
 			{
 				layers =

@@ -1,17 +1,18 @@
 local rocket_ingredients
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     if mods["SchallUraniumProcessing"] then
         rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "uranium-235", 20 },
-            { "plutonium", 5 } }
+            { "plutonium",           5 } }
     else
-        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "plutonium", 10 }}
+        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "plutonium", 10 } }
     end
 else
-    rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 25 }, { "plutonium", 5 },
+    rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 25 },
+        { "plutonium", 5 },
         { "rocket",              3 } }
 end
 
-data:extend({{
+data:extend({ {
     type = "recipe",
     name = "atomic-bomb",
     enabled = false,
@@ -25,19 +26,19 @@ data:extend({{
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        layers = {{
+        layers = { {
             size = 64,
             filename = "__Atomic_Overhaul__/graphics/vanilla/atomic-bomb.png",
             scale = 0.25,
             mipmap_count = 4
         }, {
             draw_as_light = true,
-            flags = {"light"},
+            flags = { "light" },
             size = 64,
             filename = base_graphics .. "atomic-bomb-light.png",
             scale = 0.25,
             mipmap_count = 4
-        }}
+        } }
     },
     ammo_type = {
         range_modifier = 1.5,
@@ -60,4 +61,4 @@ data:extend({{
     subgroup = "ammo",
     order = "d[rocket-launcher]-c[atomic-bomb]",
     stack_size = 10
-}})
+} })

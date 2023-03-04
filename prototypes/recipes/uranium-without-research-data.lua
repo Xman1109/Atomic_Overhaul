@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
     data:extend({ {
         type = "recipe",
         name = "uranium-without-research-data",
@@ -7,7 +7,8 @@ if settings.startup["complexity-level"].value ~= "simple" then
         category = "centrifuging",
         ingredients = { { "used-up-uranium-fuel-cell", 5 } },
         icon = graphics .. "uranium-without-research-recipe.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon_size = 64,
+        icon_mipmaps = 4,
         subgroup = "reprocessing-without-research-data",
         order = "b",
         main_product = "",

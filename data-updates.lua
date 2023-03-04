@@ -12,7 +12,7 @@ require(vanilla .. "technologies")
 require(vanilla .. "entities")
 
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
-    if settings.startup["complexity-level"].value == "simple" then
+    if settings.startup["ao-complexity-level"].value == "simple" then
         if ao_debug then
             log("Atomic Overhaul: Space Exploration add-on is ignored because of simplified complexity level selected.")
         end

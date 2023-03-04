@@ -1,4 +1,4 @@
-if settings.startup["complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" then
   data:extend(
     {
       {
@@ -25,7 +25,8 @@ if settings.startup["complexity-level"].value ~= "simple" then
             }
           }
         },
-        icon_size = 64, icon_mipmaps = 4,
+        icon_size = 64,
+        icon_mipmaps = 4,
         group = "atomic-overhaul",
         order = "a",
         subgroup = "resources",

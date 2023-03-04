@@ -1,25 +1,24 @@
 local uf_results
-if settings.startup["complexity-level"].value == "simple" then
+if settings.startup["ao-complexity-level"].value == "simple" then
     multiply_recipe(data.raw["recipe"]["nuclear-fuel-reprocessing"], 4)
     uf_results = {
         {
-        type = "item",
-        name = "fissile-products",
-        amount = 1
+            type = "item",
+            name = "fissile-products",
+            amount = 1
         },
         mods["SchallUraniumProcessing"] and {
-        type = "item",
-        name = "uranium-concentrate",
-        amount = 19
+            type = "item",
+            name = "uranium-concentrate",
+            amount = 19
         }
         or {
             type = "item",
             name = "uranium-ore",
             amount = 190
-            }
+        }
     }
 else
-
     uf_results = { {
         type = "item",
         name = "plutonium",
