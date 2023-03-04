@@ -1,3 +1,12 @@
+local function FixUraniumResources()
+    local ao_enrichUranium = (not game.active_mods["SchallUraniumProcessing"]) and
+        settings.startup["ao-complexity-level"].value == "simple"
+    if game.forces["player"].technologies["uranium-processing"].researched and ao_enrichUranium then
+        game.forces["player"].recipes["uranium-low-enriched"].enabled = true
+        game.forces["player"].recipes["uranium-235"].enabled = true
+    end
+end
+
 script.on_init(function() --I will make this more compact in the future
     if remote.interfaces["kr-radioactivity"] then
         remote.call("kr-radioactivity", "add_item", "plutonium-fuel-cell")
@@ -22,6 +31,7 @@ script.on_init(function() --I will make this more compact in the future
             remote.call("kr-radioactivity", "add_item", "beryllium-depleted-cell")
         end
     end
+    FixUraniumResources()
 end)
 script.on_configuration_changed(function()
     if remote.interfaces["kr-radioactivity"] then
@@ -62,6 +72,7 @@ script.on_configuration_changed(function()
         game.print(
             "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
     end
+    FixUraniumResources()
 end)
 
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
