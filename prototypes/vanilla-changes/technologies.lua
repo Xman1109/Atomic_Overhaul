@@ -1,6 +1,5 @@
 if settings.startup["complexity-level"].value == "simple" then
-    data.raw["technology"]["nuclear-fuel-reprocessing"].localised_description = {"technology-description.nuclear-fuel-reprocessing-simple"}
-    data.raw["technology"]["uranium-processing"].localised_name = {"technology-name.uranium-processing-simple"}
+    data.raw["technology"]["nuclear-fuel-reprocessing"].localised_description = {"technology-description.nuclear-fuel-reprocessing-simple"}    
 else
     for _, lab in pairs(data.raw["lab"]) do
         if lab.inputs then

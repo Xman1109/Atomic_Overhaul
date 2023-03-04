@@ -16,17 +16,24 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "thorium-wrd",
+        name = "ao-breeder",
         setting_type = "startup",
         default_value = false,
         order = "c"
     },
     {
         type = "bool-setting",
-        name = "old-graphite-fuel",
+        name = "thorium-wrd",
         setting_type = "startup",
         default_value = false,
         order = "d"
+    },
+    {
+        type = "bool-setting",
+        name = "old-graphite-fuel",
+        setting_type = "startup",
+        default_value = false,
+        order = "e"
     },
     {
         type = "string-setting",
@@ -34,14 +41,14 @@ data:extend({
         setting_type = "startup",
         default_value = "advanced",
         allowed_values = { "off", "basic", "advanced" },
-        order = "e"
+        order = "f"
     },
     {
         type = "string-setting",
         name = "heat-algo-searchterm",
         setting_type = "startup",
         default_value = "plate, brick",
-        order = "f"
+        order = "g"
     },
     {
         type = "bool-setting",

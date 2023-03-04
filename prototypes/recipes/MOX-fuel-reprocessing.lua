@@ -4,8 +4,8 @@ if settings.startup["complexity-level"].value == "simple" then
         m_results = {
             { "fissile-products", 4 },
             { "plutonium", 2 },
-            { "uranium-238", 18 },
-            { "uranium-concentrate", 21 }
+            { "uranium-238", 21 },
+            { "uranium-concentrate", 18 }
         }
     else
         m_results = {
@@ -25,7 +25,8 @@ if settings.startup["complexity-level"].value == "simple" then
                 icon_mipmaps = 4,
                 category = "centrifuging",
                 crafting_machine_tint = cmt.MOX,
-                energy_required = 72,
+                energy_required = 24,
+                allow_decomposition = false,
                 enabled = false,
                 order = "d",
                 subgroup = "reprocessing",

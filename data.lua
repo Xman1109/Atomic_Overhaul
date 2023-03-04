@@ -1,5 +1,16 @@
 require("__Atomic_Overhaul__/lib/core")
 
+ao_breeder = ( not mods["Nuclear Fuel"] ) and settings.startup["complexity-level"].value == "simple" and settings.startup["ao-breeder"].value
+ao_enrichUranium = ( not mods["SchallUraniumProcessing"] ) and settings.startup["complexity-level"].value == "simple"
+local breed = require("prototypes/breeder")
+if ao_enrichUranium then -- if no SchallUraniumProcessing is loaded we always add our own (better) enrichment levels for simplified mod complexity
+    breed.NewEnrichment()
+end
+if ao_breeder then -- Breeder is added optionally, but it conflicts with Nuclear Fuel (as I found NF support in this mod)
+    -- Breeder requires (must have!) uranium enrichment recipes added by AO or by SchallUraniumProcessing !!!
+    breed.Breeder()
+end
+
 require("prototypes/group")
 require(fluids .. "waste-solution")
 require(items .. "empty-fuel-cell")
