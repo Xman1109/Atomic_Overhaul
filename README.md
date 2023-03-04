@@ -1,56 +1,61 @@
 [logo]: https://raw.githubusercontent.com/fainda/images/main/logo2.png
+[downloads]: https://img.shields.io/badge/dynamic/json?color=blue&style=plastic&label=Downloads&query=downloads_count&url=https%3A%2F%2Fmods.factorio.com%2Fapi%2Fmods%2FAtomic_Overhaul
+[commits]: https://img.shields.io/github/commit-activity/m/Xman1109/Atomic_Overhaul?color=g&style=plastic
+[patreon]: https://img.shields.io/badge/Become%20a-Patron-red?style=plastic
+[version]: https://img.shields.io/badge/dynamic/json?color=yellow&style=plastic&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FXman1109%2FAtomic_Overhaul%2Fmain%2Finfo.json
+[translate]: https://img.shields.io/badge/Translate-here!-blueviolet?style=plastic
 
 ![logo][] <br>
-<a href=https://mods.factorio.com/mod/Atomic_Overhaul/downloads>
-![downloads](https://img.shields.io/badge/dynamic/json?color=blue&style=plastic&label=Downloads&query=downloads_count&url=https%3A%2F%2Fmods.factorio.com%2Fapi%2Fmods%2FAtomic_Overhaul)</a>
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Xman1109/Atomic_Overhaul?color=g&style=plastic) <a href="https://www.patreon.com/bePatron?u=74323441">
-![Patreon](https://img.shields.io/badge/Become%20a-Patron-red?style=plastic)</a>
-![Version](https://img.shields.io/badge/dynamic/json?color=yellow&style=plastic&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FXman1109%2FAtomic_Overhaul%2Fmain%2Finfo.json)
-<a href="https://crowdin.com/project/factorio-mods-localization"> ![Translate](https://img.shields.io/badge/Translate-here!-blueviolet?style=plastic)</a>
-
+<a href="https://img.shields.io/badge/dynamic/json?color=blue&style=plastic&label=Downloads&query=downloads_count&url=https%3A%2F%2Fmods.factorio.com%2Fapi%2Fmods%2FAtomic_Overhaul"> ![downloads][]</a> ![version][] ![commits][] <a href="https://www.patreon.com/bePatron?u=74323441"> ![patreon][]</a> <a href="https://crowdin.com/project/factorio-mods-localization"> ![translate][]</a> <br>
 Atomic Overhaul is a mod for <a href=https://factorio.com>Factorio</a> adding new nuclear fuels, recipes and technologies to the game. <br>
 Developed by <a href=https://github.com/Xman1109>Xman1109</a> and <a href=https://github.com/fainda>fainda</a>.
 
-<h3>Available in</h3>
+---
+
+<h3>Translations</h3>
 German <br>
 English <br>
 Spanish (thanks to <a href=https://github.com/Kopynft>@Kopynft</a>) <br>
-French (thanks to @Rominou) <br>
-Turkish (thanks to @Nekoist) <br>
-Brazil-Portuguese (by thoraras) <br>
-Taiwan-Chinese (by hunterkm)
+
+French (thanks to @Rominou) _via crowdin_ <br>
+Turkish (thanks to @Nekoist) _via crowdin_ <br>
+Brazil-Portuguese (by @thoraras) _via crowdin_ <br>
+Taiwan-Chinese (by @hunterkm) _via crowdin_ <br>
+Ukrainian (by @Met\_en\_Bouldry) _via crowdin_ <br>
+
+<!-- ^ STOP, dont use auto-formatting here! ^ -->
 
 <h2>Graphite</h2>
 
-[graphite]: https://raw.githubusercontent.com/fainda/images/main/Graphite.png
+[graphite]: graphics/images/graphite.png
 
 ![graphite][] <br>
 After you have researched the **graphite processing** technology, you are able to craft graphite, which will be needed to craft **graphite fuel cells**.
 
 <h2>Uranium</h2>
 
-[uranium]: https://raw.githubusercontent.com/fainda/images/main/uranium.png
+[uranium]: graphics/images/uranium.png
 
 ![uranium][] <br>
 Uranium remains as in the base game. It is used to craft fuel cells, which, when reprocessed, give **plutonium**, **research data**, and uranium-238. You will need the research data to research new technologies regarding nuclear stuff.
 
 <h2>Plutonium</h2>
 
-[plutonium]: https://raw.githubusercontent.com/fainda/images/main/plutonium.png
+[plutonium]: graphics/images/plutonium.png
 
 ![plutonium][] <br>
 Plutonium is not only used for crafting new fuel cells, but also for crafting the **atomic bomb** or the new **plutonium fuel**.
 
 <h2>Mixed Oxide (MOX)</h2>
 
-[mox]: https://raw.githubusercontent.com/fainda/images/main/MOX.png
+[mox]: graphics/images/MOX.png
 
 ![MOX][] <br>
 MOX is another fuel consisting of uranium and plutonium.
 
 <h2>Thorium</h2>
 
-[thorium]: https://raw.githubusercontent.com/fainda/images/main/thorium.png
+[thorium]: graphics/images/thorium.png
 
 ![thorium][] <br>
 Thorium is, by standart, the **highest tier** of nuclear fuel. You can also use it to craft **Thorium Modules**, which increase the speed of processing/reprocessing recipes.
@@ -63,7 +68,7 @@ Atomic Overhaul provides additional content for this mod.
 
 <h2>The Space Reactor</h2>
 
-<img align="left" src="https://raw.githubusercontent.com/fainda/images/main/hr-reactor.png">
+<img align="left" src="graphics/images/hr-reactor.png">
 
 The Space Reactor is a prototype of the standard reactor. It is modified to withstand the cold vacuum of space and resist cosmic radiation.
 
@@ -71,13 +76,13 @@ This Reactor is only placeable in space, regardless of the ground it is standing
 
 Remember that **_you can only fuel it with the new fuel cells,_** each of which having its own glow as seen in the picture below.
 
- <img align="right" hight=180 width=425 src="https://raw.githubusercontent.com/fainda/images/main/reactor-glow.png">
+ <img align="right" hight=180 width=425 src="graphics/images/glow_a.png">
  
 <br><br><br><br><br><br><br><br>
 ___
 <h2>Iridium-192</h2>
 
-[iridium]: https://raw.githubusercontent.com/fainda/images/main/iridium-192.png
+[iridium]: graphics/images/iridium.png
 
 ![iridium][] <br>
 You are now able to extract the rare Iridium-192 Isotope from Iridium Powder and Sulfuric Acid inside of a Radiation facility.
@@ -85,7 +90,7 @@ Once Again, you will need it for a more powerful fuel cell with a fuel value of 
 
 <h2>Holmium-166</h2>
 
-[holmium]: https://raw.githubusercontent.com/fainda/images/main/holmium-166.png
+[holmium]: graphics/images/holmium.png
 
 ![holmium][]<br>
 
@@ -93,7 +98,7 @@ Another Isotope you are now able to extract from Holmium powder and Sulfuric Aci
 
 <h2>Beryllium-7</h2>
  
-[beryllium]: https://raw.githubusercontent.com/fainda/images/main/beryllium-7.png
+[beryllium]: graphics/images/beryllium.png
 
 ![beryllium][]
 

@@ -129,7 +129,7 @@ if settings.startup["se-addon"].value == true then
     hideType("r", "se-delivery-cannon-pack-uranium-238")
 
     modifyEffects("se-delivery-cannon-capsule-iridium", { { type = "unlock-recipe", recipe = "lead-delivery-recipe" } }
-        , "add")
+    , "add")
 
     if data.raw["recipe"]["se-vulcanite-enriched"] or data.raw["recipe"]["se-casting-machine"] then
         local reprocessing

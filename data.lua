@@ -116,7 +116,6 @@ end
 
 -- TODO: make the scripts "beautiful"
 -- TODO: add the fuel rods ✔ (space rods still missing)
--- TODO: Fix the icons with the zero g icon ✔
 -- TODO: Add locals ✔ (recipes still need locales)
 -- TODO: Make recipes for the fuel rods
 -- TODO: Add the rod-light map to the fuel rods
