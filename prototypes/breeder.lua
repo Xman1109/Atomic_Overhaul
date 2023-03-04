@@ -99,6 +99,7 @@ function breed.NewEnrichment()
     c_recipe.allow_decomposition = false
     c_recipe.subgroup = "resources"
     c_recipe.localised_description = { "technology-description.kovarex-simple" }
+    data.raw.technology["kovarex-enrichment-process"].localised_description = { "technology-description.kovarex-simple" }
     for i, component in pairs(c_recipe.ingredients) do
       for _, value in pairs(component) do
         if value == "uranium-235" then
@@ -162,6 +163,7 @@ function breed.Breeder()
         name = 'nuclear-breeder'
       } })
   end
+  data.raw.reactor['nuclear-reactor'].fast_replaceable_group = "reactor"
   breed.APM_breeder_reactor()
   data:extend({
 
@@ -169,7 +171,7 @@ function breed.Breeder()
     {
       type = "item",
       name = "ao-breeder-fuel-cell",
-      icon = se_addon_graphics .. "holmium-fuel-cell.png", -- taking holmium fuel cell graphics and glow color
+      icon = se_addon_graphics .. "beryllium-fuel-cell.png", -- taking beryllium fuel cell graphics and glow color
       icon_size = 64,
       icon_mipmaps = 4,
       pictures =
@@ -178,7 +180,7 @@ function breed.Breeder()
         {
           {
             size = 64,
-            filename = se_addon_graphics .. "holmium-fuel-cell.png",
+            filename = se_addon_graphics .. "beryllium-fuel-cell.png",
             scale = 0.25,
             icon_mipmaps = 4
           },
@@ -194,8 +196,8 @@ function breed.Breeder()
       },
       fuel_category = "nuclear-breeder",
       burnt_result = "ao-breeder-depleted-cell",
-      fuel_value = "1GJ",
-      fuel_glow_color = { 203, 79, 71 },
+      fuel_value = "2GJ",
+      fuel_glow_color = { 100, 247, 207 },
       stack_size = 50,
       group = "atomic_overhaul",
       subgroup = "fuel-cells",
@@ -204,7 +206,7 @@ function breed.Breeder()
     {
       type = "item",
       name = "ao-breeder-depleted-cell",
-      icon = se_addon_graphics .. "holmium-depleted-cell.png", -- taking holmium fuel cell graphics
+      icon = se_addon_graphics .. "beryllium-depleted-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
       stack_size = 50,
@@ -245,11 +247,11 @@ function breed.Breeder()
     {
       type = "recipe",
       name = "ao-breeder-fuel-cell-recipe",
-      icon = se_addon_graphics .. "holmium-fuel-cell.png",
+      icon = se_addon_graphics .. "beryllium-fuel-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
       category = "centrifuging",
-      crafting_machine_tint = cmt.holmium,
+      crafting_machine_tint = cmt.beryllium,
       energy_required = 120,
       enabled = false,
       order = "f",
@@ -261,17 +263,17 @@ function breed.Breeder()
         { "uranium-238",          5 }
       },
       results = {
-        { "ao-breeder-fuel-cell", 4 },
+        { "ao-breeder-fuel-cell", 2 },
       }
     },
     {
       type = "recipe",
       name = "ao-breeder-reprocessing",
-      icon = se_addon_graphics .. "holmium-166-reprocessing-recipe.png", -- taking holmium fuel cell graphics
+      icon = se_addon_graphics .. "beryllium-7-reprocessing-recipe.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
       category = "centrifuging",
-      crafting_machine_tint = cmt.holmium,
+      crafting_machine_tint = cmt.beryllium,
       energy_required = 180,
       allow_decomposition = false,
       enabled = false,
@@ -279,7 +281,7 @@ function breed.Breeder()
       subgroup = "reprocessing",
       ingredients =
       {
-        { "ao-breeder-depleted-cell", 4 }
+        { "ao-breeder-depleted-cell", 2 }
       },
       results = {
         { "plutonium",        4 },
