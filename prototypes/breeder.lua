@@ -235,8 +235,8 @@ function breed.Breeder()
       icon_mipmaps = 4,
       ingredients = {
         { "concrete",         500 },
-        { "steel-plate",      500 },
-        { "advanced-circuit", 500 },
+        { "steel-plate",      800 },
+        { "advanced-circuit", 600 },
         { "copper-plate",     500 }
       },
       result = "apm_nuclear_breeder",
@@ -337,6 +337,8 @@ function breed.Breeder()
         name = "nuclear-rocket-fuel",
         icon_size = 128,
         icon = "__Atomic_Overhaul__/graphics/vanilla/nuclear-rocket-fuel_tech.png",
+        -- graphics from Nuclear Fuel mod https://mods.factorio.com/mod/Nuclear%20Fuel
+        -- MIT license
         effects =
         {
           {

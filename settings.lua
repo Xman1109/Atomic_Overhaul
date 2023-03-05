@@ -10,7 +10,8 @@ data:extend({
         type = "string-setting",
         name = "ao-complexity-level",
         setting_type = "startup",
-        allowed_values = { "full", "advanced", "simple" },
+        allowed_values = { "full", "simple" },
+        --allowed_values = { "full", "advanced", "simple" },
         default_value = "full",
         order = "b"
     },

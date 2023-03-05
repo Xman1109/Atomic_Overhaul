@@ -10,7 +10,6 @@
     "base",
     "! PlutoniumEnergy",
     "? RealisticReactors",
-    "? SchallUraniumProcessing",
     "(?) space-exploration",
     "(?) space-exploration-postprocess",
     "(?) informatron"

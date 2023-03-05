@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.12
+Date: 2023-02-22
+  Major Features:
+    - Mod complexity selection introduced. Full (default) represents actual features when more is better. Simplified is a comfortable
+      composition of realism (Uranium enrichment, Plutonium-239 sources, MOX fuel, nuclear breeding) and game balance.
+      Optional Breeding feature replaces unrealistic Kovarex enrichment for Simplified mode.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.11
 Date: 2023-02-22
   Changes:

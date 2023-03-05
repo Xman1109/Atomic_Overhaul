@@ -47,7 +47,7 @@ function Glow(name, typeOfItem)
                 scale = 0.25
             else
                 log("Error: Item " .. i .. " has not the right icon size (" .. data.raw["item"][i].icon_size .. ")." ..
-                "\n")
+                    "\n")
             end
             if data.raw["item"][i] then
                 if typeOfItem == "resource" then
@@ -339,7 +339,7 @@ function modifyIngredients(name, ingredients, task)
                             ingredient[1] = ingredients
                             if ao_debug == true then
                                 log("Replaced ingredient '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                serpent.block(ingredients) .. "'" .. "\n")
+                                    serpent.block(ingredients) .. "'" .. "\n")
                             end
                         end
                     end
@@ -363,7 +363,7 @@ end
 function modifyResults(name, results, task)
     if ao_debug == true then
         log("Trying to use modifyResults on recipe." .. name .. " with " .. serpent.block(results) .. " and task " ..
-        '"' .. tostring(task) .. '"' .. "\n")
+            '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["recipe"][name] then
         if data.raw["recipe"][name].results then
@@ -394,7 +394,7 @@ function modifyResults(name, results, task)
                                 result.name = results
                                 if ao_debug == true then
                                     log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                    serpent.block(results) .. "'" .. "\n")
+                                        serpent.block(results) .. "'" .. "\n")
                                 end
                             end
                         end
@@ -430,7 +430,7 @@ function modifyResults(name, results, task)
                             recipe.result.name = results
                             if ao_debug == true then
                                 log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
-                                serpent.block(results) .. "'" .. "\n")
+                                    serpent.block(results) .. "'" .. "\n")
                             end
                         end
                     end
@@ -455,7 +455,7 @@ end
 function modifyPrerequisites(name, prerequisites, task)
     if ao_debug == true then
         log("Trying to use modifyPrerequisites on technology." .. name .. " with " .. serpent.block(prerequisites) ..
-        " and task " .. '"' .. tostring(task) .. '"' .. "\n")
+            " and task " .. '"' .. tostring(task) .. '"' .. "\n")
     end
     if data.raw["technology"][name] then
         if task == "replace" or task == nil then
@@ -497,7 +497,7 @@ end
 function regroup(type, name, group, subgroup, order)
     if ao_debug == true then
         log("Trying to use regroup on " .. type .. "." .. name .. " Group: " .. '"' .. tostring(group) .. '"' ..
-        " Subgroup: " .. '"' .. tostring(subgroup) .. '"' .. " order: " .. '"' .. tostring(order) .. '"' .. "\n")
+            " Subgroup: " .. '"' .. tostring(subgroup) .. '"' .. " order: " .. '"' .. tostring(order) .. '"' .. "\n")
     end
     type = resolveType(type)
     if group == "AO" then
@@ -541,7 +541,7 @@ end
 function iconizer(fromType1, fromName1, toType2, toName2)
     if ao_debug == true then
         log("Trying to use iconizer on " .. fromType1 .. "." .. fromName1 .. " --> " .. toType2 .. "." .. toName2 ..
-        "\n")
+            "\n")
     end
 
     fromType1 = resolveType(fromType1)
@@ -575,7 +575,7 @@ function iconizer(fromType1, fromName1, toType2, toName2)
                 data.raw[toType2][toName2].icon_mipmaps = data.raw[fromType1][fromName1].icon_mipmaps
                 if ao_debug == true then
                     log(fromType1 .. "." .. fromName1 .. "'s icon mipmaps got replaced by '" .. toType2 .. "." ..
-                    toName2 .. "'")
+                        toName2 .. "'")
                 end
             else
                 if ao_debug == true then
@@ -586,7 +586,7 @@ function iconizer(fromType1, fromName1, toType2, toName2)
                 data.raw[toType2][toName2].pictures = data.raw[fromType1][fromName1].pictures
                 if ao_debug == true then
                     log(fromType1 .. "." .. fromName1 .. "'s pictures got replaced by '" .. toType2 .. "." .. toName2 ..
-                    "'")
+                        "'")
                 end
             else
                 if ao_debug == true then
@@ -791,47 +791,50 @@ function make_4way_animation_from_spritesheet(animation)
 end
 
 function multiply_recipe(recipe, multiple)
+    -- function code by brevven
+    -- CC-BY-SA-4.0 license
+    -- https://github.com/brevven/foundry
     if recipe then
-      if recipe.energy_required then
-        recipe.energy_required = recipe.energy_required * multiple
-      else
-        recipe.energy_required = 0.5 * multiple
-      end
-      if recipe.result_count then
-        recipe.result_count = recipe.result_count * multiple
-      end
-      if recipe.results then
-        for i, result in pairs(recipe.results) do
-          if result.name then
-            if result.amount then
-              result.amount = result.amount * multiple
-            end
-            if result.amount_min ~= nil then
-              result.amount_min = result.amount_min * multiple
-              result.amount_max = result.amount_max * multiple
-            end
-            if result.catalyst_amount then
-              result.catalyst_amount = result.catalyst_amount * multiple
-            end
-          end
-          if result[1] then
-            result[2] = result[2] * multiple
-          end
+        if recipe.energy_required then
+            recipe.energy_required = recipe.energy_required * multiple
+        else
+            recipe.energy_required = 0.5 * multiple
         end
-      end
-      if not recipe.results and not recipe.result_count then
-        -- implicit one item result
-        recipe.result_count = multiple
-      end
-      if recipe.ingredients then
-        for i, ingredient in pairs(recipe.ingredients) do
-          if ingredient.name then
-            ingredient.amount = ingredient.amount * multiple
-          end
-          if ingredient[1] then
-            ingredient[2] = ingredient[2] * multiple
-          end
+        if recipe.result_count then
+            recipe.result_count = recipe.result_count * multiple
         end
-      end
+        if recipe.results then
+            for i, result in pairs(recipe.results) do
+                if result.name then
+                    if result.amount then
+                        result.amount = result.amount * multiple
+                    end
+                    if result.amount_min ~= nil then
+                        result.amount_min = result.amount_min * multiple
+                        result.amount_max = result.amount_max * multiple
+                    end
+                    if result.catalyst_amount then
+                        result.catalyst_amount = result.catalyst_amount * multiple
+                    end
+                end
+                if result[1] then
+                    result[2] = result[2] * multiple
+                end
+            end
+        end
+        if not recipe.results and not recipe.result_count then
+            -- implicit one item result
+            recipe.result_count = multiple
+        end
+        if recipe.ingredients then
+            for i, ingredient in pairs(recipe.ingredients) do
+                if ingredient.name then
+                    ingredient.amount = ingredient.amount * multiple
+                end
+                if ingredient[1] then
+                    ingredient[2] = ingredient[2] * multiple
+                end
+            end
+        end
     end
-  end
+end
