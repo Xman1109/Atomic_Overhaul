@@ -838,3 +838,48 @@ function multiply_recipe(recipe, multiple)
         end
     end
 end
+
+---
+--- This function is used to adjust the fuel value of a given item
+---
+--- Krastorio2 = 6.3
+---
+---@param item (string|table) This is the name of the item
+---@param multiple (int|float) This is the multiple to apply to the fuel value
+function multiplyFuelValue(item, multiple)
+    if type(item) == "string" then
+        if data.raw["item"][item] then
+            if data.raw["item"][item].fuel_value then
+                data.raw["item"][item].fuel_value = data.raw["item"][item].fuel_value * multiple
+            else
+                if ao_debug then
+                    log("multiplyFuelValue: " .. item .. " has no fuel_value")
+                end
+            end
+        else
+            if ao_debug then
+                log("multiplyFuelValue: " .. item .. " does not exist")
+            end
+        end
+    elseif type(item) == "table" then
+        for _, v in pairs(item) do
+            if data.raw["item"][v] then
+                if data.raw["item"][v].fuel_value then
+                    data.raw["item"][v].fuel_value = data.raw["item"][v].fuel_value * multiple
+                else
+                    if ao_debug then
+                        log("multiplyFuelValue: " .. v .. " has no fuel_value")
+                    end
+                end
+            else
+                if ao_debug then
+                    log("multiplyFuelValue: " .. v .. " does not exist")
+                end
+            end
+        end
+    else
+        if ao_debug then
+            log("multiplyFuelValue: " .. item .. " is not a string or table")
+        end
+    end
+end

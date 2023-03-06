@@ -73,30 +73,9 @@ else
         "fusion-reactor-equipment", "spidertron", "kr-rocket-turret" }
 end
 addResearchData(k2_se_list)
-data.raw["item"]["graphite-fuel-cell"].fuel_value = "19GJ"
-data.raw["item"]["plutonium-fuel-cell"].fuel_value = "63GJ"
-data.raw["item"]["MOX-fuel-cell"].fuel_value = "75GJ"
-data.raw["item"]["thorium-fuel-cell"].fuel_value = "100GJ"
-modifyResults("graphite-fuel-cell-recipe", { {
-    type = "item",
-    name = "graphite-fuel-cell",
-    amount = 1
-} })
-modifyResults("plutonium-fuel-cell-recipe", { {
-    type = "item",
-    name = "plutonium-fuel-cell",
-    amount = 1
-} })
-modifyResults("MOX-fuel-cell-recipe", { {
-    type = "item",
-    name = "MOX-fuel-cell",
-    amount = 1
-} })
-modifyResults("thorium-fuel-cell-recipe", { {
-    type = "item",
-    name = "thorium-fuel-cell",
-    amount = 1
-} })
+-- multiplyFuelValue(
+--     { "graphite-fuel-cell", "non-moderated-fuel-cell", "plutonium-fuel-cell", "MOX-fuel-cell", "thorium-fuel-cell" },
+--     6.3)
 if settings.startup["se-addon"].value == true then
     table.insert(data.raw["technology"]["se-antimatter-reactor"].prerequisites, "space-reactor")
     data.raw["reactor"]["nuclear-reactor"].collision_mask =
