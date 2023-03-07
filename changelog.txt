@@ -12,6 +12,8 @@ Date: 2023-02-22
     - some russian translations
     - made some changes to the readme.md
   Info:
+    - @garrotte helped me a lot with the mod and made the mod complexity selection possible, so thanks to him!
+      Also check out his mods: https://mods.factorio.com/user/garrotte !
     - The old graphite processing will be discontinued in the next update!
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.11

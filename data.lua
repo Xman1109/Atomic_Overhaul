@@ -118,4 +118,3 @@ end
 -- TODO: add the fuel rods ✔ (space rods still missing)
 -- TODO: Add locals ✔ (recipes still need locales)
 -- TODO: Make recipes for the fuel rods
--- TODO: Add the rod-light map to the fuel rods
