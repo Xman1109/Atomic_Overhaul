@@ -1,4 +1,4 @@
-local small_ruins = require("__Atomic_Overhaul__/prototypes/addons/the-ruins-mod/ruins/small")
+local small_ruins = require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruins.small")
 local medium_ruins = require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruins.medium")
 local large_ruins = require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruins.large")
 
@@ -10,15 +10,15 @@ script.on_init(make_ruin_set)
 script.on_load(make_ruin_set)
 
 
-local documents = {}
+-- local documents = {}
 
-function documents.on_player_used_capsule(event)
-    if event.item == "secret-documents" then
-        local techs = {}
-        local r = math.random(1, #techs)
-        while game.forces.player.technologies[techs[r]].hidden == false do
-            r = math.random(1, #techs)
-        end
-        game.forces.player.technologies[techs[r]].hidden = false
-    end
-end
+-- function documents.on_player_used_capsule(event)
+--     if event.item == "secret-documents" then
+--         local techs = {}
+--         local r = math.random(1, #techs)
+--         while game.forces.player.technologies[techs[r]].hidden == false do
+--             r = math.random(1, #techs)
+--         end
+--         game.forces.player.technologies[techs[r]].hidden = false
+--     end
+-- end

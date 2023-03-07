@@ -14,6 +14,13 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                         size = 128,
                         scale = 0.125,
                         mipmap_count = 4
+                    },
+                    {
+                        filename = graphics .. "rod-light.png",
+                        size = 128,
+                        scale = 0.125,
+                        draw_as_light = true,
+                        mipmap_count = 4
                     }
                 }
             },
