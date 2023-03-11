@@ -260,7 +260,8 @@ function breed.Breeder()
       {
         { "uranium-235",          1 },
         { "uranium-low-enriched", 7 },
-        { "uranium-238",          5 }
+        { "uranium-238",          5 },
+        { "iron-plate",           1 },
       },
       results = {
         { "ao-breeder-fuel-cell", 2 },

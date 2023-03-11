@@ -3,11 +3,12 @@ local m_results
 if settings.startup["ao-complexity-level"].value == "simple" then
     m_ingredients =
     {
-        { "plutonium",   2 },
-        { "uranium-238", 38 }
+        { "plutonium",   4 },
+        { "uranium-238", 76 },
+        { "iron-plate",  1 }
     }
     m_results = {
-        { "MOX-fuel-cell", 1 },
+        { "MOX-fuel-cell", 2 },
     }
 else
     m_ingredients =
