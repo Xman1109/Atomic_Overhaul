@@ -237,7 +237,8 @@ function breed.Breeder()
         { "concrete",         500 },
         { "steel-plate",      800 },
         { "advanced-circuit", 600 },
-        { "copper-plate",     500 }
+        { "copper-plate",     500 },
+        (mods["bztungsten"] and { "tungsten-plate", 600 }) or nil
       },
       result = "apm_nuclear_breeder",
       energy_required = 64,

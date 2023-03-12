@@ -49,6 +49,9 @@ if settings.startup["ao-complexity-level"].value == "simple" then
 
         replace_ingredient_partly("uranium-fuel-cell", nuclear_plate, 1, nuclear_z, 1)
         replace_ingredient_partly("MOX-fuel-cell-recipe", nuclear_plate, 1, nuclear_z, 1)
-        if ao_breeder then replace_ingredient_partly("ao-breeder-fuel-cell-recipe", nuclear_plate, 1, nuclear_z, 1) end
+        if ao_breeder then
+            replace_ingredient_partly("ao-breeder-fuel-cell-recipe", nuclear_plate, 1, nuclear_z, 1)
+            table.insert(data.raw.recipe["apm_nuclear_breeder-recipe"].ingredients, { nuclear_z, 150 })
+        end
     end
 end
