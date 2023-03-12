@@ -13,11 +13,11 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             order = "b",
             ingredients = {
                 { type = "item",  name = "fissile-products", amount = 5 },
-                { type = "fluid", name = "sulfuric-acid",    amount = 60 }
+                { type = "fluid", name = "sulfuric-acid",    amount = 30 }
             },
             results = {
                 { type = "item",  name = "plutonium",                  amount = 1 },
-                { type = "fluid", name = "radioactive-waste-solution", amount = 30 }
+                { type = "fluid", name = "radioactive-waste-solution", amount = 20 }
             }
         }
     })
