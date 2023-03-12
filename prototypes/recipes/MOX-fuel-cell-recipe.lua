@@ -5,7 +5,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     {
         { "plutonium",   4 },
         { "uranium-238", 76 },
-        { "iron-plate",  1 }
+        { "iron-plate",  2 }
     }
     m_results = {
         { "MOX-fuel-cell", 2 },

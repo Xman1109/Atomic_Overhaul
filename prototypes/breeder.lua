@@ -87,7 +87,7 @@ function breed.NewEnrichment()
     },
   })
   data.raw["recipe"]["uranium-processing"].hidden = true -- I hid it instead of using for LEU, because icon, description would be incorrect anyway.
-  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { { "uranium-low-enriched", 4 }, { "iron-plate", 1 } }
+  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { { "uranium-low-enriched", 4 }, { "iron-plate", 2 } }
   data.raw["recipe"]["uranium-fuel-cell"].result_count = 2
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
@@ -261,7 +261,7 @@ function breed.Breeder()
         { "uranium-235",          1 },
         { "uranium-low-enriched", 7 },
         { "uranium-238",          5 },
-        { "iron-plate",           1 },
+        { "iron-plate",           2 },
       },
       results = {
         { "ao-breeder-fuel-cell", 2 },

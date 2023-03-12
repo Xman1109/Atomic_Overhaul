@@ -64,6 +64,13 @@ if mods["bzcarbon"] then
     end
 end
 
+if mods["bzlead"] or mods["bzzirconium"] then
+    require(compatibility .. "bznuclear")
+    if ao_debug == true then
+        log(debug_text .. "bzlead and/or bzzirconium")
+    end
+end
+
 -- Addon stage begins here.
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("__Atomic_Overhaul__/lib/se-addon")
