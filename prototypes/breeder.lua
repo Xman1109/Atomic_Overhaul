@@ -42,7 +42,7 @@ function breed.NewEnrichment()
     {
       type = "recipe",
       name = "uranium-low-enriched",
-      energy_required = 30,
+      energy_required = 84,
       enabled = false,
       category = "centrifuging",
       ingredients =
@@ -64,7 +64,7 @@ function breed.NewEnrichment()
     {
       type = "recipe",
       name = "uranium-235",
-      energy_required = 180,
+      energy_required = 360,
       enabled = false,
       category = "centrifuging",
       localised_name = { "recipe-name.uranium-235-simple" },
@@ -133,7 +133,7 @@ function breed.NewEnrichment()
 
   --  **** TECHNOLOGIES ****
   local process_u = data.raw["technology"]["uranium-processing"]
-  if process_u then -- TO_DO Add unlock in control.lua for situation with unloading Schall's mod or adding AO to existing game in Simplified mode.
+  if process_u then
     for i, v in pairs(process_u.effects) do
       if v.recipe == "uranium-processing" then
         table.remove(process_u.effects, i)
