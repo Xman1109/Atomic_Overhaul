@@ -59,7 +59,6 @@ function breed.NewEnrichment()
         { "uranium-238",          6 }
       },
       allow_decomposition = false,
-      -- TO_DO : allow all modules
     },
     {
       type = "recipe",
@@ -83,9 +82,14 @@ function breed.NewEnrichment()
         { "uranium-238", 19 }
       },
       allow_decomposition = false,
-      -- TO_DO : allow all modules
     },
   })
+  for _, i in pairs(data.raw["module"]) do
+    if i.category == "productivity" then
+      table.insert(i.limitation, "uranium-235")
+      table.insert(i.limitation, "uranium-low-enriched")
+    end
+  end
   data.raw["recipe"]["uranium-processing"].hidden = true -- I hid it instead of using for LEU, because icon, description would be incorrect anyway.
   data.raw["recipe"]["uranium-fuel-cell"].ingredients = { { "uranium-low-enriched", 4 }, { "iron-plate", 2 } }
   data.raw["recipe"]["uranium-fuel-cell"].result_count = 2
