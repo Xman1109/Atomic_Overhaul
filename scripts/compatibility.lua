@@ -1,5 +1,5 @@
 -- this script replaces the nuclear fuel reprocessing recipe with a custom one
-if k2_se then
+if script.active_mods["Krastorio2"] and script.active_mods["space-exploration"] then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -12,7 +12,7 @@ if k2_se then
         end)
 end
 
-if bobplates then
+if script.active_mods["bobplates"] then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do
@@ -25,7 +25,7 @@ if bobplates then
         end)
 end
 
-if bzcarbon then
+if script.active_mods["bzcarbon"] then
     script.on_init(
         function()
             for index, force in pairs(game.forces) do

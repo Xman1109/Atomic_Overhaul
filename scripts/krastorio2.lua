@@ -1,4 +1,29 @@
-script.on_init(function()
+local function FixUraniumResources()
+    local ao_enrichUranium = (not game.active_mods["SchallUraniumProcessing"]) and
+        settings.startup["ao-complexity-level"].value == "simple"
+    local ao_breeder = (not game.active_mods["Nuclear Fuel"]) and
+        settings.startup["ao-complexity-level"].value == "simple" and
+        settings.startup["ao-breeder"].value
+    if game.forces["player"].technologies["uranium-processing"].researched and ao_enrichUranium then
+        game.forces["player"].recipes["uranium-low-enriched"].enabled = true
+        game.forces["player"].recipes["uranium-235"].enabled = true
+    end
+
+    for i, force in pairs(game.forces) do
+        if ao_breeder and ao_enrichUranium then
+            force.technologies["kovarex-enrichment-process"].enabled = false
+            force.recipes["kovarex-enrichment-process"].enabled = false
+        else
+            force.technologies["kovarex-enrichment-process"].enabled = true
+            if force.technologies["kovarex-enrichment-process"].researched then
+                force.recipes["kovarex-enrichment-process"].enabled = true
+            end
+        end
+    end
+end
+
+
+script.on_init(function() --I will make this more compact in the future
     if remote.interfaces["kr-radioactivity"] then
         remote.call("kr-radioactivity", "add_item", "plutonium-fuel-cell")
         remote.call("kr-radioactivity", "add_item", "plutonium")
@@ -22,6 +47,7 @@ script.on_init(function()
             remote.call("kr-radioactivity", "add_item", "beryllium-depleted-cell")
         end
     end
+    FixUraniumResources()
 end)
 script.on_configuration_changed(function()
     if remote.interfaces["kr-radioactivity"] then

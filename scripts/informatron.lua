@@ -1,18 +1,9 @@
-remote.add_interface("Atomic_Overhaul", {
-    informatron_menu = function(data)
-        return example_menu(data.player_index)
-    end,
-    informatron_page_content = function(data)
-        return example_page_content(data.page_name, data.player_index, data.element)
-    end
-})
-
 function example_menu(player_index)
-    return {
-        AO_materials = 1,
-        SE_materials = 1
-    }
-end
+        return {
+            AO_materials = 1,
+            SE_materials = 1
+        }
+    end
 
 function example_page_content(page_name, player_index, element)
     -- main page
