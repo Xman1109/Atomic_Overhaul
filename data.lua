@@ -114,7 +114,6 @@ if mods["informatron"] then
     informatron_make_image("glow_1", images .. "glow.png", 243, 100)
 end
 
--- TODO: make the scripts "beautiful"
--- TODO: add the fuel rods ✔ (space rods still missing)
--- TODO: Add locals ✔ (recipes still need locales)
+-- TODO: add the space rods
+-- TODO: Add recipe locales
 -- TODO: Make recipes for the fuel rods
