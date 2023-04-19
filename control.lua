@@ -1,3 +1,27 @@
+function FixUraniumResources()
+    local ao_enrichUranium = (not game.active_mods["SchallUraniumProcessing"]) and
+        settings.startup["ao-complexity-level"].value == "simple"
+    local ao_breeder = (not game.active_mods["Nuclear Fuel"]) and
+        settings.startup["ao-complexity-level"].value == "simple" and
+        settings.startup["ao-breeder"].value
+    if game.forces["player"].technologies["uranium-processing"].researched and ao_enrichUranium then
+        game.forces["player"].recipes["uranium-low-enriched"].enabled = true
+        game.forces["player"].recipes["uranium-235"].enabled = true
+    end
+
+    for i, force in pairs(game.forces) do
+        if ao_breeder and ao_enrichUranium then
+            force.technologies["kovarex-enrichment-process"].enabled = false
+            force.recipes["kovarex-enrichment-process"].enabled = false
+        else
+            force.technologies["kovarex-enrichment-process"].enabled = true
+            if force.technologies["kovarex-enrichment-process"].researched then
+                force.recipes["kovarex-enrichment-process"].enabled = true
+            end
+        end
+    end
+end
+
 -- checking if the mod is loaded on a used savegame for the first time
 script.on_init(function()
     if (settings.startup["ao-complexity-level"].value ~= "simple") then -- Why should mod always threaten player?
