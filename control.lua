@@ -38,10 +38,10 @@ script.on_configuration_changed(function()
     FixUraniumResources()
 end)
 
+
+require("scripts.compatibility")
+require("scripts.remote-interface")
 for name, _ in pairs(script.active_mods) do
-    log(name)
-    require("scripts.compatibility")
-    require("scripts.remote-interface")
     if name == "Krastorio2" then
         require("scripts.krastorio2")
         if ao_debug then

@@ -125,3 +125,4 @@ end
 -- TODO: change the techs to unlock the fuel rods 🗸
 -- TODO: enable the advanced standard fuel cells
 -- TODO: make migrations 🙄
+-- TODO: Figure out why the fuck the data-update.lua is not being executed and why I cant get a new effect on a vanilla technology...
