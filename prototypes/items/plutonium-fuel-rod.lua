@@ -15,7 +15,8 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                         mipmap_count = 4
                     },
                     {
-                        filename = graphics .. "rod-light",
+                        filename = graphics .. "rod-light.png",
+                        flags = { "light" },
                         size = 128,
                         scale = 0.125,
                         mipmap_count = 4,

@@ -29,6 +29,10 @@ else
         },
         {
             type = "unlock-recipe",
+            recipe = "MOX-rod-recipe"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "MOX-fuel-cell-recipe"
         }
     }

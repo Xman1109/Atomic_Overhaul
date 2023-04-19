@@ -12,6 +12,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             {
                 {
                     type = "unlock-recipe",
+                    recipe = "plutonium-rod-recipe"
+                },
+                {
+                    type = "unlock-recipe",
                     recipe = "plutonium-fuel-cell-recipe"
                 }
             },

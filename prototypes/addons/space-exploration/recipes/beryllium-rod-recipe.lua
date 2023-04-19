@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "beryllium-fuel-rod",
+        name = "beryllium-rod-recipe",
         icon = se_addon_graphics .. "beryllium-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,

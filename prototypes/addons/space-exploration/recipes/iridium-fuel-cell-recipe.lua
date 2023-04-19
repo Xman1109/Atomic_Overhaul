@@ -14,8 +14,7 @@ data:extend(
         ingredients =
         {
             {fuel_cell, 10},
-            {"iridium-192", 5},
-            {"graphite", 3}
+            {"iridium-fuel-rod", 10}
         },
         always_show_made_in = true,
         results = 	{

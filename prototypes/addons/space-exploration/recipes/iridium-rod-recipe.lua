@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "iridium-fuel-rod",
+        name = "iridium-rod-recipe",
         icon = se_addon_graphics .. "iridium-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,

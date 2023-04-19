@@ -17,26 +17,26 @@ require(fluids .. "waste-solution")
 require(items .. "empty-fuel-cell")
 require(items .. "nuclear-waste")
 require(items .. "research-data")
--- require(items .. "uranium-fuel-rod")
 require(items .. "graphite")
 require(items .. "graphite-depleted-cell")
 require(items .. "graphite-fuel-cell")
 require(items .. "MOX")
 require(items .. "MOX-depleted-cell")
 require(items .. "MOX-fuel-cell")
--- require(items .. "MOX-fuel-rod")
+require(items .. "MOX-fuel-rod")
 require(items .. "plutonium")
 require(items .. "plutonium-depleted-cell")
 require(items .. "plutonium-fuel")
 require(items .. "plutonium-fuel-cell")
--- require(items .. "plutonium-fuel-rod")
+require(items .. "plutonium-fuel-rod")
 require(items .. "thorium")
 require(items .. "thorium-depleted-cell")
 require(items .. "thorium-fuel-cell")
--- require(items .. "thorium-fuel-rod")
+require(items .. "thorium-fuel-rod")
 require(items .. "thorium-module-1")
 require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
+require(items .. "uranium-fuel-rod")
 
 
 require(ao_recipes .. "empty-fuel-cell-recipe")
@@ -46,11 +46,13 @@ require(ao_recipes .. "graphite-recipe")
 require(ao_recipes .. "MOX-fuel-cell-recipe")
 require(ao_recipes .. "MOX-fuel-reprocessing")
 require(ao_recipes .. "MOX-recipe")
+require(ao_recipes .. "MOX-rod-recipe")
 require(ao_recipes .. "MOX-without-research-data")
 require(ao_recipes .. "plutonium-fuel-cell-recipe")
 require(ao_recipes .. "plutonium-fuel-recipe")
 require(ao_recipes .. "plutonium-fuel-reprocessing")
 require(ao_recipes .. "plutonium-without-research-data")
+require(ao_recipes .. "plutonium-rod-recipe")
 require(ao_recipes .. "research-data")
 require(ao_recipes .. "thorium-fuel-cell-recipe")
 require(ao_recipes .. "thorium-fuel-reprocessing")
@@ -58,6 +60,8 @@ require(ao_recipes .. "thorium-module-1")
 require(ao_recipes .. "thorium-module-2")
 require(ao_recipes .. "thorium-module-3")
 require(ao_recipes .. "thorium-recipe")
+require(ao_recipes .. "thorium-rod-recipe")
+require(ao_recipes .. "uranium-rod-recipe")
 require(ao_recipes .. "uranium-without-research-data")
 require(ao_recipes .. "waste-liquefaction")
 require(ao_recipes .. "waste-solution-reprocessing")
@@ -113,7 +117,11 @@ if mods["informatron"] then
     informatron_make_image("beryllium", images .. "beryllium.png", 64, 64)
     informatron_make_image("glow_1", images .. "glow.png", 243, 100)
 end
-
--- TODO: add the space rods
--- TODO: Add recipe locales
--- TODO: Make recipes for the fuel rods
+-- TODO: add the space rods 🗸
+-- TODO: Add recipe locales 🗸
+-- TODO: Make recipes for the fuel rods 🗸
+-- TODO: change fuel cell recipe to use the fuel rods 🗸
+-- TODO: locales for the fuel rod items 🗸
+-- TODO: change the techs to unlock the fuel rods 🗸
+-- TODO: enable the advanced standard fuel cells
+-- TODO: make migrations 🙄

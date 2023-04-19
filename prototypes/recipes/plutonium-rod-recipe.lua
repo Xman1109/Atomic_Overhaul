@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "plutonium-fuel-rod",
+        name = "plutonium-rod-recipe",
         icon = graphics .. "plutonium-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,

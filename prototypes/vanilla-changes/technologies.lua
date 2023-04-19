@@ -7,6 +7,8 @@ else
             table.insert(lab.inputs, "research-data")
         end
     end
+    modifyEffects("uranium-processing", { { type = "unlock-recipe", recipe = "uranium-rod-recipe" } }, "add")
+    -- TODO: instead of table.insert, use our own functions
     table.insert(data.raw["technology"]["nuclear-fuel-reprocessing"].prerequisites, "uranium-processing")
     table.insert(data.raw["technology"]["atomic-bomb"].prerequisites, "plutonium-processing")
     table.insert(data.raw["technology"]["atomic-bomb"].unit.ingredients, { "research-data", 1 })

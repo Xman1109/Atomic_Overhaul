@@ -41,9 +41,8 @@ else
 
     data.raw["recipe"]["uranium-fuel-cell"].ingredients =
     {
-        { "uranium-235",     1 },
-        { "graphite",        19 },
-        { "empty-fuel-cell", 10 }
+        { "uranium-fuel-rod", 10 },
+        { "empty-fuel-cell",  10 }
     }
 end
 data.raw["recipe"]["uranium-fuel-cell"].category = "centrifuging"

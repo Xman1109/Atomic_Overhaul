@@ -17,6 +17,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                     },
                     {
                         filename = graphics .. "rod-light.png",
+                        flags = { "light" },
                         size = 128,
                         scale = 0.125,
                         draw_as_light = true,

@@ -14,6 +14,10 @@ data:extend({
                 },
                 {
                     type = "unlock-recipe",
+                    recipe = "iridium-rod-recipe"
+                },
+                {
+                    type = "unlock-recipe",
                     recipe = "iridium-fuel-cell-recipe"
                 }
             },

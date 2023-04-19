@@ -14,6 +14,10 @@ data:extend({
                 },
                 {
                     type = "unlock-recipe",
+                    recipe = "beryllium-rod-recipe"
+                },
+                {
+                    type = "unlock-recipe",
                     recipe = "beryllium-fuel-cell-recipe"
                 }
             },

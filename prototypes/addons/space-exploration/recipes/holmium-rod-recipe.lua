@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "holmium-fuel-rod",
+        name = "holmium-rod-recipe",
         icon = se_addon_graphics .. "holmium-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,

@@ -16,6 +16,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 },
                 {
                     type = "unlock-recipe",
+                    recipe = "thorium-rod-recipe"
+                },
+                {
+                    type = "unlock-recipe",
                     recipe = "thorium-fuel-cell-recipe"
                 }
             },

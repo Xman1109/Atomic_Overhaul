@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "MOX-fuel-rod",
+        name = "MOX-rod-recipe",
         icon = graphics .. "MOX-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,

@@ -13,9 +13,8 @@ if settings.startup["ao-complexity-level"].value == "simple" then
 else
     m_ingredients =
     {
-        { "MOX",             10 },
-        { "empty-fuel-cell", 10 },
-        { "graphite",        1 }
+        { "MOX-fuel-rod",             10 },
+        { "empty-fuel-cell", 10 }
     }
     m_results = {
         { "MOX-fuel-cell", 10 },

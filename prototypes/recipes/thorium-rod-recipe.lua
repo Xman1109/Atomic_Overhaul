@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "thorium-fuel-rod",
+        name = "thorium-rod-recipe",
         icon = graphics .. "thorium-fuel-rod.png",
         icon_size = 128,
         icon_mipmaps = 4,
