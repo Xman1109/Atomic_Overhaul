@@ -1,4 +1,5 @@
 if settings.startup["se-addon"].value == true then
+    modifyEffects("uranium-processing", { { type = "unlock-recipe", recipe = "uranium-rod-recipe" } }, "add")
     table.insert(data.raw["technology"]["se-antimatter-reactor"].prerequisites, "space-reactor")
     data.raw["reactor"]["nuclear-reactor"].collision_mask =
     data.raw["transport-belt"]["transport-belt"].collision_mask or
