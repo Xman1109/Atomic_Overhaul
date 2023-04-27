@@ -10,6 +10,10 @@ assignees: Xman1109
 
 # Bug Report
 
+- [ ] old graphite fuel setting enabled ?
+
+
+
 ## Describe the bug
 
 ```

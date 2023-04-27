@@ -16,7 +16,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             recipe["thorium-rod-recipe"].enabled = true
         end
 
-        if settings.startup["se-addon"].value == true then
+        if settings.startup["se-addon"].value == true and technologies["se-processing-iridium"] ~= nil then
             if technologies["iridium-192-processing"].researched then
                 recipe["iridium-rod-recipe"].enabled = true
             end
