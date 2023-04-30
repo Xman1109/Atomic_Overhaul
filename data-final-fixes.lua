@@ -121,6 +121,10 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_recipes .. "lead-delivery-recipe") -----\
     require(se_addon_recipes .. "capsule-recipes") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_recipes .. "space-reactor-recipe")
+    require(se_addon_recipes .. "advanced-uranium-cell-recipe")
+    require(se_addon_recipes .. "advanced-plutonium-cell-recipe")
+    require(se_addon_recipes .. "advanced-MOX-cell-recipe")
+    require(se_addon_recipes .. "advanced-thorium-cell-recipe")
 
     require(se_addon_techs .. "beryllium-7-processing")
     require(se_addon_techs .. "beryllium-7-reprocessing")
@@ -132,6 +136,7 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_techs .. "iridium-192-reprocessing")
     require(se_addon_techs .. "iridium-192-without-research-data")
     require(se_addon_techs .. "space-reactor")
+    require(se_addon_techs .. "advanced-fuel-cells")
 
     if ao_debug == true then
         log(debug_addon_text .. "space-exploration")
