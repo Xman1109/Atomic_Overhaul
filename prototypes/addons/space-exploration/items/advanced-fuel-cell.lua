@@ -5,8 +5,8 @@ data:extend({
 		icon = se_addon_graphics .. "advanced-fuel-cell.png",
 		icon_size = 64, icon_mipmaps = 4,
 		group = "atomic-overhaul",
-		order = "zz",
-		subgroup = "fuel-cells",
+		order = "z",
+		subgroup = "space-fuel-cells",
 		stack_size = 50,
 	}
 })

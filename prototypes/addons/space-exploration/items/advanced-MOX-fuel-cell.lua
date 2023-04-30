@@ -36,7 +36,7 @@ data:extend({
 		},
 		group = "atomic-overhaul",
 		order = "c",
-		subgroup = "fuel-cells",
+		subgroup = "advanced-fuel-cells",
 		fuel_category = "space-nuclear-fuel",
 		burnt_result = "advanced-MOX-depleted-cell",
 		fuel_glow_color = { 118, 150, 57 },

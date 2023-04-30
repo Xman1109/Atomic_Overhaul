@@ -27,7 +27,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 }
             },
             group = "atomic-overhaul",
-            order = "a",
+            order = "ab",
             subgroup = "fuel-cells",
             fuel_category = "nuclear",
             burnt_result = "non-moderated-depleted-cell",

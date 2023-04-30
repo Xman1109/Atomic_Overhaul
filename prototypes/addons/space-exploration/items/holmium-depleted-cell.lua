@@ -6,5 +6,5 @@ data:extend({{
     stack_size = 50,
     group = "atomic-overhaul",
     order = "g",
-    subgroup = "used-up-fuel-cells",
+    subgroup = "space-depleted-cells",
 }})

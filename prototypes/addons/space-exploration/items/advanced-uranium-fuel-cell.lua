@@ -12,10 +12,10 @@ data:extend({
             },
             zero_g_icon
         },
-        pictures = data.raw["item"]["uranium-fuel-cell"].pictures .. zero_g_picture,
+        pictures = data.raw["item"]["uranium-fuel-cell"].pictures,
         group = "atomic-overhaul",
         order = "a",
-        subgroup = "fuel-cells",
+        subgroup = "advanced-fuel-cells",
         fuel_category = "space-nuclear-fuel",
         burnt_result = "advanced-uranium-depleted-cell",
         fuel_glow_color = { 219, 225, 130 },

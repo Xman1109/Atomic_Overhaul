@@ -7,7 +7,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
 			icon_size = 64,
 			icon_mipmaps = 4,
 			group = "atomic-overhaul",
-			order = "z",
+			order = "a",
 			subgroup = "fuel-cells",
 			stack_size = 50,
 		}

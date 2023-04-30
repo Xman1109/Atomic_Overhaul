@@ -28,6 +28,6 @@ data:extend(
             stack_size = 50,
             group = "atomic-overhaul",
             order = "zc",
-            subgroup = "used-up-fuel-cells",
+            subgroup = "advanced-depleted-cells",
         }
     })

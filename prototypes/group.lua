@@ -16,12 +16,6 @@ data:extend(
         },
         {
             type = "item-subgroup",
-            name = "fuel-rods",
-            group = "atomic-overhaul",
-            order = "b"
-        },
-        {
-            type = "item-subgroup",
             name = "fuel-cells",
             group = "atomic-overhaul",
             order = "c"

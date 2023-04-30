@@ -30,7 +30,7 @@ data:extend({
         fuel_glow_color = {100, 247, 207},
         stack_size = 50,
         group = "atomic_overhaul",
-        subgroup = "fuel-cells",
+        subgroup = "space-fuel-cells",
         order = "zc",
     }
 })
