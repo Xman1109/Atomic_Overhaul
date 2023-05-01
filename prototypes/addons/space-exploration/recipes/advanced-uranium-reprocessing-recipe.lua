@@ -1,0 +1,24 @@
+data:extend(
+{
+    {
+        type = "recipe",
+        name = "beryllium-7-reprocessing",
+        icon = ,
+        icon_size = 64,
+        icon_mipmaps = 4,
+        category = "space-radiation",
+        energy_required = 50,
+        enabled = false,
+        order = "zc",
+        subgroup = "reprocessing",
+        ingredients =
+        {
+            {"beryllium-depleted-cell", 5}
+        },
+        results = 	{
+            {"nuclear-waste", 20},
+            {type = "item", name = "se-beryllium-powder", amount_min = 0, amount_max = 1},
+            {type="item", name="research-data", amount = 10}
+        },
+    }
+})
