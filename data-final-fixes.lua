@@ -76,8 +76,6 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("__Atomic_Overhaul__/lib/se-addon")
     require("prototypes.addons.space-exploration.group")
     require(se_addon_items .. "advanced-MOX-depleted-cell")
-    require(se_addon_items .. "advanced-MOX-depleted-cell")
-    require(se_addon_items .. "advanced-MOX-fuel-cell")
     require(se_addon_items .. "advanced-MOX-fuel-cell")
     require(se_addon_items .. "advanced-fuel-cell")
     require(se_addon_items .. "advanced-plutonium-depleted-cell")
@@ -102,7 +100,15 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_items .. "capsule-items") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_items .. "space-reactor")
 
+    require(se_addon_recipes .. "advanced-MOX-cell-recipe")
+    require(se_addon_recipes .. "advanced-MOX-reprocessing-recipe")
     require(se_addon_recipes .. "advanced-fuel-cell-recipe")
+    require(se_addon_recipes .. "advanced-plutonium-cell-recipe")
+    require(se_addon_recipes .. "advanced-plutonium-reprocessing-recipe")
+    require(se_addon_recipes .. "advanced-thorium-cell-recipe")
+    require(se_addon_recipes .. "advanced-thorium-reprocessing-recipe")
+    require(se_addon_recipes .. "advanced-uranium-cell-recipe")
+    require(se_addon_recipes .. "advanced-uranium-reprocessing-recipe")
     require(se_addon_recipes .. "beryllium-7-recipe")
     require(se_addon_recipes .. "beryllium-7-reprocessing-recipe")
     require(se_addon_recipes .. "beryllium-7-without-research-data-recipe")
@@ -121,11 +127,8 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_recipes .. "lead-delivery-recipe") -----\
     require(se_addon_recipes .. "capsule-recipes") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_recipes .. "space-reactor-recipe")
-    require(se_addon_recipes .. "advanced-uranium-cell-recipe")
-    require(se_addon_recipes .. "advanced-plutonium-cell-recipe")
-    require(se_addon_recipes .. "advanced-MOX-cell-recipe")
-    require(se_addon_recipes .. "advanced-thorium-cell-recipe")
 
+    require(se_addon_techs .. "advanced-fuel-cells")
     require(se_addon_techs .. "beryllium-7-processing")
     require(se_addon_techs .. "beryllium-7-reprocessing")
     require(se_addon_techs .. "beryllium-7-without-research-data")
@@ -136,7 +139,6 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_techs .. "iridium-192-reprocessing")
     require(se_addon_techs .. "iridium-192-without-research-data")
     require(se_addon_techs .. "space-reactor")
-    require(se_addon_techs .. "advanced-fuel-cells")
 
     if ao_debug == true then
         log(debug_addon_text .. "space-exploration")

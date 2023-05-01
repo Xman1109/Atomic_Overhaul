@@ -2,6 +2,7 @@
 Version: 1.3.17
 Date: ????
   Changes:
+    - (SE) Advanced Fuel cells: Ever wanted to use the normal fuel cells in space? Now you can! (idea by Flagran)
     - added chinese translations for the fuel rods
     - rearranged some item orders
 ---------------------------------------------------------------------------------------------------
