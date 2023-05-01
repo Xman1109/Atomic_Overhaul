@@ -13,7 +13,15 @@ data:extend({
             },
             {
                 type = "unlock-recipe",
+                recipe = "advanced-uranium-reprocessing-recipe"
+            },
+            {
+                type = "unlock-recipe",
                 recipe = "advanced-plutonium-recipe"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "advanced-plutonium-reprocessing-recipe"
             },
             {
                 type = "unlock-recipe",
@@ -21,8 +29,16 @@ data:extend({
             },
             {
                 type = "unlock-recipe",
+                recipe = "advanced-MOX-reprocessing-recipe"
+            },
+            {
+                type = "unlock-recipe",
                 recipe = "advanced-thorium-recipe"
             },
+            {
+                type = "unlock-recipe",
+                recipe = "advanced-thorium-reprocessing-recipe"
+            }
         },
         prerequisites = {"space-reactor"},
         unit =

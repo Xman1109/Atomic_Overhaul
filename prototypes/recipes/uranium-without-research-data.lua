@@ -11,7 +11,6 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
         icon_mipmaps = 4,
         subgroup = "reprocessing-without-research-data",
         order = "b",
-        main_product = "",
         results = {
             { "uranium-238", 3 },
             { type = "item", name = "plutonium",     amount_min = 2, amount_max = 4 },

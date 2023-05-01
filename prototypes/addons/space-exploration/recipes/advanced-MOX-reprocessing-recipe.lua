@@ -2,13 +2,13 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "advanced-uranium-reprocessing",
-        icon = data.raw["recipe"]["uranium-fuel-cell"].icon,
+        name = "advanced-MOX-reprocessing",
+        icon = data.raw["recipe"]["MOX-fuel-cell"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
         icons = {
             {
-                icon = graphics .. "uranium-without-research-recipe.png",
+                icon = graphics .. "MOX-without-research-recipe.png",
                 icon_size = 64,
                 icon_mipmaps = 4,
             },
@@ -22,12 +22,12 @@ data:extend(
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
-        order = "zza",
+        order = "zzc",
         subgroup = "reprocessing",
         ingredients =
         {
-            {"advanced-uranium-depleted-cell", 5}
+            {"advanced-MOX-depleted-cell", 5}
         },
-        results = data.raw["recipe"]["uranium-without-research-data"].results,
+        results = data.raw["recipe"]["MOX-without-research-data"].results,
     }
 })
