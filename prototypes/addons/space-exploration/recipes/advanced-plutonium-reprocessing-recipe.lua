@@ -2,8 +2,8 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "advanced-plutonium-reprocessing",
-        icon = data.raw["recipe"]["plutonium-fuel-cell"].icon,
+        name = "advanced-plutonium-reprocessing-recipe",
+        icon = data.raw["recipe"]["plutonium-fuel-cell-recipe"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
         icons = {
@@ -22,8 +22,8 @@ data:extend(
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
-        order = "zzb",
-        subgroup = "reprocessing",
+        order = "b",
+        subgroup = "advanced-reprocessing",
         ingredients =
         {
             {"advanced-plutonium-depleted-cell", 5}

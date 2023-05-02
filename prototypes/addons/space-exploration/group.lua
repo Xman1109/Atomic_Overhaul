@@ -2,13 +2,6 @@ data:extend({ {
     type = "fuel-category",
     name = "space-nuclear-fuel"
 },
-
-    {
-        type = "item-subgroup",
-        name = "fuel-rods",
-        group = "atomic-overhaul",
-        order = "b"
-    },
     {
         type = "item-subgroup",
         name = "advanced-fuel-cells",
@@ -32,6 +25,24 @@ data:extend({ {
         name = "space-depleted-cells",
         group = "atomic-overhaul",
         order = "dd"
+    },
+    {
+        type = "item-subgroup",
+        name = "space-reprocessing",
+        group = "atomic-overhaul",
+        order = "fa"
+    },
+    {
+        type = "item-subgroup",
+        name = "space-reprocessing-without-research-data",
+        group = "atomic-overhaul",
+        order = "fb"
+    },
+    {
+        type = "item-subgroup",
+        name = "advanced-reprocessing",
+        group = "atomic-overhaul",
+        order = "fc"
     },
     {
         type = "item-subgroup",

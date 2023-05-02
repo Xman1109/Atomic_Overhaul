@@ -2,7 +2,7 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "advanced-uranium-reprocessing",
+        name = "advanced-uranium-reprocessing-recipe",
         icon = data.raw["recipe"]["uranium-fuel-cell"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
@@ -22,8 +22,8 @@ data:extend(
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
-        order = "zza",
-        subgroup = "reprocessing",
+        order = "a",
+        subgroup = "advanced-reprocessing",
         ingredients =
         {
             {"advanced-uranium-depleted-cell", 5}

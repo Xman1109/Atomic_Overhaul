@@ -2,8 +2,8 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "advanced-thorium-reprocessing",
-        icon = data.raw["recipe"]["thorium-fuel-cell"].icon,
+        name = "advanced-thorium-reprocessing-recipe",
+        icon = data.raw["recipe"]["thorium-fuel-cell-recipe"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
         icons = {
@@ -22,12 +22,15 @@ data:extend(
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
-        order = "zzd",
-        subgroup = "reprocessing",
+        order = "d",
+        subgroup = "advanced-reprocessing",
         ingredients =
         {
             {"advanced-thorium-depleted-cell", 5}
         },
-        results = data.raw["recipe"]["thorium-without-research-data"].results,
+        results = {
+            { "nuclear-waste", 15 },
+            { type = "item",   name = "thorium", amount_min = 2, amount_max = 3 },
+        }
     }
 })

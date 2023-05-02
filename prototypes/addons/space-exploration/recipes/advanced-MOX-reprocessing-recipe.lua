@@ -2,8 +2,8 @@ data:extend(
 {
     {
         type = "recipe",
-        name = "advanced-MOX-reprocessing",
-        icon = data.raw["recipe"]["MOX-fuel-cell"].icon,
+        name = "advanced-MOX-reprocessing-recipe",
+        icon = data.raw["recipe"]["MOX-fuel-cell-recipe"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
         icons = {
@@ -22,8 +22,8 @@ data:extend(
         category = "space-radiation",
         energy_required = 60,
         enabled = false,
-        order = "zzc",
-        subgroup = "reprocessing",
+        order = "c",
+        subgroup = "advanced-reprocessing",
         ingredients =
         {
             {"advanced-MOX-depleted-cell", 5}
