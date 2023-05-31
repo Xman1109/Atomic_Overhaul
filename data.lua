@@ -84,6 +84,9 @@ require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
+require(entities .. "heat-fluid-tank")
+require(entities .. "heat-tank-pipe")
+
 if settings.startup["old-graphite-fuel"].value == false then
     require(items .. "non-moderated-fuel-cell")
     require(items .. "non-moderated-depleted-cell")
@@ -117,11 +120,3 @@ if mods["informatron"] then
     informatron_make_image("beryllium", images .. "beryllium.png", 64, 64)
     informatron_make_image("glow_1", images .. "glow.png", 243, 100)
 end
--- TODO: add the space rods 🗸
--- TODO: Add recipe locales 🗸
--- TODO: Make recipes for the fuel rods 🗸
--- TODO: change fuel cell recipe to use the fuel rods 🗸
--- TODO: locales for the fuel rod items 🗸
--- TODO: change the techs to unlock the fuel rods 🗸
--- TODO: enable the advanced standard fuel cells
--- TODO: make migrations 🙄 🗸

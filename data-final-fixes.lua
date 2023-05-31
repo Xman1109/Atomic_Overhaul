@@ -146,7 +146,7 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
 end
 
 -- if mods["AbandonedRuins"] and settings.startup["ruins-addon"].value == true then
---     require("__Atomic_Overhaul__.prototypes.addons.the-ruins-mod.ruin-set.the-ruins-set")
+--     require("__Atomic_Overhaul__/lib/ruins-addon")
 --     ruins = true
 --     if ao_debug == true then
 --         log(debug_text .. "the-ruins-mod")
