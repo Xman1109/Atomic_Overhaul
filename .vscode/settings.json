@@ -4,8 +4,8 @@
     "editor.formatOnPaste": false
     },
   "[lua]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
   },
   "factorio.versions": [
       {
