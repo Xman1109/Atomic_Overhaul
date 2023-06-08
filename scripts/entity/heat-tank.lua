@@ -1,3 +1,4 @@
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 script.on_nth_tick(60, function(event) --TODO: change to smth more reasonable  -- runs every 60 ticks
     for k, v in pairs(game.surfaces) do -- for each surface in the game
         if game.surfaces[v.name].find_entities_filtered { name = "heat-fluid-tank" } then -- if there are any heat-fluid-tanks on the surface
@@ -20,3 +21,4 @@ script.on_nth_tick(60, function(event) --TODO: change to smth more reasonable  -
         end
     end
 end)
+end
