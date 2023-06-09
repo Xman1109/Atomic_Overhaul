@@ -5,15 +5,15 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     {
         { "plutonium",   4 },
         { "uranium-238", 76 },
-        { "iron-plate",  2 }
+        { "iron-plate",  3 }
     }
     m_results = {
-        { "MOX-fuel-cell", 2 },
+        { "MOX-fuel-cell", 3 },
     }
 else
     m_ingredients =
     {
-        { "MOX-fuel-rod",             10 },
+        { "MOX-fuel-rod",    10 },
         { "empty-fuel-cell", 10 }
     }
     m_results = {
@@ -29,7 +29,7 @@ data:extend(
             icon = graphics .. "MOX-fuel-cell.png",
             icon_size = 64,
             icon_mipmaps = 4,
-            category = "centrifuging",
+            -- category = "centrifuging",
             crafting_machine_tint = cmt.MOX,
             energy_required = 50,
             enabled = false,

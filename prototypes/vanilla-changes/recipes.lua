@@ -5,7 +5,8 @@ if settings.startup["ao-complexity-level"].value == "simple" then
         {
             type = "item",
             name = "fissile-products",
-            amount = 1
+            amount_min = 1,
+            amount_max = 2
         },
         mods["SchallUraniumProcessing"] and {
             type = "item",
@@ -44,8 +45,9 @@ else
         { "uranium-fuel-rod", 10 },
         { "empty-fuel-cell",  10 }
     }
+    data.raw["recipe"]["uranium-fuel-cell"].category = "centrifuging"
 end
-data.raw["recipe"]["uranium-fuel-cell"].category = "centrifuging"
+
 regroup("r", "uranium-processing", "AO", "resources", "b")
 regroup("r", "nuclear-fuel-reprocessing", "AO", "reprocessing", "b")
 regroup("r", "nuclear-fuel", "AO", "fuel", "a")

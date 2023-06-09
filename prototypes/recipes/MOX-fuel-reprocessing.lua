@@ -32,7 +32,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 2 }
+                    { "MOX-depleted-cell", 3 }
                 },
                 results = m_results,
             }

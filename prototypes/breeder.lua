@@ -96,8 +96,7 @@ function breed.NewEnrichment()
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
 
-  local c_recipe = data.raw.recipe
-      ["kovarex-enrichment-process"] -- fixing Kovarex for no-Breeders to utilize DU into LEU only.
+  local c_recipe = data.raw.recipe["kovarex-enrichment-process"] -- fixing Kovarex for no-Breeders to utilize DU into LEU only.
   if c_recipe then
     c_recipe.energy_required = 120
     c_recipe.allow_decomposition = false
@@ -255,7 +254,7 @@ function breed.Breeder()
       icon = se_addon_graphics .. "beryllium-fuel-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
-      category = "centrifuging",
+      --category = "centrifuging",
       crafting_machine_tint = cmt.beryllium,
       energy_required = 120,
       enabled = false,
