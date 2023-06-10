@@ -1,5 +1,6 @@
 local m_ingredients
 local m_results
+local m_time
 if settings.startup["ao-complexity-level"].value == "simple" then
     m_ingredients =
     {
@@ -10,6 +11,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     m_results = {
         { "MOX-fuel-cell", 3 },
     }
+    m_time = 75
 else
     m_ingredients =
     {
@@ -19,6 +21,7 @@ else
     m_results = {
         { "MOX-fuel-cell", 10 },
     }
+    m_time = 50
 end
 
 data:extend(
@@ -31,7 +34,7 @@ data:extend(
             icon_mipmaps = 4,
             -- category = "centrifuging",
             crafting_machine_tint = cmt.MOX,
-            energy_required = 50,
+            energy_required = m_time,
             enabled = false,
             order = "d",
             subgroup = "fuel-cells",

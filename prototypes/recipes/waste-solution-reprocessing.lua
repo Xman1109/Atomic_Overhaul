@@ -8,7 +8,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             icon_mipmaps = 4,
             category = "chemistry",
             enabled = false,
-            energy_required = 30,
+            energy_required = 70,
             subgroup = "waste-reprocessing",
             order = "b",
             ingredients = {

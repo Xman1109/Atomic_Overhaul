@@ -244,7 +244,7 @@ function breed.Breeder()
         (mods["bztungsten"] and { "tungsten-plate", 600 }) or nil
       },
       result = "apm_nuclear_breeder",
-      energy_required = 64,
+      energy_required = 90,
       --category = "advanced-crafting",
       enabled = false
     },
@@ -279,7 +279,7 @@ function breed.Breeder()
       icon_mipmaps = 4,
       category = "centrifuging",
       crafting_machine_tint = cmt.beryllium,
-      energy_required = 180,
+      energy_required = 300,
       allow_decomposition = false,
       enabled = false,
       order = "f",
@@ -289,10 +289,10 @@ function breed.Breeder()
         { "ao-breeder-depleted-cell", 2 }
       },
       results = {
-        { "plutonium",        4 },
+        { "plutonium",        3 },
         mods["SchallUraniumProcessing"] and { "uranium-concentrate", 39 }
         or { "uranium-ore", 390 },
-        { "fissile-products", 4 }
+        { "fissile-products", 9 }
       },
     },
 
