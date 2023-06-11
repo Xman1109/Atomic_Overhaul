@@ -5,7 +5,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     m_ingredients =
     {
         { "plutonium",   4 },
-        { "uranium-238", 76 },
+        { "uranium-238", 70 },
         { "iron-plate",  3 }
     }
     m_results = {

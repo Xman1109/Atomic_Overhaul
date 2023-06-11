@@ -263,8 +263,8 @@ function breed.Breeder()
       ingredients =
       {
         { "uranium-235",          1 },
-        { "uranium-low-enriched", 7 },
-        { "uranium-238",          5 },
+        { "uranium-low-enriched", 4 },
+        { "uranium-238",          4 },
         { "iron-plate",           2 },
       },
       results = {
@@ -289,10 +289,10 @@ function breed.Breeder()
         { "ao-breeder-depleted-cell", 2 }
       },
       results = {
-        { "plutonium",        3 },
-        mods["SchallUraniumProcessing"] and { "uranium-concentrate", 39 }
-        or { "uranium-ore", 390 },
-        { "fissile-products", 9 }
+        { "plutonium",        1 },
+        mods["SchallUraniumProcessing"] and { "uranium-concentrate", 3 }
+        or { "uranium-ore", 30 },
+        { name = "fissile-products",  amount_min = 8, amount_max = 9 }
       },
     },
 
@@ -370,6 +370,12 @@ function breed.Breeder()
     })
     data.raw.technology["kovarex-enrichment-process"].enabled = false
     data.raw.recipe["kovarex-enrichment-process"].hidden = true
+  end
+  for _, i in pairs(data.raw["module"]) do
+    if i.category == "productivity" then
+      table.insert(i.limitation, "ao-breeder-fuel-cell-recipe")
+      table.insert(i.limitation, "ao-breeder-reprocessing")
+    end
   end
 end
 

@@ -65,7 +65,14 @@ require(ao_recipes .. "uranium-rod-recipe")
 require(ao_recipes .. "uranium-without-research-data")
 require(ao_recipes .. "waste-liquefaction")
 require(ao_recipes .. "waste-solution-reprocessing")
-
+if settings.startup["ao-complexity-level"].value == "simple" then
+    for _, i in pairs(data.raw["module"]) do
+    if i.category == "productivity" then
+      table.insert(i.limitation, "MOX-fuel-cell-recipe")
+      table.insert(i.limitation, "MOX-reprocessing")
+    end
+  end
+end
 
 require(techs .. "graphite-fuel-reprocessing")
 require(techs .. "graphite-processing")
