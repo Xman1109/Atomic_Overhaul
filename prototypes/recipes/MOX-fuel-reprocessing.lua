@@ -25,7 +25,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 icon_mipmaps = 4,
                 category = "centrifuging",
                 crafting_machine_tint = cmt.MOX,
-                energy_required = 36,
+                energy_required = 80,
                 allow_decomposition = false,
                 enabled = false,
                 order = "d",

@@ -63,7 +63,7 @@ function breed.NewEnrichment()
     {
       type = "recipe",
       name = "uranium-235",
-      energy_required = 360,
+      energy_required = 280,
       enabled = false,
       category = "centrifuging",
       localised_name = { "recipe-name.uranium-235-simple" },
@@ -201,7 +201,7 @@ function breed.Breeder()
       burnt_result = "ao-breeder-depleted-cell",
       fuel_value = "2GJ",
       fuel_glow_color = { 100, 247, 207 },
-      stack_size = 50,
+      stack_size = 10,
       group = "atomic_overhaul",
       subgroup = "fuel-cells",
       order = "f"
@@ -212,7 +212,7 @@ function breed.Breeder()
       icon = se_addon_graphics .. "beryllium-depleted-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
-      stack_size = 50,
+      stack_size = 10,
       group = "atomic-overhaul",
       order = "f",
       subgroup = "used-up-fuel-cells",
