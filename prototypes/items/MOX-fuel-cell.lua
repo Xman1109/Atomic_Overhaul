@@ -1,8 +1,11 @@
 local fuel_value
+local stack
 if settings.startup["ao-complexity-level"].value == "simple" then
 	fuel_value = "11GJ"
+	stack = 25
 else
 	fuel_value = "12GJ"
+	stack = 50
 end
 
 data:extend({
@@ -39,6 +42,6 @@ data:extend({
 		burnt_result = "MOX-depleted-cell",
 		fuel_glow_color = { 118, 150, 57 },
 		fuel_value = fuel_value,
-		stack_size = 50
+		stack_size = stack
 	}
 })
