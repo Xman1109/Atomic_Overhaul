@@ -63,7 +63,7 @@ function breed.NewEnrichment()
     {
       type = "recipe",
       name = "uranium-235",
-      energy_required = 360,
+      energy_required = 280,
       enabled = false,
       category = "centrifuging",
       localised_name = { "recipe-name.uranium-235-simple" },
@@ -96,8 +96,7 @@ function breed.NewEnrichment()
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
 
-  local c_recipe = data.raw.recipe
-      ["kovarex-enrichment-process"] -- fixing Kovarex for no-Breeders to utilize DU into LEU only.
+  local c_recipe = data.raw.recipe["kovarex-enrichment-process"] -- fixing Kovarex for no-Breeders to utilize DU into LEU only.
   if c_recipe then
     c_recipe.energy_required = 120
     c_recipe.allow_decomposition = false
@@ -202,7 +201,7 @@ function breed.Breeder()
       burnt_result = "ao-breeder-depleted-cell",
       fuel_value = "2GJ",
       fuel_glow_color = { 100, 247, 207 },
-      stack_size = 50,
+      stack_size = 10,
       group = "atomic_overhaul",
       subgroup = "fuel-cells",
       order = "f"
@@ -213,7 +212,7 @@ function breed.Breeder()
       icon = se_addon_graphics .. "beryllium-depleted-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
-      stack_size = 50,
+      stack_size = 10,
       group = "atomic-overhaul",
       order = "f",
       subgroup = "used-up-fuel-cells",
@@ -245,7 +244,7 @@ function breed.Breeder()
         (mods["bztungsten"] and { "tungsten-plate", 600 }) or nil
       },
       result = "apm_nuclear_breeder",
-      energy_required = 64,
+      energy_required = 90,
       --category = "advanced-crafting",
       enabled = false
     },
@@ -255,7 +254,7 @@ function breed.Breeder()
       icon = se_addon_graphics .. "beryllium-fuel-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
-      category = "centrifuging",
+      --category = "centrifuging",
       crafting_machine_tint = cmt.beryllium,
       energy_required = 120,
       enabled = false,
@@ -264,8 +263,8 @@ function breed.Breeder()
       ingredients =
       {
         { "uranium-235",          1 },
-        { "uranium-low-enriched", 7 },
-        { "uranium-238",          5 },
+        { "uranium-low-enriched", 4 },
+        { "uranium-238",          4 },
         { "iron-plate",           2 },
       },
       results = {
@@ -280,7 +279,7 @@ function breed.Breeder()
       icon_mipmaps = 4,
       category = "centrifuging",
       crafting_machine_tint = cmt.beryllium,
-      energy_required = 180,
+      energy_required = 300,
       allow_decomposition = false,
       enabled = false,
       order = "f",
@@ -290,10 +289,10 @@ function breed.Breeder()
         { "ao-breeder-depleted-cell", 2 }
       },
       results = {
-        { "plutonium",        4 },
-        mods["SchallUraniumProcessing"] and { "uranium-concentrate", 39 }
-        or { "uranium-ore", 390 },
-        { "fissile-products", 4 }
+        { "plutonium",        1 },
+        mods["SchallUraniumProcessing"] and { "uranium-concentrate", 3 }
+        or { "uranium-ore", 30 },
+        { name = "fissile-products",  amount_min = 8, amount_max = 9 }
       },
     },
 
@@ -371,6 +370,12 @@ function breed.Breeder()
     })
     data.raw.technology["kovarex-enrichment-process"].enabled = false
     data.raw.recipe["kovarex-enrichment-process"].hidden = true
+  end
+  for _, i in pairs(data.raw["module"]) do
+    if i.category == "productivity" then
+      table.insert(i.limitation, "ao-breeder-fuel-cell-recipe")
+      table.insert(i.limitation, "ao-breeder-reprocessing")
+    end
   end
 end
 

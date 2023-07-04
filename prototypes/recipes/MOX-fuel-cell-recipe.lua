@@ -1,24 +1,27 @@
 local m_ingredients
 local m_results
+local m_time
 if settings.startup["ao-complexity-level"].value == "simple" then
     m_ingredients =
     {
         { "plutonium",   4 },
-        { "uranium-238", 76 },
-        { "iron-plate",  2 }
+        { "uranium-238", 70 },
+        { "iron-plate",  3 }
     }
     m_results = {
-        { "MOX-fuel-cell", 2 },
+        { "MOX-fuel-cell", 3 },
     }
+    m_time = 75
 else
     m_ingredients =
     {
-        { "MOX-fuel-rod",             10 },
+        { "MOX-fuel-rod",    10 },
         { "empty-fuel-cell", 10 }
     }
     m_results = {
         { "MOX-fuel-cell", 10 },
     }
+    m_time = 50
 end
 
 data:extend(
@@ -29,9 +32,9 @@ data:extend(
             icon = graphics .. "MOX-fuel-cell.png",
             icon_size = 64,
             icon_mipmaps = 4,
-            category = "centrifuging",
+            -- category = "centrifuging",
             crafting_machine_tint = cmt.MOX,
-            energy_required = 50,
+            energy_required = m_time,
             enabled = false,
             order = "d",
             subgroup = "fuel-cells",

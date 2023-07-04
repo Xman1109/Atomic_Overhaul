@@ -2,17 +2,17 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     local m_results
     if mods["SchallUraniumProcessing"] then
         m_results = {
-            { "fissile-products",    4 },
-            { "plutonium",           2 },
-            { "uranium-238",         21 },
-            { "uranium-concentrate", 18 }
+            { name = "fissile-products", amount_min = 2, amount_max = 3 },
+            { "plutonium",           1 },
+            { "uranium-238",         10 },
+            { "uranium-concentrate", 32 }
         }
     else
         m_results = {
-            { "fissile-products", 4 },
-            { "plutonium",        2 },
-            { "uranium-238",      21 },
-            { "uranium-ore",      180 }
+            { name = "fissile-products", amount_min = 2, amount_max = 3 },
+            { "plutonium",        1 },
+            { "uranium-238",      10 },
+            { "uranium-ore",      320 }
         }
     end
     data:extend(
@@ -25,14 +25,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 icon_mipmaps = 4,
                 category = "centrifuging",
                 crafting_machine_tint = cmt.MOX,
-                energy_required = 24,
+                energy_required = 80,
                 allow_decomposition = false,
                 enabled = false,
                 order = "d",
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 2 }
+                    { "MOX-depleted-cell", 3 }
                 },
                 results = m_results,
             }

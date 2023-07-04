@@ -38,6 +38,7 @@ script.on_configuration_changed(function()
     FixUraniumResources()
 end)
 
+require("scripts.entity.heat-tank")
 
 require("scripts.compatibility")
 require("scripts.remote-interface")
@@ -48,7 +49,7 @@ for name, _ in pairs(script.active_mods) do
             log("Atomic Overhaul: Krastorio 2 detected, loading compatibility script")
         end
     end
-    -- if name == "ruins" then -- not ready yet
+    -- if name == "AbandonedRuins" then -- not ready yet
     --     require("scripts.ruins-mod")
     --     if ao_debug then
     --         log("Atomic Overhaul: Ruins detected, loading compatibility script")
