@@ -18,7 +18,7 @@ if script.active_mods["bobplates"] then
             for index, force in pairs(game.forces) do
                 local technologies = force.technologies
                 local recipe = force.recipes
-                if recipe["empty-nuclear-fuel-reprocessing"].enabled then
+                if recipe["nuclear-fuel-reprocessing"].enabled then
                     technologies["ao-graphite-processing"].enabled = true
                 end
             end
