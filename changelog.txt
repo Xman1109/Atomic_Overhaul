@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.19
 Date: ????
   Changes:
+    - Normal mode: Added the Heat Accumulator, which can store heat for later use
     - no centrifuges are required to assemble standard, MOX and breeder fuel cells.
     - Simplified mode: productivity modules allowed for MOX fuel and breeding. Greatly rebalanced breeder&MOX production cycle.
     - Simplified mode: reduced stack size for MOX and breeder fuel cells.

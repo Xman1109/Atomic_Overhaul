@@ -5,8 +5,12 @@ function repeat_heat_pipe_pictures(path, name_prefix, data)
     local all_pictures = {}
     for key, t in pairs(data) do
         if t.empty then
-            all_pictures[key] = { priority = "low", filename = "__core__/graphics/empty.png", width = 1,
-                height = 1 }
+            all_pictures[key] = {
+                priority = "low",
+                filename = "__core__/graphics/empty.png",
+                width = 1,
+                height = 1
+            }
         else
             local tile_pictures = {}
             local sprite = {
@@ -37,9 +41,10 @@ data:extend({ {
     type = "heat-pipe",
     name = "heat-tank-pipe",
     icon = "__base__/graphics/icons/storage-tank.png",
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
+    icon_mipmaps = 4,
     flags = { "placeable-player", "player-creation" },
-    minable = { mining_time = 0.5, result = "storage-tank" },
+    minable = { mining_time = 0.5, result = "heat-tank-pipe" },
     max_health = 500,
     corpse = "storage-tank-remnants",
     dying_explosion = "storage-tank-explosion",
@@ -55,17 +60,17 @@ data:extend({ {
             sheets =
             {
                 {
-                    filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
+                    filename = entity_graphics .. "heat-tank-pipe.png",
                     priority = "extra-high",
-                    frames = 2,
+                    frames = 1,
                     width = 110,
                     height = 108,
                     shift = util.by_pixel(0, 4),
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
+                        filename = entity_graphics .. "hr-heat-tank-pipe.png",
                         priority = "extra-high",
-                        frames = 2,
+                        frames = 1,
                         width = 219,
                         height = 215,
                         shift = util.by_pixel(-0.25, 3.75),
@@ -73,18 +78,18 @@ data:extend({ {
                     }
                 },
                 {
-                    filename = "__base__/graphics/entity/storage-tank/storage-tank-shadow.png",
+                    filename = entity_graphics .. "heat-tank-pipe-shadow.png",
                     priority = "extra-high",
-                    frames = 2,
+                    frames = 1,
                     width = 146,
                     height = 77,
                     shift = util.by_pixel(30, 22.5),
                     draw_as_shadow = true,
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
+                        filename = entity_graphics .. "hr-heat-tank-pipe-shadow.png",
                         priority = "extra-high",
-                        frames = 2,
+                        frames = 1,
                         width = 291,
                         height = 153,
                         shift = util.by_pixel(29.75, 22.25),
@@ -186,47 +191,50 @@ data:extend({ {
     heat_buffer =
     {
         max_temperature = 1000,
-        specific_heat = "1MJ",
-        max_transfer = "1GW",
+        specific_heat = "10MJ",
+        max_transfer = "2GW",
         minimum_glow_temperature = 350,
         connections =
-        {
+        { -- the entity is 3x3 tiles, but the connections are only on the edges
+            { -- left bottom
+                position = { -1, -1 },
+                direction = defines.direction.north
+            },
             {
+                position = { -1, -1 },
+                direction = defines.direction.west
+            },
+
+            { -- left top
                 position = { -1, 1 },
                 direction = defines.direction.south
             },
-            -- {
-            --     position = { -1, 1 },
-            --     direction = defines.direction.west
-            -- },
-            -- {
-            --     position = { 1, -1 },
-            --     direction = defines.direction.south
-            -- },
-            -- {
-            --     position = { 1, -1 },
-            --     direction = defines.direction.east
-            -- },
-            -- {
-            --     position = { 1, 1 },
-            --     direction = defines.direction.north
-            -- },
-            -- {
-            --     position = { 1, 1 },
-            --     direction = defines.direction.east
-            -- },
-            -- {
-            --     position = { -1, -1 },
-            --     direction = defines.direction.south
-            -- },
-            -- {
-            --     position = { -1, -1 },
-            --     direction = defines.direction.west
-            -- }
+            {
+                position = { -1, 1 },
+                direction = defines.direction.west
+            },
+
+            { -- right bottom
+                position = { 1, -1 },
+                direction = defines.direction.north
+            },
+            {
+                position = { 1, -1 },
+                direction = defines.direction.east
+            },
+
+            { -- right top
+                position = { 1, 1 },
+                direction = defines.direction.south
+            },
+            {
+                position = { 1, 1 },
+                direction = defines.direction.east
+            }
         }
     },
 
-    connection_sprites = repeat_heat_pipe_pictures("__base__/graphics/entity/storage-tank/hr-storage-tank.png",
+    connection_sprites = repeat_heat_pipe_pictures(entity_graphics .. "hr-heat-tank-pipe.png",
         "heat-pipe"
         ,
         {
@@ -248,7 +256,7 @@ data:extend({ {
             ending_left = {}
         }),
 
-    heat_glow_sprites = repeat_heat_pipe_pictures("__base__/graphics/entity/storage-tank/hr-storage-tank.png", "heated",
+    heat_glow_sprites = repeat_heat_pipe_pictures(entity_graphics .. "hr-heat-tank-pipe.png", "heated",
         {
             single = { empty = true },
             straight_vertical = { variations = 6 },

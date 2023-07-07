@@ -9,7 +9,7 @@ data:extend({
         icon_size = 64,
         icon_mipmaps = 4,
         flags = { "placeable-player", "player-creation" },
-        minable = { mining_time = 0.5, result = "storage-tank" },
+        minable = { mining_time = 0.5, result = "heat-fluid-tank" },
         max_health = 500,
         corpse = "storage-tank-remnants",
         dying_explosion = "storage-tank-explosion",
@@ -38,7 +38,7 @@ data:extend({
                 sheets =
                 {
                     {
-                        filename = "__base__/graphics/entity/storage-tank/storage-tank.png",
+                        filename = entity_graphics .. "heat-fluid-tank.png",
                         priority = "extra-high",
                         frames = 2,
                         width = 110,
@@ -46,7 +46,7 @@ data:extend({
                         shift = util.by_pixel(0, 4),
                         hr_version =
                         {
-                            filename = "__base__/graphics/entity/storage-tank/hr-storage-tank.png",
+                            filename = entity_graphics .. "hr-heat-fluid-tank.png",
                             priority = "extra-high",
                             frames = 2,
                             width = 219,
