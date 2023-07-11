@@ -5,14 +5,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             { name = "fissile-products", amount_min = 2, amount_max = 3 },
             { "plutonium",           1 },
             { "uranium-238",         10 },
-            { "uranium-concentrate", 32 }
+            { "uranium-concentrate", 34 }
         }
     else
         m_results = {
             { name = "fissile-products", amount_min = 2, amount_max = 3 },
             { "plutonium",        1 },
             { "uranium-238",      10 },
-            { "uranium-ore",      320 }
+            { "uranium-ore",      340 }
         }
     end
     data:extend(
