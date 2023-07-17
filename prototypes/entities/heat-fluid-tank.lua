@@ -1,5 +1,9 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
+local desc
+if settings.startup["heat-accumulator"].value == false then
+    desc = {"", {"settings-disabled.heat-fluid-tank"}, {"mod-setting-name.heat-accumulator"}}
+end
 
 data:extend({
     {
@@ -16,6 +20,7 @@ data:extend({
         collision_box = { { -1.3, -1.3 }, { 1.3, 1.3 } },
         selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
         damaged_trigger_effect = hit_effects.entity(),
+        localised_description = desc,
         fluid_box =
         {
             base_area = 250,

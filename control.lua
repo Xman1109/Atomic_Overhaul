@@ -31,14 +31,16 @@ script.on_init(function()
 end)
 
 script.on_configuration_changed(function()
-    if (settings.startup["ao-complexity-level"].value ~= "simple") then --no graphite in Simplified
-        game.print(
-            "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
-    end
+    -- if (settings.startup["ao-complexity-level"].value ~= "simple") then --no graphite in Simplified -- Discontinued the old way of making graphite
+    --     game.print(
+    --         "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
+    -- end
     FixUraniumResources()
 end)
 
-require("scripts.entity.heat-tank")
+if settings.startup["heat-accumulator"].value == true then
+    require("scripts.entity.heat-tank")
+end
 
 require("scripts.compatibility")
 require("scripts.remote-interface")

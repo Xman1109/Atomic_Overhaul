@@ -34,7 +34,8 @@ data:extend({
         name = "old-graphite-fuel",
         setting_type = "startup",
         default_value = false,
-        order = "e"
+        order = "e",
+        localised_description = {"settings-deprecated.old-graphite-fuel"}
     },
     {
         type = "string-setting",
@@ -53,6 +54,13 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "heat-accumulator",
+        setting_type = "startup",
+        default_value = true,
+        order = "h"
+    },
+    {
+        type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
         default_value = true,
@@ -62,8 +70,9 @@ data:extend({
         type = "bool-setting",
         name = "ruins-addon",
         setting_type = "startup",
-        default_value = true,
-        order = "za"
+        default_value = false,
+        order = "za",
+        hidden = true
     },
     {
         type = "string-setting",
