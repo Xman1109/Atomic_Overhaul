@@ -26,6 +26,94 @@ function thorium_module_limitation()
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
 end
 
+local function internalGlow(name, typeOfItem)
+    local icon
+    local icon_size
+    local icon_mipmaps
+    local scale
+    local resource_glow = {
+        draw_as_light = true,
+        flags = { "light" },
+        size = 64,
+        filename = graphics .. "resource-light.png",
+        scale = 0.25,
+        mipmap_count = 4
+    }
+    local cell_glow = {
+        draw_as_light = true,
+        flags = { "light" },
+        size = 64,
+        filename = base_graphics .. "uranium-fuel-cell-light.png",
+        scale = 0.25,
+        mipmap_count = 4
+    }
+    local fuel_glow = {
+        draw_as_light = true,
+        flags = { "light" },
+        size = 64,
+        filename = base_graphics .. "nuclear-fuel-light.png",
+        scale = 0.25,
+        mipmap_count = 4
+    }
+    local glow
+    if typeOfItem == "resource" then
+        glow = resource_glow
+    elseif typeOfItem == "cell" then
+        glow = cell_glow
+    elseif typeOfItem == "fuel" then
+        glow = fuel_glow
+    else
+        log("Error: Unknown typeOfItem: " .. tostring(typeOfItem) .. "\n")
+    end
+    if data.raw["item"][name] then
+        if data.raw["item"][name].icon == nil then
+            if data.raw["item"][name].pictures.layer == nil then
+                if data.raw["item"][name].icons == nil then
+                    log("Error: Item " .. name .. " has no icon." .. "\n")
+                else
+                    icon = data.raw["item"][name].icons[1].icon
+                    icon_size = data.raw["item"][name].icons[1].icon_size
+                    icon_mipmaps = data.raw["item"][name].icons[1].icon_mipmaps
+                end
+            else
+                icon = data.raw["item"][name].pictures.layers[1].filename
+                icon_size = data.raw["item"][name].pictures.layers[1].size
+                icon_mipmaps = data.raw["item"][name].pictures.layers[1].mipmap_count
+            end
+        else
+            icon = data.raw["item"][name].icon
+            icon_size = data.raw["item"][name].icon_size
+            icon_mipmaps = data.raw["item"][name].icon_mipmaps
+        end
+        if icon_size == 32 then
+            scale = 0.5
+        elseif icon_size == 64 then
+            scale = 0.25
+        else
+            log(
+                "Error: Item " ..
+                name .. " has not the right icon size (" .. icon_size .. ")." ..
+                "\n")
+        end
+        if glow ~= nil then
+            data.raw["item"][name].pictures = {
+                layers = { {
+                    size = icon_size,
+                    filename = icon,
+                    scale = scale,
+                    mipmap_count = icon_mipmaps
+                }, glow }
+            }
+        else
+            log("Error: glow is nil" .. "\n")
+        end
+        if ao_debug == true then
+            log("successfully applied " .. typeOfItem .. "-glow on item." .. name .. "\n")
+        end
+    else
+        log("Error: could not find item." .. name .. "\n")
+    end
+end
 ---
 --- This function is used to make an item glow
 ---
@@ -40,154 +128,11 @@ function Glow(name, typeOfItem)
     end
     local scale
     if type(name) == "table" then
-        for k, i in pairs(name) do
-            if data.raw["item"][i].icon_size == 32 then
-                scale = 0.5
-            elseif data.raw["item"][i].icon_size == 64 then
-                scale = 0.25
-            else
-                log("Error: Item " .. i .. " has not the right icon size (" .. data.raw["item"][i].icon_size .. ")." ..
-                    "\n")
-            end
-            if data.raw["item"][i] then
-                if typeOfItem == "resource" then
-                    data.raw["item"][i].pictures = {
-                        layers = { {
-                            size = data.raw["item"][i].icon_size,
-                            filename = data.raw["item"][i].icon,
-                            scale = scale,
-                            mipmap_count = data.raw["item"][i].mipmap_count
-                        }, {
-                            draw_as_light = true,
-                            flags = { "light" },
-                            size = 64,
-                            filename = graphics .. "resource-light.png",
-                            scale = 0.25,
-                            mipmap_count = 4
-                        } }
-                    }
-                    if ao_debug == true then
-                        log("successfully applied " .. "resource-glow on item." .. i .. "\n")
-                    end
-                elseif typeOfItem == "cell" then
-                    data.raw["item"][i].pictures = {
-                        layers = { {
-                            size = data.raw["item"][i].icon_size,
-                            filename = data.raw["item"][i].icon,
-                            scale = scale,
-                            mipmap_count = data.raw["item"][i].mipmap_count
-                        }, {
-                            draw_as_light = true,
-                            flags = { "light" },
-                            size = 64,
-                            filename = base_graphics .. "uranium-fuel-cell-light.png",
-                            scale = 0.25,
-                            mipmap_count = 4
-                        } }
-                    }
-                    if ao_debug == true then
-                        log("successfully applied " .. typeOfItem .. "-glow on item." .. i .. "\n")
-                    end
-                elseif typeOfItem == "fuel" then
-                    data.raw["item"][i].pictures = {
-                        layers = { {
-                            size = data.raw["item"][i].icon_size,
-                            filename = data.raw["item"][i].icon,
-                            scale = scale,
-                            mipmap_count = data.raw["item"][i].mipmap_count
-                        }, {
-                            draw_as_light = true,
-                            flags = { "light" },
-                            size = 64,
-                            filename = base_graphics .. "nuclear-fuel-light.png",
-                            scale = 0.25,
-                            mipmap_count = 4
-                        } }
-                    }
-                    if ao_debug == true then
-                        log("successfully applied " .. typeOfItem .. "-glow on item." .. i .. "\n")
-                    end
-                else
-                    log("Error: Unknown typeOfItem: " .. tostring(typeOfItem) .. "\n")
-                end
-            else
-                log("Error: could not find item." .. i .. "\n")
-            end
+        for _, i in ipairs(name) do
+            internalGlow(i, typeOfItem)
         end
     else
-        if data.raw["item"][name].icon_size == 32 then
-            scale = 0.5
-        elseif data.raw["item"][name].icon_size == 64 then
-            scale = 0.25
-        else
-            log(
-                "Error: Item " .. name .. " has not the right icon size (" .. data.raw["item"][name].icon_size .. ")." ..
-                "\n")
-        end
-        if data.raw["item"][name] then
-            if typeOfItem == "resource" then
-                data.raw["item"][name].pictures = {
-                    layers = { {
-                        size = data.raw["item"][name].icon_size,
-                        filename = data.raw["item"][name].icon,
-                        scale = scale,
-                        mipmap_count = data.raw["item"][name].mipmap_count
-                    }, {
-                        draw_as_light = true,
-                        flags = { "light" },
-                        size = 64,
-                        filename = graphics .. "resource-light.png",
-                        scale = 0.25,
-                        mipmap_count = 4
-                    } }
-                }
-                if ao_debug == true then
-                    log("successfully applied " .. "resource-glow on item." .. name .. "\n")
-                end
-            elseif typeOfItem == "cell" then
-                data.raw["item"][name].pictures = {
-                    layers = { {
-                        size = data.raw["item"][name].icon_size,
-                        filename = data.raw["item"][name].icon,
-                        scale = scale,
-                        mipmap_count = data.raw["item"][name].mipmap_count
-                    }, {
-                        draw_as_light = true,
-                        flags = { "light" },
-                        size = 64,
-                        filename = base_graphics .. "uranium-fuel-cell-light.png",
-                        scale = 0.25,
-                        mipmap_count = 4
-                    } }
-                }
-                if ao_debug == true then
-                    log("successfully applied " .. typeOfItem .. "-glow on item." .. name .. "\n")
-                end
-            elseif typeOfItem == "fuel" then
-                data.raw["item"][name].pictures = {
-                    layers = { {
-                        size = data.raw["item"][name].icon_size,
-                        filename = data.raw["item"][name].icon,
-                        scale = scale,
-                        mipmap_count = data.raw["item"][name].mipmap_count
-                    }, {
-                        draw_as_light = true,
-                        flags = { "light" },
-                        size = 64,
-                        filename = base_graphics .. "nuclear-fuel-light.png",
-                        scale = 0.25,
-                        mipmap_count = 4
-                    } }
-                }
-                if ao_debug == true then
-                    log("successfully applied " .. typeOfItem .. "-glow on item." .. name .. "\n")
-                end
-            else
-                log("Error: Unknown typeOfItem: " .. tostring(typeOfItem) .. "\n")
-            end
-        else
-            log("Error: could not find item." .. name .. "\n")
-        end
+        internalGlow(name, typeOfItem)
     end
 end
 
