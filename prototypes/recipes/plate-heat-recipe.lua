@@ -69,17 +69,13 @@ if ao_debug then
     log("\n\n\n---AO: Auto-Recipe generation started---")
 end
 
-for _, recipe in pairs(testrecipes) do
-    if data.raw.recipe[recipe] then
-        if data.raw.recipe[recipe].category then
-            if data.raw["recipe"][recipe].category ~= "crafting" then
-                cc = data.raw.recipe[recipe].category
-                if ao_debug then
-                    log("Found category " .. cc)
-                end
-                break
-            end
+for _, recipename in pairs(testrecipes) do
+    if data.raw.recipe[recipename] and data.raw.recipe[recipename].category and data.raw.recipe[recipename].category ~= "crafting" then
+        cc = data.raw.recipe[recipename].category
+        if ao_debug then
+            log("Found category " .. cc)
         end
+        break
     end
 end
 
