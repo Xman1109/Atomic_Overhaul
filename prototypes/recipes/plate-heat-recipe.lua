@@ -58,6 +58,28 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
         )
 end
 
+-- Returns true if the recipe contains at least one minable ingredient
+-- otherwise false.
+--
+-- Returns false if ``recipe`` is nil.
+local function recipeHasMinableIngredient(recipe)
+    if not recipe or not recipe.ingredients then
+        return false
+    end
+
+    for _, resource in pairs(data.raw["resource"]) do
+        if resource.minable and resource.minable.result then
+            for _, ingredient in pairs(recipe.ingredients) do
+                if ingredient[1] == resource.minable.result then
+                    return true
+                end
+            end
+        end
+    end
+
+    return false
+end
+
 
 local cc = nil
 local exports = {}
@@ -107,23 +129,13 @@ for _, recipe in pairs(data.raw["recipe"]) do
                 end
                 --data:extend({ newRecipe })
                 table.insert(exports, newRecipe)
-            elseif settings.startup["heat-algo-mode"].value == "advanced" then
-                if recipe.ingredients then
-                    for _, resource in pairs(data.raw["resource"]) do
-                        if resource.minable and resource.minable.result then
-                            for _, ingredient in pairs(recipe.ingredients) do
-                                if ingredient[1] == resource.minable.result then
-                                    local newRecipe = deriveNewHeatRecipe(recipe)
-                                    if ao_debug then
-                                        log("Copied Smelting Recipe: " .. newRecipe.name)
-                                    end
-                                    --data:extend({ newRecipe })
-                                    table.insert(exports, newRecipe)
-                                end
-                            end
-                        end
-                    end
+            elseif settings.startup["heat-algo-mode"].value == "advanced" and recipeHasMinableIngredient(recipe) then
+                local newRecipe = deriveNewHeatRecipe(recipe)
+                if ao_debug then
+                    log("Copied Smelting Recipe: " .. newRecipe.name)
                 end
+                --data:extend({ newRecipe })
+                table.insert(exports, newRecipe)
             end
         end
     end
