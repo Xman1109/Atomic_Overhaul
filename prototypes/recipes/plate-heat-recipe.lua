@@ -108,12 +108,10 @@ if ao_debug then
     log("Keywords: " .. serpent.block(searchterms))
 end
 
-if settings.startup["heat-algo-mode"].value == "advanced" then
-    if ao_debug then
+if ao_debug then
+    if settings.startup["heat-algo-mode"].value == "advanced" then
         log("Advanced Heat Algorithm")
-    end
-elseif settings.startup["heat-algo-mode"].value == "basic" then
-    if ao_debug then
+    elseif settings.startup["heat-algo-mode"].value == "basic" then
         log("Basic Heat Algorithm Mode")
     end
 end
