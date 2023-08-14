@@ -75,6 +75,26 @@ local function recipeHasMinableIngredient(recipe)
                         ingredient.name == resource.minable.result then
                         return true
                     end
+                elseif resource.minable.results then
+                    for _, result in pairs(resource.minable.results) do
+                        -- Note: We cannot compare with 2-by-2 like this:
+                        --
+                        -- > if (ingredient[1] == result[1]) or
+                        -- >     (ingredient[1] == result.name) or
+                        -- >     (ingredient.name == result[1]) or
+                        -- >     (ingredient.name == result.name) then
+                        -- >     return true
+                        -- > end
+                        --
+                        -- because one of the two entries abc[1] and abc.name
+                        -- will be nil, thus one of the four comparisons will
+                        -- result in ``nil == nil``, which is true.
+                        result_name = result[1] or result.name
+                        ingredient_name = ingredient[1] or ingredient.name
+                        if (ingredient_name == result_name) then
+                            return true
+                        end
+                    end
                 end
             end
         end
