@@ -36,16 +36,11 @@ local function productMatchesSearchterms(recipeData, searchterms)
             end
         end
     elseif recipeData.results then
-        for k4, result in pairs(recipeData.results) do
+        for _, result in pairs(recipeData.results) do
             for _, i in pairs(searchterms) do
-                if result[1] then
-                    if result[1]:find(i) then
-                        return true
-                    end
-                elseif result.name then
-                    if result.name:find(i) then
-                        return true
-                    end
+                if (result[1] and result[1]:find(i)) or
+                    (result.name and result.name:find(i)) then
+                    return true
                 end
             end
         end
@@ -55,15 +50,12 @@ local function productMatchesSearchterms(recipeData, searchterms)
 end
 
 local function recipeProductMatchesSearchterms(recipe, searchterms)
-    if recipe.normal then
-        return productMatchesSearchterms(recipe.normal, searchterms)
-    elseif recipe.expensive then
-        return productMatchesSearchterms(recipe.expensive, searchterms)
-    elseif recipe then
-        return productMatchesSearchterms(recipe, searchterms)
-    end
-
-    return false
+    return
+        recipe and (
+            productMatchesSearchterms(recipe.normal, searchterms) or
+            productMatchesSearchterms(recipe.expensive, searchterms) or
+            productMatchesSearchterms(recipe, searchterms)
+        )
 end
 
 
