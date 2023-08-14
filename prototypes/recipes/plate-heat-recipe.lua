@@ -91,14 +91,14 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
         log("Advanced Heat Algorithm")
     end
 
-    for _, resource in pairs(data.raw["resource"]) do
-        if resource.minable.result then
-            for _, recipe in pairs(data.raw["recipe"]) do
-                if recipe.category == cc then
-                    if recipe.ingredients then
-                        for _, ingredient in pairs(recipe.ingredients) do
-                            if ingredient[1] == resource.minable.result then
-                                if recipeProductMatchesSearchterms(recipe, searchterms) then
+    for _, recipe in pairs(data.raw["recipe"]) do
+        if recipe.category == cc then
+            if recipeProductMatchesSearchterms(recipe, searchterms) then
+                if recipe.ingredients then
+                    for _, resource in pairs(data.raw["resource"]) do
+                        if resource.minable.result then
+                            for _, ingredient in pairs(recipe.ingredients) do
+                                if ingredient[1] == resource.minable.result then
                                     local newRecipe = deriveNewHeatRecipe(recipe)
                                     if ao_debug then
                                         log("Copied Smelting Recipe: " .. newRecipe.name)
