@@ -21,15 +21,15 @@ local function deriveNewHeatRecipe(recipe)
 end
 
 local function recipeProductMatchesSearchterms(recipe, searchterms)
-    if data.raw["recipe"][recipe.name].normal then
-        if data.raw["recipe"][recipe.name].normal.result then
+    if recipe.normal then
+        if recipe.normal.result then
             for _, i in pairs(searchterms) do
                 if recipe.normal.result:find(i) then
                     return true
                 end
             end
-        elseif data.raw["recipe"][recipe.name].normal.results then
-            for k4, result in pairs(data.raw["recipe"][recipe.name].normal.results) do
+        elseif recipe.normal.results then
+            for k4, result in pairs(recipe.normal.results) do
                 for _, i in pairs(searchterms) do
                     if result[1] then
                         if result[1]:find(i) then
@@ -43,15 +43,15 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
                 end
             end
         end
-    elseif data.raw["recipe"][recipe.name].expensive then
-        if data.raw["recipe"][recipe.name].expensive.result then
+    elseif recipe.expensive then
+        if recipe.expensive.result then
             for _, i in pairs(searchterms) do
                 if recipe.expensive.result:find(i) then
                     return true
                 end
             end
-        elseif data.raw["recipe"][recipe.name].expensive.results then
-            for k4, result in pairs(data.raw["recipe"][recipe.name].expensive.results) do
+        elseif recipe.expensive.results then
+            for k4, result in pairs(recipe.expensive.results) do
                 for _, i in pairs(searchterms) do
                     if result[1] then
                         if result[1]:find(i) then
@@ -65,14 +65,14 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
                 end
             end
         end
-    elseif data.raw["recipe"][recipe.name].result then
+    elseif recipe.result then
         for _, i in pairs(searchterms) do
             if recipe.result:find(i) then
                 return true
             end
         end
-    elseif data.raw["recipe"][recipe.name].results then
-        for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
+    elseif recipe.results then
+        for k4, result in pairs(recipe.results) do
             for _, i in pairs(searchterms) do
                 if result[1] then
                     if result[1]:find(i) then
@@ -130,10 +130,10 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
     for k, resource in pairs(data.raw["resource"]) do
         if resource.minable.result then
             for k2, recipe in pairs(data.raw["recipe"]) do
-                if data.raw["recipe"][recipe.name].category == cc then
-                    if data.raw["recipe"][recipe.name].ingredients then
-                        for k3, ingredient in pairs(data.raw["recipe"][recipe.name].ingredients) do
-                            if ingredient[1] == data.raw["resource"][resource.name].minable.result then
+                if recipe.category == cc then
+                    if recipe.ingredients then
+                        for k3, ingredient in pairs(recipe.ingredients) do
+                            if ingredient[1] == resource.minable.result then
                                 if recipeProductMatchesSearchterms(recipe, searchterms) then
                                     local newRecipe = deriveNewHeatRecipe(recipe)
                                     if ao_debug then
@@ -157,7 +157,7 @@ elseif settings.startup["heat-algo-mode"].value == "basic" then
     end
 
     for k2, recipe in pairs(data.raw["recipe"]) do
-        if data.raw["recipe"][recipe.name].category == cc then
+        if recipe.category == cc then
             if recipeProductMatchesSearchterms(recipe, searchterms) then
                 local newRecipe = deriveNewHeatRecipe(recipe)
                 if ao_debug then
