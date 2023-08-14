@@ -137,11 +137,19 @@ for _, recipename in pairs(testrecipes) do
     end
 end
 
-for word in string.gmatch(setting_searchterms, '([^, ]+)') do
-    table.insert(searchterms, word)
-end
-if ao_debug then
-    log("Keywords: " .. serpent.block(searchterms))
+if setting_searchterms == "" then
+    -- empty word matches everything
+    table.insert(searchterms, "")
+    if ao_debug then
+        log("Keywords: No keywords")
+    end
+else
+    for word in string.gmatch(setting_searchterms, '([^, ]+)') do
+        table.insert(searchterms, word)
+    end
+    if ao_debug then
+        log("Keywords: " .. serpent.block(searchterms))
+    end
 end
 
 if ao_debug then

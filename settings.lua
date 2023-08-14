@@ -50,6 +50,7 @@ data:extend({
         name = "heat-algo-searchterm",
         setting_type = "startup",
         default_value = "plate, brick",
+        allow_blank = true,
         order = "g"
     },
     {
