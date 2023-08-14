@@ -67,9 +67,9 @@ local function recipeHasMinableIngredient(recipe)
         return false
     end
 
-    for _, resource in pairs(data.raw["resource"]) do
-        if resource.minable and resource.minable.result then
-            for _, ingredient in pairs(recipe.ingredients) do
+    for _, ingredient in pairs(recipe.ingredients) do
+        for _, resource in pairs(data.raw["resource"]) do
+            if resource.minable and resource.minable.result then
                 if ingredient[1] == resource.minable.result then
                     return true
                 end
