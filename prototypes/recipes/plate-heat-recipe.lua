@@ -90,10 +90,24 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
     if ao_debug then
         log("Advanced Heat Algorithm")
     end
+elseif settings.startup["heat-algo-mode"].value == "basic" then
+    if ao_debug then
+        log("Basic Heat Algorithm Mode")
+    end
+end
 
-    for _, recipe in pairs(data.raw["recipe"]) do
-        if recipe.category == cc then
-            if recipeProductMatchesSearchterms(recipe, searchterms) then
+
+for _, recipe in pairs(data.raw["recipe"]) do
+    if recipe.category == cc then
+        if recipeProductMatchesSearchterms(recipe, searchterms) then
+            if settings.startup["heat-algo-mode"].value == "basic" then
+                local newRecipe = deriveNewHeatRecipe(recipe)
+                if ao_debug then
+                    log("Copied Smelting Recipe: " .. newRecipe.name)
+                end
+                --data:extend({ newRecipe })
+                table.insert(exports, newRecipe)
+            elseif settings.startup["heat-algo-mode"].value == "advanced" then
                 if recipe.ingredients then
                     for _, resource in pairs(data.raw["resource"]) do
                         if resource.minable and resource.minable.result then
@@ -113,26 +127,6 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
             end
         end
     end
-
-
-elseif settings.startup["heat-algo-mode"].value == "basic" then
-    if ao_debug then
-        log("Basic Heat Algorithm Mode")
-    end
-
-    for _, recipe in pairs(data.raw["recipe"]) do
-        if recipe.category == cc then
-            if recipeProductMatchesSearchterms(recipe, searchterms) then
-                local newRecipe = deriveNewHeatRecipe(recipe)
-                if ao_debug then
-                    log("Copied Smelting Recipe: " .. newRecipe.name)
-                end
-                --data:extend({ newRecipe })
-                table.insert(exports, newRecipe)
-            end
-        end
-    end
-
 end
 
 
