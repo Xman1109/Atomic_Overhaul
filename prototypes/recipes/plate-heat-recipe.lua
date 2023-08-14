@@ -96,7 +96,7 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
             if recipeProductMatchesSearchterms(recipe, searchterms) then
                 if recipe.ingredients then
                     for _, resource in pairs(data.raw["resource"]) do
-                        if resource.minable.result then
+                        if resource.minable and resource.minable.result then
                             for _, ingredient in pairs(recipe.ingredients) do
                                 if ingredient[1] == resource.minable.result then
                                     local newRecipe = deriveNewHeatRecipe(recipe)
