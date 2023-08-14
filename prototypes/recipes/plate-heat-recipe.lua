@@ -8,12 +8,11 @@ local function deriveNewHeatRecipe(recipe)
     newRecipe.category = "heat-furnace"
     newRecipe.hidden = false
     local isunlockedbytech = false
-    for k4, tech in pairs(data.raw["technology"]) do
+    for _, tech in pairs(data.raw["technology"]) do
         if tech.effects then
-            for k5, effect in pairs(tech.effects) do
+            for _, effect in pairs(tech.effects) do
                 if effect.recipe == recipe.name then
-                    table.insert(data.raw["technology"][tech.name].effects
-                        ,
+                    table.insert(tech.effects,
                         { type = "unlock-recipe", recipe = newRecipe.name })
                     isunlockedbytech = true
                 end
@@ -21,11 +20,7 @@ local function deriveNewHeatRecipe(recipe)
             end
         end
     end
-    if isunlockedbytech == false then
-        newRecipe.enabled = true
-    else
-        newRecipe.enabled = false
-    end
+    newRecipe.enabled = not isunlockedbytech
     return newRecipe
 end
 
