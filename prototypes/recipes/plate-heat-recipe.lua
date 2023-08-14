@@ -58,16 +58,16 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
         )
 end
 
--- Returns true if the recipe contains at least one minable ingredient
--- otherwise false.
+-- ``recipeData`` is a Recipe Data; most commonly the ``recipe`` itself or
+-- ``recipe.normal`` or ``recipe.expensive``.
 --
--- Returns false if ``recipe`` is nil.
-local function recipeHasMinableIngredient(recipe)
-    if not recipe or not recipe.ingredients then
+-- Returns false if ``recipeData`` is nil
+local function recipeDataHasMinableIngredient(recipeData)
+    if not recipeData or not recipeData.ingredients then
         return false
     end
 
-    for _, ingredient in pairs(recipe.ingredients) do
+    for _, ingredient in pairs(recipeData.ingredients) do
         for _, resource in pairs(data.raw["resource"]) do
             if resource.minable then
                 if resource.minable.result then
@@ -101,6 +101,19 @@ local function recipeHasMinableIngredient(recipe)
     end
 
     return false
+end
+
+-- Returns true if the recipe contains at least one minable ingredient
+-- otherwise false.
+--
+-- Returns false if ``recipe`` is nil.
+local function recipeHasMinableIngredient(recipe)
+    return
+        recipe and (
+            recipeDataHasMinableIngredient(recipe.normal) or
+            recipeDataHasMinableIngredient(recipe.expensive) or
+            recipeDataHasMinableIngredient(recipe)
+        )
 end
 
 
