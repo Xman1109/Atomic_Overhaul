@@ -91,12 +91,12 @@ if settings.startup["heat-algo-mode"].value == "advanced" then
         log("Advanced Heat Algorithm")
     end
 
-    for k, resource in pairs(data.raw["resource"]) do
+    for _, resource in pairs(data.raw["resource"]) do
         if resource.minable.result then
-            for k2, recipe in pairs(data.raw["recipe"]) do
+            for _, recipe in pairs(data.raw["recipe"]) do
                 if recipe.category == cc then
                     if recipe.ingredients then
-                        for k3, ingredient in pairs(recipe.ingredients) do
+                        for _, ingredient in pairs(recipe.ingredients) do
                             if ingredient[1] == resource.minable.result then
                                 if recipeProductMatchesSearchterms(recipe, searchterms) then
                                     local newRecipe = deriveNewHeatRecipe(recipe)
@@ -120,7 +120,7 @@ elseif settings.startup["heat-algo-mode"].value == "basic" then
         log("Basic Heat Algorithm Mode")
     end
 
-    for k2, recipe in pairs(data.raw["recipe"]) do
+    for _, recipe in pairs(data.raw["recipe"]) do
         if recipe.category == cc then
             if recipeProductMatchesSearchterms(recipe, searchterms) then
                 local newRecipe = deriveNewHeatRecipe(recipe)
