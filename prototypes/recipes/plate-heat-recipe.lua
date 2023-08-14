@@ -6,21 +6,17 @@ local function deriveNewHeatRecipe(recipe)
     local newRecipe = table.deepcopy(recipe)
     newRecipe.name = recipe.name .. "-heat"
     newRecipe.category = "heat-furnace"
-    newRecipe.hidden = false
-    local isunlockedbytech = false
     for _, tech in pairs(data.raw["technology"]) do
         if tech.effects then
             for _, effect in pairs(tech.effects) do
                 if effect.type == "unlock-recipe" and effect.recipe == recipe.name then
                     table.insert(tech.effects,
                         { type = "unlock-recipe", recipe = newRecipe.name })
-                    isunlockedbytech = true
                 end
 
             end
         end
     end
-    newRecipe.enabled = not isunlockedbytech
     return newRecipe
 end
 
