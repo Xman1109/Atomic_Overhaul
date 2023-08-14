@@ -20,59 +20,23 @@ local function deriveNewHeatRecipe(recipe)
     return newRecipe
 end
 
-local function recipeProductMatchesSearchterms(recipe, searchterms)
-    if recipe.normal then
-        if recipe.normal.result then
-            for _, i in pairs(searchterms) do
-                if recipe.normal.result:find(i) then
-                    return true
-                end
-            end
-        elseif recipe.normal.results then
-            for k4, result in pairs(recipe.normal.results) do
-                for _, i in pairs(searchterms) do
-                    if result[1] then
-                        if result[1]:find(i) then
-                            return true
-                        end
-                    elseif result.name then
-                        if result.name:find(i) then
-                            return true
-                        end
-                    end
-                end
-            end
-        end
-    elseif recipe.expensive then
-        if recipe.expensive.result then
-            for _, i in pairs(searchterms) do
-                if recipe.expensive.result:find(i) then
-                    return true
-                end
-            end
-        elseif recipe.expensive.results then
-            for k4, result in pairs(recipe.expensive.results) do
-                for _, i in pairs(searchterms) do
-                    if result[1] then
-                        if result[1]:find(i) then
-                            return true
-                        end
-                    elseif result.name then
-                        if result.name:find(i) then
-                            return true
-                        end
-                    end
-                end
-            end
-        end
-    elseif recipe.result then
+-- ``recipeData`` is a Recipe Data; most commonly the ``recipe`` itself or
+-- ``recipe.normal`` or ``recipe.expensive``.
+--
+-- Returns false if ``recipeData`` is nil
+local function productMatchesSearchterms(recipeData, searchterms)
+    if not recipeData then
+        return false
+    end
+
+    if recipeData.result then
         for _, i in pairs(searchterms) do
-            if recipe.result:find(i) then
+            if recipeData.result:find(i) then
                 return true
             end
         end
-    elseif recipe.results then
-        for k4, result in pairs(recipe.results) do
+    elseif recipeData.results then
+        for k4, result in pairs(recipeData.results) do
             for _, i in pairs(searchterms) do
                 if result[1] then
                     if result[1]:find(i) then
@@ -85,6 +49,18 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
                 end
             end
         end
+    end
+
+    return false
+end
+
+local function recipeProductMatchesSearchterms(recipe, searchterms)
+    if recipe.normal then
+        return productMatchesSearchterms(recipe.normal, searchterms)
+    elseif recipe.expensive then
+        return productMatchesSearchterms(recipe.expensive, searchterms)
+    elseif recipe then
+        return productMatchesSearchterms(recipe, searchterms)
     end
 
     return false
