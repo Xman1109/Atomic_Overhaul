@@ -24,12 +24,12 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
     if data.raw["recipe"][recipe.name].normal then
         if data.raw["recipe"][recipe.name].normal.result then
             for _, i in pairs(searchterms) do
-                if recipe.result:find(i) then
+                if recipe.normal.result:find(i) then
                     return true
                 end
             end
         elseif data.raw["recipe"][recipe.name].normal.results then
-            for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
+            for k4, result in pairs(data.raw["recipe"][recipe.name].normal.results) do
                 for _, i in pairs(searchterms) do
                     if result[1] then
                         if result[1]:find(i) then
@@ -46,12 +46,12 @@ local function recipeProductMatchesSearchterms(recipe, searchterms)
     elseif data.raw["recipe"][recipe.name].expensive then
         if data.raw["recipe"][recipe.name].expensive.result then
             for _, i in pairs(searchterms) do
-                if recipe.result:find(i) then
+                if recipe.expensive.result:find(i) then
                     return true
                 end
             end
         elseif data.raw["recipe"][recipe.name].expensive.results then
-            for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
+            for k4, result in pairs(data.raw["recipe"][recipe.name].expensive.results) do
                 for _, i in pairs(searchterms) do
                     if result[1] then
                         if result[1]:find(i) then
