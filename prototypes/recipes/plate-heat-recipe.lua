@@ -158,78 +158,13 @@ elseif settings.startup["heat-algo-mode"].value == "basic" then
 
     for k2, recipe in pairs(data.raw["recipe"]) do
         if data.raw["recipe"][recipe.name].category == cc then
-            if data.raw["recipe"][recipe.name].normal then
-                if data.raw["recipe"][recipe.name].normal.result then
-                    for _, i in pairs(searchterms) do
-                        if recipe.normal.result:find(i) then
-                            local newRecipe = deriveNewHeatRecipe(recipe)
-                            if ao_debug then
-                                log("Copied Smelting Recipe: " .. newRecipe.name)
-                            end
-                            --data:extend({ newRecipe })
-                            table.insert(exports, newRecipe)
-                        end
-                    end
-                elseif data.raw["recipe"][recipe.name].normal.results then
-                    for k4, result in pairs(data.raw["recipe"][recipe.name].normal.results) do
-                        for _, i in pairs(searchterms) do
-                            if result[1] then
-                                if result[1]:find(i) then
-                                    local newRecipe = deriveNewHeatRecipe(recipe)
-                                    if ao_debug then
-                                        log("Copied Smelting Recipe: " .. newRecipe.name)
-                                    end
-                                    --data:extend({ newRecipe })
-                                    table.insert(exports, newRecipe)
-                                end
-                            elseif result.name then
-                                if result.name:find(i) then
-                                    local newRecipe = deriveNewHeatRecipe(recipe)
-                                    if ao_debug then
-                                        log("Copied Smelting Recipe: " .. newRecipe.name)
-                                    end
-                                    --data:extend({ newRecipe })
-                                    table.insert(exports, newRecipe)
-                                end
-                            end
-                        end
-                    end
+            if recipeProductMatchesSearchterms(recipe, searchterms) then
+                local newRecipe = deriveNewHeatRecipe(recipe)
+                if ao_debug then
+                    log("Copied Smelting Recipe: " .. newRecipe.name)
                 end
-            elseif data.raw["recipe"][recipe.name].result then
-                for _, i in pairs(searchterms) do
-                    if recipe.result:find(i) then
-                        local newRecipe = deriveNewHeatRecipe(recipe)
-                        if ao_debug then
-                            log("Copied Smelting Recipe: " .. newRecipe.name)
-                        end
-                        --data:extend({ newRecipe })
-                        table.insert(exports, newRecipe)
-                    end
-                end
-            elseif data.raw["recipe"][recipe.name].results then
-                for k4, result in pairs(data.raw["recipe"][recipe.name].results) do
-                    for _, i in pairs(searchterms) do
-                        if result[1] then
-                            if result[1]:find(i) then
-                                local newRecipe = deriveNewHeatRecipe(recipe)
-                                if ao_debug then
-                                    log("Copied Smelting Recipe: " .. newRecipe.name)
-                                end
-                                --data:extend({ newRecipe })
-                                table.insert(exports, newRecipe)
-                            end
-                        elseif result.name then
-                            if result.name:find(i) then
-                                local newRecipe = deriveNewHeatRecipe(recipe)
-                                if ao_debug then
-                                    log("Copied Smelting Recipe: " .. newRecipe.name)
-                                end
-                                --data:extend({ newRecipe })
-                                table.insert(exports, newRecipe)
-                            end
-                        end
-                    end
-                end
+                --data:extend({ newRecipe })
+                table.insert(exports, newRecipe)
             end
         end
     end
