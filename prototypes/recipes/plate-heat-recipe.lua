@@ -11,7 +11,7 @@ local function deriveNewHeatRecipe(recipe)
     for _, tech in pairs(data.raw["technology"]) do
         if tech.effects then
             for _, effect in pairs(tech.effects) do
-                if effect.recipe == recipe.name then
+                if effect.type == "unlock-recipe" and effect.recipe == recipe.name then
                     table.insert(tech.effects,
                         { type = "unlock-recipe", recipe = newRecipe.name })
                     isunlockedbytech = true
