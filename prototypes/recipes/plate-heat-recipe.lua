@@ -122,14 +122,8 @@ end
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.category == cc then
         if recipeProductMatchesSearchterms(recipe, searchterms) then
-            if settings.startup["heat-algo-mode"].value == "basic" then
-                local newRecipe = deriveNewHeatRecipe(recipe)
-                if ao_debug then
-                    log("Copied Smelting Recipe: " .. newRecipe.name)
-                end
-                --data:extend({ newRecipe })
-                table.insert(exports, newRecipe)
-            elseif settings.startup["heat-algo-mode"].value == "advanced" and recipeHasMinableIngredient(recipe) then
+            if (settings.startup["heat-algo-mode"].value == "basic") or
+                    (settings.startup["heat-algo-mode"].value == "advanced" and recipeHasMinableIngredient(recipe)) then
                 local newRecipe = deriveNewHeatRecipe(recipe)
                 if ao_debug then
                     log("Copied Smelting Recipe: " .. newRecipe.name)
