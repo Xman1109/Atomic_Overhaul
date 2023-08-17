@@ -1,4 +1,5 @@
-if settings.startup["ao-complexity-level"].value ~= "simple" then
+if settings.startup["ao-complexity-level"].value ~= "simple" and
+    not data.raw.item["graphite"] then
   data:extend(
     {
       {
