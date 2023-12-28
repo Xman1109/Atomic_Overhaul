@@ -1,8 +1,15 @@
 ---------------------------------------------------------------------------------------------------
-Version: unreleased
-Date: unreleased
-  Features:
-    - Auto-Recipe Algorithm keywords can be left empty to match any recipe.
+Version: 1.3.22
+Date: 2023-12-28
+  Info:
+    - Merry Christmas!
+    - and a happy new year!
+  Changes:
+    - Fixed the heat accumulator script (thanks to @AmCh-Q)
+    - Auto-Recipe Algorithm keywords can be left empty to match any recipe. (by @leanora-polera)
+    - updated some translations (thanks to all translators!)
+    - (K2+SE) Fixed a bug where the research data recipe could not be unlocked
+    - possible fix for the bobplates startup crash
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.21
 Date: 2023-07-23

@@ -25,6 +25,10 @@ modifyEffects("nuclear-fuel-reprocessing", { {
     type = "unlock-recipe",
     recipe = "ao-nuclear-fuel-reprocessing"
 } })
+modifyEffects("nuclear-fuel-reprocessing", { {
+    type = "unlock-recipe",
+    recipe = "research-data-recipe"
+} }, "add")
 hideType("r", "nuclear-fuel-reprocessing")
 local nfr = table.deepcopy(data.raw["recipe"]["nuclear-fuel-reprocessing"])
 nfr.name = "ao-nuclear-fuel-reprocessing"

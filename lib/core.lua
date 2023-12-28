@@ -67,18 +67,22 @@ local function internalGlow(name, typeOfItem)
     end
     if data.raw["item"][name] then
         if data.raw["item"][name].icon == nil then
-            if data.raw["item"][name].pictures.layer == nil then
-                if data.raw["item"][name].icons == nil then
-                    log("Error: Item " .. name .. " has no icon." .. "\n")
+            if data.raw["item"][name].pictures then
+                if data.raw["item"][name].pictures.layer == nil then
+                    if data.raw["item"][name].icons == nil then
+                        log("Error: Item " .. name .. " has no icon." .. "\n")
+                    else
+                        icon = data.raw["item"][name].icons[1].icon
+                        icon_size = data.raw["item"][name].icons[1].icon_size
+                        icon_mipmaps = data.raw["item"][name].icons[1].icon_mipmaps
+                    end
                 else
-                    icon = data.raw["item"][name].icons[1].icon
-                    icon_size = data.raw["item"][name].icons[1].icon_size
-                    icon_mipmaps = data.raw["item"][name].icons[1].icon_mipmaps
+                    icon = data.raw["item"][name].pictures.layers[1].filename
+                    icon_size = data.raw["item"][name].pictures.layers[1].size
+                    icon_mipmaps = data.raw["item"][name].pictures.layers[1].mipmap_count
                 end
             else
-                icon = data.raw["item"][name].pictures.layers[1].filename
-                icon_size = data.raw["item"][name].pictures.layers[1].size
-                icon_mipmaps = data.raw["item"][name].pictures.layers[1].mipmap_count
+                log("Error: Item " .. name .. " has no icon or pictures." .. "\n")
             end
         else
             icon = data.raw["item"][name].icon

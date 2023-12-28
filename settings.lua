@@ -55,10 +55,11 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "heat-accumulator",
+        name = "heat-accumulator", -- out of order because it's a hidden setting
         setting_type = "startup",
         default_value = true,
-        order = "h"
+        order = "h",
+        hidden = true
     },
     {
         type = "bool-setting",
