@@ -93,11 +93,13 @@ local function internalGlow(name, typeOfItem)
             scale = 0.5
         elseif icon_size == 64 then
             scale = 0.25
+            --TODO: Maybe this needs some tweaking in the future to cover the cases where the icon size is regulated by the picture.layers.size or smth similar
         else
             log(
                 "Error: Item " ..
-                name .. " has not the right icon size (" .. icon_size .. ")." ..
+                name .. " has not the right icon size (" .. tostring(icon_size) .. "), defaulting to 0.25 !" ..
                 "\n")
+            scale = 0.25
         end
         if glow ~= nil then
             data.raw["item"][name].pictures = {

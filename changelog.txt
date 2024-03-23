@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.23
+Date: 2024-03-23
+  Changes:
+    - Fixed a bug where the game would throw an error when an icon_size was not defined (thanks to @SGZ-Creations)
+    - updated some translations (thanks to all translators!)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.22
 Date: 2023-12-28
   Info:
