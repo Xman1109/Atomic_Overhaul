@@ -27,14 +27,14 @@ remote.add_interface("Atomic_Overhaul", {
             }
         }
     end,
-    jetpack_fuels = {
-                    "plutonium-fuel-cell",
-                    "MOX-fuel-cell",
-                    "thorium-fuel-cell",
-                    "iridium-fuel-cell",
-                    "holmium-fuel-cell",
-                    "beryllium-fuel-cell",
-                }
+    -- jetpack_fuels = {
+    --                 "plutonium-fuel-cell",
+    --                 "MOX-fuel-cell",
+    --                 "thorium-fuel-cell",
+    --                 "iridium-fuel-cell",
+    --                 "holmium-fuel-cell",
+    --                 "beryllium-fuel-cell",
+    --             }
                 -- remote.add_interface("your-mod", {
 --   jetpack_fuels = function() return {["slow-fuel"] = 0.5, ["fast-fuel"] = 1.1} end
 -- })
