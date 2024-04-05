@@ -65,41 +65,61 @@ local function internalGlow(name, typeOfItem)
     else
         log("Error: Unknown typeOfItem: " .. tostring(typeOfItem) .. "\n")
     end
+
     if data.raw["item"][name] then
         if data.raw["item"][name].icon == nil then
             if data.raw["item"][name].pictures then
                 if data.raw["item"][name].pictures.layer == nil then
-                    if data.raw["item"][name].icons == nil then
-                        log("Error: Item " .. name .. " has no icon." .. "\n")
+                    if data.raw["item"][name].icons[1].icon_size then
+                        if data.raw["item"][name].icons == nil then
+                            log("Error: Item " .. name .. " has no icon." .. "\n")
+                        else
+                            icon = data.raw["item"][name].icons[1].icon or nil
+                            icon_size = data.raw["item"][name].icons[1].icon_size or nil
+                            icon_mipmaps = data.raw["item"][name].icons[1].icon_mipmaps or nil
+                        end
                     else
-                        icon = data.raw["item"][name].icons[1].icon
-                        icon_size = data.raw["item"][name].icons[1].icon_size
-                        icon_mipmaps = data.raw["item"][name].icons[1].icon_mipmaps
+                        log("Error: Item " .. name .. " has no icon size." .. "\n")
                     end
                 else
-                    icon = data.raw["item"][name].pictures.layers[1].filename
-                    icon_size = data.raw["item"][name].pictures.layers[1].size
-                    icon_mipmaps = data.raw["item"][name].pictures.layers[1].mipmap_count
+                    icon = data.raw["item"][name].pictures.layers[1].filename or nil
+                    icon_size = data.raw["item"][name].pictures.layers[1].size or nil
+                    icon_mipmaps = data.raw["item"][name].pictures.layers[1].mipmap_count or nil
                 end
             else
                 log("Error: Item " .. name .. " has no icon or pictures." .. "\n")
             end
         else
-            icon = data.raw["item"][name].icon
-            icon_size = data.raw["item"][name].icon_size
-            icon_mipmaps = data.raw["item"][name].icon_mipmaps
+            icon = data.raw["item"][name].icon or nil
+            icon_size = data.raw["item"][name].icon_size or nil
+            icon_mipmaps = data.raw["item"][name].icon_mipmaps or nil
         end
-        if icon_size == 32 then
-            scale = 0.5
-        elseif icon_size == 64 then
-            scale = 0.25
-            --TODO: Maybe this needs some tweaking in the future to cover the cases where the icon size is regulated by the picture.layers.size or smth similar
-        else
-            log(
-                "Error: Item " ..
-                name .. " has not the right icon size (" .. tostring(icon_size) .. "), defaulting to 0.25 !" ..
-                "\n")
-            scale = 0.25
+        if icon_size ~= nil then
+            if icon_size == 32 then
+                scale = 0.5
+            elseif icon_size == 64 then
+                scale = 0.25
+                --TODO: Maybe this needs some tweaking in the future to cover the cases where the icon size is regulated by the picture.layers.size or smth similar
+            else
+                log(
+                    "Error: Item " ..
+                    name .. " has not the right icon size (" .. tostring(icon_size) .. "), defaulting to 0.25 !" ..
+                    "\n")
+                scale = 0.25
+            end
+        end
+        if icon_size == nil then
+            log("Error: icon_size is nil" .. "\n")
+            glow = nil
+        elseif icon == nil then
+            log("Error: icon is nil" .. "\n")
+            glow = nil
+        elseif scale == nil then
+            log("Error: scale is nil" .. "\n")
+            glow = nil
+        elseif icon_mipmaps == nil then
+            log("Error: icon_mipmaps is nil" .. "\n")
+            glow = nil
         end
         if glow ~= nil then
             data.raw["item"][name].pictures = {

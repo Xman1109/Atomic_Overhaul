@@ -15,7 +15,7 @@ assignees: Xman1109
 
 ```
 
-## A list of Mods you are playing with (mod-list.json / written out list)
+## A save with the Mods you are playing with
 
 ```
 

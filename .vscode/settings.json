@@ -8,11 +8,10 @@
     "editor.formatOnPaste": false
   },
   "factorio.versions": [
-      {
-          "name": "1.1.70",
-          "factorioPath": "f:\\Steam\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe",
-          "active": true
-      }
+    {
+      "name": "1.1.70",
+      "factorioPath": "f:\\Steam\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe"
+    }
   ],
   "Lua.diagnostics.globals": [
       "data",
