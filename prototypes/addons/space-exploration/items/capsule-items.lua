@@ -1,33 +1,4 @@
-local list = {
-    "uranium-235",
-    "uranium-238",
-    "uranium-fuel-cell",
-    "unmoderated-uranium-fuel-cell",
-    "depleted-uranium-fuel-cell",
-    "depleted-unmoderated-uranium-fuel-cell",
-    "graphite",
-    "graphite-fuel-cell",
-    "depleted-graphite-fuel-cell",
-    "plutonium",
-    "plutonium-fuel",
-    "plutonium-fuel-cell",
-    "depleted-plutonium-fuel-cell",
-    "thorium",
-    "thorium-fuel-cell",
-    "depleted-thorium-fuel-cell",
-    "MOX",
-    "MOX-fuel-cell",
-    "depleted-MOX-fuel-cell",
-    "iridium-192",
-    "iridium-fuel-cell",
-    "depleted-iridium-fuel-cell",
-    "holmium-166",
-    "holmium-fuel-cell",
-    "depleted-holmium-fuel-cell",
-    "beryllium-7",
-    "beryllium-fuel-cell",
-    "depleted-beryllium-fuel-cell"
-}
+local list = delivery_list
 
 local template = {
     type = "item",

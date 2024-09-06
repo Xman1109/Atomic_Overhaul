@@ -116,3 +116,33 @@ cmt.beryllium = {
         a = 1.000
     }
 }
+delivery_list = {
+    "uranium-235",
+    "uranium-238",
+    "uranium-fuel-cell",
+    "unmoderated-uranium-fuel-cell",
+    "non-moderated-fuel-cell",
+    "non-moderated-depleted-cell",
+    "graphite",
+    "graphite-fuel-cell",
+    "graphite-depleted-cell",
+    "plutonium",
+    "plutonium-fuel",
+    "plutonium-fuel-cell",
+    "plutonium-depleted-cell",
+    "thorium",
+    "thorium-fuel-cell",
+    "thorium-depleted-cell",
+    "MOX",
+    "MOX-fuel-cell",
+    "MOX-depleted-cell",
+    "iridium-192",
+    "iridium-fuel-cell",
+    "iridium-depleted-cell",
+    "holmium-166",
+    "holmium-fuel-cell",
+    "holmium-depleted-cell",
+    "beryllium-7",
+    "beryllium-fuel-cell",
+    "beryllium-depleted-cell"
+}
