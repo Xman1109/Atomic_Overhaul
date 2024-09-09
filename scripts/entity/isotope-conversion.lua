@@ -1,4 +1,6 @@
-log("Atomic Overhaul: Isotope Conversion script loaded")
+if ao_debug == true then
+    log("Atomic Overhaul: Isotope Conversion script loaded")
+end
 
 -- Event listener for when an entity is destroyed
 script.on_event(defines.events.on_entity_died, function(event)
@@ -44,7 +46,7 @@ function convert_items_to_scrap(surface, position, radius)
                 true -- Enable the item to be picked up
             )
 
-            game.print("Your radars picked up a strange signal coming from: [gps=" .. position.x .. ", " .. position.y .. "]") --TODO: make this message localised
+            game.print({ "", {"chat-message.meltdown_conversion"}, "[gps=" .. position.x .. ", " .. position.y .. "]"})
         end
     end
 end
