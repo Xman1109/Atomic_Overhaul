@@ -79,3 +79,4 @@ if not global.ao_scrap then
 end
 require("scripts.entity.isotope-conversion")
 require("scripts.isotope-tech")
+require("scripts.isotope-analysis")

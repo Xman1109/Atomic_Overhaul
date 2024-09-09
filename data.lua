@@ -99,6 +99,8 @@ require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
+require(techs .. "isotope-analysis")
+
 require(entities .. "heat-fluid-tank")
 require(entities .. "heat-tank-pipe")
 
