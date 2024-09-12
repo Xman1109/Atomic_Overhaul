@@ -41,6 +41,8 @@ require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
 require(items .. "uranium-fuel-rod")
 
+require(items .. "isotope-scrap")
+
 
 require(ao_recipes .. "empty-fuel-cell-recipe")
 require(ao_recipes .. "graphite-fuel-cell-recipe")
@@ -96,6 +98,8 @@ require(techs .. "thorium-module-3")
 require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
+
+require(techs .. "isotope-analysis")
 
 require(entities .. "heat-fluid-tank")
 require(entities .. "heat-tank-pipe")
