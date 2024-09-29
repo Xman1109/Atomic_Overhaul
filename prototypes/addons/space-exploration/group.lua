@@ -50,4 +50,11 @@ data:extend({ {
         group = "atomic-overhaul",
         order = "z"
     },
+    { type = "module-category", name = "thorium-module-3" },
+    { type = "module-category", name = "thorium-module-4" },
+    { type = "module-category", name = "thorium-module-5" },
+    { type = "module-category", name = "thorium-module-6" },
+    { type = "module-category", name = "thorium-module-7" },
+    { type = "module-category", name = "thorium-module-8" },
+    { type = "module-category", name = "thorium-module-9" }
 })

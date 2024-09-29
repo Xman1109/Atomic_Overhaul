@@ -1,4 +1,7 @@
 require("__Atomic_Overhaul__/lib/core")
+if mods["space-exploration"] and settings.startup["se-addon"].value == true then
+    require("__Atomic_Overhaul__/lib/se-addon")
+end
 
 ao_breeder = (not mods["Nuclear Fuel"]) and settings.startup["ao-complexity-level"].value == "simple"
     and settings.startup["ao-breeder"].value
@@ -72,11 +75,11 @@ require(ao_recipes .. "waste-liquefaction")
 require(ao_recipes .. "waste-solution-reprocessing")
 if settings.startup["ao-complexity-level"].value == "simple" then
     for _, i in pairs(data.raw["module"]) do
-    if i.category == "productivity" then
-      table.insert(i.limitation, "MOX-fuel-cell-recipe")
-      table.insert(i.limitation, "MOX-reprocessing")
+        if i.category == "productivity" then
+            table.insert(i.limitation, "MOX-fuel-cell-recipe")
+            table.insert(i.limitation, "MOX-reprocessing")
+        end
     end
-  end
 end
 
 require(techs .. "graphite-fuel-reprocessing")

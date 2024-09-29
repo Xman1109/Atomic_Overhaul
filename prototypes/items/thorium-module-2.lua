@@ -1,11 +1,18 @@
 if settings.startup["ao-complexity-level"].value ~= "simple" then
+  if mods["space-exploration"] and settings.startup["se-addon"].value == true then
+    icon = se_addon_graphics .. "thorium-module-2.png"
+    icon_size = 128
+  else
+    icon = graphics .. "thorium-module-2.png"
+    icon_size = 64
+  end
   data:extend(
     {
       {
         type = "module",
         name = "thorium-module-2",
-        icon = graphics .. "thorium-module-2.png",
-        icon_size = 64,
+        icon = icon,
+        icon_size = icon_size,
         icon_mipmaps = 4,
         subgroup = "module",
         category = "thorium-module",
