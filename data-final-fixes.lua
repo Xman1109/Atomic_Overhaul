@@ -73,7 +73,6 @@ end
 
 -- Addon stage begins here.
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
-    require("__Atomic_Overhaul__/lib/se-addon")
     require("prototypes.addons.space-exploration.group")
     require(se_addon_items .. "advanced-MOX-depleted-cell")
     require(se_addon_items .. "advanced-MOX-fuel-cell")
@@ -99,6 +98,12 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_items .. "lead-delivery-capsule") --\
     require(se_addon_items .. "capsule-items") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_items .. "space-reactor")
+    require(se_addon_items .. "thorium-module-4") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-5") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-6") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-7") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-8") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-9") -- Made by SargaPulcsis
 
     require(se_addon_recipes .. "advanced-MOX-cell-recipe")
     require(se_addon_recipes .. "advanced-MOX-reprocessing-recipe")
@@ -127,6 +132,12 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_recipes .. "lead-delivery-recipe") -----\
     require(se_addon_recipes .. "capsule-recipes") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_recipes .. "space-reactor-recipe")
+    require(se_addon_recipes .. "thorium-module-4") -- Made by SargaPulcsis
+    require(se_addon_recipes .. "thorium-module-5") -- Made by SargaPulcsis
+    require(se_addon_recipes .. "thorium-module-6") -- Made by SargaPulcsis
+    require(se_addon_recipes .. "thorium-module-7") -- Made by SargaPulcsis
+    require(se_addon_recipes .. "thorium-module-8") -- Made by SargaPulcsis
+    require(se_addon_recipes .. "thorium-module-9") -- Made by SargaPulcsis
 
     require(se_addon_techs .. "advanced-fuel-cells")
     require(se_addon_techs .. "beryllium-7-processing")
@@ -139,6 +150,12 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_techs .. "iridium-192-reprocessing")
     require(se_addon_techs .. "iridium-192-without-research-data")
     require(se_addon_techs .. "space-reactor")
+    require(se_addon_techs .. "thorium-module-4") -- Made by SargaPulcsis
+    require(se_addon_techs .. "thorium-module-5") -- Made by SargaPulcsis
+    require(se_addon_techs .. "thorium-module-6") -- Made by SargaPulcsis
+    require(se_addon_techs .. "thorium-module-7") -- Made by SargaPulcsis
+    require(se_addon_techs .. "thorium-module-8") -- Made by SargaPulcsis
+    require(se_addon_techs .. "thorium-module-9") -- Made by SargaPulcsis
 
     if ao_debug == true then
         log(debug_addon_text .. "space-exploration")

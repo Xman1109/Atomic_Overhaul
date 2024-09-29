@@ -2,6 +2,12 @@ Version: 1.4.0
   Changes:
     -  
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.28
+Date: 2024-09-29
+  Changes:
+    -  Integrated the "Space Exploration Atomic Overhaul Modules" Mod into the main mod (thanks to @SargaPulcsis)
+    -  Updated Locales (thanks to all translators!)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.27
 Date: 2024-09-12
   Changes:
