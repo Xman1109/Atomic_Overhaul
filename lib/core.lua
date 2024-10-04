@@ -10,6 +10,8 @@ graphics = "__Atomic_Overhaul__/graphics/icons/"
 entity_graphics = "__Atomic_Overhaul__/graphics/entities/"
 images = "__Atomic_Overhaul__/graphics/images/"
 
+placeholder_icon = "__Atomic_Overhaul__/graphics/icons/placeholder.png"
+
 cmt = {} -- crafting machine tint
 
 DEFAULT = {}
