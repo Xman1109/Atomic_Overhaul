@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.29
+Date: 2024-09-29
+  Changes:
+    -  (SE) Adopted the changes for thorium module 1-3 from @SargaPulcsis's Mod (thanks to @SargaPulcsis & @Bluebottle39)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.28
 Date: 2024-09-29
   Changes:
