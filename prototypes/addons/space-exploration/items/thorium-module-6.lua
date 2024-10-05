@@ -18,7 +18,7 @@ data:extend(
           speed = { bonus = 0.35 },
           pollution = { bonus = 0.28 }
         },
-        limitation = productivity_module_limitation(),
-		    limitation_message_key = "production-module-usable-only-on-intermediates"
+        limitation = thorium_module_limitation(),
+        limitation_message_key = "thorium-module-usable-only-on-intermediates"
       },
 })
