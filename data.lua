@@ -1,6 +1,12 @@
 require("__Atomic_Overhaul__/lib/core")
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("__Atomic_Overhaul__/lib/se-addon")
+    require(se_addon_items .. "thorium-module-4") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-5") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-6") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-7") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-8") -- Made by SargaPulcsis
+    require(se_addon_items .. "thorium-module-9") -- Made by SargaPulcsis
 end
 
 ao_breeder = (not mods["Nuclear Fuel"]) and settings.startup["ao-complexity-level"].value == "simple"

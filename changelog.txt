@@ -2,6 +2,11 @@ Version: 1.4.0
   Changes:
     -  
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.31
+Date: 2024-10-10
+  Changes:
+    -  (SE) Thorium Module 4-9 were not be able to used with the "module inserter simplified" mod due to load order (thanks to @Bluebottle39)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.30
 Date: 2024-10-05
   Changes:

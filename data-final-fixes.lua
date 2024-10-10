@@ -98,12 +98,6 @@ if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require(se_addon_items .. "lead-delivery-capsule") --\
     require(se_addon_items .. "capsule-items") ---------- >These two are for the capsule, and need to stay together. (DO NOT MOVE)
     require(se_addon_items .. "space-reactor")
-    require(se_addon_items .. "thorium-module-4") -- Made by SargaPulcsis
-    require(se_addon_items .. "thorium-module-5") -- Made by SargaPulcsis
-    require(se_addon_items .. "thorium-module-6") -- Made by SargaPulcsis
-    require(se_addon_items .. "thorium-module-7") -- Made by SargaPulcsis
-    require(se_addon_items .. "thorium-module-8") -- Made by SargaPulcsis
-    require(se_addon_items .. "thorium-module-9") -- Made by SargaPulcsis
 
     require(se_addon_recipes .. "advanced-MOX-cell-recipe")
     require(se_addon_recipes .. "advanced-MOX-reprocessing-recipe")
