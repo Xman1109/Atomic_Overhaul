@@ -75,6 +75,12 @@ data:extend(
             order = "j"
         },
         {
+            type = "item-subgroup",
+            name = "upgrade-items",
+            group = "atomic-overhaul",
+            order = "k"
+        },
+        {
             type = "module-category",
             name = "thorium-module"
         },

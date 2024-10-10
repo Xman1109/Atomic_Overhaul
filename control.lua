@@ -82,5 +82,6 @@ if not global.ao_scrap then
     global.ao_scrap = false
 end
 require("scripts.entity.isotope-conversion")
+require("scripts.entity.upgrade-capsules")
 require("scripts.isotope-tech")
 require("scripts.isotope-analysis")
