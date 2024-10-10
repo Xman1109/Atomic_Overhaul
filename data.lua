@@ -24,6 +24,9 @@ end
 require("prototypes/group")
 require(fluids .. "waste-solution")
 require(fluids .. "heating-oil")
+
+require(fluids .. "xenon")
+
 require(items .. "empty-fuel-cell")
 require(items .. "nuclear-waste")
 require(items .. "research-data")
@@ -51,6 +54,10 @@ require(items .. "thorium-module-3")
 require(items .. "uranium-fuel-rod")
 
 require(items .. "isotope-scrap")
+require(items .. "isotope-data")
+require(items .. "muonium")
+require(items .. "true-muonium")
+require(items .. "X17-particle")
 
 
 require(ao_recipes .. "empty-fuel-cell-recipe")

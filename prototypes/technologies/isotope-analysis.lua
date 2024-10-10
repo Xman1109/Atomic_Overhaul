@@ -2,8 +2,8 @@ data:extend({
     {
         type = "technology",
         name = "isotope-analysis",
-        icon = placeholder_icon,
-        icon_size = 64,
+        icon = graphics .. "isotope-analysis.png",
+        icon_size = 256,
         visible_when_disabled = true,
         enabled = false,
         effects = {

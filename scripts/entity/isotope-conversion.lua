@@ -19,7 +19,7 @@ end)
 
 -- Function to convert items within the given radius to scrap
 function convert_items_to_scrap(surface, position, radius)
-    -- Find all items on the ground within the radius
+    -- Find all items on the ground within the radius--[[  ]]
     local items_on_ground = surface.find_entities_filtered({
         area = {
             { position.x - radius, position.y - radius },

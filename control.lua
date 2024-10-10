@@ -36,12 +36,16 @@ script.on_configuration_changed(function()
     --         "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
     -- end
     FixUraniumResources()
-    -- if player name is "X_Man1109" or "fainda" print a personal message
-    if game.players[1].name == "X_Man11092006" then
-        local ao_version = "1.4.0"
-        game.print("Atomic Overhaul Version " .. ao_version)
-    else
-        game.print(game.players[1].name)
+    -- if player name is "X_Man1109" print a personal message
+    if game.players ~= nil then                  -- 
+        if game.players[1] ~= nil then           -- This happens when factorio has its 5 minutes again...
+            if game.players[1].name ~= nil then  --
+                if game.players[1].name == "X_Man11092006" then
+                    local ao_version = "1.4.0"
+                    game.print("Atomic Overhaul Version " .. ao_version)
+                end
+            end
+        end
     end
 end)
 
