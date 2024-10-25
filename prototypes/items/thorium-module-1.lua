@@ -3,19 +3,19 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
     icon = se_addon_graphics .. "thorium-module-1.png"
     icon_size = 128
     effect = {
-      productivity = { bonus = 0.04 },
-      consumption = { bonus = 1.00 },
-      speed = { bonus = 0.10 },
-      pollution = { bonus = 0.08 }
+      productivity = 0.04,
+      consumption = 1.00,
+      speed = 0.10,
+      pollution = 0.08
     }
   else
     icon = graphics .. "thorium-module-1.png"
     icon_size = 64
     effect = {
-      productivity = { bonus = 0.03 },
-      consumption = { bonus = 0.40 },
-      speed = { bonus = 0.15 },
-      pollution = { bonus = 0.05 }
+      productivity = 0.03,
+      consumption = 0.40,
+      speed = 0.15,
+      pollution = 0.05
     }
   end
   data:extend(

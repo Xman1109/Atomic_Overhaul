@@ -20,15 +20,6 @@ function repeat_heat_pipe_pictures(path, name_prefix, data)
                 height = 215,
                 -- shift = { 0.6875, -0.203125 },
                 scale = 0.5,
-                hr_version =
-                {
-                    priority = "low",
-                    filename = path,
-                    width = 219,
-                    height = 215,
-                    -- shift = { 0.6875, -0.203125 },
-                    scale = 0.5,
-                }
             }
             table.insert(tile_pictures, sprite)
             all_pictures[key] = tile_pictures
@@ -60,42 +51,23 @@ data:extend({ {
             sheets =
             {
                 {
-                    filename = entity_graphics .. "heat-tank-pipe.png",
+                    filename = entity_graphics .. "hr-heat-tank-pipe.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 110,
-                    height = 108,
-                    shift = util.by_pixel(0, 4),
-                    hr_version =
-                    {
-                        filename = entity_graphics .. "hr-heat-tank-pipe.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 219,
-                        height = 215,
-                        shift = util.by_pixel(-0.25, 3.75),
-                        scale = 0.5
-                    }
+                    width = 219,
+                    height = 215,
+                    shift = util.by_pixel(-0.25, 3.75),
+                    scale = 0.5
                 },
                 {
-                    filename = entity_graphics .. "heat-tank-pipe-shadow.png",
+                    filename = entity_graphics .. "hr-heat-tank-pipe-shadow.png",
                     priority = "extra-high",
                     frames = 1,
-                    width = 146,
-                    height = 77,
-                    shift = util.by_pixel(30, 22.5),
-                    draw_as_shadow = true,
-                    hr_version =
-                    {
-                        filename = entity_graphics .. "hr-heat-tank-pipe-shadow.png",
-                        priority = "extra-high",
-                        frames = 1,
-                        width = 291,
-                        height = 153,
-                        shift = util.by_pixel(29.75, 22.25),
-                        scale = 0.5,
-                        draw_as_shadow = true
-                    }
+                    width = 291,
+                    height = 153,
+                    shift = util.by_pixel(29.75, 22.25),
+                    scale = 0.5,
+                    draw_as_shadow = true
                 }
             }
         },
@@ -110,16 +82,9 @@ data:extend({ {
         {
             filename = "__base__/graphics/entity/storage-tank/window-background.png",
             priority = "extra-high",
-            width = 17,
-            height = 24,
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
-                priority = "extra-high",
-                width = 34,
-                height = 48,
-                scale = 0.5
-            }
+            width = 34,
+            height = 48,
+            scale = 0.5
         },
         flow_sprite =
         {
@@ -133,25 +98,13 @@ data:extend({ {
             filename = "__base__/graphics/entity/pipe/steam.png",
             priority = "extra-high",
             line_length = 10,
-            width = 24,
-            height = 15,
+            width = 48,
+            height = 30,
             frame_count = 60,
             axially_symmetrical = false,
-            direction_count = 1,
             animation_speed = 0.25,
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/pipe/hr-steam.png",
-                priority = "extra-high",
-                line_length = 10,
-                width = 48,
-                height = 30,
-                frame_count = 60,
-                axially_symmetrical = false,
-                animation_speed = 0.25,
-                direction_count = 1,
-                scale = 0.5
-            }
+            direction_count = 1,
+            scale = 0.5
         }
     },
     flow_length_in_ticks = 360,
@@ -195,7 +148,7 @@ data:extend({ {
         max_transfer = "2GW",
         minimum_glow_temperature = 350,
         connections =
-        { -- the entity is 3x3 tiles, but the connections are only on the edges
+        {     -- the entity is 3x3 tiles, but the connections are only on the edges
             { -- left bottom
                 position = { -1, -1 },
                 direction = defines.direction.north

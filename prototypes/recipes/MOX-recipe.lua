@@ -15,12 +15,12 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "resources",
                 ingredients =
                 {
-                    { "uranium-235", 9 }, -- WHY? WHY mixing enriched instead of depleted?
-                    { "plutonium",   1 }
+                    {type="item", name="uranium-235", amount=9}, -- WHY? WHY mixing enriched instead of depleted?
+                    {type="item", name="plutonium", amount=1}
                 },
                 always_show_made_in = true,
                 results = {
-                    { "MOX", 8 },
+                    {type="item", name="MOX", amount=8},
                 },
             }
         })

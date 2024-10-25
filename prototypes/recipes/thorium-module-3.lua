@@ -20,12 +20,12 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             energy_required = 40,
             ingredients =
             {
-                { "thorium",               30 },
-                { "productivity-module-3", 1 },
-                { "speed-module-3",        1 }
+                {type="item", name="thorium", amount=30},
+                {type="item", name="productivity-module-3", amount=1},
+                {type="item", name="speed-module-3", amount=1}
             },
             results = {
-                { "thorium-module-3", 1 }
+                {type="item", name="thorium-module-3", amount=1}
             }
         },
     })

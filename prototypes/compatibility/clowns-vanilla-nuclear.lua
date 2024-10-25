@@ -1,6 +1,6 @@
 Glow("plutonium-239")
 regroup("is", "clowns-uranium-centrifuging", "AO", nil, "z")
-modifyIngredients("uranium-fuel-cell", { { "35%-uranium", 1 }, { "graphite", 19 }, { "empty-fuel-cell", 10 } })
+modifyIngredients("uranium-fuel-cell", { {type="item", name="35%-uranium", 1 }, {type="item", name="graphite", amount=19}, { "empty-fuel-cell", amount=10} })
 regroup("i", "AO", "resources", "d")
 modifyEffects("uranium-processing", { {
     type = "unlock-recipe",

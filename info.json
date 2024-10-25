@@ -5,7 +5,7 @@
   "description": "Atomic Overhaul is a mod for Factorio adding new nuclear fuels, recipes and technologies to the game.\n Developed by X_Man1109 and fainda.\n\nYou can help to translate this mod on crowdin! \nhttps://crowdin.com/project/factorio-mods-localization --> Atomic Overhaul",
   "author": "X_Man1109, fainda",
   "contact": "X_Man1109#6160",
-  "factorio_version": "1.1",
+  "factorio_version": "2.0",
   "dependencies": [
     "base",
     "! PlutoniumEnergy",

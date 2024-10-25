@@ -6,23 +6,23 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     m_category = "crafting"
     m_ingredients =
     {
-        { "plutonium",   4 },
-        { "uranium-238", 85 },
-        { "iron-plate",  3 }
+        {type="item", name="plutonium", amount=4},
+        {type="item", name="uranium-238", amount=85},
+        {type="item", name="iron-plate", amount=3}
     }
     m_results = {
-        { "MOX-fuel-cell", 3 },
+        {type="item", name="MOX-fuel-cell", amount=3},
     }
     m_time = 75
 else
     m_category = "centrifuging"
     m_ingredients =
     {
-        { "MOX-fuel-rod",    10 },
-        { "empty-fuel-cell", 10 }
+        {type="item", name="MOX-fuel-rod", amount=10},
+        {type="item", name="empty-fuel-cell", amount=10}
     }
     m_results = {
-        { "MOX-fuel-cell", 10 },
+        {type="item", name="MOX-fuel-cell", amount=10},
     }
     m_time = 50
 end

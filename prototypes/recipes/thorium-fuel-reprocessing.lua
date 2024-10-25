@@ -2,7 +2,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
     local wrd = nil
     local thorium = { type = "item", name = "thorium", amount_min = 2, amount_max = 3 }
     if settings.startup["thorium-wrd"].value == true then
-        wrd = { "research-data", 10 }
+        wrd = {type="item", name="research-data", amount=10}
         thorium = { type = "item", name = "thorium", amount_min = 1, amount_max = 2 }
     end
     data:extend(
@@ -21,10 +21,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "thorium-depleted-cell", 5 }
+                    {type="item", name="thorium-depleted-cell", amount=5}
                 },
                 results = {
-                    { "nuclear-waste", 15 },
+                    {type="item", name="nuclear-waste", amount=15},
                     thorium,
                     wrd
                 },

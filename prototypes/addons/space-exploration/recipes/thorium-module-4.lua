@@ -13,12 +13,12 @@ data:extend({
             energy_required = 40,
             ingredients =
             {
-                { "thorium",               30 },
-                { "productivity-module-4", 1 },
-                { "speed-module-4",        1 }
+                {type="item", name="thorium", amount=30},
+                {type="item", name="productivity-module-4", amount=1},
+                {type="item", name="speed-module-4", amount=1}
             },
             results = {
-                { "thorium-module-4", 1 }
+                {type="item", name="thorium-module-4", amount=1}
             }
         },
 })

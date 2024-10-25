@@ -14,11 +14,11 @@ data:extend(
         ingredients =
         {
             {fuel_cell, 10},
-            {"holmium-fuel-rod", 10}
+            {type="item", name="holmium-fuel-rod", amount=10}
         },
         always_show_made_in = true,
         results = 	{
-            {"holmium-fuel-cell", 10},
+            {type="item", name="holmium-fuel-cell", amount=10},
         },
     }
 })

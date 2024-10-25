@@ -14,7 +14,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "non-moderated-depleted-cell", 5 }
+                    {type="item", name="non-moderated-depleted-cell", amount=5}
                 },
                 results = {
                     { type = "item", name = "uranium-238",   amount_min = 1, amount_max = 2 },

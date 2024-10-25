@@ -15,10 +15,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "reprocessing-without-research-data",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 5 }
+                    {type="item", name="MOX-depleted-cell", amount=5}
                 },
                 results = {
-                    { "nuclear-waste", 13 },
+                    {type="item", name="nuclear-waste", amount=13},
                     { type = "item",   name = "MOX", amount_min = 2, amount_max = 4 }
                 },
             }

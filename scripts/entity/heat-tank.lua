@@ -1,5 +1,5 @@
 script.on_init(function()
-    global.ao_heat_tank = global.ao_heat_tank or {}
+    storageao_heat_tank = storageao_heat_tank or {}
 end)
 
 if settings.startup["ao-complexity-level"].value ~= "simple" then
@@ -7,7 +7,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
 
         
         --LOGGING STAGE BEGINS HERE
-        global.ao_heat_tank = global.ao_heat_tank or {}
+        storageao_heat_tank = storageao_heat_tank or {}
         local entity = event.created_entity
         local length = 1
         if entity.name == "heat-fluid-tank" then
@@ -15,22 +15,22 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             local y = entity.position.y
             local surface = event.created_entity.surface.name
 
-            if global.ao_heat_tank[surface] == nil then
-                global.ao_heat_tank[surface] = {}
+            if storageao_heat_tank[surface] == nil then
+                storageao_heat_tank[surface] = {}
             end
-            for i, v in pairs(global.ao_heat_tank[surface]) do
+            for i, v in pairs(storageao_heat_tank[surface]) do
                 length = length + 1
             end
-            table.insert(global.ao_heat_tank[surface], length, { x = x, y = y })
+            table.insert(storageao_heat_tank[surface], length, { x = x, y = y })
         end
         --LOGGING STAGE ENDS HERE
 
 
         -- check if the tanks are still existing and remove them from the table if not
-        for i, v in pairs(global.ao_heat_tank) do
+        for i, v in pairs(storageao_heat_tank) do
             for j, k in pairs(v) do
                 if game.surfaces[i].find_entities_filtered { position = k, type = "storage-tank" }[1] == nil then
-                    table.remove(global.ao_heat_tank[i], j)
+                    table.remove(storageao_heat_tank[i], j)
                 else
                     -- check if the tank has a fluidbox and if it has, check if it is heating oil and if it is, check if it has more than 24.500 units of it
                     if game.surfaces[i].find_entities_filtered { position = k }[1] then

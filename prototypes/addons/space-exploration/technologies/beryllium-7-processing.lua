@@ -4,7 +4,7 @@ data:extend({
             type = "technology",
             name = "beryllium-7-processing",
             icon = se_addon_graphics .. "beryllium-7-processing.png",
-            icon_size = "256",
+            icon_size = 256,
             prerequisites = {"se-processing-beryllium", "holmium-166-reprocessing"},
             effects =
             {

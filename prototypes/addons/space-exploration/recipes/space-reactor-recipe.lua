@@ -12,16 +12,16 @@ data:extend(
         subgroup = "energy",
         ingredients =
         {
-            {"nuclear-reactor", 1},
-            {"processing-unit", 250},
-            {"se-heat-shielding", 100},
-            {"low-density-structure", 75},
-            {"se-holmium-plate", 50},
-            {"se-iridium-plate", 50},
+            {type="item", name="nuclear-reactor", amount=1},
+            {type="item", name="processing-unit", amount=250},
+            {type="item", name="se-heat-shielding", amount=100},
+            {type="item", name="low-density-structure", amount=75},
+            {type="item", name="se-holmium-plate", amount=50},
+            {type="item", name="se-iridium-plate", amount=50},
         },
         always_show_made_in = true,
         results = 	{
-            {"space-reactor", 1}
+            {type="item", name="space-reactor", amount=1}
         },
     }
 })

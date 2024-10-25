@@ -4,7 +4,7 @@ data:extend({
             type = "technology",
             name = "iridium-192-without-research-data",
             icon = se_addon_graphics .. "iridium-192-without-research-data.png",
-            icon_size = "256",
+            icon_size = 256,
             prerequisites = {"iridium-192-reprocessing"},
             effects =
             {

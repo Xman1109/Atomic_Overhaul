@@ -15,7 +15,7 @@ data:extend({
             {type = "item", name = "graphite", amount = 3}
         },
         results = {
-            {"holmium-fuel-rod", 10}
+            {type="item", name="holmium-fuel-rod", amount=10}
         }
     }
 })

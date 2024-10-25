@@ -15,10 +15,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "plutonium-depleted-cell", 5 }
+                    {type="item", name="plutonium-depleted-cell", amount=5}
                 },
                 results = {
-                    { "nuclear-waste", 10 },
+                    {type="item", name="nuclear-waste", amount=10},
                     { type = "item",   name = "plutonium",     amount_min = 1, amount_max = 3 },
                     { type = "item",   name = "research-data", amount_min = 4, amount_max = 6 }
                 },

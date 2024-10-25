@@ -16,7 +16,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 { type = "item", name = "graphite", amount = 1 }
             },
             results = {
-                { "thorium-fuel-rod", 10 }
+                {type="item", name="thorium-fuel-rod", amount=10}
             }
         }
     })

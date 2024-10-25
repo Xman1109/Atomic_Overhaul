@@ -3,16 +3,16 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     if mods["SchallUraniumProcessing"] then
         m_results = {
             { name = "fissile-products", amount_min = 2, amount_max = 3 },
-            { "plutonium",           1 },
-            { "uranium-238",         10 },
-            { "uranium-concentrate", 34 }
+            {type="item", name="plutonium", amount=1},
+            {type="item", name="uranium-238", amount=10},
+            {type="item", name="uranium-concentrate", amount=34}
         }
     else
         m_results = {
             { name = "fissile-products", amount_min = 2, amount_max = 3 },
-            { "plutonium",        1 },
-            { "uranium-238",      10 },
-            { "uranium-ore",      340 }
+            {type="item", name="plutonium", amount=1},
+            {type="item", name="uranium-238", amount=10},
+            {type="item", name="uranium-ore", amount=340}
         }
     end
     data:extend(
@@ -32,7 +32,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 3 }
+                    {type="item", name="MOX-depleted-cell", amount=3}
                 },
                 results = m_results,
             }
@@ -54,10 +54,10 @@ else
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "MOX-depleted-cell", 5 }
+                    {type="item", name="MOX-depleted-cell", amount=5}
                 },
                 results = {
-                    { "nuclear-waste", 13 },
+                    {type="item", name="nuclear-waste", amount=13},
                     { type = "item",   name = "MOX",           amount_min = 1, amount_max = 3 },
                     { type = "item",   name = "research-data", amount_min = 7, amount_max = 10 }
                 },

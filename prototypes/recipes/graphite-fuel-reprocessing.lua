@@ -15,7 +15,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    { "graphite-depleted-cell", 5 }
+                    {type="item", name="graphite-depleted-cell", amount=5}
                 },
                 results = {
                     { type = "item", name = "graphite",        amount_min = 2, amount_max = 3 },

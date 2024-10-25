@@ -14,12 +14,12 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "fuel-cells",
                 ingredients =
                 {
-                    { "plastic-bar", 10 },
-                    { "iron-plate",  10 }
+                    {type="item", name="plastic-bar", amount=10},
+                    {type="item", name="iron-plate", amount=10}
                 },
                 always_show_made_in = true,
                 results = {
-                    { "empty-fuel-cell", 10 }
+                    {type="item", name="empty-fuel-cell", amount=10}
                 },
             }
         })

@@ -47,7 +47,7 @@ function breed.NewEnrichment()
       category = "centrifuging",
       ingredients =
       {
-        { "uranium-ore", 70 }
+        {type="item", name="uranium-ore", amount=70}
       },
       group = "atomic-overhaul",
       subgroup = "resources",
@@ -55,8 +55,8 @@ function breed.NewEnrichment()
       main_product = "uranium-low-enriched",
       results =
       {
-        { "uranium-low-enriched", 1 },
-        { "uranium-238",          6 }
+        {type="item", name="uranium-low-enriched", amount=1},
+        {type="item", name="uranium-238", amount=6}
       },
       allow_decomposition = false,
     },
@@ -70,7 +70,7 @@ function breed.NewEnrichment()
       localised_description = { "recipe-description.uranium-235-simple" },
       ingredients =
       {
-        { "uranium-low-enriched", 20 }
+        {type="item", name="uranium-low-enriched", amount=20}
       },
       group = "atomic-overhaul",
       subgroup = "resources",
@@ -78,8 +78,8 @@ function breed.NewEnrichment()
       main_product = "uranium-235",
       results =
       {
-        { "uranium-235", 1 },
-        { "uranium-238", 19 }
+        {type="item", name="uranium-235", amount=1},
+        {type="item", name="uranium-238", amount=19}
       },
       allow_decomposition = false,
     },
@@ -91,7 +91,7 @@ function breed.NewEnrichment()
     end
   end
   data.raw["recipe"]["uranium-processing"].hidden = true -- I hid it instead of using for LEU, because icon, description would be incorrect anyway.
-  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { { "uranium-low-enriched", 4 }, { "iron-plate", 2 } }
+  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { {type="item", name="uranium-low-enriched", 4 }, { "iron-plate", amount=2} }
   data.raw["recipe"]["uranium-fuel-cell"].result_count = 2
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
@@ -237,13 +237,13 @@ function breed.Breeder()
       icon_size = 64,
       icon_mipmaps = 4,
       ingredients = {
-        { "concrete",         500 },
-        { "steel-plate",      800 },
-        { "advanced-circuit", 600 },
-        { "copper-plate",     500 },
-        (mods["bztungsten"] and { "tungsten-plate", 600 }) or nil
+        {type="item", name="concrete", amount=500},
+        {type="item", name="steel-plate", amount=800},
+        {type="item", name="advanced-circuit", amount=600},
+        {type="item", name="copper-plate", amount=500},
+        (mods["bztungsten"] and {type="item", name="tungsten-plate", amount=600}) or nil
       },
-      result = "apm_nuclear_breeder",
+      results = {{ type = "item", name = "apm_nuclear_breeder", amount = 1 }},
       energy_required = 90,
       --category = "advanced-crafting",
       enabled = false
@@ -262,13 +262,13 @@ function breed.Breeder()
       subgroup = "fuel-cells",
       ingredients =
       {
-        { "uranium-235",          1 },
-        { "uranium-low-enriched", 4 },
-        { "uranium-238",          4 },
-        { "iron-plate",           2 },
+        {type="item", name="uranium-235", amount=1},
+        {type="item", name="uranium-low-enriched", amount=4},
+        {type="item", name="uranium-238", amount=4},
+        {type="item", name="iron-plate", amount=2},
       },
       results = {
-        { "ao-breeder-fuel-cell", 2 },
+        {type = "item", name = "ao-breeder-fuel-cell", amount = 2},
       }
     },
     {
@@ -286,13 +286,13 @@ function breed.Breeder()
       subgroup = "reprocessing",
       ingredients =
       {
-        { "ao-breeder-depleted-cell", 2 }
+        {type="item", name="ao-breeder-depleted-cell", amount=2}
       },
       results = {
-        { "plutonium",        1 },
-        mods["SchallUraniumProcessing"] and { "uranium-concentrate", 3 }
-        or { "uranium-ore", 30 },
-        { name = "fissile-products",  amount_min = 8, amount_max = 9 }
+        {type = "item", name = "plutonium", amount = 1},
+        mods["SchallUraniumProcessing"] and { type = item, name = "uranium-concentrate", amount = 3 }
+        or {type="item", name="uranium-ore", amount=30},
+        { type = "item", name = "fissile-products",  amount_min = 8, amount_max = 9 }
       },
     },
 
@@ -324,10 +324,10 @@ function breed.Breeder()
         count = 1500,
         ingredients =
         {
-          { "automation-science-pack", 1 },
-          { "logistic-science-pack",   1 },
-          { "chemical-science-pack",   1 },
-          { "production-science-pack", 1 },
+          {type="item", name="automation-science-pack", amount=1},
+          {type="item", name="logistic-science-pack", amount=1},
+          {type="item", name="chemical-science-pack", amount=1},
+          {type="item", name="production-science-pack", amount=1},
         },
         time = 45
       }
@@ -357,10 +357,10 @@ function breed.Breeder()
         {
           ingredients =
           {
-            { "automation-science-pack", 1 },
-            { "logistic-science-pack",   1 },
-            { "chemical-science-pack",   1 },
-            { "production-science-pack", 1 }
+            {type="item", name="automation-science-pack", amount=1},
+            {type="item", name="logistic-science-pack", amount=1},
+            {type="item", name="chemical-science-pack", amount=1},
+            {type="item", name="production-science-pack", amount=1}
           },
           time = 45,
           count = 200

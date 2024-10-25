@@ -4,7 +4,7 @@ data:extend({
             type = "technology",
             name = "holmium-166-without-research-data",
             icon = se_addon_graphics .. "holmium-166-without-research-data.png",
-            icon_size = "256",
+            icon_size = 256,
             prerequisites = {"holmium-166-reprocessing"},
             effects =
             {

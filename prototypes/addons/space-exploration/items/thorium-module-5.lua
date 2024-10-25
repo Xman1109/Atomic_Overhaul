@@ -13,10 +13,10 @@ data:extend(
         stack_size = 50,
         effect =
         {
-          productivity = { bonus = 0.12 },
-          consumption = { bonus = 2.70 },
-          speed = { bonus = 0.30 },
-          pollution = { bonus = 0.24 }
+          productivity = 0.12,
+          consumption = 2.70,
+          speed = 0.30,
+          pollution = 0.24
         },
         limitation = thorium_module_limitation(),
         limitation_message_key = "thorium-module-usable-only-on-intermediates"

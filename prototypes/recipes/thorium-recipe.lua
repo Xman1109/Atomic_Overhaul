@@ -15,11 +15,11 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "resources",
                 ingredients =
                 {
-                    { "uranium-ore", 15 }
+                    {type="item", name="uranium-ore", amount=15}
                 },
                 always_show_made_in = true,
                 results = {
-                    { "uranium-238", 3 },
+                    {type="item", name="uranium-238", amount=3},
                     { type = "item", name = "uranium-235", amount_min = 1, amount_max = 2 },
                     { type = "item", name = "thorium",     amount_min = 0, amount_max = 3 }
                 },

@@ -17,9 +17,9 @@ if settings.startup["ao-complexity-level"].value == "full" then
                 always_show_made_in = true,
                 ingredients =
                 {
-                    { "uranium-235",  1 },
-                    { "copper-plate", 2 },
-                    { "plastic-bar",  5 }
+                    {type="item", name="uranium-235", amount=1},
+                    {type="item", name="copper-plate", amount=2},
+                    {type="item", name="plastic-bar", amount=5}
                 },
                 results = {
                     { type = "item", name = "research-data", amount_min = 3, amount_max = 5 },

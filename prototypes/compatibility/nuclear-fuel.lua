@@ -21,7 +21,7 @@ modifyResults("nuclear-fuel-reprocessing", { {
     amount_max = 3
 } })
 regroup("r", "breeder-fuel-cell", nil, "fuel-cells", "c[plutonium-fuel-cell-recipe]-d[breeder-fuel-cell]")
-modifyIngredients("breeder-fuel-cell", { { "empty-fuel-cell", 10 }, { "plutonium", 1 }, { "uranium-238", 19 } })
+modifyIngredients("breeder-fuel-cell", { {type="item", name="empty-fuel-cell", 10 }, {type="item", name="plutonium", amount=1}, { "uranium-238", amount=19} })
 regroup("r", "breeder-fuel-reprocessing", nil, "reprocessing",
     "c[plutonium-fuel-reprocessing]-d[breeder-fuel-reprocessing]")
 hideType("t", "mox-fuel")
@@ -36,9 +36,9 @@ data:extend({ {
     name = "atomic-bomb",
     enabled = false,
     energy_required = 50,
-    ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 30 }, { "plutonium", 15 },
-        { "rocket", 3 } },
-    result = "atomic-bomb"
+    ingredients = { {type="item", name="processing-unit", 10 }, {type="item", name="explosives", 25 }, { "uranium-235", amount=30}, { "plutonium", amount=15},
+        {type="item", name="rocket", amount=3} },
+    results = {{ type = "item", name = "atomic-bomb", amount = 1 }}
 }, {
     type = "ammo",
     name = "atomic-bomb",

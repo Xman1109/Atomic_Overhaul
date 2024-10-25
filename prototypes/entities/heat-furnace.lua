@@ -60,24 +60,14 @@ heat_furnace.working_visualisations =
             layers =
             {
                 {
-                    filename = entity_graphics .. "heat-furnace-heater.png",
+                    filename = entity_graphics .. "hr-heat-furnace-heater.png",
                     priority = "high",
-                    width = 25,
-                    height = 15,
+                    width = 60,
+                    height = 56,
                     frame_count = 12,
                     animation_speed = 0.5,
                     shift = { 0, 0.63 },
-                    hr_version =
-                    {
-                        filename = entity_graphics .. "hr-heat-furnace-heater.png",
-                        priority = "high",
-                        width = 60,
-                        height = 56,
-                        frame_count = 12,
-                        animation_speed = 0.5,
-                        shift = { 0, 0.63 },
-                        scale = 0.5
-                    }
+                    scale = 0.5
                 }
             }
         },
@@ -107,25 +97,13 @@ heat_furnace.working_visualisations =
             filename = "__base__/graphics/entity/steel-furnace/steel-furnace-working.png",
             priority = "high",
             line_length = 1,
-            width = 64,
-            height = 74,
+            width = 128,
+            height = 150,
             frame_count = 1,
             direction_count = 1,
-            shift = util.by_pixel(0, -4),
+            shift = util.by_pixel(0, -5),
             blend_mode = "additive",
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/steel-furnace/hr-steel-furnace-working.png",
-                priority = "high",
-                line_length = 1,
-                width = 128,
-                height = 150,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(0, -5),
-                blend_mode = "additive",
-                scale = 0.5,
-            }
+            scale = 0.5,
         }
     },
     {
@@ -139,26 +117,13 @@ heat_furnace.working_visualisations =
             priority = "high",
             line_length = 1,
             draw_as_sprite = false,
-            width = 78,
-            height = 64,
+            width = 152,
+            height = 126,
             frame_count = 1,
             direction_count = 1,
-            shift = util.by_pixel(0, 48),
+            shift = util.by_pixel(1, 48),
             blend_mode = "additive",
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/steel-furnace/hr-steel-furnace-ground-light.png",
-                priority = "high",
-                line_length = 1,
-                draw_as_sprite = false,
-                width = 152,
-                height = 126,
-                frame_count = 1,
-                direction_count = 1,
-                shift = util.by_pixel(1, 48),
-                blend_mode = "additive",
-                scale = 0.5,
-            }
+            scale = 0.5,
         },
     },
 }
@@ -167,42 +132,23 @@ heat_furnace.animation =
     layers =
     {
         {
-            filename = entity_graphics .. "heat-furnace.png",
+            filename = entity_graphics .. "hr-heat-furnace.png",
             priority = "high",
-            width = 85,
-            height = 87,
+            width = 171,
+            height = 174,
             frame_count = 1,
-            shift = util.by_pixel(-1.5, 1.5),
-            hr_version =
-            {
-                filename = entity_graphics .. "hr-heat-furnace.png",
-                priority = "high",
-                width = 171,
-                height = 174,
-                frame_count = 1,
-                shift = util.by_pixel(-1.25, 2),
-                scale = 0.5
-            }
+            shift = util.by_pixel(-1.25, 2),
+            scale = 0.5
         },
         {
             filename = "__base__/graphics/entity/steel-furnace/steel-furnace-shadow.png",
             priority = "high",
-            width = 139,
-            height = 43,
+            width = 277,
+            height = 85,
             frame_count = 1,
             draw_as_shadow = true,
-            shift = util.by_pixel(39.5, 11.5),
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/steel-furnace/hr-steel-furnace-shadow.png",
-                priority = "high",
-                width = 277,
-                height = 85,
-                frame_count = 1,
-                draw_as_shadow = true,
-                shift = util.by_pixel(39.25, 11.25),
-                scale = 0.5
-            }
+            shift = util.by_pixel(39.25, 11.25),
+            scale = 0.5
         }
     }
 }

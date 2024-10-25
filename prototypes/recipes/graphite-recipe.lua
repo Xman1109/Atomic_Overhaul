@@ -14,11 +14,11 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 subgroup = "resources",
                 ingredients =
                 {
-                    { "coal", 10 }
+                    {type="item", name="coal", amount=10}
                 },
                 always_show_made_in = true,
                 results = {
-                    { "graphite",    3 },
+                    {type="item", name="graphite", amount=3},
                     { type = "item", name = "coal", amount_min = 1, amount_max = 3 }
                 },
             }
