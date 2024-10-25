@@ -22,6 +22,12 @@ data:extend(
         },
         {
             type = "item-subgroup",
+            name = "isotopes",
+            group = "atomic-overhaul",
+            order = "b-c"
+        },
+        {
+            type = "item-subgroup",
             name = "fuel-cells",
             group = "atomic-overhaul",
             order = "c"
@@ -67,6 +73,12 @@ data:extend(
             name = "other-items",
             group = "atomic-overhaul",
             order = "j"
+        },
+        {
+            type = "item-subgroup",
+            name = "upgrade-items",
+            group = "atomic-overhaul",
+            order = "k"
         },
         {
             type = "module-category",
