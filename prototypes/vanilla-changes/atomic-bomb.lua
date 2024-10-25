@@ -1,16 +1,28 @@
 local rocket_ingredients
 if settings.startup["ao-complexity-level"].value == "simple" then
     if ao_breeder then
-        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "uranium-235", 20 },
-            { "plutonium",           10 } }
+        rocket_ingredients = {
+            {type = "item", name = "processing-unit", amount = 10},
+            {type = "item", name = "explosives", amount = 10},
+            {type = "item", name = "uranium-235", amount = 20},
+            {type = "item", name = "plutonium", amount = 10}
+        }
     else -- obtaining Pu-239 is a pain, but Kovarex cheat is On
-        rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 10 }, { "uranium-235", 35 },
-            { "plutonium",           3 } }
+        rocket_ingredients = {
+            {type = "item", name = "processing-unit", amount = 10},
+            {type = "item", name = "explosives", amount = 10},
+            {type = "item", name = "uranium-235", amount = 35},
+            {type = "item", name = "plutonium", amount = 3}
+        }
     end
 else
-    rocket_ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 25 },
-        { "plutonium",           5 },
-        { "rocket",              3 } }
+    rocket_ingredients = {
+        {type = "item", name = "processing-unit", amount = 10},
+        {type = "item", name = "explosives", amount = 25},
+        {type = "item", name = "uranium-235", amount = 25},
+        {type = "item", name = "plutonium", amount = 5},
+        {type = "item", name = "rocket", amount = 3}
+    }
 end
 
 data:extend({ {
@@ -19,7 +31,9 @@ data:extend({ {
     enabled = false,
     energy_required = 50,
     ingredients = rocket_ingredients,
-    result = "atomic-bomb"
+    results = {
+        {type = "item", name = "atomic-bomb", amount = 1}
+    },
 }, {
     type = "ammo",
     name = "atomic-bomb",
@@ -41,6 +55,7 @@ data:extend({ {
             mipmap_count = 4
         } }
     },
+    ammo_category = "rocket",
     ammo_type = {
         range_modifier = 1.5,
         cooldown_modifier = 10,

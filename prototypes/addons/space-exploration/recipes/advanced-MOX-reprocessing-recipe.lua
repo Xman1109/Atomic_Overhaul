@@ -26,7 +26,7 @@ data:extend(
         subgroup = "advanced-reprocessing",
         ingredients =
         {
-            {"advanced-MOX-depleted-cell", 5}
+            {type = "item", name = "advanced-MOX-depleted-cell", amount = 5}
         },
         results = data.raw["recipe"]["MOX-without-research-data"].results,
     }

@@ -26,7 +26,7 @@ data:extend(
         subgroup = "advanced-reprocessing",
         ingredients =
         {
-            {"advanced-uranium-depleted-cell", 5}
+            {type = "item", name = "advanced-uranium-depleted-cell", amount = 5}
         },
         results = data.raw["recipe"]["uranium-without-research-data"].results,
     }

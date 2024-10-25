@@ -3,11 +3,11 @@ data:extend(
         {
             type = "item",
             name = "advanced-uranium-depleted-cell",
-            icon = data.raw["item"]["used-up-uranium-fuel-cell"].icon,
+            icon = data.raw["item"]["depleted-uranium-fuel-cell"].icon,
             icons =
             {
                 {
-                    icon = data.raw["item"]["used-up-uranium-fuel-cell"].icon,
+                    icon = data.raw["item"]["depleted-uranium-fuel-cell"].icon,
                     icon_size = 64,
                     icon_mipmaps = 4,
                 },
@@ -18,7 +18,7 @@ data:extend(
                 layers =
                 {
                     {
-                        filename = data.raw["item"]["used-up-uranium-fuel-cell"].icon,
+                        filename = data.raw["item"]["depleted-uranium-fuel-cell"].icon,
                         size = 64,
                         scale = 0.25,
                         mipmap_count = 4,

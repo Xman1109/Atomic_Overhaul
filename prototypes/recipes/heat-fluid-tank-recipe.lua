@@ -12,13 +12,13 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
         enabled = false,
         energy_required = 20,
         ingredients = {
-            {"storage-tank", 1},
-            {"steel-plate", 100},
-            {"copper-plate", 50},
-            {"heat-pipe", 4},
+            {type="item", name="storage-tank", amount=1},
+            {type="item", name="steel-plate", amount=100},
+            {type="item", name="copper-plate", amount=50},
+            {type="item", name="heat-pipe", amount=4},
         },
         results = {
-            {"heat-fluid-tank", 1}
+            {type="item", name="heat-fluid-tank", amount=1}
         }
     } })
 end

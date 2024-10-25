@@ -14,10 +14,10 @@ data:extend(
         subgroup = "reprocessing-without-research-data",
         ingredients =
         {
-            {"holmium-depleted-cell", 5}
+            {type="item", name="holmium-depleted-cell", amount=5}
         },
         results = 	{
-            {"nuclear-waste", 17},
+            {type="item", name="nuclear-waste", amount=17},
             {type = "item", name = "se-holmium-powder", amount_min = 1, amount_max = 2}
         },
     }

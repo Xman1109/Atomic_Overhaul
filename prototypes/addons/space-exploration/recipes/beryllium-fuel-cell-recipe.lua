@@ -14,11 +14,11 @@ data:extend(
         ingredients =
         {
             {fuel_cell, 10},
-            {"beryllium-fuel-rod", 10}
+            {type="item", name="beryllium-fuel-rod", amount=10}
         },
         always_show_made_in = true,
         results = 	{
-            {"beryllium-fuel-cell", 10},
+            {type="item", name="beryllium-fuel-cell", amount=10},
         },
     }
 })

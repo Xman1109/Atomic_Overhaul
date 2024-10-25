@@ -1,7 +1,7 @@
 function FixUraniumResources()
-    local ao_enrichUranium = (not game.active_mods["SchallUraniumProcessing"]) and
+    local ao_enrichUranium = (not script.active_mods["SchallUraniumProcessing"]) and
         settings.startup["ao-complexity-level"].value == "simple"
-    local ao_breeder = (not game.active_mods["Nuclear Fuel"]) and
+    local ao_breeder = (not script.active_mods["Nuclear Fuel"]) and
         settings.startup["ao-complexity-level"].value == "simple" and
         settings.startup["ao-breeder"].value
     if game.forces["player"].technologies["uranium-processing"].researched and ao_enrichUranium then

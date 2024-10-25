@@ -14,10 +14,10 @@ data:extend(
         subgroup = "reprocessing-without-research-data",
         ingredients =
         {
-            {"iridium-depleted-cell", 5}
+            {type="item", name="iridium-depleted-cell", amount=5}
         },
         results = 	{
-            {"nuclear-waste", 15},
+            {type="item", name="nuclear-waste", amount=15},
             {type = "item", name = "se-iridium-powder", amount_min = 1, amount_max = 3}
         },
     }

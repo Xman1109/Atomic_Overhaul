@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.32
+Date: 2024-10-25
+  Changes:
+    -  Updated the mod to Factorio 2.0
+    -  COMPATIBILITY MAY BE BROKEN, PLEASE BACKUP YOUR SAVEGAMES AND REPORT ANY BUGS!
+---------------------------------------------------------------------------------------------------
 Version: 1.3.31
 Date: 2024-10-10
   Changes:

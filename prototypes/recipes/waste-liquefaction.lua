@@ -11,7 +11,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
         enabled = false,
         energy_required = 10,
         ingredients = {
-            { "nuclear-waste", 20 },
+            {type="item", name="nuclear-waste", amount=20},
             { type = "fluid",  name = "sulfuric-acid", amount = 10 }
         },
         results = {

@@ -14,10 +14,11 @@ data:extend(
         subgroup = "reprocessing-without-research-data",
         ingredients =
         {
-            {"beryllium-depleted-cell", 5}
+            {type="item", name="beryllium-depleted-cell", amount=5}
+
         },
         results = 	{
-            {"nuclear-waste", 20},
+            {type="item", name="nuclear-waste", amount=20},
             {type = "item", name = "se-beryllium-powder", amount = 1},
         },
     }

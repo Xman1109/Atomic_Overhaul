@@ -13,12 +13,12 @@ data:extend(
         subgroup = "resources",
         ingredients =
         {
-            {"se-iridium-powder", 5},
+            {type="item", name="se-iridium-powder", amount=5},
             {type = "fluid", name = "sulfuric-acid", amount = 10}
         },
         always_show_made_in = true,
         results = 	{
-            {"iridium-192", 2},
+            {type="item", name="iridium-192", amount=2},
             {type = "item", name = "iridium-192", probability = 0.25, amount = 1},
             {type = "item", name = "se-iridium-powder", probability = 0.5, amount = 1},
         },

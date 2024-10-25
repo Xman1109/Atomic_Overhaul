@@ -14,6 +14,24 @@ elseif settings.startup["ao-complexity-level"].value ~= "simple" then
     table.insert(data.raw["technology"]["nuclear-fuel-reprocessing"].effects,
         { type = "unlock-recipe", recipe = "research-data-recipe" })
 
+    modifyEffects("nuclear-power", {
+        {
+            type = "unlock-recipe",
+            recipe = "nuclear-reactor"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "heat-exchanger"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "heat-pipe"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "steam-turbine"
+        }
+    })
 
     if settings.startup["old-graphite-fuel"].value then
         data.raw["technology"]["uranium-processing"].prerequisites = { "graphite-fuel-reprocessing" }
@@ -26,7 +44,7 @@ elseif settings.startup["ao-complexity-level"].value ~= "simple" then
         data.raw["technology"]["uranium-processing"].prerequisites = { "graphite-cooking" }
         data.raw["technology"]["nuclear-power"].prerequisites = { "non-moderated-fuel-processing" }
         modifyEffects("uranium-processing",
-        { { type = "unlock-recipe", recipe = "uranium-fuel-cell" },
-            { type = "unlock-recipe", recipe = "uranium-rod-recipe" } })
+            { { type = "unlock-recipe", recipe = "uranium-fuel-cell" },
+                { type = "unlock-recipe", recipe = "uranium-rod-recipe" } })
     end
 end

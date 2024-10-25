@@ -10,4 +10,4 @@ modifyEffects("ao-graphite-processing", {{
     recipe = "graphite-fuel-cell-recipe"
 }})
 hideType("r", "graphite-recipe")
-modifyIngredients("graphite-fuel-cell-recipe", {{"graphite", 25}, {"empty-fuel-cell", 10}})
+modifyIngredients("graphite-fuel-cell-recipe", {{type="item", name="graphite", 25}, {"empty-fuel-cell", amount=10}})

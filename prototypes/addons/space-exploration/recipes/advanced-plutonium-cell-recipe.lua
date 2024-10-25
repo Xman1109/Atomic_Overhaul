@@ -14,12 +14,12 @@ data:extend(
         subgroup = "space-fuel-cells",
         ingredients =
         {
-            {fuel_cell, 10},
-            {"plutonium-fuel-rod", 10}
+            {type="item", name=fuel_cell, amount=10},
+            {type="item", name="plutonium-fuel-rod", amount=10}
         },
         always_show_made_in = true,
         results = 	{
-            {"advanced-plutonium-fuel-cell", 10},
+            {type = "item", name = "advanced-plutonium-fuel-cell", amount = 10}
         },
     }
 })

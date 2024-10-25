@@ -5,9 +5,9 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             type = "technology",
             name = "ao-graphite-processing",
             icon = graphics .. "graphite-processing.png",
-            icon_size = "256",
+            icon_size = 256,
             icon_mipmaps = 4,
-            prerequisites = { "chemical-science-pack", "concrete" },
+            prerequisites = { "uranium-mining" },
             effects =
             {
                 {

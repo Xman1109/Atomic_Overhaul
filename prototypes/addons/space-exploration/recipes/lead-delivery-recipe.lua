@@ -10,13 +10,13 @@ data:extend({
         enabled = false,
         energy_required = 10,
         ingredients = {
-            { "se-delivery-cannon-capsule", 1 },
-            { "se-heat-shielding", 20 }
+            {type="item", name="se-delivery-cannon-capsule", amount=1},
+            {type="item", name="se-heat-shielding", amount=20}
             --WIP
         },
         group = "atomic-overhaul",
         subgroup = "delivery-capules",
         order = "a",
-        result = "lead-delivery-capsule"
+        results = {{ type = "item", name = "lead-delivery-capsule", amount = 1 }}
     }
 })

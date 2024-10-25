@@ -26,10 +26,10 @@ data:extend(
         subgroup = "advanced-reprocessing",
         ingredients =
         {
-            {"advanced-thorium-depleted-cell", 5}
+            {type="item", name="advanced-thorium-depleted-cell", amount=5}
         },
         results = {
-            { "nuclear-waste", 15 },
+            { type = "item", name = "nuclear-waste", amount = 15},
             { type = "item",   name = "thorium", amount_min = 2, amount_max = 3 },
         }
     }

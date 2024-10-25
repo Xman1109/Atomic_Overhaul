@@ -13,12 +13,12 @@ data:extend(
         subgroup = "resources",
         ingredients =
         {
-            {"se-beryllium-powder", 10},
+            {type = "item", name = "se-beryllium-powder", amount = 10},
             {type = "fluid", name = "se-beryllium-hydroxide", amount = 30}
         },
         always_show_made_in = true,
         results = 	{
-            {"beryllium-7", 2},
+            {type = "item", name = "beryllium-7", amount = 2},
             {type = "item", name = "beryllium-7", probability = 0.11, amount = 3},
             {type = "item", name = "se-beryllium-powder", probability = 0.5, amount = 1},
         },

@@ -14,12 +14,12 @@ data:extend(
         subgroup = "space-fuel-cells",
         ingredients =
         {
-            {fuel_cell, 10},
-            {"MOX-fuel-rod", 10}
+            {type="item", name=fuel_cell, amount=10},
+            {type="item", name="MOX-fuel-rod", amount=10}
         },
         always_show_made_in = true,
         results = 	{
-            {"advanced-MOX-fuel-cell", 10},
+            {type = "item", name = "empty-fuel-cell", amount = 10}
         },
     }
 })

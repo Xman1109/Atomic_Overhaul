@@ -2,7 +2,7 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local desc
 if settings.startup["heat-accumulator"].value == false then
-    desc = {"", {"settings-disabled.heat-fluid-tank"}, {"mod-setting-name.heat-accumulator"}}
+    desc = { "", { "settings-disabled.heat-fluid-tank" }, { "mod-setting-name.heat-accumulator" } }
 end
 
 data:extend({
@@ -32,7 +32,9 @@ data:extend({
                 { position = { 1, 2 } },
                 { position = { -2, -1 } }
             },
-            hide_connection_info = true
+            hide_connection_info = true,
+            volume = data.raw["storage-tank"]["storage-tank"].fluid_box.volume,
+            pipe_connections = data.raw["storage-tank"]["storage-tank"].fluid_box.pipe_connections
         },
         two_direction_only = true,
         window_bounding_box = { { -0.125, 0.6875 }, { 0.1875, 1.1875 } },
@@ -43,42 +45,23 @@ data:extend({
                 sheets =
                 {
                     {
-                        filename = entity_graphics .. "heat-fluid-tank.png",
+                        filename = entity_graphics .. "hr-heat-fluid-tank.png",
                         priority = "extra-high",
                         frames = 2,
-                        width = 110,
-                        height = 108,
-                        shift = util.by_pixel(0, 4),
-                        hr_version =
-                        {
-                            filename = entity_graphics .. "hr-heat-fluid-tank.png",
-                            priority = "extra-high",
-                            frames = 2,
-                            width = 219,
-                            height = 215,
-                            shift = util.by_pixel(-0.25, 3.75),
-                            scale = 0.5
-                        }
+                        width = 219,
+                        height = 215,
+                        shift = util.by_pixel(-0.25, 3.75),
+                        scale = 0.5
                     },
                     {
                         filename = "__base__/graphics/entity/storage-tank/storage-tank-shadow.png",
                         priority = "extra-high",
                         frames = 2,
-                        width = 146,
-                        height = 77,
-                        shift = util.by_pixel(30, 22.5),
-                        draw_as_shadow = true,
-                        hr_version =
-                        {
-                            filename = "__base__/graphics/entity/storage-tank/hr-storage-tank-shadow.png",
-                            priority = "extra-high",
-                            frames = 2,
-                            width = 291,
-                            height = 153,
-                            shift = util.by_pixel(29.75, 22.25),
-                            scale = 0.5,
-                            draw_as_shadow = true
-                        }
+                        width = 291,
+                        height = 153,
+                        shift = util.by_pixel(29.75, 22.25),
+                        scale = 0.5,
+                        draw_as_shadow = true
                     }
                 }
             },
@@ -93,16 +76,9 @@ data:extend({
             {
                 filename = "__base__/graphics/entity/storage-tank/window-background.png",
                 priority = "extra-high",
-                width = 17,
-                height = 24,
-                hr_version =
-                {
-                    filename = "__base__/graphics/entity/storage-tank/hr-window-background.png",
-                    priority = "extra-high",
-                    width = 34,
-                    height = 48,
-                    scale = 0.5
-                }
+                width = 34,
+                height = 48,
+                scale = 0.5
             },
             flow_sprite =
             {
@@ -116,25 +92,13 @@ data:extend({
                 filename = "__base__/graphics/entity/pipe/steam.png",
                 priority = "extra-high",
                 line_length = 10,
-                width = 24,
-                height = 15,
+                width = 48,
+                height = 30,
                 frame_count = 60,
                 axially_symmetrical = false,
-                direction_count = 1,
                 animation_speed = 0.25,
-                hr_version =
-                {
-                    filename = "__base__/graphics/entity/pipe/hr-steam.png",
-                    priority = "extra-high",
-                    line_length = 10,
-                    width = 48,
-                    height = 30,
-                    frame_count = 60,
-                    axially_symmetrical = false,
-                    animation_speed = 0.25,
-                    direction_count = 1,
-                    scale = 0.5
-                }
+                direction_count = 1,
+                scale = 0.5
             }
         },
         flow_length_in_ticks = 360,

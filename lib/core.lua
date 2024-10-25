@@ -396,9 +396,9 @@ function modifyResults(name, results, task)
                 end
             elseif task == "globalReplace" then
                 for _, recipe in pairs(data.raw["recipe"]) do
-                    if recipe.result then
-                        if recipe.result.name == name then
-                            recipe.result.name = results
+                    if recipe.results then
+                        if recipe.results.name == name then
+                            recipe.results.name = results
                             if ao_debug == true then
                                 log("Replaced result '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
                                     serpent.block(results) .. "'" .. "\n")
@@ -594,7 +594,7 @@ function addResearchData(name)
                     end
                 end
                 if found == false then
-                    table.insert(data.raw["technology"][i].unit.ingredients, { "research-data", 1 })
+                    table.insert(data.raw["technology"][i].unit.ingredients, {type="item", name="research-data", amount=1})
                     if ao_debug == true then
                         log("Added research data to " .. i .. "\n")
                     end
@@ -618,7 +618,7 @@ function addResearchData(name)
                 end
             end
             if found == false then
-                table.insert(data.raw["technology"][name].unit.ingredients, { "research-data", 1 })
+                table.insert(data.raw["technology"][name].unit.ingredients, {type="item", name="research-data", amount=1})
                 if ao_debug == true then
                     log("Added research data to " .. name .. "\n")
                 end

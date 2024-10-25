@@ -12,12 +12,12 @@ local template = {
     hide_from_stats = true,
     allow_decomposition = false,
     ingredients = {
-        { "lead-delivery-capsule", 1 },
+        {type="item", name="lead-delivery-capsule", amount=1},
     },
     group = "atomic-overhaul",
     subgroup = "delivery-capules",
     order = "b",
-    result = "lead-delivery-cannon-pack-"
+    results = {{ type = "item", name = "lead-delivery-cannon-pack-", amount = 1 }}
 }
 
 -- now we want to generate new recipes for each item in the list with template as a base

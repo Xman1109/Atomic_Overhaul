@@ -4,7 +4,7 @@ data:extend({
             type = "technology",
             name = "beryllium-7-without-research-data",
             icon = se_addon_graphics .. "beryllium-7-without-research-data.png",
-            icon_size = "256",
+            icon_size = 256,
             prerequisites = {"beryllium-7-reprocessing"},
             effects =
             {

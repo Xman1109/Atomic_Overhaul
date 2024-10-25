@@ -4,7 +4,7 @@ data:extend({
             type = "technology",
             name = "iridium-192-processing",
             icon = se_addon_graphics .. "iridium-192-processing.png",
-            icon_size = "256",
+            icon_size = 256,
             prerequisites = {"se-processing-iridium", "space-reactor"},
             effects =
             {

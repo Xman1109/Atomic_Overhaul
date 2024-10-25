@@ -66,7 +66,7 @@ modifyEffects("uranium-processing", { {
     type = "unlock-recipe",
     recipe = "clowns-centrifuging-35%"
 } }, "add")
-modifyIngredients("uranium-fuel-cell", { { "35%-uranium", 1 }, { "graphite", 19 }, { "empty-fuel-cell", 10 } })
+modifyIngredients("uranium-fuel-cell", { {type="item", name="35%-uranium", 1 }, {type="item", name="graphite", amount=19}, { "empty-fuel-cell", amount=10} })
 modifyEffects("mixed-oxide-fuel", { {
     type = "unlock-recipe",
     recipe = "thorium-mixed-oxide"
@@ -150,7 +150,7 @@ data:extend({ {
     name = "atomic-bomb",
     enabled = false,
     energy_required = 50,
-    ingredients = { { "rocket-control-unit", 10 }, { "explosives", 25 }, { "uranium-235", 30 }, { "plutonium", 15 },
-        { "rocket", 3 } },
-    result = "atomic-bomb"
+    ingredients = { {type="item", name="processing-unit", 10 }, {type="item", name="explosives", 25 }, { "uranium-235", amount=30}, { "plutonium", amount=15},
+        {type="item", name="rocket", amount=3} },
+    results = {{ type = "item", name = "atomic-bomb", amount = 1 }}
 } })

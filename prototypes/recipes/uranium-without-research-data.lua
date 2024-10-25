@@ -5,14 +5,14 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
         energy_required = 60,
         enabled = false,
         category = "centrifuging",
-        ingredients = { { "used-up-uranium-fuel-cell", 5 } },
+        ingredients = { {type="item", name="depleted-uranium-fuel-cell", amount=5} },
         icon = graphics .. "uranium-without-research-recipe.png",
         icon_size = 64,
         icon_mipmaps = 4,
         subgroup = "reprocessing-without-research-data",
         order = "b",
         results = {
-            { "uranium-238", 3 },
+            {type="item", name="uranium-238", amount=3},
             { type = "item", name = "plutonium",     amount_min = 2, amount_max = 4 },
             { type = "item", name = "nuclear-waste", amount = 5 }
         },

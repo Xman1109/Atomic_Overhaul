@@ -35,32 +35,18 @@ data:extend({
     lower_layer_picture =
     {
       filename = "__base__/graphics/entity/nuclear-reactor/reactor-pipes.png",
-      width = 156,
-      height = 156,
-      shift = util.by_pixel( -2, -4),
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-pipes.png",
-        width = 320,
-        height = 316,
-        scale = 0.5,
-        shift = util.by_pixel( -1, -5)
-      }
+      width = 320,
+      height = 316,
+      scale = 0.5,
+      shift = util.by_pixel( -1, -5)
     },
     heat_lower_layer_picture = apply_heat_pipe_glow
     {
       filename = "__base__/graphics/entity/nuclear-reactor/reactor-pipes-heated.png",
-      width = 156,
-      height = 156,
-      shift = util.by_pixel( -3, -4),
-      hr_version =
-      {
-        filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-pipes-heated.png",
-        width = 320,
-        height = 316,
-        scale = 0.5,
-        shift = util.by_pixel( -0.5, -4.5)
-      }
+      width = 320,
+      height = 316,
+      scale = 0.5,
+      shift = util.by_pixel( -0.5, -4.5)
     },
 
     picture =
@@ -68,56 +54,32 @@ data:extend({
       layers =
       {
         {
-          filename = se_addon_entity_graphics .. "reactor.png",
-          width = 154,
-          height = 158,
-          shift = util.by_pixel( -6, -6),
-          hr_version =
-          {
-            filename = se_addon_entity_graphics .. "hr-reactor.png",
-            width = 302,
-            height = 318,
-            scale = 0.5,
-            shift = util.by_pixel( -5, -7)
-          }
+          filename = se_addon_entity_graphics .. "hr-reactor.png",
+          width = 302,
+          height = 318,
+          scale = 0.5,
+          shift = util.by_pixel( -5, -7)
         },
         {
           filename = "__base__/graphics/entity/nuclear-reactor/reactor-shadow.png",
-          width = 263,
-          height = 162,
+          width = 525,
+          height = 323,
+          scale = 0.5,
           shift = { 1.625, 0 },
-          draw_as_shadow = true,
-          hr_version =
-          {
-            filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-shadow.png",
-            width = 525,
-            height = 323,
-            scale = 0.5,
-            shift = { 1.625, 0 },
-            draw_as_shadow = true
-          }
+          draw_as_shadow = true
         }
       }
     },
 
     working_light_picture =
     {
-      filename = se_addon_entity_graphics .. "reactor-lights-color.png",
+      filename = se_addon_entity_graphics .. "hr-reactor-lights-color.png",
       blend_mode = "additive",
       draw_as_glow = true,
-      width = 160,
-      height = 160,
+      width = 320,
+      height = 320,
+      scale = 0.5,
       shift = { -0.03125, -0.1875 },
-      hr_version =
-      {
-        filename = se_addon_entity_graphics .. "hr-reactor-lights-color.png",
-        blend_mode = "additive",
-        draw_as_glow = true,
-        width = 320,
-        height = 320,
-        scale = 0.5,
-        shift = { -0.03125, -0.1875 },
-      }
     },
     heat_buffer =
     {
@@ -180,17 +142,10 @@ data:extend({
       heat_picture = apply_heat_pipe_glow
       {
         filename = "__base__/graphics/entity/nuclear-reactor/reactor-heated.png",
-        width = 108,
-        height = 128,
-        shift = util.by_pixel(1, -7),
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-heated.png",
-          width = 216,
-          height = 256,
-          scale = 0.5,
-          shift = util.by_pixel(3, -6.5)
-        }
+        width = 216,
+        height = 256,
+        scale = 0.5,
+        shift = util.by_pixel(3, -6.5)
       },
     },
 
@@ -199,17 +154,10 @@ data:extend({
       sheet =
       {
         filename = "__base__/graphics/entity/nuclear-reactor/reactor-connect-patches.png",
-        width = 32,
-        height = 32,
+        width = 64,
+        height = 64,
         variation_count = 12,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-connect-patches.png",
-          width = 64,
-          height = 64,
-          variation_count = 12,
-          scale = 0.5
-        }
+        scale = 0.5
       }
     },
 
@@ -218,19 +166,11 @@ data:extend({
       sheet =
       {
         filename = "__base__/graphics/entity/nuclear-reactor/reactor-connect-patches.png",
-        width = 32,
-        height = 32,
+        width = 64,
+        height = 64,
         variation_count = 12,
-        y = 32,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-connect-patches.png",
-          width = 64,
-          height = 64,
-          variation_count = 12,
-          y = 64,
-          scale = 0.5
-        }
+        y = 64,
+        scale = 0.5
       }
     },
 
@@ -239,17 +179,10 @@ data:extend({
       sheet = apply_heat_pipe_glow
       {
         filename = "__base__/graphics/entity/nuclear-reactor/reactor-connect-patches-heated.png",
-        width = 32,
-        height = 32,
+        width = 64,
+        height = 64,
         variation_count = 12,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-connect-patches-heated.png",
-          width = 64,
-          height = 64,
-          variation_count = 12,
-          scale = 0.5
-        }
+        scale = 0.5
       }
     },
 
@@ -258,19 +191,11 @@ data:extend({
       sheet = apply_heat_pipe_glow
       {
         filename = "__base__/graphics/entity/nuclear-reactor/reactor-connect-patches-heated.png",
-        width = 32,
-        height = 32,
+        width = 64,
+        height = 64,
         variation_count = 12,
-        y = 32,
-        hr_version =
-        {
-          filename = "__base__/graphics/entity/nuclear-reactor/hr-reactor-connect-patches-heated.png",
-          width = 64,
-          height = 64,
-          variation_count = 12,
-          y = 64,
-          scale = 0.5
-        }
+        y = 64,
+        scale = 0.5
       }
     },
 

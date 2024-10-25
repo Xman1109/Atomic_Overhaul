@@ -14,11 +14,11 @@ data:extend(
         ingredients =
         {
             {fuel_cell, 10},
-            {"iridium-fuel-rod", 10}
+            {type="item", name="iridium-fuel-rod", amount=10}
         },
         always_show_made_in = true,
         results = 	{
-            {"iridium-fuel-cell", 10},
+            {type="item", name="iridium-fuel-cell", amount=10},
         },
     }
 })

@@ -126,7 +126,7 @@ if settings.startup["se-addon"].value == true then
         regroup("i", "uranium-235", "AO", "resources", "c")
         regroup("i", "uranium-238", "AO", "resources", "b")
         regroup("i", "uranium-fuel-cell", "AO", "fuel-cells", "b")
-        regroup("i", "used-up-uranium-fuel-cell", "AO", "used-up-fuel-cells", "b")
+        regroup("i", "depleted-uranium-fuel-cell", "AO", "used-up-fuel-cells", "b")
         regroup("r", "uranium-fuel-cell", "AO", "fuel-cells", "b")
         regroup("r", "nuclear-fuel-reprocessing", "AO", "reprocessing", "b")
         regroup("r", "nuclear-fuel", "AO", "fuel", "a")

@@ -12,13 +12,13 @@ data:extend(
         subgroup = "fuel-cells",
         ingredients =
         {
-            {"empty-fuel-cell", 10},
-            {"low-density-structure", 5},
-            {"se-heat-shielding", 3}
+            {type="item", name="empty-fuel-cell", amount=10},
+            {type="item", name="low-density-structure", amount=5},
+            {type="item", name="se-heat-shielding", amount=3}
         },
         always_show_made_in = true,
         results = 	{
-            {"advanced-fuel-cell", 10},
+            {type = "item", name = "empty-fuel-cell", amount = 10}
         },
     }
 })
