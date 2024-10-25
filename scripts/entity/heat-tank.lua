@@ -1,5 +1,5 @@
 script.on_init(function()
-    storageao_heat_tank = storageao_heat_tank or {}
+    storage.ao_heat_tank = storage.ao_heat_tank or {}
 end)
 
 if settings.startup["ao-complexity-level"].value ~= "simple" then
@@ -7,30 +7,30 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
 
         
         --LOGGING STAGE BEGINS HERE
-        storageao_heat_tank = storageao_heat_tank or {}
-        local entity = event.created_entity
+        storage.ao_heat_tank = storage.ao_heat_tank or {}
+        local entity = event.entity
         local length = 1
         if entity.name == "heat-fluid-tank" then
             local x = entity.position.x
             local y = entity.position.y
-            local surface = event.created_entity.surface.name
+            local surface = event.entity.surface.name
 
-            if storageao_heat_tank[surface] == nil then
-                storageao_heat_tank[surface] = {}
+            if storage.ao_heat_tank[surface] == nil then
+                storage.ao_heat_tank[surface] = {}
             end
-            for i, v in pairs(storageao_heat_tank[surface]) do
+            for i, v in pairs(storage.ao_heat_tank[surface]) do
                 length = length + 1
             end
-            table.insert(storageao_heat_tank[surface], length, { x = x, y = y })
+            table.insert(storage.ao_heat_tank[surface], length, { x = x, y = y })
         end
         --LOGGING STAGE ENDS HERE
 
 
         -- check if the tanks are still existing and remove them from the table if not
-        for i, v in pairs(storageao_heat_tank) do
+        for i, v in pairs(storage.ao_heat_tank) do
             for j, k in pairs(v) do
                 if game.surfaces[i].find_entities_filtered { position = k, type = "storage-tank" }[1] == nil then
-                    table.remove(storageao_heat_tank[i], j)
+                    table.remove(storage.ao_heat_tank[i], j)
                 else
                     -- check if the tank has a fluidbox and if it has, check if it is heating oil and if it is, check if it has more than 24.500 units of it
                     if game.surfaces[i].find_entities_filtered { position = k }[1] then
