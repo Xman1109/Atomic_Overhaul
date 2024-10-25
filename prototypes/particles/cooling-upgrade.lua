@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "projectile",
-        name = "shielded-upgrade-capsule",
+        name = "cooling-upgrade-capsule",
         flags = { "not-on-map" },
         acceleration = 0.005,
         action =
@@ -26,7 +26,7 @@ data:extend({
                         },
                         {
                             type = "create-entity",
-                            entity_name = "shielded-upgrade-explosion",
+                            entity_name = "cooling-upgrade-explosion",
                             trigger_created_entity = true,
 
                         }
@@ -42,23 +42,11 @@ data:extend({
             frame_count = 16,
             line_length = 8,
             animation_speed = 0.250,
-            width = 29,
-            height = 29,
+            width = 58,
+            height = 59,
             shift = util.by_pixel(1, 0.5),
             priority = "high",
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/poison-capsule/hr-poison-capsule.png",
-                draw_as_glow = true,
-                frame_count = 16,
-                line_length = 8,
-                animation_speed = 0.250,
-                width = 58,
-                height = 59,
-                shift = util.by_pixel(1, 0.5),
-                priority = "high",
-                scale = 0.5
-            }
+            scale = 0.5
 
         },
         shadow =
@@ -67,24 +55,12 @@ data:extend({
             frame_count = 16,
             line_length = 8,
             animation_speed = 0.250,
-            width = 27,
-            height = 21,
+            width = 54,
+            height = 42,
             shift = util.by_pixel(1, 2),
             priority = "high",
             draw_as_shadow = true,
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/poison-capsule/hr-poison-capsule-shadow.png",
-                frame_count = 16,
-                line_length = 8,
-                animation_speed = 0.250,
-                width = 54,
-                height = 42,
-                shift = util.by_pixel(1, 2),
-                priority = "high",
-                draw_as_shadow = true,
-                scale = 0.5
-            }
+            scale = 0.5
         },
         smoke =
         {
@@ -145,23 +121,11 @@ data:extend({
             frame_count = 16,
             line_length = 8,
             animation_speed = 0.250,
-            width = 32,
-            height = 30,
-            shift = util.by_pixel(1, 0),
+            width = 60,
+            height = 60,
+            shift = util.by_pixel(0.5, 0.5),
             priority = "high",
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/slowdown-capsule/hr-slowdown-capsule.png",
-                draw_as_glow = true,
-                frame_count = 16,
-                line_length = 8,
-                animation_speed = 0.250,
-                width = 60,
-                height = 60,
-                shift = util.by_pixel(0.5, 0.5),
-                priority = "high",
-                scale = 0.5
-            }
+            scale = 0.5
 
         },
         shadow =
@@ -170,24 +134,12 @@ data:extend({
             frame_count = 16,
             line_length = 8,
             animation_speed = 0.250,
-            width = 32,
-            height = 24,
-            shift = util.by_pixel(2, 13),
+            width = 64,
+            height = 48,
+            shift = util.by_pixel(2, 13.5),
             priority = "high",
             draw_as_shadow = true,
-            hr_version =
-            {
-                filename = "__base__/graphics/entity/slowdown-capsule/hr-slowdown-capsule-shadow.png",
-                frame_count = 16,
-                line_length = 8,
-                animation_speed = 0.250,
-                width = 64,
-                height = 48,
-                shift = util.by_pixel(2, 13.5),
-                priority = "high",
-                draw_as_shadow = true,
-                scale = 0.5
-            }
+            scale = 0.5
         },
         smoke = capsule_smoke
     },

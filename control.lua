@@ -78,10 +78,11 @@ end
 
 
 -- 1.4.0
-if not global.ao_scrap then
-    global.ao_scrap = false
+if not storage.ao_scrap then
+    storage.ao_scrap = false
 end
 require("scripts.entity.isotope-conversion")
 require("scripts.entity.upgrade-capsules")
 require("scripts.isotope-tech")
 require("scripts.isotope-analysis")
+require("scripts.X17-tech")

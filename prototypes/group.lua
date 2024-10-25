@@ -81,6 +81,12 @@ data:extend(
             order = "k"
         },
         {
+            type = "item-subgroup",
+            name = "weaponry",
+            group = "atomic-overhaul",
+            order = "l"
+        },
+        {
             type = "module-category",
             name = "thorium-module"
         },

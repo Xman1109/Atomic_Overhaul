@@ -12,7 +12,7 @@ data:extend({
                 recipe = "graphite-recipe"
             }
         },
-        prerequisites = {"nuclear-power", "advanced-electronics-2"}, --TODO: Add the correct prerequisites
+        prerequisites = {"nuclear-power", "processing-unit"}, --TODO: Add the correct prerequisites
         unit = {
             count = 100,
             ingredients = {
