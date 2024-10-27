@@ -4,11 +4,15 @@ ao_recipes = "prototypes.recipes."
 techs = "prototypes.technologies."
 entities = "prototypes.entities."
 vanilla = "prototypes.vanilla-changes."
-base_graphics = "__base__/graphics/icons/"
+particles = "prototypes.particles."
+smokes = "prototypes.smoke."
 compatibility = "prototypes.compatibility."
+base_graphics = "__base__/graphics/icons/"
 graphics = "__Atomic_Overhaul__/graphics/icons/"
 entity_graphics = "__Atomic_Overhaul__/graphics/entities/"
 images = "__Atomic_Overhaul__/graphics/images/"
+
+placeholder_icon = "__Atomic_Overhaul__/graphics/icons/placeholder.png"
 
 cmt = {} -- crafting machine tint
 
