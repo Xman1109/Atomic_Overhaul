@@ -19,7 +19,10 @@ if script.active_mods["bobplates"] then
                 local technologies = force.technologies
                 local recipe = force.recipes
                 if recipe["nuclear-fuel-reprocessing"].enabled then
-                    technologies["ao-graphite-processing"].enabled = true
+                    technologies["non-moderated-fuel-reprocessing"].enabled = true
+                    technologies["graphite-cooking"].enabled = true
+                    technologies["uranium-processing"].enabled = true
+                    technologies["non-moderated-fuel-processing"].enabled = true
                 end
             end
         end)
@@ -30,7 +33,7 @@ if script.active_mods["bzcarbon"] then
         function()
             for index, force in pairs(game.forces) do
                 local technologies = force.technologies
-                if technologies["ao-graphite-processing"].researched then
+                if technologies["graphite-cooking"].researched then
                     technologies["graphite-processing"].researched = true
                 end
             end

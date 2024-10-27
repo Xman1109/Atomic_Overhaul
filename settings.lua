@@ -35,7 +35,8 @@ data:extend({
         setting_type = "startup",
         default_value = false,
         order = "e",
-        localised_description = {"settings-deprecated.old-graphite-fuel"}
+        localised_description = {"settings-deprecated.old-graphite-fuel"},
+        hidden = true -- hidden because it's deprecated
     },
     {
         type = "string-setting",
