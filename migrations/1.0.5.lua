@@ -5,8 +5,12 @@ for index, force in pairs(game.forces) do
 
     else
         if technologies["uranium-processing"].researched then
-            technologies["ao-graphite-processing"].researched = true
-            technologies["graphite-fuel-reprocessing"].researched = true
+            if technologies["ao-graphite-processing"] then
+                technologies["ao-graphite-processing"].researched = true
+            end
+            if technologies["graphite-processing"] then
+                technologies["graphite-fuel-reprocessing"].researched = true
+            end
         end
         if technologies["plutonium-processing"].researched then
             technologies["MOX-processing"].researched = true
