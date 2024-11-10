@@ -121,7 +121,7 @@ if settings.startup["se-addon"].value == true then
         else
             reprocessing = "graphite-cooking"
         end
-        modifyPrerequisites("uranium-processing", { reprocessing, "advanced-electronics-2" })
+        modifyPrerequisites("uranium-processing", { reprocessing, "processing-unit" })
         regroup("r", "uranium-processing", "AO", "resources", "b")
         regroup("i", "uranium-235", "AO", "resources", "c")
         regroup("i", "uranium-238", "AO", "resources", "b")

@@ -22,8 +22,24 @@ if ao_breeder then -- Breeder is added optionally, but it conflicts with Nuclear
 end
 
 require("prototypes/group")
+require("prototypes/damage-type")
+require("prototypes.entities.explosions")
 require(fluids .. "waste-solution")
 require(fluids .. "heating-oil")
+
+require(fluids .. "xenon")
+
+require(smokes .. "X17-smoke")
+require(smokes .. "X17-capsule-particle-smoke")
+require(smokes .. "X17-cloud-visual-dummy")
+require(smokes .. "X17-capsule-smoke")
+
+require(particles .. "cooling-upgrade")
+require(particles .. "catalyser-upgrade")
+require(particles .. "shielded-upgrade")
+require(particles .. "X17-capsule-projectile")
+require(particles .. "X17-capsule-metal-particle")
+
 require(items .. "empty-fuel-cell")
 require(items .. "nuclear-waste")
 require(items .. "research-data")
@@ -49,6 +65,19 @@ require(items .. "thorium-module-1")
 require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
 require(items .. "uranium-fuel-rod")
+
+require(items .. "isotope-scrap")
+require(items .. "isotope-data")
+require(items .. "muonium")
+require(items .. "true-muonium")
+require(items .. "X17-particle")
+require(items .. "cooling-upgrade")
+require(items .. "catalyser-upgrade")
+require(items .. "shielded-upgrade")
+require(items .. "upgraded-reactors")
+require(items .. "X17-magazine")
+require(items .. "X17-artillery-shell")
+require(items .. "X17-capsule")
 
 
 require(ao_recipes .. "empty-fuel-cell-recipe")
@@ -106,8 +135,13 @@ require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
+require(techs .. "isotope-analysis")
+require(techs .. "X17-weaponry")
+
 require(entities .. "heat-fluid-tank")
 require(entities .. "heat-tank-pipe")
+
+require(entities .. "upgraded-reactors")
 
 if settings.startup["old-graphite-fuel"].value == false then
     require(items .. "non-moderated-fuel-cell")
