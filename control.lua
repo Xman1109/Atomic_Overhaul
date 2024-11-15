@@ -52,6 +52,17 @@ script.on_configuration_changed(function()
     else
         if ao_debug then
             log("Atomic Overhaul: Kovarex Enrichment Process managed by another mod.")
+        
+        
+    -- if player name is "X_Man1109" print a personal message
+    if game.players ~= nil then                  -- 
+        if game.players[1] ~= nil then           -- This happens when factorio has its 5 minutes again...
+            if game.players[1].name ~= nil then  --
+                if game.players[1].name == "X_Man11092006" then
+                    local ao_version = "1.4.0"
+                    game.print("Atomic Overhaul Version " .. ao_version)
+                end
+            end
         end
     end
 end)
@@ -82,3 +93,14 @@ for name, _ in pairs(script.active_mods) do
         end
     end
 end
+
+
+-- 1.4.0
+if not storage.ao_scrap then
+    storage.ao_scrap = false
+end
+require("scripts.entity.isotope-conversion")
+require("scripts.entity.upgrade-capsules")
+require("scripts.isotope-tech")
+require("scripts.isotope-analysis")
+require("scripts.X17-tech")
