@@ -18,6 +18,8 @@ DEFAULT.recipe = {}
 
 debug_text = "AO-DEBUG: Compatibilty loaded for: "
 
+ao_debug = settings.startup["ao-debug"].value
+
 local tv = 1
 
 function thorium_module_limitation()
@@ -26,6 +28,18 @@ function thorium_module_limitation()
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
 end
 
+if not (settings.startup["ao-kovarex-enabled"].value == nil) then --doesnt get executed wtf???
+    ao_kovarex = settings.startup["ao-kovarex-enabled"].value
+    if ao_debug == true then
+        log("Atomic Overhaul: Kovarex Enrichment Process managed by Atomic Overhaul.")
+    end
+else
+    ao_kovarex = nil
+    if ao_debug == true then
+        log("Atomic Overhaul: Kovarex Enrichment Process managed by another mod.")
+    end
+end
+-- begin of cool functions
 local function internalGlow(name, typeOfItem)
     local icon
     local icon_size

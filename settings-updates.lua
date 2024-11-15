@@ -5,3 +5,16 @@
 --         log("Atomic Overhaul: Ruins Mod detected, setting ruins to Atomic Overhaul's ruins.")
 --     end
 -- end
+
+if not data.raw["bool-setting"]["nuclear-fuel-kovarex-enabled"] then
+    data:extend({
+        {
+            type = "bool-setting",
+            name = "ao-kovarex-enabled",
+            setting_type = "startup",
+            default_value = true,
+            order = "i",
+            hidden = false
+        }
+    })
+end

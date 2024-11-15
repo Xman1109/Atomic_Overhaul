@@ -84,5 +84,13 @@ data:extend({
         default_value = "Advanced Fuel Cell",
         allowed_values = { "Advanced Fuel Cell", "Normal Fuel Cell" },
         order = "za"
+    },
+    {
+        type = "bool-setting",
+        name = "ao-kovarex-enabled",
+        setting_type = "startup",
+        default_value = true,
+        order = "i",
+        hidden = true
     }
 })
