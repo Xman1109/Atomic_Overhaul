@@ -47,4 +47,22 @@ elseif settings.startup["ao-complexity-level"].value ~= "simple" then
             { { type = "unlock-recipe", recipe = "uranium-fuel-cell" },
                 { type = "unlock-recipe", recipe = "uranium-rod-recipe" } })
     end
+    if not (ao_kovarex == nil) then
+        if settings.startup["ao-kovarex-enabled"].value == true then
+            data.raw.technology["kovarex-enrichment-process"].enabled = true
+            if ao_debug == true then
+                log("Atomic Overhaul: Kovarex Enrichment Process enabled.")
+            end
+        else
+            data.raw.technology["kovarex-enrichment-process"].enabled = false
+            table.insert(data.raw["technology"]["plutonium-fuel"].effects, { type = "unlock-recipe", recipe = "nuclear-fuel" })
+            if ao_debug == true then
+                log("Atomic Overhaul: Kovarex Enrichment Process disabled.")
+            end
+        end
+    else
+        if ao_debug == true then
+            log("Atomic Overhaul: Kovarex Enrichment Process managed by another mod.")
+        end
+    end
 end

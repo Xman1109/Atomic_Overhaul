@@ -46,6 +46,23 @@ else
         {type = "item", name = "empty-fuel-cell", amount = 10 }
     }
     data.raw["recipe"]["uranium-fuel-cell"].category = "centrifuging"
+    if not (ao_kovarex == nil) then
+        if settings.startup["ao-kovarex-enabled"].value == true then
+            data.raw.recipe["kovarex-enrichment-process"].hidden = false
+            if ao_debug == true then
+                log("Atomic Overhaul: Kovarex Enrichment Process enabled.")
+            end
+        else
+            data.raw.recipe["kovarex-enrichment-process"].hidden = true
+            if ao_debug == true then
+                log("Atomic Overhaul: Kovarex Enrichment Process disabled.")
+            end
+        end
+    else
+        if ao_debug == true then
+            log("Atomic Overhaul: Kovarex Enrichment Process managed by another mod.")
+        end
+    end
 end
 
 regroup("r", "uranium-processing", "AO", "resources", "b")

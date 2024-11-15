@@ -31,11 +31,29 @@ script.on_init(function()
 end)
 
 script.on_configuration_changed(function()
+    local recipe = game.forces["player"].recipes
+    local technology = game.forces["player"].technologies
     -- if (settings.startup["ao-complexity-level"].value ~= "simple") then --no graphite in Simplified -- Discontinued the old way of making graphite
     --     game.print(
     --         "\nAtomic Overhaul now features a new way of creating Graphite.\nIf you dont like it, you can disable it in the mod settings.\n")
     -- end
     FixUraniumResources()
+    if not (ao_kovarex == nil) then
+        if settings.startup["ao-kovarex-enabled"].value == true then
+            if technology["kovarex-enrichment-process"].researched then
+                recipe["kovarex-enrichment-process"].enabled = true
+                recipe["nuclear-fuel"].enabled = true
+            end
+        else
+            if technology["plutonium-fuel"].researched then
+                recipe["nuclear-fuel"].enabled = true
+            end
+        end
+    else
+        if ao_debug then
+            log("Atomic Overhaul: Kovarex Enrichment Process managed by another mod.")
+        
+        
     -- if player name is "X_Man1109" print a personal message
     if game.players ~= nil then                  -- 
         if game.players[1] ~= nil then           -- This happens when factorio has its 5 minutes again...
