@@ -1,8 +1,6 @@
 -- Event listener for when an entity is destroyed
 function IsotopeConversion(event)
-    game.print("died")
     local entity = event.entity
-    log(entity.name)
     -- Check if the destroyed entity is a nuclear reactor
     if entity.name == "nuclear-reactor" then
         if ao_debug then
