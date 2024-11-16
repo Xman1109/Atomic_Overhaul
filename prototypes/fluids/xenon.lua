@@ -3,7 +3,7 @@ data:extend({ {
     name = "xenon",
     group = "atomic_overhaul",
     subgroup = "waste-reprocessing",
-    default_temperature = -108,1,
+    default_temperature = -108,
     base_color = { r = 115, g = 129, b = 255 },
     flow_color = { r = 135, g = 147, b = 255 },
     icon = graphics .. "xenon.png",

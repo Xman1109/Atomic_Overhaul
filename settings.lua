@@ -64,6 +64,21 @@ data:extend({
     },
     {
         type = "bool-setting",
+        name = "ao-kovarex-enabled",
+        setting_type = "startup",
+        default_value = true,
+        order = "i",
+        hidden = true
+    },
+    {
+        type = "bool-setting",
+        name = "ao-isotope-update",
+        setting_type = "startup",
+        default_value = true,
+        order = "j"
+    },
+    {
+        type = "bool-setting",
         name = "se-addon",
         setting_type = "startup",
         default_value = true,
@@ -84,13 +99,5 @@ data:extend({
         default_value = "Advanced Fuel Cell",
         allowed_values = { "Advanced Fuel Cell", "Normal Fuel Cell" },
         order = "za"
-    },
-    {
-        type = "bool-setting",
-        name = "ao-kovarex-enabled",
-        setting_type = "startup",
-        default_value = true,
-        order = "i",
-        hidden = true
     }
 })

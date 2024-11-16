@@ -9,7 +9,7 @@ data:extend({
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "graphite-recipe"
+                recipe = "graphite-furnace-recipe"
             }
         },
         prerequisites = {"nuclear-power", "processing-unit"}, --TODO: Add the correct prerequisites

@@ -13,7 +13,7 @@ data:extend(
                     {
                     filename = graphics .. "isotope-scrap.png",
                     size = 64,
-                    scale = 0.25,
+                    scale = 1,
                     mipmap_count = 4,
                     },
                     {
@@ -21,7 +21,7 @@ data:extend(
                     flags = { "light" },
                     size = 64,
                     filename = graphics .. "isotope-scrap-light.png",
-                    scale = 0.25,
+                    scale = 1,
                     mipmap_count = 4,
                     }
                 }

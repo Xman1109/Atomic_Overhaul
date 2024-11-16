@@ -1,4 +1,4 @@
-script.on_init(function() --I will make this more compact in the future
+function InitK2Radioactive() --I will make this more compact in the future
     if remote.interfaces["kr-radioactivity"] then
         remote.call("kr-radioactivity", "add_item", "MOX")
         remote.call("kr-radioactivity", "add_item", "MOX-depleted-cell")
@@ -38,8 +38,8 @@ script.on_init(function() --I will make this more compact in the future
         end
     end
     FixUraniumResources()
-end)
-script.on_configuration_changed(function()
+end
+function ConfigK2Radioactive()
     if remote.interfaces["kr-radioactivity"] then
         remote.call("kr-radioactivity", "add_item", "MOX")
         remote.call("kr-radioactivity", "add_item", "MOX-depleted-cell")
@@ -78,4 +78,4 @@ script.on_configuration_changed(function()
             remote.call("kr-radioactivity", "add_item", "iridium-fuel-rod")
         end
     end
-end)
+end

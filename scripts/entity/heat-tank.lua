@@ -1,11 +1,7 @@
-script.on_init(function()
-    storage.ao_heat_tank = storage.ao_heat_tank or {}
-end)
-
 if settings.startup["ao-complexity-level"].value ~= "simple" then
-    script.on_event(defines.events.on_built_entity, function(event)
+    function HeatTank(event)
 
-        
+
         --LOGGING STAGE BEGINS HERE
         storage.ao_heat_tank = storage.ao_heat_tank or {}
         local entity = event.entity
@@ -52,5 +48,5 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                 end
             end
         end
-    end)
+    end
 end

@@ -82,7 +82,7 @@ modifyEffects("ao-graphite-processing", { {
     recipe = "centrifuge"
 }, {
     type = "unlock-recipe",
-    recipe = "graphite-recipe"
+    recipe = "graphite-furnace-recipe"
 }, {
     type = "unlock-recipe",
     recipe = "empty-nuclear-fuel-cell"

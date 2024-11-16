@@ -1,4 +1,4 @@
-script.on_event(defines.events.on_trigger_created_entity, function(event)
+function UpgradeCapsules(event)
     if event.entity.name == "cooling-upgrade-explosion" or event.entity.name == "catalyser-upgrade-explosion" or event.entity.name == "shielded-upgrade-explosion" then
         local upgrade
         local upgrade_name
@@ -81,11 +81,12 @@ script.on_event(defines.events.on_trigger_created_entity, function(event)
             -- Print message to the players if no reactor is found
             game.print({"", {"chat-message.no-reactor-found"}, " [gps=" .. position.x .. ", " .. position.y .. "]"})
             --Drop the capsule on the ground
-            surface.spill_item_stack(
-                position,                                -- Position of the item
-                { name = upgrade, count = 1 }, -- Item to be spilled
-                true                                     -- Enable the item to be picked up
-            )
+            surface.spill_item_stack{
+                position = position,                                -- Position of the item
+                stack = { name = upgrade, count = 1 }, -- Item to be spilled
+                enable_looted = true                                     -- Enable the item to be picked up
+            }
         end
     end
-end)
+end
+log("Atomic Overhaul: Upgrade Capsules script loaded")
