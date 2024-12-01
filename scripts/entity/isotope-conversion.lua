@@ -33,16 +33,20 @@ function convert_items_to_scrap(surface, position, radius)
 
         -- Destroy the current item and replace it with scrap
         if item_stack then
-            -- Create a new item entity with scrap
-            surface.spill_item_stack {
-                position = pos,
-                stack = { name = "isotope-scrap", count = item_stack.count },
-                enable_looted = true
-            }
-            -- Remove the old item
-            item.destroy()
-
-            game.print({ "", { "chat-message.meltdown_conversion" }, "[gps=" .. position.x .. ", " .. position.y .. "]" })
+            -- If the item is not "isotope-scrap" then convert it
+            if item_stack.name ~= "isotope-scrap" then
+                -- Create a new item entity with scrap
+                surface.spill_item_stack {
+                    position = pos,
+                    stack = { name = "isotope-scrap", count = item_stack.count },
+                    enable_looted = true
+                }
+                -- Remove the old item
+                item.destroy()
+                -- Print a message to the player, containing the position of the converted item
+                game.print({ "", { "chat-message.meltdown_conversion" }, "[gps=" ..
+                position.x .. ", " .. position.y .. "]" })
+            end
         end
     end
 end

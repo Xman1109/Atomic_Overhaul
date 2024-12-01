@@ -18,7 +18,7 @@ data:extend(
                     {
                         filename = graphics .. "thorium-used-up-fuel-cell.png",
                         size = 64,
-                        scale = 0.25,
+                        scale = 0.5,
                         mipmap_count = 4
                     },
                     zero_g_picture

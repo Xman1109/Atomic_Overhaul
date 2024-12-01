@@ -12,13 +12,13 @@ data:extend({
                     filename = graphics .. "X17-container.png",
                     size = 64,
                     mipmap_count = 4,
-                    scale = 0.25
+                    scale = 0.5
                 },
                 {
                     filename = graphics .. "isotope-light.png",
                     size = 64,
                     mipmap_count = 4,
-                    scale = 0.25,
+                    scale = 0.5,
                     draw_as_light = true,
                     flags = { "light" }
                 }

@@ -13,7 +13,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                     {
                         size = 64,
                         filename = graphics .. "non-moderated-fuel-cell.png",
-                        scale = 0.25,
+                        scale = 0.5,
                         mipmap_count = 4
                     },
                     {
@@ -21,7 +21,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                         flags = { "light" },
                         size = 64,
                         filename = base_graphics .. "uranium-fuel-cell-light.png",
-                        scale = 0.25,
+                        scale = 0.5,
                         mipmap_count = 4
                     }
                 }

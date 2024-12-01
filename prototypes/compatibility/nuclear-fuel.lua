@@ -49,14 +49,14 @@ data:extend({ {
         layers = { {
             size = 64,
             filename = "__Atomic_Overhaul__/graphics/vanilla/atomic-bomb.png",
-            scale = 0.25,
+            scale = 0.5,
             mipmap_count = 4
         }, {
             draw_as_light = true,
             flags = { "light" },
             size = 64,
             filename = base_graphics .. "atomic-bomb-light.png",
-            scale = 0.25,
+            scale = 0.5,
             mipmap_count = 4
         } }
     },

@@ -13,7 +13,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" and
             {
               size = 64,
               filename = graphics .. "graphite.png",
-              scale = 0.25,
+              scale = 0.5,
               mipmap_count = 4
             },
             {
@@ -21,7 +21,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" and
               flags = { "light" },
               size = 64,
               filename = graphics .. "resource-light.png",
-              scale = 0.25,
+              scale = 0.5,
               mipmap_count = 4
             }
           }

@@ -17,7 +17,7 @@ function breed.NewEnrichment()
           {
             size = 64,
             filename = graphics .. "low-enriched-uranium.png",
-            scale = 0.25,
+            scale = 0.5,
             mipmap_count = 4
           },
           {
@@ -25,7 +25,7 @@ function breed.NewEnrichment()
             flags = { "light" },
             size = 64,
             filename = graphics .. "resource-light.png",
-            scale = 0.25,
+            scale = 0.5,
             mipmap_count = 4
           }
         }
@@ -184,7 +184,7 @@ function breed.Breeder()
           {
             size = 64,
             filename = se_addon_graphics .. "beryllium-fuel-cell.png",
-            scale = 0.25,
+            scale = 0.5,
             icon_mipmaps = 4
           },
           {
@@ -192,7 +192,7 @@ function breed.Breeder()
             flags = { "light" },
             size = 64,
             filename = base_graphics .. "uranium-fuel-cell-light.png",
-            scale = 0.25,
+            scale = 0.5,
             icon_mipmaps = 4
           }
         }

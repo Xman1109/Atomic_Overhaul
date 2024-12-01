@@ -8,7 +8,7 @@ data:extend(
             {
                 size = 64,
                 filename = graphics .. "MOX-used-up-fuel-cell1.png",
-                scale = 0.25,
+                scale = 0.5,
                 mipmap_count = 4
             },
             icon_size = 64,

@@ -15,7 +15,7 @@ capsule.pictures = {
             width = 64,
             height = 64,
             size = 64,
-            scale = 0.25,
+            scale = 0.5,
         },
         {
             filename = graphics .. "X17-capsule-light.png",
@@ -23,7 +23,7 @@ capsule.pictures = {
             width = 64,
             height = 64,
             size = 64,
-            scale = 0.25,
+            scale = 0.5,
             flags = {"light"},
             draw_as_light = true,
         }

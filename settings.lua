@@ -72,7 +72,7 @@ data:extend({
     },
     {
         type = "bool-setting",
-        name = "ao-isotope-update",
+        name = "ao-isotope-update", -- 1.4.0
         setting_type = "startup",
         default_value = true,
         order = "j"

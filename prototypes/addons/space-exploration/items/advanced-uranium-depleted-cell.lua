@@ -20,7 +20,7 @@ data:extend(
                     {
                         filename = data.raw["item"]["depleted-uranium-fuel-cell"].icon,
                         size = 64,
-                        scale = 0.25,
+                        scale = 0.5,
                         mipmap_count = 4,
                     },
                     zero_g_picture

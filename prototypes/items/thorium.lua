@@ -12,7 +12,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
             {
               size = 64,
               filename = graphics .. "thorium.png",
-              scale = 0.25,
+              scale = 0.5,
               mipmap_count = 4
             },
             {
@@ -20,7 +20,7 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
               flags = { "light" },
               size = 64,
               filename = graphics .. "resource-light.png",
-              scale = 0.25,
+              scale = 0.5,
               mipmap_count = 4
             }
           }

@@ -11,7 +11,7 @@ data:extend(
                 {
                   size = 64,
                   filename = graphics .. "plutonium.png",
-                  scale = 0.25,
+                  scale = 0.5,
                   mipmap_count = 4
                 },
                 {
@@ -19,7 +19,7 @@ data:extend(
                   flags = {"light"},
                   size = 64,
                   filename = graphics .. "resource-light.png",
-                  scale = 0.25,
+                  scale = 0.5,
                   mipmap_count = 4
                 }
               }

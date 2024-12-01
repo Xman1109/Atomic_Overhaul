@@ -44,6 +44,17 @@ else
     end
 end
 -- begin of cool functions
+
+---
+---Prints a message to the log if settings.startup["ao-debug"] is true.
+---@param message (string) The message to print to the log.
+---
+function ao_log(message)
+    if settings.startup["ao-debug"].value == true then
+        log(message)
+    end
+end
+
 local function internalGlow(name, typeOfItem)
     local icon
     local icon_size
@@ -54,7 +65,7 @@ local function internalGlow(name, typeOfItem)
         flags = { "light" },
         size = 64,
         filename = graphics .. "resource-light.png",
-        scale = 0.25,
+        scale = 0.5,
         mipmap_count = 4
     }
     local cell_glow = {
@@ -62,7 +73,7 @@ local function internalGlow(name, typeOfItem)
         flags = { "light" },
         size = 64,
         filename = base_graphics .. "uranium-fuel-cell-light.png",
-        scale = 0.25,
+        scale = 0.5,
         mipmap_count = 4
     }
     local fuel_glow = {
@@ -70,7 +81,7 @@ local function internalGlow(name, typeOfItem)
         flags = { "light" },
         size = 64,
         filename = base_graphics .. "nuclear-fuel-light.png",
-        scale = 0.25,
+        scale = 0.5,
         mipmap_count = 4
     }
     local glow
@@ -116,14 +127,14 @@ local function internalGlow(name, typeOfItem)
             if icon_size == 32 then
                 scale = 0.5
             elseif icon_size == 64 then
-                scale = 0.25
+                scale = 0.5
                 --TODO: Maybe this needs some tweaking in the future to cover the cases where the icon size is regulated by the picture.layers.size or smth similar
             else
                 log(
                     "Error: Item " ..
                     name .. " has not the right icon size (" .. tostring(icon_size) .. "), defaulting to 0.25 !" ..
                     "\n")
-                scale = 0.25
+                scale = 0.5
             end
         end
         if icon_size == nil then

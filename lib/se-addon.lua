@@ -12,7 +12,7 @@ zero_g_picture = {
     filename = se_addon_graphics .. "zero-g.png",
     priority = "extra-high",
     size = 64,
-    scale = 0.25,
+    scale = 0.5,
     mipmap_count = 4
 }
 

@@ -22,7 +22,7 @@ data:extend({
 				{
 					size = 64,
 					filename = graphics .. "MOX-fuel-cell1.png",
-					scale = 0.25,
+					scale = 0.5,
 					mipmap_count = 4
 				},
 				{
@@ -30,7 +30,7 @@ data:extend({
 					flags = { "light" },
 					size = 64,
 					filename = base_graphics .. "uranium-fuel-cell-light.png",
-					scale = 0.25,
+					scale = 0.5,
 					mipmap_count = 4
 				}
 			}
