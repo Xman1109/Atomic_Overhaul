@@ -52,9 +52,9 @@ data:extend({
   {
     type = "boiler",
     name = "cold-fusion-reactor",
-    icon = "__base__/graphics/icons/boiler.png",
+    icon = graphics .. "fusion-reactor-icon.png",
     flags = { "placeable-neutral", "player-creation" },
-    minable = { mining_time = 0.2, result = "boiler" },
+    minable = { mining_time = 0.2, result = "cold-fusion-reactor" },
     max_health = 500,
     corpse = "boiler-remnants",
     dying_explosion = data.raw["reactor"]["nuclear-reactor"].dying_explosion,

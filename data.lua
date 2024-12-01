@@ -51,6 +51,8 @@ require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
 require(items .. "uranium-fuel-rod")
 
+require(items .. "cold-fusion-reactor")
+
 
 require(ao_recipes .. "empty-fuel-cell-recipe")
 require(ao_recipes .. "graphite-fuel-cell-recipe")

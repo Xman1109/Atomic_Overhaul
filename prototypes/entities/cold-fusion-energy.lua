@@ -28,12 +28,13 @@ data:extend({
     {
         type = "electric-energy-interface",
         name = "cold-fusion-energy",
-        icon = "__base__/graphics/icons/accumulator.png",
+        icon = graphics .. "fusion-reactor-icon.png",
         icon_size = 64,
         flags = {"placeable-off-grid", "not-on-map"},
         selectable_in_game = false,
         collision_box = { { -2.9, -2.9 }, { 2.9, 2.9 } },
         selection_box = { { -2.9, -2.9 }, { 2.9, 2.9 } },
+        selectable = false,
         energy_source = {
             type = "electric",
             buffer_capacity = "5GJ",
