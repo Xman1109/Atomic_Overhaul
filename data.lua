@@ -80,6 +80,9 @@ require(ao_recipes .. "uranium-rod-recipe")
 require(ao_recipes .. "uranium-without-research-data")
 require(ao_recipes .. "waste-liquefaction")
 require(ao_recipes .. "waste-solution-reprocessing")
+
+
+require(ao_recipes .. "heat-tank-bottling")
 if settings.startup["ao-complexity-level"].value == "simple" then
     for _, i in pairs(data.raw["module"]) do
         if i.category == "productivity" then

@@ -17,6 +17,10 @@ if settings.startup["ao-complexity-level"].value ~= "simple" then
                     type = "unlock-recipe",
                     recipe = "heat-fluid-tank-recipe"
                 },
+                {
+                    type = "unlock-recipe",
+                    recipe = "heat-tank-bottling"
+                }
             },
             unit =
             {
