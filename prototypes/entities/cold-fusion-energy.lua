@@ -32,7 +32,6 @@ data:extend({
         icon_size = 64,
         flags = {"placeable-off-grid", "not-on-map"},
         selectable_in_game = false,
-        collision_box = { { -2.9, -2.9 }, { 2.9, 2.9 } },
         selection_box = { { -2.9, -2.9 }, { 2.9, 2.9 } },
         selectable = false,
         energy_source = {

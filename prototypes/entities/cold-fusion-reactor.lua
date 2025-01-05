@@ -53,6 +53,8 @@ data:extend({
     type = "boiler",
     name = "cold-fusion-reactor",
     icon = graphics .. "fusion-reactor-icon.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
     flags = { "placeable-neutral", "player-creation" },
     minable = { mining_time = 0.2, result = "cold-fusion-reactor" },
     max_health = 500,

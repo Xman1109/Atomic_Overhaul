@@ -3,8 +3,8 @@ data:extend({
     {
         type = "capsule",
         name = "catalyser-upgrade",
-        icon = graphics .. "catalyser-upgrade.png",
-        icon_size = 64,
+        icon = graphics .. "catalyser-upgrade_1.png",
+        icon_size = 128,
         icon_mipmaps = 4,
         capsule_action =
         {

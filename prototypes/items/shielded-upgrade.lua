@@ -3,8 +3,8 @@ data:extend({
     {
         type = "capsule",
         name = "shielded-upgrade",
-        icon = graphics .. "shielded-upgrade.png",
-        icon_size = 64,
+        icon = graphics .. "shielded-upgrade_1.png",
+        icon_size = 128,
         icon_mipmaps = 4,
         capsule_action =
         {

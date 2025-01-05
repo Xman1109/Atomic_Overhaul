@@ -3,8 +3,8 @@ data:extend({
     {
         type = "capsule",
         name = "cooling-upgrade",
-        icon = graphics .. "cooling-upgrade.png",
-        icon_size = 64,
+        icon = graphics .. "cooling-upgrade_1.png",
+        icon_size = 128,
         icon_mipmaps = 4,
         capsule_action =
         {
