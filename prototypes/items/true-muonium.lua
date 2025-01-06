@@ -25,9 +25,8 @@ data:extend({
             }
         },
 		fuel_category = "cold-fusion",
-		burnt_result = "MOX-depleted-cell",
 		fuel_glow_color = { 0, 0, 200, 1 },
-		fuel_value = "50GJ",
+		fuel_value = "20GJ",
         group = "atomic-overhaul",
         subgroup = "isotopes",
         order = "b",

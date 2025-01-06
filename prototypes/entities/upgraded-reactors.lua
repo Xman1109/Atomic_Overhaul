@@ -1,4 +1,4 @@
-local list = { "nuclear-reactor" }
+local list = { "nuclear-reactor" } -- may be extended in the future
 
 --clone every reactor from list (table.deepcopy)
 for _, reactor in pairs(list) do
@@ -18,7 +18,7 @@ for _, reactor in pairs(list) do
         local number, unit = entity_cooled.heat_buffer.specific_heat:match("([%d%.]+)(%a+)")
         entity_cooled.heat_buffer.specific_heat = tonumber(number) * 1.5 .. unit
         entity_cooled.localised_name = {"", {"entity-name." .. reactor}, " (", {"item-name.cooling-upgrade"}, ")"}
-        entity_cooled.localised_description = {"", {"entity-name." .. reactor}, {"item-strings.upgrade-description"}, {"item-name.cooling-upgrade"}}
+        entity_cooled.localised_description = {"", {"entity-name." .. reactor}, " ", {"item-strings.upgrade-description"}, " ", {"item-name.cooling-upgrade"}}
 
         entity_catalyser.name = "catalyser-" .. reactor
         entity_catalyser.minable.result = "catalyser-" .. reactor
@@ -26,7 +26,7 @@ for _, reactor in pairs(list) do
         entity_catalyser.consumption = tonumber(number) * 0.5 .. unit
         entity_catalyser.energy_source.effectivity = entity_catalyser.energy_source.effectivity * 1.5
         entity_catalyser.localised_name = {"", {"entity-name." .. reactor}, " (", {"item-name.catalyser-upgrade"}, ")"}
-        entity_catalyser.localised_description = {"", {"entity-name." .. reactor}, {"item-strings.upgrade-description"}, {"item-name.catalyser-upgrade"}}
+        entity_catalyser.localised_description = {"", {"entity-name." .. reactor}, " ", {"item-strings.upgrade-description"}, " ", {"item-name.catalyser-upgrade"}}
 
         entity_shielded.name = "shielded-" .. reactor
         entity_shielded.minable.result = "shielded-" .. reactor
@@ -34,7 +34,7 @@ for _, reactor in pairs(list) do
         local number, unit = entity_shielded.consumption:match("([%d%.]+)(%a+)")
         entity_shielded.consumption = tonumber(number) * 1.5 .. unit
         entity_shielded.localised_name = {"", {"entity-name." .. reactor}, " (", {"item-name.shielded-upgrade"}, ")"}
-        entity_shielded.localised_description = {"", {"entity-name." .. reactor}, {"item-strings.upgrade-description"}, {"item-name.shielded-upgrade"}}
+        entity_shielded.localised_description = {"", {"entity-name." .. reactor}, " ", {"item-strings.upgrade-description"}, " ", {"item-name.shielded-upgrade"}}
 
         data:extend({ entity_cooled, entity_catalyser, entity_shielded })
         if ao_debug then
