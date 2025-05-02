@@ -1,7 +1,7 @@
 if settings.startup["ao-complexity-level"].value == "full" then
     data:extend(
         {
-            {
+            { --TODO: We need the recipe and implementation for this
                 type = "tool",
                 name = "isotope-data",
                 localised_description = { "item-description.science-pack" },

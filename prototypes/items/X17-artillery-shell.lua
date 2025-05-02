@@ -29,6 +29,6 @@ shell.pictures = {
         }
     }
 }
--- shell.ammo_type.action.action_delivery.projectile = uranium_artillery_projectile --TODO
+shell.ammo_type.action.action_delivery.projectile = "X17-projectile"
 
 data:extend({shell})

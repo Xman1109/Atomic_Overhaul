@@ -87,16 +87,18 @@ data:extend(
             order = "l"
         },
         {
+            type = "item-subgroup",
+            name = "cold-fusion",
+            group = "atomic-overhaul",
+            order = "m"
+        },
+        {
             type = "module-category",
             name = "thorium-module"
         },
         { type = "module-category", name = "thorium-module" },
         { type = "module-category", name = "thorium-module-1" },
         { type = "module-category", name = "thorium-module-2" },
-        {
-            type = "fuel-category",
-            name = "cold-fusion"
-        }
     })
 if settings.startup["ao-complexity-level"].value == "simple" or
     settings.startup["old-graphite-fuel"].value == false then
@@ -104,4 +106,13 @@ if settings.startup["ao-complexity-level"].value == "simple" or
         type = "recipe-category",
         name = "heat-furnace"
     } })
+end
+
+if settings.startup["ao-isotope-update"].value == true then
+    data:extend({
+        {
+            type = "fuel-category",
+            name = "cold-fusion"
+        }
+    })
 end

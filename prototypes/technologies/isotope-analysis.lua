@@ -9,16 +9,25 @@ data:extend({
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "graphite-furnace-recipe"
+                recipe = "research-data-recipe"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "xenon-recipe"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "muonium-recipe"
             }
         },
-        prerequisites = {"nuclear-power", "processing-unit"}, --TODO: Add the correct prerequisites
+        prerequisites = {"waste-reprocessing", "processing-unit"},
         unit = {
             count = 100,
             ingredients = {
                 {"automation-science-pack", 1},
                 {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1} --TODO: Add the research pack
+                {"chemical-science-pack", 1},
+                {"research-data", 1},
             },
             time = 30
         }

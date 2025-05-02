@@ -51,8 +51,6 @@ require(items .. "thorium-module-2")
 require(items .. "thorium-module-3")
 require(items .. "uranium-fuel-rod")
 
-require(items .. "cold-fusion-reactor")
-
 
 require(ao_recipes .. "empty-fuel-cell-recipe")
 require(ao_recipes .. "graphite-fuel-cell-recipe")
@@ -164,14 +162,29 @@ if settings.startup["ao-isotope-update"].value == true then
     require(items .. "X17-magazine")
     require(items .. "X17-artillery-shell")
     require(items .. "X17-capsule")
+    require(items .. "cold-fusion-reactor")
 
     require(techs .. "isotope-analysis")
     require(techs .. "X17-weaponry")
+    require(techs .. "muonium-separation")
+    require(techs .. "muonium-processing")
 
     require(entities .. "upgraded-reactors")
 
     require(entities .. "cold-fusion-reactor")
     require(entities .. "cold-fusion-energy")
+
+    require(ao_recipes .. "cold-fusion-recipe")
+    require(ao_recipes .. "muonium-separation")
+    require(ao_recipes .. "X17-magazine-recipe")
+    require(ao_recipes .. "X17-capsule-recipe")
+    require(ao_recipes .. "X17-artillery-shell-recipe")
+    require(ao_recipes .. "isotope-data-recipe")
+    require(ao_recipes .. "xenon-recipe")
+    require(ao_recipes .. "muonium-recipe")
+
+    require(projectiles .. "X17-projectile")
+    require(projectiles .. "X17-bomb-projectile")
 end
 
 if mods["informatron"] then
