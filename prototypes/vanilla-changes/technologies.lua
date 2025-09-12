@@ -5,6 +5,9 @@ elseif settings.startup["ao-complexity-level"].value ~= "simple" then
     for _, lab in pairs(data.raw["lab"]) do
         if lab.inputs then
             table.insert(lab.inputs, "research-data")
+            if settings.startup["ao-isotope-update"].value then
+                table.insert(lab.inputs, "isotope-data")
+            end
         end
     end
     -- TODO: instead of table.insert, use our own functions

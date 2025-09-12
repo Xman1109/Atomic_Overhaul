@@ -2,7 +2,7 @@ data:extend(
     {
         {
             type = "recipe",
-            name = "research-data-recipe",
+            name = "isotope-data-recipe",
             icon = graphics .. "isotope-data.png",
             icon_size = 128,
             icon_mipmaps = 4,

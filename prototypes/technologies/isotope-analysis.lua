@@ -9,7 +9,7 @@ data:extend({
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "research-data-recipe"
+                recipe = "isotope-data-recipe"
             },
             {
                 type = "unlock-recipe",

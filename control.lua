@@ -11,7 +11,7 @@ function FixUraniumResources()
         game.forces["player"].recipes["uranium-low-enriched"].enabled = true
         game.forces["player"].recipes["uranium-235"].enabled = true
     end
-    
+
     for i, force in pairs(game.forces) do
         if ao_breeder and ao_enrichUranium then
             force.technologies["kovarex-enrichment-process"].enabled = false

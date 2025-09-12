@@ -2,11 +2,14 @@
 Version: 1.4.0
 Date: 2025-??-??
   Changes:
-    - Added new Conseqences for the Reactor meltdown
+    - Added new Conseqences for the Reactor meltdown... ;)
     - Added 3 new resources: Muonium, X17-Particles and True Muonium
     - Added 3 new Reactor Upgrades
     - Added a bottling recipe for the heat-accumulator
     - Updated Locales (thanks to all translators!)
+
+  Info:
+    - Compatibility with bobplates is disabled, because there is a bug which causes a crash during startup.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.36
 Date: 2024-11-15
@@ -21,7 +24,7 @@ Date: 2024-11-10
 Version: 1.3.34
 Date: 2024-10-27
   Changes:
-    -  Fixed a bug where empty fuel cells would not be able to be crafted
+    - Fixed a bug where empty fuel cells would not be able to be crafted
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.33
 Date: 2024-10-25

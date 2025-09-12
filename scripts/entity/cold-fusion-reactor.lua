@@ -1,4 +1,5 @@
 function ColdFusionReactor(event)
+    storage.ao_cold_fusion = storage.ao_cold_fusion or {}
     local entity = event.entity
     if entity.name == "cold-fusion-reactor" then
         local energy_interface = entity.surface.create_entity {
@@ -12,6 +13,7 @@ function ColdFusionReactor(event)
 end
 
 function whenReactorIsMissing(event)
+    storage.ao_cold_fusion = storage.ao_cold_fusion or {}
     if event.entity.name == "cold-fusion-reactor" then
         for i, pair in pairs(storage.ao_cold_fusion) do
             if pair.reactor == event.entity then
