@@ -83,14 +83,6 @@ require(ao_recipes .. "waste-solution-reprocessing")
 
 
 require(ao_recipes .. "heat-tank-bottling")
-if settings.startup["ao-complexity-level"].value == "simple" then
-    for _, i in pairs(data.raw["module"]) do
-        if i.category == "productivity" then
-            table.insert(i.limitation, "MOX-fuel-cell-recipe")
-            table.insert(i.limitation, "MOX-reprocessing")
-        end
-    end
-end
 
 require(techs .. "graphite-fuel-reprocessing")
 require(techs .. "graphite-processing")
@@ -133,7 +125,7 @@ if settings.startup["thorium-wrd"].value == true then
     require(techs .. "thorium-without-research-data")
 end
 
-if settings.startup["ao-isotope-update"].value == true then
+if settings.startup["ao-isotope-update"].value == true and settings.startup["ao-complexity-level"].value ~= "simple" then
     require("prototypes/damage-type")
     require("prototypes.entities.explosions")
 

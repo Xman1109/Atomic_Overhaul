@@ -26,7 +26,7 @@ function breed.APM_breeder_reactor()
     breeder_reactor.neighbour_bonus = 0.2
     breeder_reactor.energy_source = {}
     breeder_reactor.energy_source.type = "burner"
-    breeder_reactor.energy_source.fuel_category = "nuclear-breeder"
+    breeder_reactor.energy_source.fuel_categories = {"nuclear-breeder"}
     breeder_reactor.energy_source.effectivity = 1
     breeder_reactor.energy_source.fuel_inventory_size = 1
     breeder_reactor.energy_source.burnt_inventory_size = 1
@@ -35,78 +35,78 @@ function breed.APM_breeder_reactor()
     breeder_reactor.selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } }
 
     breeder_reactor.lower_layer_picture = {}
-    breeder_reactor.lower_layer_picture.filename = breeder_graphics .. "reactor/breeder_reactor_pipes.png"
+    --[[breeder_reactor.lower_layer_picture.filename = breeder_graphics .. "reactor/breeder_reactor_pipes.png"
     breeder_reactor.lower_layer_picture.width = 156
     breeder_reactor.lower_layer_picture.height = 156
     breeder_reactor.lower_layer_picture.shift = util.by_pixel(-2, -4)
-    breeder_reactor.lower_layer_picture.hr_version = {}
-    breeder_reactor.lower_layer_picture.hr_version.filename =
+    breeder_reactor.lower_layer_picture.hr_version = {}]]
+    breeder_reactor.lower_layer_picture.filename =
         breeder_graphics .. "reactor/hr_breeder_reactor_pipes.png"
-    breeder_reactor.lower_layer_picture.hr_version.width = 320
-    breeder_reactor.lower_layer_picture.hr_version.height = 316
-    breeder_reactor.lower_layer_picture.hr_version.scale = 0.5
-    breeder_reactor.lower_layer_picture.hr_version.shift = util.by_pixel(-1, -5)
+    breeder_reactor.lower_layer_picture.width = 320
+    breeder_reactor.lower_layer_picture.height = 316
+    breeder_reactor.lower_layer_picture.scale = 0.5
+    breeder_reactor.lower_layer_picture.shift = util.by_pixel(-1, -5)
 
     breeder_reactor.heat_lower_layer_picture = {}
-    breeder_reactor.heat_lower_layer_picture.filename =
+    --[[breeder_reactor.heat_lower_layer_picture.filename =
         breeder_graphics .. "reactor/breeder_reactor_pipes_hot.png"
     breeder_reactor.heat_lower_layer_picture.width = 156
     breeder_reactor.heat_lower_layer_picture.height = 156
     breeder_reactor.heat_lower_layer_picture.shift = util.by_pixel(-3, -4)
-    breeder_reactor.heat_lower_layer_picture.hr_version = {}
-    breeder_reactor.heat_lower_layer_picture.hr_version.filename =
+    breeder_reactor.heat_lower_layer_picture.hr_version = {} ]]
+    breeder_reactor.heat_lower_layer_picture.filename =
         breeder_graphics .. "reactor/hr_breeder_reactor_pipes_hot.png"
-    breeder_reactor.heat_lower_layer_picture.hr_version.width = 320
-    breeder_reactor.heat_lower_layer_picture.hr_version.height = 316
-    breeder_reactor.heat_lower_layer_picture.hr_version.scale = 0.5
-    breeder_reactor.heat_lower_layer_picture.hr_version.shift = util.by_pixel(-0.5, -4.5)
+    breeder_reactor.heat_lower_layer_picture.width = 320
+    breeder_reactor.heat_lower_layer_picture.height = 316
+    breeder_reactor.heat_lower_layer_picture.scale = 0.5
+    breeder_reactor.heat_lower_layer_picture.shift = util.by_pixel(-0.5, -4.5)
 
     breeder_reactor.picture = {}
     breeder_reactor.picture.layers = {}
     breeder_reactor.picture.layers[1] = {}
-    breeder_reactor.picture.layers[1].filename =
+    --[[breeder_reactor.picture.layers[1].filename =
         breeder_graphics .. "reactor/breeder_reactor.png"
     breeder_reactor.picture.layers[1].width = 240
     breeder_reactor.picture.layers[1].height = 170
     breeder_reactor.picture.layers[1].shift = { 1.375, 0 }
-    breeder_reactor.picture.layers[1].hr_version = {}
-    breeder_reactor.picture.layers[1].hr_version.filename =
+    breeder_reactor.picture.layers[1].hr_version = {}]]
+    breeder_reactor.picture.layers[1].filename =
         breeder_graphics .. "reactor/hr_breeder_reactor.png"
-    breeder_reactor.picture.layers[1].hr_version.width = 480
-    breeder_reactor.picture.layers[1].hr_version.height = 340
-    breeder_reactor.picture.layers[1].hr_version.scale = 0.5
-    breeder_reactor.picture.layers[1].hr_version.shift = { 1.375, 0 }
+    breeder_reactor.picture.layers[1].width = 480
+    breeder_reactor.picture.layers[1].height = 340
+    breeder_reactor.picture.layers[1].scale = 0.5
+    breeder_reactor.picture.layers[1].shift = { 1.375, 0 }
     breeder_reactor.picture.layers[2] = {}
-    breeder_reactor.picture.layers[2].filename =
+    --[[breeder_reactor.picture.layers[2].filename =
         breeder_graphics .. "reactor/breeder_reactor_shadow.png"
     breeder_reactor.picture.layers[2].width = 240
     breeder_reactor.picture.layers[2].height = 170
     breeder_reactor.picture.layers[2].shift = { 1.375, 0 }
     breeder_reactor.picture.layers[2].draw_as_shadow = true
-    breeder_reactor.picture.layers[2].hr_version = {}
-    breeder_reactor.picture.layers[2].hr_version.filename =
+    breeder_reactor.picture.layers[2].hr_version = {}]]
+    breeder_reactor.picture.layers[2].filename =
         breeder_graphics .. "reactor/hr_breeder_reactor_shadow.png"
-    breeder_reactor.picture.layers[2].hr_version.width = 480
-    breeder_reactor.picture.layers[2].hr_version.height = 340
-    breeder_reactor.picture.layers[2].hr_version.scale = 0.5
-    breeder_reactor.picture.layers[2].hr_version.shift = { 1.375, 0 }
-    breeder_reactor.picture.layers[2].hr_version.draw_as_shadow = true
+    breeder_reactor.picture.layers[2].width = 480
+    breeder_reactor.picture.layers[2].height = 340
+    breeder_reactor.picture.layers[2].scale = 0.5
+    breeder_reactor.picture.layers[2].shift = { 1.375, 0 }
+    breeder_reactor.picture.layers[2].draw_as_shadow = true
 
     breeder_reactor.working_light_picture = {}
-    breeder_reactor.working_light_picture.filename =
+    --[[breeder_reactor.working_light_picture.filename =
         breeder_graphics .. "reactor/breeder_reactor_glow.png"
     breeder_reactor.working_light_picture.width = 240
     breeder_reactor.working_light_picture.height = 170
     breeder_reactor.working_light_picture.shift = { 1.375, 0 }
     breeder_reactor.working_light_picture.blend_mode = "additive"
-    breeder_reactor.working_light_picture.hr_version = {}
-    breeder_reactor.working_light_picture.hr_version.filename =
+    breeder_reactor.working_light_picture.hr_version = {}]]
+    breeder_reactor.working_light_picture.filename =
         breeder_graphics .. "reactor/hr_breeder_reactor_glow.png"
-    breeder_reactor.working_light_picture.hr_version.width = 480
-    breeder_reactor.working_light_picture.hr_version.height = 340
-    breeder_reactor.working_light_picture.hr_version.scale = 0.5
-    breeder_reactor.working_light_picture.hr_version.shift = { 1.375, 0 }
-    breeder_reactor.working_light_picture.hr_version.blend_mode = "additive"
+    breeder_reactor.working_light_picture.width = 480
+    breeder_reactor.working_light_picture.height = 340
+    breeder_reactor.working_light_picture.scale = 0.5
+    breeder_reactor.working_light_picture.shift = { 1.375, 0 }
+    breeder_reactor.working_light_picture.blend_mode = "additive"
 
     --breeder_reactor.light = {intensity = 0.6, size = 9.9, shift = {0.0, 0.0}, color = {r = 1.0, g = 0.5, b = 0.0}}
     breeder_reactor.use_fuel_glow_color = true                                               -- should use glow color from fuel item prototype as light color and tint for working_light_picture

@@ -2,14 +2,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     local m_results
     if mods["SchallUraniumProcessing"] then
         m_results = {
-            { name = "fissile-products", amount_min = 2, amount_max = 3 },
+            {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
             {type="item", name="uranium-concentrate", amount=34}
         }
     else
         m_results = {
-            { name = "fissile-products", amount_min = 2, amount_max = 3 },
+            {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
             {type="item", name="uranium-ore", amount=340}

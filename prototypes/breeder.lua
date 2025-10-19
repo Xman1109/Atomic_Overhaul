@@ -45,6 +45,7 @@ function breed.NewEnrichment()
       energy_required = 84,
       enabled = false,
       category = "centrifuging",
+
       ingredients =
       {
         {type="item", name="uranium-ore", amount=70}
@@ -84,15 +85,10 @@ function breed.NewEnrichment()
       allow_decomposition = false,
     },
   })
-  for _, i in pairs(data.raw["module"]) do
-    if i.category == "productivity" then
-      table.insert(i.limitation, "uranium-235")
-      table.insert(i.limitation, "uranium-low-enriched")
-    end
-  end
+
   data.raw["recipe"]["uranium-processing"].hidden = true -- I hid it instead of using for LEU, because icon, description would be incorrect anyway.
-  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { {type="item", name="uranium-low-enriched", 4 }, { "iron-plate", amount=2} }
-  data.raw["recipe"]["uranium-fuel-cell"].result_count = 2
+  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { {type="item", name="uranium-low-enriched", amount = 4 }, {type="item", name = "iron-plate", amount=2} }
+  data.raw["recipe"]["uranium-fuel-cell"].results[1].amount = 2
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
 
@@ -324,10 +320,10 @@ function breed.Breeder()
         count = 1500,
         ingredients =
         {
-          {type="item", name="automation-science-pack", amount=1},
-          {type="item", name="logistic-science-pack", amount=1},
-          {type="item", name="chemical-science-pack", amount=1},
-          {type="item", name="production-science-pack", amount=1},
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"production-science-pack", 1},
         },
         time = 45
       }
@@ -357,10 +353,10 @@ function breed.Breeder()
         {
           ingredients =
           {
-            {type="item", name="automation-science-pack", amount=1},
-            {type="item", name="logistic-science-pack", amount=1},
-            {type="item", name="chemical-science-pack", amount=1},
-            {type="item", name="production-science-pack", amount=1}
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            {"chemical-science-pack", 1},
+            {"production-science-pack", 1}
           },
           time = 45,
           count = 200
@@ -371,12 +367,7 @@ function breed.Breeder()
     data.raw.technology["kovarex-enrichment-process"].enabled = false
     data.raw.recipe["kovarex-enrichment-process"].hidden = true
   end
-  for _, i in pairs(data.raw["module"]) do
-    if i.category == "productivity" then
-      table.insert(i.limitation, "ao-breeder-fuel-cell-recipe")
-      table.insert(i.limitation, "ao-breeder-reprocessing")
-    end
-  end
+
 end
 
 return breed

@@ -144,7 +144,7 @@ script.on_event(defines.events.on_picked_up_item, function(event)
 end)
 
 script.on_event(defines.events.on_research_finished, function(event)
-    rrCentrifuge(event)
+    if settings.startup["ao-complexity-level"].value ~= "simple" then rrCentrifuge(event) end
     if settings.startup["ao-isotope-update"].value == true then
         IsotopeAnalysis(event)
         X17Tech(event)
