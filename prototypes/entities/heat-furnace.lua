@@ -3,6 +3,8 @@ heat_furnace.name = "heat-furnace"
 heat_furnace.type = "assembling-machine"
 heat_furnace.crafting_categories = { "heat-furnace" }
 heat_furnace.minable.result = "heat-furnace"
+heat_furnace.module_slots = 2
+-- heat_furnace.allowed_effects = { "consumption", "speed", "productivity", "pollution" }
 
 heat_furnace.energy_source =
 {

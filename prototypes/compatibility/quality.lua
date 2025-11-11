@@ -1,0 +1,1 @@
+data.raw["assembling-machine"]["heat-furnace"].allowed_effects = { "consumption", "speed", "pollution", "quality"}

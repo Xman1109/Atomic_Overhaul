@@ -18,7 +18,7 @@ data:extend({
     energy_source =
     {
       type = "burner",
-      fuel_category = "space-nuclear-fuel",
+      fuel_categories = {"space-nuclear-fuel"},
       effectivity = 1,
       fuel_inventory_size = 1,
       burnt_inventory_size = 1,

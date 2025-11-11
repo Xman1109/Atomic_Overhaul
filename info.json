@@ -9,8 +9,9 @@
   "dependencies": [
     "base",
     "! PlutoniumEnergy",
-    "! bobplates",
+    "! heat-furnace",
     "? RealisticReactors",
+    "(?) bobplates",
     "(?) space-exploration",
     "(?) space-exploration-postprocess",
     "(?) informatron",

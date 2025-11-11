@@ -29,13 +29,13 @@ for _, item in pairs(list) do
             local new_recipe = table.deepcopy(template)
             local amount = math.min(200, base_recipe.stack_size or 1)
             new_recipe.name = new_recipe.name .. item
-            new_recipe.result = new_recipe.result .. item
+            new_recipe.results[1].name = new_recipe.results[1].name .. item
             new_recipe.icon = base_recipe.icon
             new_recipe.icon_size = base_recipe.icon_size
             new_recipe.icon_mipmaps = base_recipe.icon_mipmaps
             new_recipe.localised_name = { "", { "item-name.lead-delivery-capsule" }, ": ", { "item-name." .. item } }
             new_recipe.order = string.char(96 + _)
-            table.insert(new_recipe.ingredients, { item, amount })
+            table.insert(new_recipe.ingredients, { type = "item", name = item, amount = amount })
             data:extend({ new_recipe })
             if ao_debug then
                 log("Atomic Overhaul: " .. serpent.block(new_recipe))

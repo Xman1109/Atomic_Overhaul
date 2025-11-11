@@ -30,7 +30,7 @@ local tv = 1
 function thorium_module_limitation()
     return { "uranium-processing", "nuclear-fuel-reprocessing", "uranium-without-research-data",
         "plutonium-fuel-reprocessing", "plutonium-without-research-data", "MOX-recipe", "MOX-reprocessing",
-        "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" }
+        "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" } --TODO: thorium recipe cant use module... find out why!
 end
 
 if not (settings.startup["ao-kovarex-enabled"].value == nil) then --doesnt get executed wtf???

@@ -94,11 +94,8 @@ data:extend(
         },
         {
             type = "module-category",
-            name = "thorium-module"
-        },
-        { type = "module-category", name = "thorium-module" },
-        { type = "module-category", name = "thorium-module-1" },
-        { type = "module-category", name = "thorium-module-2" },
+            name = "thorium-module",
+        }
     })
 if settings.startup["ao-complexity-level"].value == "simple" or
     settings.startup["old-graphite-fuel"].value == false then

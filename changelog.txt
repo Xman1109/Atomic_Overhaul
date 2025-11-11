@@ -1,11 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
-Date: 2025-10-19
+Date: 2025-11-11
   Changes:
-    -  Fixed simple mode by @garrotte
+    - Fixed simple mode by @garrotte
+    - Fixed a bug where the X17-weaponry chat message would show up multiple times (thanks to squish8294)
+    - Marked the Heat furnace Mod by ElAdamo as incompatible
+    - Fixed a startup crash when playing with Space Exploration (thanks to @shadowcarl4678 on github)
+    - made bobplates compatible again !But changes could still be made at the plutonium & thorium tier!
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
-Date: 2025-??-??
+Date: 2025-09-12
   Changes:
     - Added new Conseqences for the Reactor meltdown... ;)
     - Added 3 new resources: Muonium, X17-Particles and True Muonium
@@ -34,44 +38,44 @@ Date: 2024-10-27
 Version: 1.3.33
 Date: 2024-10-25
   Changes:
-    -  Fixed a bug that would crash the game when the player places something
+    - Fixed a bug that would crash the game when the player places something
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.32
 Date: 2024-10-25
   Changes:
-    -  Updated the mod to Factorio 2.0
-    -  COMPATIBILITY MAY BE BROKEN, PLEASE BACKUP YOUR SAVEGAMES AND REPORT ANY BUGS!
+    - Updated the mod to Factorio 2.0
+    - COMPATIBILITY MAY BE BROKEN, PLEASE BACKUP YOUR SAVEGAMES AND REPORT ANY BUGS!
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.31
 Date: 2024-10-10
   Changes:
-    -  (SE) Thorium Module 4-9 were not be able to used with the "module inserter simplified" mod due to load order (thanks to @Bluebottle39)
+    - (SE) Thorium Module 4-9 were not be able to used with the "module inserter simplified" mod due to load order (thanks to @Bluebottle39)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.30
 Date: 2024-10-05
   Changes:
-    -  (SE) Thorium Module 1-9 had the wrong limitations, so I fixed them (thanks to @Bluebottle39)
+    - (SE) Thorium Module 1-9 had the wrong limitations, so I fixed them (thanks to @Bluebottle39)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.29
 Date: 2024-10-04
   Changes:
-    -  (SE) Adopted the changes for thorium module 1-3 from @SargaPulcsis's Mod (thanks to @SargaPulcsis & @Bluebottle39)
+    - (SE) Adopted the changes for thorium module 1-3 from @SargaPulcsis's Mod (thanks to @SargaPulcsis & @Bluebottle39)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.28
 Date: 2024-09-29
   Changes:
-    -  Integrated the "Space Exploration Atomic Overhaul Modules" Mod into the main mod (thanks to @SargaPulcsis)
-    -  Updated Locales (thanks to all translators!)
+    - Integrated the "Space Exploration Atomic Overhaul Modules" Mod into the main mod (thanks to @SargaPulcsis)
+    - Updated Locales (thanks to all translators!)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.27
 Date: 2024-09-12
   Changes:
-    -  Fixed a bug where the centrifuge would not be able to be unlocked and crafted
+    - Fixed a bug where the centrifuge would not be able to be unlocked and crafted
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.26
 Date: 2024-09-06
   Changes:
-    -  (SE) Fixed a bug where multiple items from AO would not be able to be shot into space
+    - (SE) Fixed a bug where multiple items from AO would not be able to be shot into space
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.25
 Date: 2024-04-08

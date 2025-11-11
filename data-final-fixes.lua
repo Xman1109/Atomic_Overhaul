@@ -71,6 +71,13 @@ if mods["bzlead"] or mods["bzzirconium"] then
     end
 end
 
+if mods["quality"] then
+    require(compatibility .. "quality")
+    if ao_debug == true then
+        log(debug_text .. "quality")
+    end
+end
+
 -- Addon stage begins here.
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("prototypes.addons.space-exploration.group")

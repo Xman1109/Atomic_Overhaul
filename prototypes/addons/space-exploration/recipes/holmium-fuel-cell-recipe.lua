@@ -13,7 +13,7 @@ data:extend(
         subgroup = "fuel-cells",
         ingredients =
         {
-            {fuel_cell, 10},
+            {type = "item", name = fuel_cell, amount = 10},
             {type="item", name="holmium-fuel-rod", amount=10}
         },
         always_show_made_in = true,

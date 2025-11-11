@@ -1,6 +1,6 @@
-Glow({ "thorium-232", "plutonium-239" })
+Glow({ "bob-thorium-232", "bob-plutonium-239" })
 Glow({ "deuterium-fuel-cell", "deuterium-fuel-cell-2", "thorium-plutonium-fuel-cell", "thorium-fuel-cell",
-    "plutonium-fuel-cell" }, "cell")
+    "bob-plutonium-fuel-cell" }, "cell")
 modifyResults("nuclear-fuel-reprocessing", { {
     type = "item",
     name = "plutonium",
@@ -21,7 +21,7 @@ modifyResults("nuclear-fuel-reprocessing", { {
     amount_max = 3
 }, {
     type = "item",
-    name = "fusion-catalyst",
+    name = "bob-fusion-catalyst",
     amount = 1
 } })
 modifyResults("thorium-fuel-reprocessing", { {
@@ -44,14 +44,14 @@ modifyResults("thorium-fuel-reprocessing", { {
     amount_max = 3
 }, {
     type = "item",
-    name = "fusion-catalyst",
+    name = "bob-fusion-catalyst",
     amount = 1
 } })
-regroup("r", "bob-plutonium-fuel-cell", nil, data.raw["recipe"]["bob-plutonium-fuel-cell-recipe"].subgroup,
-    data.raw["recipe"]["bob-plutonium-fuel-cell-recipe"].order)
+regroup("r", "bob-plutonium-fuel-cell", nil, data.raw["recipe"]["plutonium-fuel-cell-recipe"].subgroup,
+    data.raw["recipe"]["plutonium-fuel-cell-recipe"].order)
 regroup("r", "bob-empty-nuclear-fuel-cell", nil, "fuel-cells", "z")
-regroup("r", "bob-thorium-fuel-cell", nil, data.raw["recipe"]["bob-thorium-fuel-cell-recipe"].subgroup,
-    data.raw["recipe"]["bob-thorium-fuel-cell-recipe"].order)
+regroup("r", "bob-thorium-fuel-cell", nil, data.raw["recipe"]["thorium-fuel-cell-recipe"].subgroup,
+    data.raw["recipe"]["thorium-fuel-cell-recipe"].order)
 regroup("r", "bob-thorium-processing", nil, "resources", "f")
 regroup("r", "bob-thorium-plutonium-fuel-cell", nil, "fuel-cells", "g")
 regroup("r", "deuterium-fuel-cell", nil, "fuel-cells", "h")
@@ -75,7 +75,7 @@ iconizer("r", "bob-plutonium-fuel-cell-recipe", "i", "bob-plutonium-fuel-cell")
 iconizer("r", "bob-thorium-fuel-cell-recipe", "i", "bob-thorium-fuel-cell")
 iconizer("r", "bob-empty-fuel-cell-recipe", "i", "bob-empty-nuclear-fuel-cell")
 
-data.raw["technology"]["thorium-plutonium-fuel-cell"].icon_size = 64
+data.raw["technology"]["bob-thorium-plutonium-fuel-cell"].icon_size = 64
 
 modifyEffects("ao-graphite-processing", { {
     type = "unlock-recipe",
@@ -93,88 +93,64 @@ modifyEffects("ao-graphite-processing", { {
 
 modifyEffects("plutonium-processing", { {
     type = "unlock-recipe",
-    recipe = "plutonium-fuel-cell"
+    recipe = "bob-plutonium-fuel-cell"
 }, {
     type = "unlock-recipe",
     recipe = "bobingabout-enrichment-process"
 }, {
     type = "unlock-recipe",
-    recipe = "plutonium-nucleosynthesis"
+    recipe = "bob-plutonium-nucleosynthesis"
 } })
 
-modifyPrerequisites("thorium-processing", { "MOX-fuel-reprocessing" })
-modifyPrerequisites("deuterium-processing", { "thorium-fuel-reprocessing" })
-modifyPrerequisites("thorium-plutonium-fuel-cell", { "thorium-processing", "plutonium-processing" })
-addResearchData("thorium-processing")
+modifyPrerequisites("bob-thorium-processing", { "MOX-fuel-reprocessing" })
+modifyPrerequisites("bob-deuterium-processing", { "bob-thorium-fuel-reprocessing" })
+modifyPrerequisites("bob-thorium-plutonium-fuel-cell", { "bob-thorium-processing", "plutonium-processing" })
+addResearchData("bob-thorium-processing")
+
+data.raw["technology"]["thorium-module"].prerequisites = { "bob-thorium-processing", "speed-module",
+    "productivity-module" }
+data.raw["technology"]["waste-reprocessing"].prerequisites = { "bob-thorium-processing" }
+hideType("t", { "thorium-processing", "thorium-fuel-reprocessing", "thorium-without-research-data" })
+hideType("r", { "thorium-without-research-data", "thorium-recipe" })
 
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.ingredients then
         for _, ingredient in pairs(recipe.ingredients) do
-            if ingredient[1] == "empty-fuel-cell" then
-                ingredient[1] = "empty-nuclear-fuel-cell"
+            if ingredient.name == "empty-fuel-cell" then
+                ingredient.name = "bob-empty-nuclear-fuel-cell"
+            end
+            if ingredient.name == "plutonium" then
+                ingredient.name = "bob-plutonium-239"
+            end
+            if ingredient.name == "thorium" then
+                ingredient.name = "bob-thorium-232"
             end
         end
     end
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.results then
         for _, result in pairs(recipe.results) do
-            if result[1] == "empty-fuel-cell" then
-                result[1] = "empty-nuclear-fuel-cell"
+            if result.name == "empty-fuel-cell" then
+                result.name = "bob-empty-nuclear-fuel-cell"
             end
-        end
-    end
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.ingredients then
-        for _, ingredient in pairs(recipe.ingredients) do
-            if ingredient[1] == "plutonium" then
-                ingredient[1] = "plutonium-239"
-            end
-        end
-    end
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.results then
-        for _, result in pairs(recipe.results) do
             if result.name == "plutonium" then
-                result.name = "plutonium-239"
+                result.name = "bob-plutonium-239"
             end
-        end
-    end
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.ingredients then
-        for _, ingredient in pairs(recipe.ingredients) do
-            if ingredient[1] == "thorium" then
-                ingredient[1] = "thorium-232"
-            end
-        end
-    end
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.results then
-        for _, result in pairs(recipe.results) do
             if result.name == "thorium" then
-                result.name = "thorium-232"
+                result.name = "bob-thorium-232"
             end
         end
     end
 end
 
-local list = { "thorium-processing", "thorium-fuel-reprocessing", "thorium-plutonium-fuel-cell", "deuterium-processing",
-    "deuterium-fuel-cell-2", "deuterium-fuel-reprocessing" }
+local list = { "bob-thorium-processing", "bob-thorium-fuel-reprocessing", "bob-thorium-plutonium-fuel-cell",
+    "bob-deuterium-processing",
+    "bob-deuterium-fuel-cell-2", "bob-deuterium-fuel-reprocessing" }
 for _, tech in pairs(list) do
     data.raw["technology"][tech].unit.ingredients = { { "automation-science-pack", 1 }, { "logistic-science-pack", 1 },
-        { "chemical-science-pack", 1 }, { "production-science-pack", 1 },
+        { "chemical-science-pack",   1 }, { "production-science-pack", 1 },
         { "research-data", 1 } }
 end
 
 hideType("r", { "plutonium-fuel-cell-recipe", "empty-fuel-cell-recipe" })
-hideType("t", { "plutonium-fuel-cell", "bobingabout-enrichment-process" })
+hideType("t", { "bob-plutonium-fuel-cell", "bobingabout-enrichment-process" })
 hideType("i", { "thorium-depleted-cell", "empty-fuel-cell" })
