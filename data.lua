@@ -1,3 +1,4 @@
+log("Before: " .. serpent.block(data.raw["technology"]["uranium-processing"]))
 require("__Atomic_Overhaul__/lib/core")
 if mods["space-exploration"] and settings.startup["se-addon"].value == true then
     require("__Atomic_Overhaul__/lib/se-addon")

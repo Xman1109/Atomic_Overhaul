@@ -33,7 +33,7 @@ function thorium_module_limitation()
         "MOX-without-research-data", "thorium-recipe", "thorium-fuel-reprocessing" } --TODO: thorium recipe cant use module... find out why!
 end
 
-if not (settings.startup["ao-kovarex-enabled"].value == nil) then --doesnt get executed wtf???
+if not (settings.startup["ao-kovarex-enabled"].value == nil) and not mods["all-the-overhaul-modpack"] then -- if ATOM is installed, don't mess with kovarex
     ao_kovarex = settings.startup["ao-kovarex-enabled"].value
     if ao_debug == true then
         log("Atomic Overhaul: Kovarex Enrichment Process managed by Atomic Overhaul.")
@@ -624,7 +624,15 @@ function addResearchData(name)
                     end
                 end
                 if found == false then
-                    table.insert(data.raw["technology"][i].unit.ingredients, {type="item", name="research-data", amount=1})
+                    -- Check if existing ingredients use dictionary format or array format
+                    local first_ingredient = data.raw["technology"][i].unit.ingredients[1]
+                    if first_ingredient.name then
+                        -- Dictionary format: {type="item", name="research-data", amount=1}
+                        table.insert(data.raw["technology"][i].unit.ingredients, {type="item", name="research-data", amount=1})
+                    else
+                        -- Array format: {"research-data", 1}
+                        table.insert(data.raw["technology"][i].unit.ingredients, {"research-data", 1})
+                    end
                     if ao_debug == true then
                         log("Added research data to " .. i .. "\n")
                     end
@@ -648,7 +656,15 @@ function addResearchData(name)
                 end
             end
             if found == false then
-                table.insert(data.raw["technology"][name].unit.ingredients, {type="item", name="research-data", amount=1})
+                -- Check if existing ingredients use dictionary format or array format
+                local first_ingredient = data.raw["technology"][name].unit.ingredients[1]
+                if first_ingredient.name then
+                    -- Dictionary format: {type="item", name="research-data", amount=1}
+                    table.insert(data.raw["technology"][name].unit.ingredients, {type="item", name="research-data", amount=1})
+                else
+                    -- Array format: {"research-data", 1}
+                    table.insert(data.raw["technology"][name].unit.ingredients, {"research-data", 1})
+                end
                 if ao_debug == true then
                     log("Added research data to " .. name .. "\n")
                 end

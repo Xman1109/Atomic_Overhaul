@@ -1,26 +1,47 @@
-modifyResults("uranium-without-research-data", { {
-    type = "item",
-    name = "uranium-238",
-    amount = 6
-}, {
-    type = "item",
-    name = "plutonium",
-    amount_min = 2,
-    amount_max = 4
-}, {
-    type = "item",
-    name = "nuclear-waste",
-    amount = 5
-}, {
-    type = "item",
-    name = "tritium",
-    probability = 0.20,
-    amount = 1
-}, {
-    type = "item",
-    name = "stone",
-    amount = 4
-} })
+if mods["all-the-overhaul-modpack"] then
+    modifyResults("uranium-without-research-data", { {
+        type = "item",
+        name = "uranium-238",
+        amount = 6
+    }, {
+        type = "item",
+        name = "plutonium",
+        amount_min = 2,
+        amount_max = 4
+    }, {
+        type = "item",
+        name = "nuclear-waste",
+        amount = 5
+    }, {
+        type = "item",
+        name = "stone",
+        amount = 4
+    } })
+else
+    modifyResults("uranium-without-research-data", { {
+        type = "item",
+        name = "uranium-238",
+        amount = 6
+    }, {
+        type = "item",
+        name = "plutonium",
+        amount_min = 2,
+        amount_max = 4
+    }, {
+        type = "item",
+        name = "nuclear-waste",
+        amount = 5
+    }, {
+        type = "item",
+        name = "tritium",
+        probability = 0.20,
+        amount = 1
+    }, {
+        type = "item",
+        name = "stone",
+        amount = 4
+    } })
+end
 modifyEffects("nuclear-fuel-reprocessing", { {
     type = "unlock-recipe",
     recipe = "ao-nuclear-fuel-reprocessing"
@@ -37,37 +58,63 @@ nfr.hidden = false
 nfr.subgroup = "reprocessing"
 nfr.order = "b"
 nfr.localized_name = { "recipe-name.ao-nuclear-fuel-reprocessing" }
-nfr.results = { {
-    type = "item",
-    name = "uranium-238",
-    amount = 5
-}, {
-    type = "item",
-    name = "stone",
-    amount = 3
-}, {
-    type = "item",
-    name = "tritium",
-    probability = 0.15,
-    amount = 1
-}, {
-    type = "item",
-    name = "plutonium",
-    amount_min = 1,
-    amount_max = 3
-}, {
-    type = "item",
-    name = "nuclear-waste",
-    amount = 5
-}, {
-    type = "item",
-    name = "research-data",
-    amount_min = 1,
-    amount_max = 3
-} }
+if mods["all-the-overhaul-modpack"] then
+    nfr.results = { {
+        type = "item",
+        name = "uranium-238",
+        amount = 5
+    }, {
+        type = "item",
+        name = "stone",
+        amount = 3
+    }, {
+        type = "item",
+        name = "plutonium",
+        amount_min = 1,
+        amount_max = 3
+    }, {
+        type = "item",
+        name = "nuclear-waste",
+        amount = 5
+    }, {
+        type = "item",
+        name = "research-data",
+        amount_min = 1,
+        amount_max = 3
+    } }
+else
+    nfr.results = { {
+        type = "item",
+        name = "uranium-238",
+        amount = 5
+    }, {
+        type = "item",
+        name = "stone",
+        amount = 3
+    }, {
+        type = "item",
+        name = "tritium",
+        probability = 0.15,
+        amount = 1
+    }, {
+        type = "item",
+        name = "plutonium",
+        amount_min = 1,
+        amount_max = 3
+    }, {
+        type = "item",
+        name = "nuclear-waste",
+        amount = 5
+    }, {
+        type = "item",
+        name = "research-data",
+        amount_min = 1,
+        amount_max = 3
+    } }
+end
 data:extend({ nfr })
 if not mods["RealisticFusionPower"] then
-    k2_se_list = { "kr-antimatter-ammo", "kovarex-enrichment-process", "kr-fusion-energy", "kr-antimatter-reactor",
+    k2_se_list = { "kr-antimatter-ammo", "kr-fusion-energy", "kr-antimatter-reactor",
         "kr-antimatter-reactor-equipment", "fusion-reactor-equipment", "spidertron", "kr-rocket-turret",
         "kr-nuclear-locomotive", "kr-nuclear-reactor-equipment", "se-antimatter-reactor",
         "se-space-radiation-laboratory" }
@@ -75,6 +122,9 @@ else
     k2_se_list = { "kr-antimatter-reactor-equipment", "kr-antimatter-ammo", "se-antimatter-reactor",
         "se-space-radiation-laboratory", "kr-nuclear-locomotive", "kr-nuclear-reactor-equipment",
         "fusion-reactor-equipment", "spidertron", "kr-rocket-turret" }
+end
+if ao_kovarex == true then
+    table.insert(k2_se_list, "kovarex-enrichment-process")
 end
 addResearchData(k2_se_list)
 -- multiplyFuelValue(
