@@ -312,7 +312,7 @@ function modifyIngredients(name, ingredients, task)
             name .. " with " .. serpent.block(ingredients) .. " with Task " ..
             '"' .. tostring(task) .. '"' .. "\n")
     end
-    if data.raw["recipe"][name] then
+    if task == "globalReplace" or data.raw["recipe"][name] then
         if task == "replace" or task == nil then
             data.raw["recipe"][name].ingredients = ingredients
             if ao_debug == true then
@@ -336,8 +336,8 @@ function modifyIngredients(name, ingredients, task)
             for _, recipe in pairs(data.raw.recipe) do
                 if recipe.ingredients then
                     for _, ingredient in pairs(recipe.ingredients) do
-                        if ingredient.name or ingredient[1] == name then
-                            ingredient[1] = ingredients
+                        if ingredient.name == name then
+                            ingredient.name = ingredients
                             if ao_debug == true then
                                 log("Replaced ingredient '" .. name .. "' in recipe '" .. recipe.name .. "' with '" ..
                                     serpent.block(ingredients) .. "'" .. "\n")
