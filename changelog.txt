@@ -2,6 +2,7 @@
 Version: 1.4.2
 Date: ????
   Changes:
+    - Bob MCI & Revamp nuclear energy balance fixes in AO simple mode. Thorium and Plutonium nuclear energy tiers in realistic playable balance, wo MadClown Nuclear so far.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
 Date: 2025-11-11
