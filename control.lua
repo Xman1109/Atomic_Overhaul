@@ -112,52 +112,55 @@ script.on_configuration_changed(function()
     end
 end)
 
-script.on_event(defines.events.on_trigger_created_entity , function(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        UpgradeCapsules(event)
-    end
-end)
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 
-script.on_event(defines.events.on_entity_died, function(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        whenReactorIsMissing(event)
-        IsotopeConversion(event)
-    end
-end)
+    script.on_event(defines.events.on_trigger_created_entity , function(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            UpgradeCapsules(event)
+        end
+    end)
 
-script.on_event(defines.events.on_player_mined_entity, function(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        whenReactorIsMissing(event)
-    end
-end)
+    script.on_event(defines.events.on_entity_died, function(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            whenReactorIsMissing(event)
+            IsotopeConversion(event)
+        end
+    end)
 
-script.on_event(defines.events.on_robot_mined_entity, function(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        whenReactorIsMissing(event)
-    end
-end)
+    script.on_event(defines.events.on_player_mined_entity, function(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            whenReactorIsMissing(event)
+        end
+    end)
 
-script.on_event(defines.events.on_picked_up_item, function(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        IsotopeTech(event)
-    end
-end)
+    script.on_event(defines.events.on_robot_mined_entity, function(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            whenReactorIsMissing(event)
+        end
+    end)
 
-script.on_event(defines.events.on_research_finished, function(event)
-    if settings.startup["ao-complexity-level"].value ~= "simple" then rrCentrifuge(event) end
-    if settings.startup["ao-isotope-update"].value == true then
-        IsotopeAnalysis(event)
-        X17Tech(event)
-    end
-end)
+    script.on_event(defines.events.on_picked_up_item, function(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            IsotopeTech(event)
+        end
+    end)
 
-script.on_event(defines.events.on_built_entity, function(event)
-    HeatTank(event)
-    if settings.startup["ao-isotope-update"].value == true then
-        ColdFusionReactor(event)
-    end
-end)
+    script.on_event(defines.events.on_research_finished, function(event)
+        rrCentrifuge(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            IsotopeAnalysis(event)
+            X17Tech(event)
+        end
+    end)
 
+    script.on_event(defines.events.on_built_entity, function(event)
+        HeatTank(event)
+        if settings.startup["ao-isotope-update"].value == true then
+            ColdFusionReactor(event)
+        end
+    end)
+
+end
 
 
 -- 1.4.0

@@ -12,7 +12,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             subgroup = "waste-reprocessing",
             order = "b",
             ingredients = {
-                { type = "item",  name = "fissile-products", amount = 5 },
+                { type = "item",  name = "fissile-products", amount = 7 },
                 { type = "fluid", name = "sulfuric-acid",    amount = 30 }
             },
             results = {

@@ -1,7 +1,7 @@
 local fuel_value
 local stack
 if settings.startup["ao-complexity-level"].value == "simple" then
-	fuel_value = "11GJ"
+	fuel_value = "25GJ"
 	stack = 25
 else
 	fuel_value = "12GJ"

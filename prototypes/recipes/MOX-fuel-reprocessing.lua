@@ -5,14 +5,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
-            {type="item", name="uranium-concentrate", amount=34}
+            {type="item", name="uranium-concentrate", amount=37}
         }
     else
         m_results = {
             {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
-            {type="item", name="uranium-ore", amount=340}
+            {type="item", name="uranium-ore", amount=370}
         }
     end
     data:extend(
@@ -32,7 +32,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    {type="item", name="MOX-depleted-cell", amount=3}
+                    {type="item", name="MOX-depleted-cell", amount=5}
                 },
                 results = m_results,
             }

@@ -22,7 +22,7 @@ function breed.APM_breeder_reactor()
     breeder_reactor.working_sound.sound.volume = 0.6
     breeder_reactor.working_sound.apparent_volume = 1.5
 
-    breeder_reactor.consumption = "5MW"
+    breeder_reactor.consumption = "7.5MW"
     breeder_reactor.neighbour_bonus = 0.2
     breeder_reactor.energy_source = {}
     breeder_reactor.energy_source.type = "burner"
@@ -113,10 +113,10 @@ function breed.APM_breeder_reactor()
     breeder_reactor.default_fuel_glow_color = { r = 1.000, g = 0.500, b = 0.000, a = 0.500 } --color used as working_light_picture tint for fuels that don't have glow color defined
 
     breeder_reactor.heat_buffer = {}
-    breeder_reactor.heat_buffer.max_temperature = 900
+    breeder_reactor.heat_buffer.max_temperature = 750
     breeder_reactor.heat_buffer.specific_heat = "4MJ"
-    breeder_reactor.heat_buffer.max_transfer = "7GW"
-    breeder_reactor.heat_buffer.minimum_glow_temperature = 350
+    breeder_reactor.heat_buffer.max_transfer = "5GW"
+    breeder_reactor.heat_buffer.minimum_glow_temperature = 300
     breeder_reactor.heat_buffer.glow_alpha_modifier = 0.6
     breeder_reactor.heat_buffer.connections = {}
     breeder_reactor.heat_buffer.connections[1] = {}

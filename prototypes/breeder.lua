@@ -71,7 +71,7 @@ function breed.NewEnrichment()
       localised_description = { "recipe-description.uranium-235-simple" },
       ingredients =
       {
-        {type="item", name="uranium-low-enriched", amount=20}
+        {type="item", name="uranium-low-enriched", amount=12}
       },
       group = "atomic-overhaul",
       subgroup = "resources",
@@ -80,15 +80,16 @@ function breed.NewEnrichment()
       results =
       {
         {type="item", name="uranium-235", amount=1},
-        {type="item", name="uranium-238", amount=19}
+        {type="item", name="uranium-238", amount=11}
       },
       allow_decomposition = false,
     },
   })
 
   data.raw["recipe"]["uranium-processing"].hidden = true -- I hid it instead of using for LEU, because icon, description would be incorrect anyway.
-  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { {type="item", name="uranium-low-enriched", amount = 4 }, {type="item", name = "iron-plate", amount=2} }
-  data.raw["recipe"]["uranium-fuel-cell"].results[1].amount = 2
+  data.raw["recipe"]["uranium-fuel-cell"].ingredients = { {type="item", name="uranium-low-enriched", amount = 20 }, {type="item", name = "iron-plate", amount=10} }
+  data.raw["recipe"]["uranium-fuel-cell"].results[1].amount = 10
+  data.raw["recipe"]["uranium-fuel-cell"].energy_required = 40
   data.raw["item"]["uranium-235"].localised_name = { "item-name.uranium-235-simple" }
   data.raw["item"]["uranium-238"].localised_name = { "item-name.uranium-238-simple" }
 
@@ -195,7 +196,7 @@ function breed.Breeder()
       },
       fuel_category = "nuclear-breeder",
       burnt_result = "ao-breeder-depleted-cell",
-      fuel_value = "2GJ",
+      fuel_value = "2.5GJ",
       fuel_glow_color = { 100, 247, 207 },
       stack_size = 10,
       group = "atomic_overhaul",
@@ -258,8 +259,8 @@ function breed.Breeder()
       subgroup = "fuel-cells",
       ingredients =
       {
-        {type="item", name="uranium-235", amount=1},
-        {type="item", name="uranium-low-enriched", amount=4},
+        {type="item", name="uranium-235", amount=2},
+        {type="item", name="uranium-low-enriched", amount=2},
         {type="item", name="uranium-238", amount=4},
         {type="item", name="iron-plate", amount=2},
       },
@@ -288,7 +289,7 @@ function breed.Breeder()
         {type = "item", name = "plutonium", amount = 1},
         mods["SchallUraniumProcessing"] and { type = item, name = "uranium-concentrate", amount = 3 }
         or {type="item", name="uranium-ore", amount=30},
-        { type = "item", name = "fissile-products",  amount_min = 8, amount_max = 9 }
+        { type = "item", name = "fissile-products",  amount_min = 5, amount_max = 9 }
       },
     },
 
