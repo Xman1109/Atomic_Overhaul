@@ -163,7 +163,6 @@ function breed.Breeder()
         name = 'nuclear-breeder'
       } })
   end
-  data.raw.reactor['nuclear-reactor'].fast_replaceable_group = "reactor"
   breed.APM_breeder_reactor()
   data:extend({
 
