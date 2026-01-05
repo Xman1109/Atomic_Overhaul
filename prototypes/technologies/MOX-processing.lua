@@ -7,7 +7,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     tech_effects = {
         {
             type = "unlock-recipe",
-            recipe = "MOX-fuel-cell-recipe"
+            recipe = "MOX-fuel-cell"
         },
         {
             type = "unlock-recipe",
@@ -33,7 +33,7 @@ else
         },
         {
             type = "unlock-recipe",
-            recipe = "MOX-fuel-cell-recipe"
+            recipe = "MOX-fuel-cell"
         }
     }
     tech_ingredients = {

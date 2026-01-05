@@ -31,7 +31,7 @@ data:extend(
     {
         {
             type = "recipe",
-            name = "MOX-fuel-cell-recipe",
+            name = "MOX-fuel-cell",
             icon = graphics .. "MOX-fuel-cell.png",
             icon_size = 64,
             icon_mipmaps = 4,

@@ -16,7 +16,7 @@ for index, force in pairs(game.forces) do
             technologies["MOX-processing"].researched = true
             technologies["MOX-fuel-reprocessing"].researched = true
         end
-        if recipe["MOX-fuel-cell-recipe"].enabled then
+        if recipe["MOX-fuel-cell"].enabled then
             recipe["MOX-recipe"].enabled = true
             recipe["MOX-reprocessing"].enabled = true
         end

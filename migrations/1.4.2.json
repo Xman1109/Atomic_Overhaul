@@ -1,0 +1,13 @@
+{
+    "recipe":[
+        [
+            "MOX-fuel-cell-recipe", "MOX-fuel-cell"
+        ],
+        [
+            "ao-breeder-fuel-cell-recipe", "ao-breeder-fuel-cell"
+        ],
+        [
+            "apm_nuclear_breeder-recipe", "apm_nuclear_breeder"
+        ]
+    ]
+  }

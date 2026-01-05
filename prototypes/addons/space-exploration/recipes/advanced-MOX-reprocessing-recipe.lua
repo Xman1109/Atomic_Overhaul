@@ -3,7 +3,7 @@ data:extend(
     {
         type = "recipe",
         name = "advanced-MOX-reprocessing-recipe",
-        icon = data.raw["recipe"]["MOX-fuel-cell-recipe"].icon,
+        icon = data.raw["recipe"]["MOX-fuel-cell"].icon,
         icon_size = 64,
         icon_mipmaps = 4,
         icons = {

@@ -39,8 +39,8 @@ end
 
 if settings.startup["ao-complexity-level"].value == "simple" then
     if mods.bzlead then -- replace iron with lead like for standard cells
-        replace_ingredient("MOX-fuel-cell-recipe", "iron-plate", "lead-plate")
-        if ao_breeder then replace_ingredient("ao-breeder-fuel-cell-recipe", "iron-plate", "lead-plate") end
+        replace_ingredient("MOX-fuel-cell", "iron-plate", "lead-plate")
+        if ao_breeder then replace_ingredient("ao-breeder-fuel-cell", "iron-plate", "lead-plate") end
     end
 
     if mods.bzzirconium then -- adding zirconium like for standard cells
@@ -48,10 +48,10 @@ if settings.startup["ao-complexity-level"].value == "simple" then
         local nuclear_z = data.raw.item["zircaloy-4"] and "zircaloy-4" or "zirconium-plate"
 
         replace_ingredient_partly("uranium-fuel-cell", nuclear_plate, 1, nuclear_z, 1)
-        replace_ingredient_partly("MOX-fuel-cell-recipe", nuclear_plate, 1, nuclear_z, 1)
+        replace_ingredient_partly("MOX-fuel-cell", nuclear_plate, 1, nuclear_z, 1)
         if ao_breeder then
-            replace_ingredient_partly("ao-breeder-fuel-cell-recipe", nuclear_plate, 1, nuclear_z, 1)
-            table.insert(data.raw.recipe["apm_nuclear_breeder-recipe"].ingredients, { nuclear_z, 150 })
+            replace_ingredient_partly("ao-breeder-fuel-cell", nuclear_plate, 1, nuclear_z, 1)
+            table.insert(data.raw.recipe["apm_nuclear_breeder"].ingredients, { nuclear_z, 150 })
         end
     end
 end

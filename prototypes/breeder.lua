@@ -228,7 +228,7 @@ function breed.Breeder()
     -- **** RECIPES
     {
       type = "recipe",
-      name = "apm_nuclear_breeder-recipe",
+      name = "apm_nuclear_breeder",
       icon = breeder_graphics .. "apm_nuclear_breeder.png",
       icon_size = 64,
       icon_mipmaps = 4,
@@ -246,7 +246,7 @@ function breed.Breeder()
     },
     {
       type = "recipe",
-      name = "ao-breeder-fuel-cell-recipe",
+      name = "ao-breeder-fuel-cell",
       icon = se_addon_graphics .. "beryllium-fuel-cell.png", -- taking beryllium fuel cell graphics
       icon_size = 64,
       icon_mipmaps = 4,
@@ -304,7 +304,7 @@ function breed.Breeder()
       {
         {
           type = "unlock-recipe",
-          recipe = "ao-breeder-fuel-cell-recipe"
+          recipe = "ao-breeder-fuel-cell"
         },
         {
           type = "unlock-recipe",
@@ -312,7 +312,7 @@ function breed.Breeder()
         },
         {
           type = "unlock-recipe",
-          recipe = "apm_nuclear_breeder-recipe"
+          recipe = "apm_nuclear_breeder"
         }
       },
       unit =

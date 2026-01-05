@@ -18,14 +18,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             end
         end
     end
-    r = data.raw["recipe"]["MOX-fuel-cell-recipe"]
+    r = data.raw["recipe"]["MOX-fuel-cell"]
     for i, component in pairs(r.ingredients) do
         if component.name == "iron-plate" then
             component.name = "bob-empty-nuclear-fuel-cell"
             component.amount = r.results[1].amount
         end
     end
-    r = data.raw["recipe"]["ao-breeder-fuel-cell-recipe"]
+    r = data.raw["recipe"]["ao-breeder-fuel-cell"]
     for i, component in pairs(r.ingredients) do
         if component.name == "iron-plate" then
             component.name = "bob-empty-nuclear-fuel-cell"
