@@ -103,8 +103,10 @@ require(techs .. "thorium-processing")
 require(techs .. "uranium-without-research-data")
 require(techs .. "waste-reprocessing")
 
-require(entities .. "heat-fluid-tank")
-require(entities .. "heat-tank-pipe")
+if settings.startup["ao-complexity-level"].value ~= "simple" then
+    require(entities .. "heat-fluid-tank")
+    require(entities .. "heat-tank-pipe")
+end
 
 
 if settings.startup["old-graphite-fuel"].value == false then
