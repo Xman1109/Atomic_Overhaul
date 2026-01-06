@@ -34,18 +34,16 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     end
     r = data.raw["recipe"]["ao-breeder-reprocessing"]
     table.insert(r.results, {type = "item", name = "bob-empty-nuclear-fuel-cell", amount = r.ingredients[1].amount})
-    --table.insert(r.results, {type = "item", name = "bob-fusion-catalyst", amount = 1})
     r = data.raw["recipe"]["MOX-reprocessing"]
     table.insert(r.results, {type = "item", name = "bob-empty-nuclear-fuel-cell", amount = r.ingredients[1].amount})
     r = data.raw["recipe"]["bob-thorium-fuel-cell"]
     if r then
         for i, component in pairs(r.ingredients) do
-            if component.name == "uranium-235" then
-                component.amount = 2
-            elseif component.name == "bob-thorium-232" then
+            if component.name == "bob-thorium-232" then
                 component.amount = 18
             end
         end
+        table.insert(r.ingredients, {type = "item", name = "uranium-low-enriched", amount = 10})
         r.energy_required = 20
     end
     r = data.raw["recipe"]["bob-thorium-plutonium-fuel-cell"]

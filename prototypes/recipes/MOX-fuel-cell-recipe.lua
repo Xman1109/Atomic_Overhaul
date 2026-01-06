@@ -11,7 +11,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
         {type="item", name="iron-plate", amount=5}
     }
     m_results = {
-        {type="item", name="MOX-fuel-cell", amount=5},
+        {type="item", name="MOX-fuel-cell", amount=6},
     }
     m_time = 75
 else

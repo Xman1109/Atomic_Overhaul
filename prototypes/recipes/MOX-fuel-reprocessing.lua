@@ -2,14 +2,14 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     local m_results
     if mods["SchallUraniumProcessing"] then
         m_results = {
-            {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
+            {type = "item", name = "fissile-products", amount_min = 3, amount_max = 4 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
             {type="item", name="uranium-concentrate", amount=37}
         }
     else
         m_results = {
-            {type = "item", name = "fissile-products", amount_min = 2, amount_max = 3 },
+            {type = "item", name = "fissile-products", amount_min = 3, amount_max = 4 },
             {type="item", name="plutonium", amount=1},
             {type="item", name="uranium-238", amount=10},
             {type="item", name="uranium-ore", amount=370}
@@ -32,7 +32,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
                 subgroup = "reprocessing",
                 ingredients =
                 {
-                    {type="item", name="MOX-depleted-cell", amount=5}
+                    {type="item", name="MOX-depleted-cell", amount=6}
                 },
                 results = m_results,
             }

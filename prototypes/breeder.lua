@@ -258,13 +258,13 @@ function breed.Breeder()
       subgroup = "fuel-cells",
       ingredients =
       {
-        {type="item", name="uranium-235", amount=2},
+        {type="item", name="uranium-235", amount=4},
         {type="item", name="uranium-low-enriched", amount=2},
-        {type="item", name="uranium-238", amount=4},
-        {type="item", name="iron-plate", amount=2},
+        {type="item", name="uranium-238", amount=10},
+        {type="item", name="iron-plate", amount=5},
       },
       results = {
-        {type = "item", name = "ao-breeder-fuel-cell", amount = 2},
+        {type = "item", name = "ao-breeder-fuel-cell", amount = 5},
       }
     },
     {
@@ -282,13 +282,13 @@ function breed.Breeder()
       subgroup = "reprocessing",
       ingredients =
       {
-        {type="item", name="ao-breeder-depleted-cell", amount=2}
+        {type="item", name="ao-breeder-depleted-cell", amount=5}
       },
       results = {
-        {type = "item", name = "plutonium", amount = 1},
-        mods["SchallUraniumProcessing"] and { type = item, name = "uranium-concentrate", amount = 3 }
-        or {type="item", name="uranium-ore", amount=30},
-        { type = "item", name = "fissile-products",  amount_min = 5, amount_max = 9 }
+        {type = "item", name = "plutonium", amount = 3},
+        mods["SchallUraniumProcessing"] and { type = item, name = "uranium-concentrate", amount = 7 }
+        or {type="item", name="uranium-ore", amount=70},
+        { type = "item", name = "fissile-products",  amount_min = 8, amount_max = 13 }
       },
     },
 
