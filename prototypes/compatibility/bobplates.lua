@@ -52,7 +52,7 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             if component.name == "plutonium" then
                 component.amount = 6
             elseif component.name == "bob-thorium-232" then
-                component.amount = 34
+                component.amount = 54
             end
         end
         r.energy_required = 60
