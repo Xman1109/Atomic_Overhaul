@@ -1,3 +1,4 @@
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 data:extend({ {
     type = "item",
     name = "heat-furnace",
@@ -8,3 +9,4 @@ data:extend({ {
     place_result = "heat-furnace",
     stack_size = 50
 } })
+end

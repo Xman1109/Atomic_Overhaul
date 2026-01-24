@@ -1,3 +1,4 @@
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 heat_furnace = util.table.deepcopy(data.raw["furnace"]["steel-furnace"])
 heat_furnace.name = "heat-furnace"
 heat_furnace.type = "assembling-machine"
@@ -158,3 +159,4 @@ heat_furnace.animation =
 data:extend({
     heat_furnace
 })
+end

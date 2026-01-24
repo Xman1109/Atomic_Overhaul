@@ -1,3 +1,4 @@
+if settings.startup["ao-complexity-level"].value ~= "simple" then
 data:extend({ {
     type = "recipe",
     name = "heat-furnace-recipe",
@@ -14,3 +15,4 @@ data:extend({ {
     order = "c-b[heat-furnace]",
     enabled = false
 } })
+end
