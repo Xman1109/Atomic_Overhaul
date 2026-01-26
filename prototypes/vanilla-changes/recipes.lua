@@ -8,15 +8,20 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             amount_min = 1,
             amount_max = 2
         },
+        {
+            type = "item",
+            name = "uranium-238",
+            amount = 12
+        },
         mods["SchallUraniumProcessing"] and {
             type = "item",
             name = "uranium-concentrate",
-            amount = 19
+            amount = 6
         }
         or {
             type = "item",
             name = "uranium-ore",
-            amount = 190
+            amount = 60
         }
     }
 else
