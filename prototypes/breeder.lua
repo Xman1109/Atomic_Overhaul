@@ -123,8 +123,8 @@ function breed.NewEnrichment()
   c_recipe = data.raw.recipe["nuclear-fuel"]
   for i, component in pairs(c_recipe.ingredients) do
     for _, value in pairs(component) do
-      if value == "uranium-235" then -- More universal way is to check for amount of uranium-235 and put double amount of LEU.
-        c_recipe.ingredients[i] = { type = "item", name = "uranium-low-enriched", amount = 2 }
+      if value == "uranium-235" then
+        c_recipe.ingredients[i] = { type = "item", name = "uranium-low-enriched", amount = 1 }
         break
       end
     end

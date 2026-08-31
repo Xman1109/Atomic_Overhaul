@@ -2,7 +2,13 @@ if settings.startup["ao-complexity-level"].value == "simple" then
 
     hideType("r", { "bobingabout-enrichment-process", "bob-plutonium-nucleosynthesis" })
     hideType("t", "bobingabout-enrichment-process")
-    modifyResults("nuclear-fuel-reprocessing", {{type = "item", name = "bob-empty-nuclear-fuel-cell", amount = 40 }}, "add")
+    --modifyResults("nuclear-fuel-reprocessing", {{type = "item", name = "bob-empty-nuclear-fuel-cell", amount = 40 }}, "add")
+    if data.raw["item"]["bob-empty-nuclear-fuel-cell"] then
+        table.insert(data.raw["recipe"]["nuclear-fuel-reprocessing"].results, {
+            type = "item", name = "bob-empty-nuclear-fuel-cell", amount = 40, ignored_by_productivity = 40
+        })
+    end
+    
     modifyIngredients("bob-plutonium-239", "plutonium" , "globalReplace")
     modifyIngredients("bob-plutonium-fuel-cell", "MOX-fuel-cell" , "globalReplace")
     data.raw["technology"]["nuclear-fuel-reprocessing"].icon = "__base__/graphics/technology/nuclear-fuel-reprocessing.png"

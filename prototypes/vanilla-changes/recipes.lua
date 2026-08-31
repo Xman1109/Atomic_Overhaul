@@ -6,7 +6,8 @@ if settings.startup["ao-complexity-level"].value == "simple" then
             type = "item",
             name = "fissile-products",
             amount_min = 1,
-            amount_max = 2
+            amount_max = 2,
+            ignored_by_productivity = 2
         },
         {
             type = "item",
