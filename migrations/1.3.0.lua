@@ -14,7 +14,7 @@ for index, force in pairs(game.forces) do
             end
             recipe["uranium-processing"].enabled = true
             recipe["centrifuge"].enabled = true
-            recipe["heat-furnace-recipe"].enabled = true
+            if settings.startup["ao-complexity-level"].value ~= "simple" then recipe["heat-furnace-recipe"].enabled = true end
         end
         if settings.startup["ao-complexity-level"].value ~= "simple" then
             if recipe["graphite-fuel-cell-recipe"] then
