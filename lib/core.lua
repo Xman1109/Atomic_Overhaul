@@ -530,7 +530,7 @@ end
 -- Modifies the prerequisites of a given technology.
 ---@param name (string) The name of the technology to modify.
 ---@param prerequisites (table|string) The prerequisites to set or add to the technology.
----@param task (string) The task to perform. Can be "replace" to replace the existing prerequisites, "add" to add to the existing prerequisites, or "nil" to default to "replace".
+---@param task (string) The task to perform. Can be "replace" to replace the existing prerequisites, "add" to add to the existing prerequisites, or "subst" to substitute, or "nil" to default to "replace".
 ---@return nil
 function modifyPrerequisites(name, prerequisites, task)
     if ao_debug == true then
@@ -556,6 +556,15 @@ function modifyPrerequisites(name, prerequisites, task)
                 if ao_debug == true then
                     log("Added '" .. serpent.block(prerequisites) .. "' as prerequisite to technology." .. name .. "\n")
                 end
+            end
+        elseif task == "subst" then
+            if ao_debug == true then
+                log("For the technology " .. name .. " a prerequisite " .. prerequisites[1] .. " was swapped out for " .. prerequisites[2] .. "\n")
+            end
+            for i, tech in pairs(data.raw["technology"][name].prerequisites) do
+                if tech == prerequisites[1] then
+                    data.raw["technology"][name].prerequisites[i] = prerequisites[2]
+                end        
             end
         else
             log("Unknown task: " .. '"' .. tostring(task) .. '"' .. "\n")
