@@ -1,5 +1,6 @@
 local rocket_ingredients
 if settings.startup["ao-complexity-level"].value == "simple" then
+    modifyPrerequisites("atomic-bomb", "fissile-products-reprocessing", "add")
     if ao_breeder then
         rocket_ingredients = {
             {type = "item", name = "processing-unit", amount = 10},

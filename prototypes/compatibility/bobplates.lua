@@ -15,6 +15,10 @@ if settings.startup["ao-complexity-level"].value == "simple" then
     data.raw["technology"]["nuclear-fuel-reprocessing"].icon_size = 256
     data.raw["recipe"]["nuclear-fuel-reprocessing"].icon = "__base__/graphics/icons/nuclear-fuel-reprocessing.png"
     data.raw["recipe"]["nuclear-fuel-reprocessing"].icon_size = 64
+    modifyPrerequisites("bob-thorium-plutonium-fuel-cell", {"nuclear-fuel-reprocessing", "fissile-products-reprocessing"} , "subst")
+    modifyPrerequisites("bob-rtg", {"nuclear-fuel-reprocessing", "fissile-products-reprocessing"} , "subst")
+    modifyPrerequisites("bob-nuclear-power-3", {"nuclear-fuel-reprocessing", "fissile-products-reprocessing"} , "subst")
+
     local r = data.raw["recipe"]["bob-thorium-fuel-reprocessing"]
     if r then
         for i, component in pairs(r.results) do
